@@ -15,7 +15,7 @@ export default function LecturesPage() {
       <SectionHeader
         eyebrow="Courses"
         title="바이브 코딩 강좌"
-        description="처음이라면 '홈페이지 만들기'부터. 로그인·데이터가 필요한 서비스는 '웹 서비스 만들기 20강', 유튜브 쇼츠를 자동으로 찍어내고 싶다면 '쇼츠 자동화'로."
+        description="처음이라면 '홈페이지 만들기'부터. 로그인·데이터가 필요한 서비스는 '웹 서비스 만들기 20강', 콘텐츠 자동화는 '쇼츠·네이버 블로그·SNS' 세 강좌 중 내 채널에 맞는 것부터."
       />
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {COURSES.map((c) => (
