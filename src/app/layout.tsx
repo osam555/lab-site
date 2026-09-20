@@ -3,6 +3,7 @@ import { Noto_Sans_KR, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { NavLinks } from "@/components/NavLinks";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const sans = Noto_Sans_KR({
   variable: "--font-sans-kr",
@@ -29,7 +30,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="ko"
       className={`${sans.variable} ${mono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          // Apply the saved theme before first paint to avoid a flash. Mirrors ThemeToggle.
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("lab-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <header className="sticky top-0 z-20 border-b border-line bg-background/85 backdrop-blur">
           <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
@@ -37,7 +47,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <span className="inline-block h-6 w-6 rounded-md bg-accent" aria-hidden />
               <span>바이브 코딩 랩</span>
             </Link>
-            <NavLinks />
+            <div className="flex items-center gap-3">
+              <NavLinks />
+              <ThemeToggle />
+            </div>
           </nav>
         </header>
         <main className="flex-1">{children}</main>
