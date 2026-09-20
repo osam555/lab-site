@@ -21,6 +21,14 @@ const FAQ = [
   },
 ];
 
+const MORE = [
+  { href: "/skills", tag: "Skills", title: "바이브 스킬", desc: "AI 코딩 도구의 승인 모드, 계획 모드, 규칙 파일, 외부 연결까지 실전 가이드 6편." },
+  { href: "/prompts", tag: "Prompts", title: "프롬프트 골라 쓰기", desc: "복사해서 붙여넣고 [대괄호]만 바꾸면 되는 요청문 20여 개. 상황별 분류와 검색." },
+  { href: "/tips", tag: "Tips", title: "짧은 팁", desc: "command not found부터 hydration 에러까지, 막히는 지점 15개의 1분 해결책." },
+  { href: "/repos", tag: "Repo", title: "추천 오픈소스", desc: "과정에서 쓰는 도구와 다음 단계 도구. 왜 쓰는지, 몇 강에서 나오는지 함께." },
+  { href: "/ideas", tag: "Ideas", title: "프로젝트 아이디어", desc: "20일 크기로 기획해둔 프로젝트 6개. PLAN.md에 바로 옮길 수 있는 형식." },
+];
+
 export default function Home() {
   const lessons = getAllLessons();
   const first = lessons[0];
@@ -91,6 +99,24 @@ export default function Home() {
                   ))}
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 py-16">
+        <h2 className="text-2xl font-black tracking-tight sm:text-3xl">강의 밖에서도</h2>
+        <p className="mt-2 text-muted">막혔을 때, 다음 단계가 궁금할 때, 무엇을 만들지 모를 때.</p>
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {MORE.map(({ href, title, desc, tag }) => (
+            <Link
+              key={href}
+              href={href}
+              className="group rounded-xl border border-line bg-card p-5 transition hover:border-accent hover:shadow-sm"
+            >
+              <div className="text-[11px] font-bold uppercase tracking-wide text-accent">{tag}</div>
+              <h3 className="mt-1 font-bold group-hover:text-accent">{title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
+            </Link>
           ))}
         </div>
       </section>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { NavLinks } from "@/components/NavLinks";
 
 const sans = Noto_Sans_KR({
   variable: "--font-sans-kr",
@@ -31,19 +32,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <header className="sticky top-0 z-20 border-b border-line bg-background/85 backdrop-blur">
-          <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+          <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
             <Link href="/" className="flex items-center gap-2 font-black tracking-tight">
               <span className="inline-block h-6 w-6 rounded-md bg-accent" aria-hidden />
               <span>바이브 코딩 랩</span>
             </Link>
-            <div className="flex items-center gap-5 text-sm text-muted">
-              <Link href="/lectures/vibe-coding" className="hover:text-foreground">
-                20강 목록
-              </Link>
-              <Link href="/#faq" className="hover:text-foreground">
-                FAQ
-              </Link>
-            </div>
+            <NavLinks />
           </nav>
         </header>
         <main className="flex-1">{children}</main>
