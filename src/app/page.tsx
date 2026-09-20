@@ -44,7 +44,7 @@ export default function Home() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
           Claude Code에게 방향을 알려주고 결과를 확인하는 방식으로 하루 한 강씩.
-          10일이면 내 도메인의 홈페이지가, 20일이면 로그인과 데이터가 있는 서비스가 인터넷에 올라갑니다.
+          10일이면 내 도메인의 홈페이지가, 20일이면 로그인과 데이터가 있는 서비스가, 8일이면 주제만 넣으면 돌아가는 쇼츠 파이프라인이 생깁니다.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/lectures/homepage" className="rounded-lg bg-accent px-5 py-3 font-bold text-white transition hover:opacity-90">
@@ -59,7 +59,7 @@ export default function Home() {
       <section className="border-y border-line bg-card">
         <div className="mx-auto grid max-w-5xl gap-6 px-4 py-10 sm:grid-cols-3">
           {[
-            ["2개 과정", "홈페이지 10강 + 서비스 20강"],
+            ["3개 과정", "홈페이지 10강 · 서비스 20강 · 쇼츠 8강"],
             ["0줄", "외워야 하는 문법"],
             ["Win · Mac", "두 운영체제 모두 안내"],
           ].map(([n, label]) => (
@@ -73,8 +73,8 @@ export default function Home() {
 
       <section id="courses" className="mx-auto max-w-5xl px-4 py-16">
         <h2 className="text-2xl font-black tracking-tight sm:text-3xl">과정 고르기</h2>
-        <p className="mt-2 text-muted">처음이라면 왼쪽부터. 둘 다 무료입니다.</p>
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
+        <p className="mt-2 text-muted">처음이라면 홈페이지 만들기부터. 전부 무료입니다.</p>
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {COURSES.map((c) => (
             <CourseCard key={c.slug} course={c} lessonCount={getAllLessons(c.slug).length} />
           ))}

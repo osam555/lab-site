@@ -15,9 +15,9 @@ export default function LecturesPage() {
       <SectionHeader
         eyebrow="Courses"
         title="강의 과정"
-        description="처음이라면 '홈페이지 만들기'부터. 홈페이지를 만들어봤거나 로그인·데이터가 필요한 서비스를 만들고 싶다면 '20강'으로."
+        description="처음이라면 '홈페이지 만들기'부터. 로그인·데이터가 필요한 서비스는 '20강', 유튜브 쇼츠를 자동으로 찍어내고 싶다면 '쇼츠 자동화'로."
       />
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {COURSES.map((c) => (
           <CourseCard key={c.slug} course={c} lessonCount={getAllLessons(c.slug).length} />
         ))}

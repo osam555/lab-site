@@ -34,6 +34,18 @@ export const COURSES: Course[] = [
     outcome: "로그인·데이터 저장이 되는 웹 서비스와 폰에 설치되는 PWA",
     parts: ["1부 · 준비", "2부 · 기획과 프롬프트", "3부 · 만들기", "4부 · 세상에 내놓기"],
   },
+  {
+    slug: "shorts",
+    title: "바이브 코딩으로 쇼츠 자동화",
+    tagline: "건축물 이름 하나로 대본·영상·더빙·합성까지, 한 달 4편",
+    description:
+      "Claude Code가 레퍼런스 채널을 분석해 대본과 비주얼 프롬프트를 뽑고, Google Flow로 클립을 만들고, ElevenLabs로 더빙하고, ffmpeg로 9:16 쇼츠를 조립합니다. 건축 지식 쇼츠를 예시로 진행하며, 마지막엔 전체 파이프라인을 스킬 하나로 저장해 원클릭 실행합니다.",
+    level: "입문+",
+    audience: "Claude Code를 설치해본 사람 (홈페이지 과정 3강 또는 20강 3강까지)",
+    outcome: "주제만 넣으면 돌아가는 쇼츠 제작 파이프라인과 첫 영상 1편",
+    parts: ["1부 · 준비", "2부 · 파이프라인 만들기", "3부 · 자동화와 운영"],
+    badge: "Windows · macOS",
+  },
 ];
 
 export function getCourse(slug: string) {
