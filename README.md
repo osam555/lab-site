@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 바이브 코딩 20강
 
-## Getting Started
+코딩을 몰라도 AI와 함께 하루 1강, 20일이면 내 서비스를 세상에 내놓는 무료 강의 사이트.
 
-First, run the development server:
+## 실행
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # 배포 전 확인
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 구조
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/content/lessons/lesson-NN.md` — 강의 본문 (frontmatter: number, title, subtitle, goal, minutes, part)
+- `src/lib/lessons.ts` — 마크다운 로더
+- `src/app/page.tsx` — 홈 (커리큘럼 + FAQ)
+- `src/app/lectures/vibe-coding/` — 강의 목록과 개별 강의 페이지
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+강의를 추가·수정하려면 `src/content/lessons/`의 마크다운만 편집하면 됩니다.
 
-## Learn More
+## 배포
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+GitHub에 push 후 Vercel에서 저장소를 import하면 됩니다. 별도 환경변수는 없습니다.

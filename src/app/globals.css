@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfaf7;
+  --foreground: #1c1b18;
+  --muted: #6b675e;
+  --line: #e6e2d8;
+  --card: #ffffff;
+  --accent: #2f8f5b;
+  --accent-soft: #e3f3e9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121311;
+    --foreground: #ecebe6;
+    --muted: #a09c92;
+    --line: #2a2c27;
+    --card: #1a1c18;
+    --accent: #5fc98b;
+    --accent-soft: #1d3327;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font-sans-kr), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  word-break: keep-all;
+}
+
+/* lesson body typography */
+.prose-lesson h2 {
+  font-size: 1.375rem;
+  font-weight: 800;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+.prose-lesson h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 1.75rem 0 0.5rem;
+}
+.prose-lesson p {
+  line-height: 1.8;
+  margin: 0.75rem 0;
+}
+.prose-lesson ul,
+.prose-lesson ol {
+  padding-left: 1.4rem;
+  margin: 0.75rem 0;
+  line-height: 1.8;
+}
+.prose-lesson ul {
+  list-style: disc;
+}
+.prose-lesson ol {
+  list-style: decimal;
+}
+.prose-lesson li + li {
+  margin-top: 0.25rem;
+}
+.prose-lesson strong {
+  font-weight: 700;
+}
+.prose-lesson blockquote {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.prose-lesson blockquote p {
+  margin: 0.25rem 0;
+}
+.prose-lesson code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--line);
+  padding: 0.1em 0.4em;
+  border-radius: 0.3em;
+}
+.prose-lesson pre {
+  background: #15171a;
+  color: #e6e6e6;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.prose-lesson pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+.prose-lesson table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.prose-lesson th,
+.prose-lesson td {
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-lesson th {
+  background: var(--accent-soft);
+  font-weight: 700;
+}
+.prose-lesson hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2rem 0;
+}
+.prose-lesson input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: var(--accent);
 }
