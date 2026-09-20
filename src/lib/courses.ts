@@ -13,7 +13,7 @@ export type Course = {
 export const COURSES: Course[] = [
   {
     slug: "homepage",
-    title: "바이브 코딩으로 홈페이지 만들기",
+    title: "홈페이지 만들기",
     tagline: "가게·개인·포트폴리오 홈페이지를 10일 만에 내 주소로",
     description:
       "완전 초보자를 위한 과정입니다. 프레임워크 없이 HTML 한 장부터 시작해 사진, 지도, 문의 폼이 있는 홈페이지를 만들고 내 도메인으로 공개합니다. 모든 설치·터미널 단계는 Windows와 macOS를 나란히 안내합니다.",
@@ -25,7 +25,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "vibe-coding",
-    title: "바이브 코딩 20강",
+    title: "웹 서비스 만들기 20강",
     tagline: "코딩을 몰라도, 20일이면 내 서비스가 나옵니다",
     description:
       "아이디어 정리부터 화면, 데이터 저장, 로그인, 배포, 앱 출시까지. Next.js와 Supabase로 로그인과 데이터가 있는 진짜 서비스를 만듭니다.",
@@ -36,7 +36,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: "shorts",
-    title: "바이브 코딩으로 쇼츠 자동화",
+    title: "쇼츠 자동화",
     tagline: "건축물 이름 하나로 대본·영상·더빙·합성까지, 한 달 4편",
     description:
       "Claude Code가 레퍼런스 채널을 분석해 대본과 비주얼 프롬프트를 뽑고, Google Flow로 클립을 만들고, ElevenLabs로 더빙하고, ffmpeg로 9:16 쇼츠를 조립합니다. 건축 지식 쇼츠를 예시로 진행하며, 마지막엔 전체 파이프라인을 스킬 하나로 저장해 원클릭 실행합니다.",

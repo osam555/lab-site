@@ -5,8 +5,8 @@ import { CourseCard } from "@/components/CourseCard";
 import { SectionHeader } from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
-  title: "강의",
-  description: "바이브 코딩 무료 강의 과정 목록",
+  title: "바이브 코딩 강좌",
+  description: "코딩을 몰라도 Claude Code로 만드는 무료 바이브 코딩 강좌",
 };
 
 export default function LecturesPage() {
@@ -14,8 +14,8 @@ export default function LecturesPage() {
     <div className="mx-auto max-w-5xl px-4 py-12">
       <SectionHeader
         eyebrow="Courses"
-        title="강의 과정"
-        description="처음이라면 '홈페이지 만들기'부터. 로그인·데이터가 필요한 서비스는 '20강', 유튜브 쇼츠를 자동으로 찍어내고 싶다면 '쇼츠 자동화'로."
+        title="바이브 코딩 강좌"
+        description="처음이라면 '홈페이지 만들기'부터. 로그인·데이터가 필요한 서비스는 '웹 서비스 만들기 20강', 유튜브 쇼츠를 자동으로 찍어내고 싶다면 '쇼츠 자동화'로."
       />
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {COURSES.map((c) => (

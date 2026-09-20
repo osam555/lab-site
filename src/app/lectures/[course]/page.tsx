@@ -28,7 +28,7 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
       <nav className="text-sm text-muted">
-        <Link href="/lectures" className="hover:text-foreground">← 강의 과정</Link>
+        <Link href="/lectures" className="hover:text-foreground">← 바이브 코딩 강좌</Link>
       </nav>
       <header className="mt-4">
         <div className="flex flex-wrap items-center gap-2 text-xs">

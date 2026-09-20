@@ -51,7 +51,7 @@ export default function Home() {
             홈페이지 만들기부터 시작
           </Link>
           <Link href="/lectures" className="rounded-lg border border-line bg-card px-5 py-3 font-bold transition hover:border-accent">
-            전체 과정 보기
+            전체 강좌 보기
           </Link>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function Home() {
       </section>
 
       <section id="courses" className="mx-auto max-w-5xl px-4 py-16">
-        <h2 className="text-2xl font-black tracking-tight sm:text-3xl">과정 고르기</h2>
+        <h2 className="text-2xl font-black tracking-tight sm:text-3xl">바이브 코딩 강좌</h2>
         <p className="mt-2 text-muted">처음이라면 홈페이지 만들기부터. 전부 무료입니다.</p>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {COURSES.map((c) => (
