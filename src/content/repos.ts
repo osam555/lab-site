@@ -92,7 +92,7 @@ export const REPOS: Repo[] = [
     url: "https://github.com/prettier/prettier",
     category: "품질·자동화",
     what: "코드를 자동으로 보기 좋게 정렬",
-    why: "AI가 만든 코드와 사람이 고친 코드의 모양을 통일해줍니다. 4강 확장 추천.",
+    why: "Claude가 만든 코드와 사람이 고친 코드의 모양을 통일해줍니다. 4강 확장 추천.",
     install: "npm install -D prettier",
     lesson: 4,
   },
