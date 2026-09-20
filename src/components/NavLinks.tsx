@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const NAV = [
-  { href: "/lectures/vibe-coding", label: "강의" },
+  { href: "/lectures", label: "강의" },
   { href: "/skills", label: "스킬" },
   { href: "/prompts", label: "프롬프트" },
   { href: "/tips", label: "팁" },

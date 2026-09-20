@@ -1,38 +1,36 @@
 import Link from "next/link";
-import { getAllLessons, PARTS, lessonHref } from "@/lib/lessons";
-import { LessonCard } from "@/components/LessonCard";
-
-const FAQ = [
-  {
-    q: "정말 코딩을 하나도 몰라도 되나요?",
-    a: "네. 이 과정은 문법을 외우는 대신 AI에게 무엇을 원하는지 정확히 말하는 법을 익힙니다. 코드는 읽을 줄만 알면 되고, 그것도 강의 중에 자연스럽게 익숙해집니다.",
-  },
-  {
-    q: "하루에 얼마나 걸리나요?",
-    a: "강의당 20~40분입니다. 읽고, 따라 하고, 체크리스트를 채우면 끝입니다. 주말을 쉬어도 한 달이면 20강을 마칩니다.",
-  },
-  {
-    q: "무엇이 필요한가요?",
-    a: "노트북 한 대와 Claude 또는 ChatGPT 계정, 그리고 만들고 싶은 아이디어 하나. 3강에서 필요한 도구를 전부 설치합니다.",
-  },
-  {
-    q: "20강을 마치면 무엇을 갖게 되나요?",
-    a: "인터넷에 공개된 나만의 웹 서비스 하나와, 앞으로 어떤 아이디어든 스스로 만들어 볼 수 있는 작업 습관입니다.",
-  },
-];
+import { COURSES } from "@/lib/courses";
+import { getAllLessons } from "@/lib/lessons";
+import { CourseCard } from "@/components/CourseCard";
 
 const MORE = [
-  { href: "/skills", tag: "Skills", title: "바이브 스킬", desc: "AI 코딩 도구의 승인 모드, 계획 모드, 규칙 파일, 외부 연결까지 실전 가이드 6편." },
+  { href: "/skills", tag: "Skills", title: "바이브 스킬", desc: "Claude Code의 승인 모드, 계획 모드, 규칙 파일, 외부 연결까지 실전 가이드 6편." },
   { href: "/prompts", tag: "Prompts", title: "프롬프트 골라 쓰기", desc: "복사해서 붙여넣고 [대괄호]만 바꾸면 되는 요청문 20여 개. 상황별 분류와 검색." },
   { href: "/tips", tag: "Tips", title: "짧은 팁", desc: "command not found부터 hydration 에러까지, 막히는 지점 15개의 1분 해결책." },
   { href: "/repos", tag: "Repo", title: "추천 오픈소스", desc: "과정에서 쓰는 도구와 다음 단계 도구. 왜 쓰는지, 몇 강에서 나오는지 함께." },
   { href: "/ideas", tag: "Ideas", title: "프로젝트 아이디어", desc: "20일 크기로 기획해둔 프로젝트 6개. PLAN.md에 바로 옮길 수 있는 형식." },
 ];
 
-export default function Home() {
-  const lessons = getAllLessons();
-  const first = lessons[0];
+const FAQ = [
+  {
+    q: "정말 코딩을 하나도 몰라도 되나요?",
+    a: "네. 문법을 외우는 대신 Claude Code에게 무엇을 원하는지 정확히 말하는 법을 익힙니다. 코드는 읽을 줄만 알면 되고, 그것도 강의 중에 자연스럽게 익숙해집니다.",
+  },
+  {
+    q: "어느 과정부터 시작하나요?",
+    a: "터미널을 열어본 적이 없다면 '홈페이지 만들기'부터. 여기서 설치·터미널·Git·배포를 전부 겪습니다. 그다음 '20강'으로 가면 준비 단계를 빠르게 넘길 수 있습니다.",
+  },
+  {
+    q: "Windows에서도 되나요?",
+    a: "네. '홈페이지 만들기' 과정의 설치와 터미널 단계는 Windows와 macOS를 나란히 안내하고, 화면 위 버튼으로 내 컴퓨터에 맞는 설명만 볼 수 있습니다.",
+  },
+  {
+    q: "무엇이 필요한가요?",
+    a: "노트북 한 대와 Claude 계정(Claude Code 사용을 위한 구독 또는 API), 그리고 만들고 싶은 것 하나. 도구 설치는 각 과정의 준비 단계에서 전부 합니다.",
+  },
+];
 
+export default function Home() {
   return (
     <>
       <section className="mx-auto max-w-5xl px-4 pt-16 pb-12 sm:pt-24">
@@ -42,27 +40,18 @@ export default function Home() {
         <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl">
           코딩을 몰라도,
           <br />
-          20일이면 내 서비스가 나옵니다.
+          내 홈페이지와 내 서비스를 만듭니다.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-          아이디어 정리부터 화면 만들기, 데이터 저장, 로그인, 배포, 앱 출시까지.
-          AI에게 방향을 알려주고 결과를 확인하는 방식으로 하루 한 강씩 따라오면
-          마지막 날엔 인터넷에 공개된 나만의 서비스가 생깁니다.
+          Claude Code에게 방향을 알려주고 결과를 확인하는 방식으로 하루 한 강씩.
+          10일이면 내 도메인의 홈페이지가, 20일이면 로그인과 데이터가 있는 서비스가 인터넷에 올라갑니다.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          {first && (
-            <Link
-              href={lessonHref(first.slug)}
-              className="rounded-lg bg-accent px-5 py-3 font-bold text-white transition hover:opacity-90"
-            >
-              1강부터 시작하기
-            </Link>
-          )}
-          <Link
-            href="/lectures/vibe-coding"
-            className="rounded-lg border border-line bg-card px-5 py-3 font-bold transition hover:border-accent"
-          >
-            전체 커리큘럼 보기
+          <Link href="/lectures/homepage" className="rounded-lg bg-accent px-5 py-3 font-bold text-white transition hover:opacity-90">
+            홈페이지 만들기부터 시작
+          </Link>
+          <Link href="/lectures" className="rounded-lg border border-line bg-card px-5 py-3 font-bold transition hover:border-accent">
+            전체 과정 보기
           </Link>
         </div>
       </section>
@@ -70,9 +59,9 @@ export default function Home() {
       <section className="border-y border-line bg-card">
         <div className="mx-auto grid max-w-5xl gap-6 px-4 py-10 sm:grid-cols-3">
           {[
-            ["20강", "하루 한 강, 20일 완성"],
+            ["2개 과정", "홈페이지 10강 + 서비스 20강"],
             ["0줄", "외워야 하는 문법"],
-            ["1개", "마지막 날 공개되는 내 서비스"],
+            ["Win · Mac", "두 운영체제 모두 안내"],
           ].map(([n, label]) => (
             <div key={label}>
               <div className="text-3xl font-black text-accent">{n}</div>
@@ -82,46 +71,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="curriculum" className="mx-auto max-w-5xl px-4 py-16">
-        <h2 className="text-2xl font-black tracking-tight sm:text-3xl">커리큘럼</h2>
-        <p className="mt-2 text-muted">
-          4부로 나뉩니다. 준비 → 기획과 프롬프트 → 만들기 → 세상에 내놓기.
-        </p>
-        <div className="mt-10 space-y-12">
-          {PARTS.map((part) => (
-            <div key={part}>
-              <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-accent">{part}</h3>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {lessons
-                  .filter((l) => l.part === part)
-                  .map((l) => (
-                    <LessonCard key={l.slug} lesson={l} />
-                  ))}
-              </div>
-            </div>
+      <section id="courses" className="mx-auto max-w-5xl px-4 py-16">
+        <h2 className="text-2xl font-black tracking-tight sm:text-3xl">과정 고르기</h2>
+        <p className="mt-2 text-muted">처음이라면 왼쪽부터. 둘 다 무료입니다.</p>
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          {COURSES.map((c) => (
+            <CourseCard key={c.slug} course={c} lessonCount={getAllLessons(c.slug).length} />
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-4 py-16">
-        <h2 className="text-2xl font-black tracking-tight sm:text-3xl">강의 밖에서도</h2>
-        <p className="mt-2 text-muted">막혔을 때, 다음 단계가 궁금할 때, 무엇을 만들지 모를 때.</p>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {MORE.map(({ href, title, desc, tag }) => (
-            <Link
-              key={href}
-              href={href}
-              className="group rounded-xl border border-line bg-card p-5 transition hover:border-accent hover:shadow-sm"
-            >
-              <div className="text-[11px] font-bold uppercase tracking-wide text-accent">{tag}</div>
-              <h3 className="mt-1 font-bold group-hover:text-accent">{title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
-            </Link>
-          ))}
+      <section className="border-t border-line bg-card">
+        <div className="mx-auto max-w-5xl px-4 py-16">
+          <h2 className="text-2xl font-black tracking-tight sm:text-3xl">강의 밖에서도</h2>
+          <p className="mt-2 text-muted">막혔을 때, 다음 단계가 궁금할 때, 무엇을 만들지 모를 때.</p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {MORE.map(({ href, title, desc, tag }) => (
+              <Link key={href} href={href} className="group rounded-xl border border-line bg-background p-5 transition hover:border-accent hover:shadow-sm">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-accent">{tag}</div>
+                <h3 className="mt-1 font-bold group-hover:text-accent">{title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">{desc}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="faq" className="border-t border-line bg-card">
+      <section id="faq" className="border-t border-line">
         <div className="mx-auto max-w-5xl px-4 py-16">
           <h2 className="text-2xl font-black tracking-tight sm:text-3xl">자주 묻는 질문</h2>
           <dl className="mt-8 grid gap-8 sm:grid-cols-2">

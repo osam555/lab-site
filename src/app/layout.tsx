@@ -17,11 +17,11 @@ const mono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "바이브 코딩 20강",
-    template: "%s · 바이브 코딩 20강",
+    default: "바이브 코딩 랩",
+    template: "%s · 바이브 코딩 랩",
   },
   description:
-    "코딩을 몰라도 AI와 함께 하루 1강, 20일이면 내 서비스를 세상에 내놓는 무료 강의.",
+    "코딩을 몰라도 Claude Code와 함께 홈페이지와 서비스를 만드는 무료 강의.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

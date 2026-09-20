@@ -1,6 +1,6 @@
-# 바이브 코딩 20강
+# 바이브 코딩 랩
 
-코딩을 몰라도 AI와 함께 하루 1강, 20일이면 내 서비스를 세상에 내놓는 무료 강의 사이트.
+코딩을 몰라도 Claude Code와 함께 홈페이지(10강)와 웹 서비스(20강)를 만드는 무료 강의 사이트.
 
 ## 실행
 
@@ -12,12 +12,15 @@ npm run build    # 배포 전 확인
 
 ## 구조
 
-- `src/content/lessons/lesson-NN.md` — 강의 본문 (frontmatter: number, title, subtitle, goal, minutes, part)
+- `src/lib/courses.ts` — 과정 목록 (slug, 제목, 부 구성)
+- `src/content/courses/<과정>/lesson-NN.md` — 강의 본문 (frontmatter: number, title, subtitle, goal, minutes, part)
+  - 본문에서 `::: windows` … `:::` / `::: mac` … `:::` 블록을 쓰면 강의 상단에 Windows/macOS 전환 버튼이 생깁니다
+- `src/content/{skills,tips,ideas}/*.md`, `src/content/{prompts,repos}.ts` — 부가 섹션
 - `src/lib/lessons.ts` — 마크다운 로더
 - `src/app/page.tsx` — 홈 (커리큘럼 + FAQ)
-- `src/app/lectures/vibe-coding/` — 강의 목록과 개별 강의 페이지
+- `src/app/lectures/[course]/` — 과정 페이지와 개별 강의 페이지
 
-강의를 추가·수정하려면 `src/content/lessons/`의 마크다운만 편집하면 됩니다.
+강의를 추가·수정하려면 `src/content/courses/<과정>/`의 마크다운만 편집하면 됩니다. 새 과정은 `courses.ts`에 등록하고 폴더를 만들면 됩니다.
 
 ## 배포
 

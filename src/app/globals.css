@@ -131,3 +131,34 @@ body {
   margin-right: 0.5rem;
   accent-color: var(--accent);
 }
+
+/* Windows / macOS blocks (see OsSwitch) */
+[data-os-block] {
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 0.25rem 1rem 0.75rem;
+  margin: 1rem 0;
+  position: relative;
+}
+[data-os-block]::before {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-top: 0.75rem;
+}
+[data-os-block="windows"]::before {
+  content: "Windows";
+}
+[data-os-block="mac"]::before {
+  content: "macOS";
+}
+html[data-os="windows"] [data-os-block="mac"],
+html[data-os="mac"] [data-os-block="windows"] {
+  display: none;
+}
