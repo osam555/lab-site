@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주간 AI 트렌드 — 매주 월요일, 5분 뉴스레터</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fafaf9;--surface:#fff;--border:#e7e5e4;--text:#1c1917;--muted:#78716c;--accent:#ea580c;--accent2:#f97316;--white:#fff}
+body{font-family:'Pretendard',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:680px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{padding:100px 0 60px;text-align:center}
+.hero .emoji{font-size:56px;margin-bottom:16px}
+.hero h1{font-size:clamp(28px,4.5vw,42px);font-weight:900;line-height:1.25;letter-spacing:-0.5px}
+.hero .sub{font-size:17px;color:var(--muted);margin:12px auto 0;max-width:440px}
+.hero .form{margin-top:32px;display:flex;gap:8px;max-width:420px;margin-left:auto;margin-right:auto}
+.hero .form input{flex:1;padding:14px 16px;border:2px solid var(--border);border-radius:12px;font-size:15px;outline:none;transition:border-color .3s}
+.hero .form input:focus{border-color:var(--accent)}
+.hero .form button{padding:14px 24px;background:var(--accent);color:var(--white);font-size:15px;font-weight:700;border:none;border-radius:12px;cursor:pointer;white-space:nowrap;transition:transform .2s,background .2s}
+.hero .form button:hover{background:var(--accent2);transform:translateY(-1px)}
+.hero .trust{margin-top:12px;font-size:13px;color:var(--muted)}
+.hero .trust b{color:var(--text)}
+
+/* Why */
+.why{padding:60px 0}
+.section-title{text-align:center;font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:32px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.why-card{text-align:center;padding:24px 16px}
+.why-card .icon{font-size:32px;margin-bottom:12px}
+.why-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.why-card p{font-size:14px;color:var(--muted)}
+
+/* Recent Issues */
+.recent{padding:60px 0;border-top:1px solid var(--border)}
+.issue-list{display:flex;flex-direction:column;gap:16px}
+.issue-card{padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:16px;transition:border-color .3s,box-shadow .3s}
+.issue-card:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(234,88,12,.08)}
+.issue-card .date{font-size:12px;color:var(--muted);font-weight:600}
+.issue-card h3{font-size:17px;font-weight:700;margin:4px 0}
+.issue-card p{font-size:14px;color:var(--muted)}
+.issue-card .tag{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;color:var(--accent);background:rgba(234,88,12,.08);padding:3px 10px;border-radius:99px}
+
+/* Reviews */
+.reviews{padding:60px 0;border-top:1px solid var(--border)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.rev-card{padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:16px}
+.rev-card .text{font-size:15px;font-style:italic;margin-bottom:12px}
+.rev-card .author{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.rev-card .avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#fb923c);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:12px;font-weight:700}
+
+/* Final */
+.final{padding:60px 0;text-align:center;border-top:1px solid var(--border)}
+.final h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:8px}
+.final .sub{color:var(--muted);font-size:15px;margin-bottom:24px}
+.final .form{display:flex;gap:8px;max-width:420px;margin:0 auto}
+.final .form input{flex:1;padding:14px 16px;border:2px solid var(--border);border-radius:12px;font-size:15px;outline:none}
+.final .form button{padding:14px 24px;background:var(--accent);color:var(--white);font-size:15px;font-weight:700;border:none;border-radius:12px;cursor:pointer;white-space:nowrap}
+.final .note{color:var(--muted);font-size:12px;margin-top:12px}
+
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="container">
+  <div class="emoji">📬</div>
+  <h1>매주 월요일,<br>AI 소식을 5분으로 정리합니다</h1>
+  <p class="sub">쏟아지는 AI 뉴스 중 진짜 중요한 것만 골라, 출근길에 읽을 수 있는 분량으로.</p>
+  <div class="form">
+    <input type="email" placeholder="이메일 주소 입력">
+    <button type="button">무료 구독</button>
+  </div>
+  <p class="trust">구독자 <b>2,400명</b>이 읽고 있습니다 · 스팸 없음 · 언제든 해지</p>
+</div>
+</section>
+
+<section class="why">
+<div class="container">
+  <h2 class="section-title">왜 이 뉴스레터인가요?</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon">🎯</div>
+      <h3>큐레이션</h3>
+      <p>100개 뉴스 중 핵심 5개만 골라 요약합니다</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">🔧</div>
+      <h3>실전 팁</h3>
+      <p>바로 써볼 수 있는 도구와 프롬프트를 매주 소개</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">⏱️</div>
+      <h3>5분 분량</h3>
+      <p>출근길, 점심시간에 딱 읽을 수 있는 길이</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="recent">
+<div class="container">
+  <h2 class="section-title">최근 발행</h2>
+  <div class="issue-list">
+    <div class="issue-card">
+      <div class="date">2024년 12월 16일 · #48</div>
+      <h3>Claude Code가 바꾸는 개발 현장</h3>
+      <p>터미널에서 대화하며 코드를 짜는 시대. 실제 사용 후기와 생산성 변화를 정리했습니다.</p>
+      <span class="tag">AI 도구</span>
+    </div>
+    <div class="issue-card">
+      <div class="date">2024년 12월 9일 · #47</div>
+      <h3>구글 Gemini 2.0, 뭐가 달라졌나</h3>
+      <p>멀티모달 강화, 에이전트 기능, 가격 인하. 실무에서 쓸 수 있는 부분만 추렸습니다.</p>
+      <span class="tag">LLM</span>
+    </div>
+    <div class="issue-card">
+      <div class="date">2024년 12월 2일 · #46</div>
+      <h3>비개발자가 AI로 앱을 만드는 법</h3>
+      <p>바이브코딩, 로우코드, 노코드 도구 비교. 각각 어떤 상황에서 쓰면 좋은지.</p>
+      <span class="tag">트렌드</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="reviews">
+<div class="container">
+  <h2 class="section-title">독자 한마디</h2>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="text">"월요일 아침마다 기다려지는 유일한 이메일"</div>
+      <div class="author"><div class="avatar">J</div>정유진 · PM</div>
+    </div>
+    <div class="rev-card">
+      <div class="text">"회의 때 AI 얘기 나오면 여기서 읽은 거 말합니다"</div>
+      <div class="author"><div class="avatar">K</div>김태현 · 마케터</div>
+    </div>
+    <div class="rev-card">
+      <div class="text">"핵심만 딱딱 짚어주니까 시간 낭비가 없어요"</div>
+      <div class="author"><div class="avatar">L</div>이소연 · 대표</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="final">
+<div class="container">
+  <h2>다음 월요일부터 받아보세요</h2>
+  <p class="sub">이메일 하나면 됩니다. 무료. 언제든 해지.</p>
+  <div class="form">
+    <input type="email" placeholder="이메일 주소 입력">
+    <button type="button">무료 구독</button>
+  </div>
+  <p class="note">✓ 스팸 없음 · ✓ 주 1회 · ✓ 원클릭 구독 해지</p>
+</div>
+</section>
+
+<footer>© 2024 주간 AI 트렌드. 이 페이지는 바이브코딩 강좌의 예시 랜딩페이지입니다.</footer>
+
+</body>
+</html>

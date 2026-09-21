@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바이브코딩 홈페이지 만들기 — 수강생 모집</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#ffffff;--surface:#f8fafc;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;--accent:#2563eb;--accent2:#3b82f6;--white:#fff;--warm:#fef3c7}
+body{font-family:'Pretendard',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{padding:80px 0 60px;text-align:center;background:linear-gradient(180deg,#eff6ff,var(--bg))}
+.hero .badge{display:inline-block;background:var(--warm);color:#92400e;font-size:13px;font-weight:700;padding:6px 16px;border-radius:99px;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.25;letter-spacing:-0.5px}
+.hero .sub{font-size:17px;color:var(--muted);margin:12px auto 0;max-width:460px}
+.hero .cta{display:inline-block;margin-top:28px;padding:16px 40px;background:var(--accent);color:var(--white);font-size:17px;font-weight:700;border-radius:12px;transition:transform .2s,box-shadow .2s}
+.hero .cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.3)}
+.hero .meta{margin-top:16px;font-size:13px;color:var(--muted)}
+
+/* Target */
+.target{padding:60px 0}
+.section-label{text-align:center;font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.section-title{text-align:center;font-size:clamp(22px,3vw,32px);font-weight:800;margin-bottom:32px}
+.check-list{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.check-item{display:flex;align-items:flex-start;gap:12px;font-size:16px;padding:14px 20px;background:var(--surface);border-radius:12px;border:1px solid var(--border)}
+.check-item .icon{color:var(--accent);font-size:18px;flex-shrink:0;margin-top:2px}
+
+/* Curriculum */
+.curriculum{padding:60px 0;background:var(--surface)}
+.timeline{max-width:600px;margin:0 auto;position:relative}
+.timeline::before{content:"";position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:var(--border)}
+.tl-item{display:flex;gap:20px;padding:20px 0;position:relative}
+.tl-dot{width:40px;height:40px;background:var(--accent);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;position:relative;z-index:1}
+.tl-content h3{font-size:17px;font-weight:700}
+.tl-content p{color:var(--muted);font-size:14px;margin-top:4px}
+
+/* Results */
+.results{padding:60px 0}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:750px;margin:0 auto}
+.res-card{text-align:center;padding:28px 20px;background:var(--surface);border-radius:16px;border:1px solid var(--border)}
+.res-card .icon{font-size:32px;margin-bottom:12px}
+.res-card h3{font-size:16px;font-weight:700}
+.res-card p{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* Instructor */
+.instructor{padding:60px 0;background:var(--surface)}
+.inst-box{max-width:600px;margin:0 auto;display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:center}
+.inst-photo{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-size:48px;color:var(--white);flex-shrink:0}
+.inst-info h3{font-size:20px;font-weight:800}
+.inst-info .title{color:var(--muted);font-size:14px;margin:4px 0 12px}
+.inst-info .bio{font-size:15px;max-width:360px}
+
+/* Reviews */
+.reviews{padding:60px 0}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.rev-card{padding:24px;border:1px solid var(--border);border-radius:16px}
+.rev-card .stars{color:#f59e0b;font-size:13px;margin-bottom:8px}
+.rev-card .text{font-size:15px;margin-bottom:12px}
+.rev-card .author{font-size:13px;color:var(--muted)}
+
+/* Pricing */
+.pricing{padding:60px 0;background:var(--surface)}
+.price-box{max-width:500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.price-card{padding:28px;border-radius:16px;border:1px solid var(--border);background:var(--bg);text-align:center;position:relative}
+.price-card.hot{border-color:var(--accent);box-shadow:0 4px 20px rgba(37,99,235,.12)}
+.price-card.hot::before{content:"추천";position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--white);font-size:11px;font-weight:700;padding:3px 12px;border-radius:99px}
+.price-card .label{font-size:13px;color:var(--muted);font-weight:600}
+.price-card .price{font-size:32px;font-weight:900;margin:8px 0}
+.price-card .price del{font-size:16px;color:var(--muted);font-weight:400}
+.price-card .note{font-size:12px;color:var(--muted);margin-bottom:16px}
+.price-card .btn{display:block;padding:12px;border-radius:10px;font-weight:700;font-size:14px;transition:all .3s}
+.price-card .btn.primary{background:var(--accent);color:var(--white)}
+.price-card .btn.secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}
+.price-info{text-align:center;margin-top:20px;font-size:13px;color:var(--muted)}
+
+/* FAQ */
+.faq{padding:60px 0;max-width:650px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);padding:18px 0}
+.faq-q{font-weight:700;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:"+";font-size:20px;color:var(--muted);transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--accent)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s;color:var(--muted);font-size:14px}
+.faq-item.open .faq-a{max-height:200px;padding-top:10px}
+
+/* Final */
+.final{padding:60px 0;text-align:center;background:linear-gradient(180deg,var(--bg),#eff6ff)}
+.final h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:6px}
+.final .sub{color:var(--muted);font-size:15px;margin-bottom:20px}
+.final .cta{display:inline-block;padding:16px 40px;background:var(--accent);color:var(--white);font-size:17px;font-weight:700;border-radius:12px;transition:transform .2s}
+.final .cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.3)}
+.final .note{color:var(--muted);font-size:12px;margin-top:12px}
+
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="container">
+  <div class="badge">🔥 얼리버드 30% 할인 · D-7</div>
+  <h1>코딩 없이 나만의 홈페이지를<br>10일 만에 만드세요</h1>
+  <p class="sub">AI 코딩 도구로 진짜 홈페이지를 만들고, 내 도메인으로 공개합니다. 코딩 지식 제로에서 시작.</p>
+  <a href="#pricing" class="cta">수강 신청하기</a>
+  <p class="meta">선착순 20명 · 1~2기 수료생 47명 · 수료율 94%</p>
+</div>
+</section>
+
+<section class="target">
+<div class="container">
+  <div class="section-label">수강 대상</div>
+  <h2 class="section-title">이런 분께 추천합니다</h2>
+  <div class="check-list">
+    <div class="check-item"><span class="icon">✓</span> 코딩을 전혀 모르지만, 내 홈페이지가 필요한 자영업자</div>
+    <div class="check-item"><span class="icon">✓</span> 외주 맡기기엔 비용이 부담되는 1인 사업자</div>
+    <div class="check-item"><span class="icon">✓</span> 블로그·SNS만으로 한계를 느끼는 분</div>
+    <div class="check-item"><span class="icon">✓</span> AI 도구를 처음 써보고 싶은 분</div>
+    <div class="check-item"><span class="icon">✓</span> 포트폴리오가 필요한 취업 준비생</div>
+  </div>
+</div>
+</section>
+
+<section class="curriculum">
+<div class="container">
+  <div class="section-label">커리큘럼</div>
+  <h2 class="section-title">3주 완성 로드맵</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">1</div>
+      <div class="tl-content">
+        <h3>1주차 · 준비와 첫 페이지</h3>
+        <p>Claude Code 설치, 첫 대화, 종이 설계도 → 미리보기에서 내 홈페이지 확인</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2</div>
+      <div class="tl-content">
+        <h3>2주차 · 디자인과 기능</h3>
+        <p>사진·지도·폼 추가, 색상 팔레트, 반응형 레이아웃, 여러 페이지로 확장</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">3</div>
+      <div class="tl-content">
+        <h3>3주차 · 배포와 운영</h3>
+        <p>GitHub 연결, Vercel 무료 배포, 내 도메인 연결, SEO 기초, 유지보수</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="results">
+<div class="container">
+  <div class="section-label">수강 후</div>
+  <h2 class="section-title">이걸 할 수 있게 됩니다</h2>
+  <div class="res-grid">
+    <div class="res-card"><div class="icon">🌐</div><h3>내 도메인 홈페이지</h3><p>my-site.com으로 접속 가능한 진짜 홈페이지</p></div>
+    <div class="res-card"><div class="icon">🛠️</div><h3>직접 수정·관리</h3><p>AI에게 말해서 언제든 내용 수정. 외주 비용 0원</p></div>
+    <div class="res-card"><div class="icon">🔍</div><h3>검색 노출</h3><p>구글·네이버에서 검색되는 SEO 기초 설정 완료</p></div>
+  </div>
+</div>
+</section>
+
+<section class="instructor">
+<div class="container">
+  <div class="section-label">강사</div>
+  <h2 class="section-title">누가 알려주나요?</h2>
+  <div class="inst-box">
+    <div class="inst-photo">👨‍💻</div>
+    <div class="inst-info">
+      <h3>김바이브</h3>
+      <div class="title">바이브코딩 연구소 대표</div>
+      <div class="bio">10년차 웹 개발자. 비전공자 대상 교육 3년, 수료생 200명+. "코딩을 모르는 분이 만드는 홈페이지가 더 직관적입니다."</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="reviews">
+<div class="container">
+  <div class="section-label">후기</div>
+  <h2 class="section-title">수강생이 말합니다</h2>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="stars">★★★★★</div>
+      <div class="text">"카페 홈페이지를 외주 맡기려고 견적 받았더니 200만원. 이 수업 듣고 직접 만들었는데 더 마음에 들어요."</div>
+      <div class="author">2기 수강 · 카페 사장님</div>
+    </div>
+    <div class="rev-card">
+      <div class="stars">★★★★★</div>
+      <div class="text">"진짜 코딩 하나도 모르는데 됐습니다. AI한테 말하면 만들어주니까요. 신세계."</div>
+      <div class="author">1기 수강 · 직장인</div>
+    </div>
+    <div class="rev-card">
+      <div class="stars">★★★★★</div>
+      <div class="text">"포트폴리오 사이트 만들어서 면접에 보여줬더니 바로 합격했어요. 감사합니다!"</div>
+      <div class="author">2기 수강 · 취준생</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="pricing" id="pricing">
+<div class="container">
+  <div class="section-label">수강료</div>
+  <h2 class="section-title">지금이 가장 저렴합니다</h2>
+  <div class="price-box">
+    <div class="price-card hot">
+      <div class="label">얼리버드</div>
+      <div class="price">₩69,000 <del>₩99,000</del></div>
+      <div class="note">D-7 마감 · 선착순 20명</div>
+      <a href="#" class="btn primary">얼리버드 신청</a>
+    </div>
+    <div class="price-card">
+      <div class="label">정가</div>
+      <div class="price">₩99,000</div>
+      <div class="note">얼리버드 마감 후 적용</div>
+      <a href="#" class="btn secondary">정가 신청</a>
+    </div>
+  </div>
+  <p class="price-info">모집 기간: ~ 12월 31일 · 수업 시작: 1월 6일 · 환불: 수업 시작 전 100% 환불</p>
+</div>
+</section>
+
+<section class="faq">
+<div class="container">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">자주 묻는 질문</h2>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">정말 코딩을 몰라도 되나요?</div>
+    <div class="faq-a">네. 수강생의 80%가 터미널을 처음 열어봅니다. 마우스 클릭과 한국어 입력만 할 수 있으면 됩니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">준비물이 뭔가요?</div>
+    <div class="faq-a">노트북(Windows 또는 Mac) 1대, 인터넷 연결. 그 외 설치는 수업에서 함께 합니다.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">수업 방식은?</div>
+    <div class="faq-a">온라인 자율 학습입니다. 매일 1강씩 영상+실습. 카카오톡 그룹에서 질문하면 24시간 이내 답변.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">환불 가능한가요?</div>
+    <div class="faq-a">수업 시작 전 100% 환불. 시작 후 7일 이내 50% 환불. 이후 환불 불가.</div>
+  </div>
+</div>
+</section>
+
+<section class="final">
+<div class="container">
+  <h2>자리가 얼마 남지 않았습니다</h2>
+  <p class="sub">선착순 20명 · 얼리버드 30% 할인은 D-7 마감</p>
+  <a href="#" class="cta">수강 신청하기</a>
+  <p class="note">카카오톡 문의: @vibecoding · 이메일: hello@vibecoding.kr</p>
+</div>
+</section>
+
+<footer>© 2024 바이브코딩 연구소. 이 페이지는 바이브코딩 강좌의 예시 랜딩페이지입니다.</footer>
+
+</body>
+</html>
