@@ -49,11 +49,63 @@ part: 1부 · 구조와 준비
 
 ## 실제 예시 보기
 
-이 과정에서 만드는 것과 같은 랜딩페이지를 미리 볼 수 있습니다. 클릭해서 구조를 살펴보세요.
+이 과정에서 만드는 것과 같은 랜딩페이지를 미리 볼 수 있습니다. 각 항목의 **[보기]** 버튼을 클릭해 실제 브라우저에서 동작하는 구조를 살펴보세요.
 
-- [🚀 SaaS 제품 출시](/examples/landing-saas.html) — 다크 모드, 가격표 3단, 후기, FAQ
-- [📚 강좌 수강생 모집](/examples/landing-course.html) — 커리큘럼 타임라인, 얼리버드 가격, 수강 대상
-- [📬 뉴스레터 구독](/examples/landing-newsletter.html) — 미니멀, 이메일 입력 중심, 최근 발행 목록
+<div class="sample-preview-list not-prose">
+  <div class="sample-preview-card">
+    <div class="sample-info">
+      <div class="sample-title">
+        <span>🚀</span>
+        <span>SaaS 제품 출시</span>
+      </div>
+      <div class="sample-desc">다크 모드, 가격표 3단, 후기, FAQ</div>
+    </div>
+    <a href="/examples/landing-saas.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
+      <span>보기</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  </div>
+
+  <div class="sample-preview-card">
+    <div class="sample-info">
+      <div class="sample-title">
+        <span>📚</span>
+        <span>강좌 수강생 모집</span>
+      </div>
+      <div class="sample-desc">커리큘럼 타임라인, 얼리버드 가격, 수강 대상</div>
+    </div>
+    <a href="/examples/landing-course.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
+      <span>보기</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  </div>
+
+  <div class="sample-preview-card">
+    <div class="sample-info">
+      <div class="sample-title">
+        <span>📬</span>
+        <span>뉴스레터 구독</span>
+      </div>
+      <div class="sample-desc">미니멀, 이메일 입력 중심, 최근 발행 목록</div>
+    </div>
+    <a href="/examples/landing-newsletter.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
+      <span>보기</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  </div>
+</div>
 
 > 세 페이지 모두 **HTML + CSS 한 파일**로 만들어졌습니다. Claude Code에게 요청하면 이런 결과물이 나옵니다.
 

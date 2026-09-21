@@ -154,6 +154,80 @@ body {
   accent-color: var(--accent);
 }
 
+.prose-lesson a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+.prose-lesson a:hover {
+  opacity: 0.85;
+}
+
+/* Sample preview cards in lessons */
+.sample-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+.sample-preview-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--card);
+  transition: all 0.2s ease;
+}
+.sample-preview-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+}
+.sample-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+.sample-desc {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.sample-preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  background: var(--accent);
+  border-radius: 0.5rem;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.sample-preview-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .sample-preview-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .sample-preview-btn {
+    justify-content: center;
+  }
+}
+
 /* Windows / macOS blocks (see OsSwitch) */
 [data-os-block] {
   border: 1px solid var(--line);
