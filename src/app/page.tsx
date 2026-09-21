@@ -68,9 +68,15 @@ export default function Home() {
                 Claude Code에게 방향을 알려주고 결과를 확인하는 방식으로 하루 한 강씩.
                 랜딩페이지, 홈페이지, 웹 서비스를 만들고 쇼츠·블로그·SNS 콘텐츠까지 자동으로 생산합니다.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link href="/lectures/landing-page" className="hero-cta-primary rounded-xl bg-accent px-6 py-3.5 font-bold text-white transition">
                   랜딩페이지부터 시작 →
+                </Link>
+                <Link
+                  href="/lectures/landing-page#samples"
+                  className="rounded-xl border border-accent/40 bg-accent-soft px-5 py-3.5 font-bold text-accent transition hover:bg-accent hover:text-white hover:border-accent hover:shadow-md"
+                >
+                  랜딩페이지 샘플 보기 ↗
                 </Link>
                 <Link href="/lectures" className="rounded-xl border border-line bg-card/80 px-6 py-3.5 font-bold backdrop-blur-sm transition hover:border-accent">
                   전체 강좌 보기

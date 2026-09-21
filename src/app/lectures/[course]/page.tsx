@@ -84,7 +84,7 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
       </header>
 
       {course === "landing-page" && (
-        <section className="mt-12 rounded-2xl border border-line bg-card p-6 sm:p-8 shadow-xs">
+        <section id="samples" className="mt-12 scroll-mt-20 rounded-2xl border border-line bg-card p-6 sm:p-8 shadow-xs">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
             <div>
               <div className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-bold text-accent mb-2">
