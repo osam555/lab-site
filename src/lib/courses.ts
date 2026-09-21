@@ -8,6 +8,7 @@ export type Course = {
   outcome: string;
   parts: readonly string[];
   badge?: string;
+  relatedSkills?: readonly string[]; // skill slugs
 };
 
 export const COURSES: Course[] = [
@@ -22,6 +23,16 @@ export const COURSES: Course[] = [
     outcome: "내 도메인으로 공개된 여러 페이지짜리 홈페이지",
     parts: ["1부 · 준비", "2부 · 만들기", "3부 · 공개"],
     badge: "Windows · macOS",
+    relatedSkills: [
+      "install-and-first-run",
+      "desktop-app-vs-cli",
+      "permissions-and-safety",
+      "one-slice-loop",
+      "prompt-writing",
+      "git-workflow",
+      "images-and-files",
+      "error-debugging",
+    ],
   },
   {
     slug: "homepage-cli",
@@ -34,6 +45,14 @@ export const COURSES: Course[] = [
     outcome: "지도 API, 방문자 통계, MCP 자동화, 어드민 대시보드, 카카오 로그인, SEO 고급, 검색 등록, 통합 관리 대시보드",
     parts: ["고급 · 도구 활용", "고급 · 어드민 & 인증", "고급 · SEO & 대시보드"],
     badge: "고급 · Windows · macOS",
+    relatedSkills: [
+      "mcp-and-tools",
+      "desktop-app-vs-cli",
+      "plan-mode-and-context",
+      "rules-file-deep-dive",
+      "git-workflow",
+      "error-debugging",
+    ],
   },
   {
     slug: "naver-blog",
@@ -46,6 +65,14 @@ export const COURSES: Course[] = [
     outcome: "30개 키워드 캘린더, 주제만 넣으면 에디터에 원고가 채워지는 파이프라인, 첫 글 3편",
     parts: ["1부 · 준비", "2부 · 파이프라인 만들기", "3부 · 자동화와 운영"],
     badge: "Windows · macOS",
+    relatedSkills: [
+      "prompt-writing",
+      "plan-mode-and-context",
+      "mcp-and-tools",
+      "skill-system",
+      "images-and-files",
+      "rules-file-deep-dive",
+    ],
   },
   {
     slug: "shorts",
@@ -58,6 +85,14 @@ export const COURSES: Course[] = [
     outcome: "주제만 넣으면 돌아가는 쇼츠 제작 파이프라인과 첫 영상 1편",
     parts: ["1부 · 준비", "2부 · 파이프라인 만들기", "3부 · 자동화와 운영"],
     badge: "Windows · macOS",
+    relatedSkills: [
+      "prompt-writing",
+      "plan-mode-and-context",
+      "skill-system",
+      "images-and-files",
+      "git-workflow",
+      "error-debugging",
+    ],
   },
   {
     slug: "sns",
@@ -70,6 +105,14 @@ export const COURSES: Course[] = [
     outcome: "채널별 변환 규칙, 이미지 카드 템플릿, '이 글 배포해줘' 한 줄로 도는 파이프라인",
     parts: ["1부 · 준비", "2부 · 파이프라인 만들기", "3부 · 자동화와 운영"],
     badge: "Windows · macOS",
+    relatedSkills: [
+      "prompt-writing",
+      "skill-system",
+      "rules-file-deep-dive",
+      "mcp-and-tools",
+      "images-and-files",
+      "plan-mode-and-context",
+    ],
   },
   {
     slug: "aside",
@@ -82,6 +125,16 @@ export const COURSES: Course[] = [
     outcome: "Computer Use 자동화, SEO 루틴, SNS 5채널 배포, 블로그 원클릭 발행, 유튜브·쇼츠 파이프라인, HyperFrames 모션그래픽, Remotion 데이터 영상, 스킬 파일로 원클릭 자동화",
     parts: ["1부 · Aside 도구 기초", "2부 · SEO 자동화", "3부 · SNS 자동 배포", "4부 · 블로그 자동화", "5부 · 영상 자동화"],
     badge: "Windows · macOS",
+    relatedSkills: [
+      "desktop-app-vs-cli",
+      "mcp-and-tools",
+      "skill-system",
+      "prompt-writing",
+      "rules-file-deep-dive",
+      "images-and-files",
+      "plan-mode-and-context",
+      "error-debugging",
+    ],
   },
   {
     slug: "vibe-coding",
@@ -93,6 +146,16 @@ export const COURSES: Course[] = [
     audience: "홈페이지를 넘어 '서비스'를 만들고 싶은 사람",
     outcome: "로그인·데이터 저장이 되는 웹 서비스와 폰에 설치되는 PWA",
     parts: ["1부 · 준비", "2부 · 기획과 프롬프트", "3부 · 만들기", "4부 · 세상에 내놓기"],
+    relatedSkills: [
+      "install-and-first-run",
+      "permissions-and-safety",
+      "one-slice-loop",
+      "plan-mode-and-context",
+      "prompt-writing",
+      "git-workflow",
+      "rules-file-deep-dive",
+      "error-debugging",
+    ],
   },
 ];
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { COURSES, getCourse } from "@/lib/courses";
 import { getAllLessons, lessonHref } from "@/lib/lessons";
+import { loadCollection, type Skill } from "@/lib/content";
 import { LessonCard } from "@/components/LessonCard";
 
 type Params = { course: string };
@@ -24,6 +25,12 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
   const lessons = getAllLessons(course);
   const total = lessons.reduce((s, l) => s + l.minutes, 0);
   const first = lessons[0];
+
+  // Load related skills
+  const allSkills = loadCollection<Skill>("skills");
+  const relatedSkills = (c.relatedSkills ?? [])
+    .map((slug) => allSkills.find((s) => s.slug === slug))
+    .filter(Boolean) as (typeof allSkills)[number][];
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
@@ -50,6 +57,8 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
           </Link>
         )}
       </header>
+
+      {/* Lesson list by part */}
       <div className="mt-12 space-y-12">
         {c.parts.map((part) => {
           const items = lessons.filter((l) => l.part === part);
@@ -66,6 +75,32 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
           );
         })}
       </div>
+
+      {/* Related skills section */}
+      {relatedSkills.length > 0 && (
+        <section className="mt-16 border-t border-line pt-12">
+          <h2 className="text-xl font-black tracking-tight">이 강좌에서 활용하는 스킬</h2>
+          <p className="mt-1 text-sm text-muted">강의를 들으면서 스킬 가이드를 함께 참고하세요.</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedSkills.map((skill) => (
+              <Link
+                key={skill.slug}
+                href={`/skills/${skill.slug}`}
+                className="group flex flex-col gap-1 rounded-xl border border-line bg-surface p-4 transition hover:border-accent hover:shadow-sm"
+              >
+                <span className="text-xs font-bold text-accent">{skill.category}</span>
+                <span className="font-bold leading-snug group-hover:text-accent">{skill.title}</span>
+                <span className="text-sm text-muted line-clamp-2">{skill.summary}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-6">
+            <Link href="/skills" className="text-sm text-accent hover:underline">
+              전체 스킬 보기 →
+            </Link>
+          </div>
+        </section>
+      )}
     </div>
   );
 }
