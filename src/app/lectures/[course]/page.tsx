@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { COURSES, getCourse } from "@/lib/courses";
 import { getAllLessons, lessonHref } from "@/lib/lessons";
@@ -57,6 +58,32 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
           </Link>
         )}
       </header>
+
+      {course === "landing-page" && (
+        <section className="mt-12 rounded-2xl bg-surface p-6 sm:p-8">
+          <h2 className="text-xl font-black tracking-tight mb-6">다양한 랜딩페이지 샘플 미리보기</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="flex flex-col gap-3">
+              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-line shadow-sm">
+                <Image src="/landing_sample_saas.jpg" alt="SaaS 랜딩페이지 샘플" fill className="object-cover" />
+              </div>
+              <span className="text-sm font-bold text-center">SaaS / 서비스 소개</span>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-line shadow-sm">
+                <Image src="/landing_sample_course.jpg" alt="강좌 모집 랜딩페이지 샘플" fill className="object-cover" />
+              </div>
+              <span className="text-sm font-bold text-center">온라인 강좌 모집</span>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-line shadow-sm">
+                <Image src="/landing_sample_newsletter.jpg" alt="뉴스레터 구독 랜딩페이지 샘플" fill className="object-cover" />
+              </div>
+              <span className="text-sm font-bold text-center">뉴스레터 구독</span>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Highlights */}
       {c.highlights && c.highlights.length > 0 && (
