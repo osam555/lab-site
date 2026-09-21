@@ -1,31 +1,49 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
+
+const SCENES = [
+  { key: "globe", src: "/hero-globe.jpg", alt: "디지털 지구본 — 코드 네트워크", label: "🌍 Globe" },
+  { key: "wave",  src: "/hero-wave.jpg",  alt: "웨이브 메쉬 — 그라데이션",      label: "🌊 Wave" },
+] as const;
+
 export function HeroVisual() {
+  const [idx, setIdx] = useState(0);
+  const scene = SCENES[idx];
+
   return (
     <div className="hero-visual" aria-hidden="true">
       {/* Glow backdrop */}
       <div className="hv-glow" />
 
-      {/* Floating browser window */}
-      <div className="hv-browser hv-float-1">
-        <div className="hv-browser-bar">
-          <span className="hv-dot-r" />
-          <span className="hv-dot-y" />
-          <span className="hv-dot-g" />
-          <span className="hv-url" />
-        </div>
-        <div className="hv-browser-body">
-          <div className="hv-hero-block" />
-          <div className="hv-cards-row">
-            <div className="hv-card-sm" />
-            <div className="hv-card-sm" />
-            <div className="hv-card-sm" />
-          </div>
-          <div className="hv-cta-block" />
-        </div>
+      {/* Main visual image — switches between globe/wave */}
+      <div className="hv-main-image">
+        <Image
+          key={scene.key}
+          src={scene.src}
+          alt={scene.alt}
+          width={720}
+          height={540}
+          className="hv-main-img"
+          priority
+        />
       </div>
 
-      {/* Terminal window */}
+      {/* Scene toggle pills */}
+      <div className="hv-toggle">
+        {SCENES.map((s, i) => (
+          <button
+            key={s.key}
+            onClick={() => setIdx(i)}
+            className={`hv-toggle-btn ${i === idx ? "active" : ""}`}
+          >
+            {s.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Overlay: Floating terminal */}
       <div className="hv-terminal hv-float-2">
         <div className="hv-term-bar">
           <span className="hv-dot-r" />
@@ -45,18 +63,6 @@ export function HeroVisual() {
           <div className="hv-term-line hv-type-4">
             <span className="hv-ok">✓</span> 배포 → my-site.vercel.app
           </div>
-        </div>
-      </div>
-
-      {/* Mobile preview */}
-      <div className="hv-phone hv-float-3">
-        <div className="hv-phone-notch" />
-        <div className="hv-phone-body">
-          <div className="hv-ph-header" />
-          <div className="hv-ph-img" />
-          <div className="hv-ph-text" />
-          <div className="hv-ph-text short" />
-          <div className="hv-ph-btn" />
         </div>
       </div>
 
