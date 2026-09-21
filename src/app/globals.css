@@ -450,8 +450,8 @@ html[data-os="mac"] [data-os-block="windows"] {
 /* ── Terminal ── */
 .hv-terminal {
   position: absolute;
-  bottom: 14%; left: -2%;
-  width: 56%;
+  top: 4%; left: -4%;
+  width: 52%;
   background: rgba(21,23,26,.92);
   backdrop-filter: blur(8px);
   border: 1px solid #2a2d33;
@@ -529,12 +529,12 @@ html[data-os="mac"] [data-os-block="windows"] {
   white-space: nowrap;
 }
 .hv-badge-1 {
-  bottom: 28%; right: 0;
+  bottom: 28%; right: -2%;
   animation: hv-badge-in .5s ease forwards 2.8s, hv-f-badge1 4s ease-in-out infinite 3.3s;
   opacity: 0;
 }
 .hv-badge-2 {
-  top: 12%; right: 5%;
+  top: 12%; right: -2%;
   animation: hv-badge-in .5s ease forwards 3.2s, hv-f-badge2 5s ease-in-out infinite 3.7s;
   opacity: 0;
 }
@@ -553,7 +553,7 @@ html[data-os="mac"] [data-os-block="windows"] {
 
 /* ── Responsive ── */
 @media (max-width: 639px) {
-  .hv-terminal { font-size: 9px; width: 65%; left: 0; }
+  .hv-terminal { font-size: 9px; width: 65%; left: -2%; top: 2%; }
   .hv-badge { font-size: 10px; padding: 4px 8px; }
   .hv-toggle-btn { font-size: 11px; padding: 4px 10px; }
 }
