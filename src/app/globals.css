@@ -290,3 +290,61 @@ html[data-os="mac"] [data-os-block="windows"] {
   animation: hero-float 6s ease-in-out infinite;
 }
 
+/* ── Hero Course Showcase ── */
+.hero-showcase-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 0 8px;
+  scrollbar-width: none;
+}
+.hero-showcase-track::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-showcase-card {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--card);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.hero-showcase-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(47,143,91,.15);
+}
+
+.hero-showcase-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s;
+}
+.hero-showcase-card:hover .hero-showcase-img {
+  transform: scale(1.05);
+}
+
+.hero-showcase-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white, #fff);
+  background: linear-gradient(transparent, rgba(0,0,0,.7));
+  transition: opacity 0.3s;
+}
+
+@media (min-width: 640px) {
+  .hero-showcase-card {
+    flex: 0 0 220px;
+  }
+}

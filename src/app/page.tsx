@@ -32,6 +32,14 @@ const FAQ = [
 ];
 
 export default function Home() {
+  const HERO_COURSES = [
+    { src: "/hero-landing.jpg", label: "랜딩페이지", href: "/lectures/landing-page" },
+    { src: "/hero-homepage.jpg", label: "홈페이지", href: "/lectures/homepage" },
+    { src: "/hero-shorts.jpg", label: "쇼츠 자동화", href: "/lectures/shorts" },
+    { src: "/hero-blog.jpg", label: "블로그 자동화", href: "/lectures/naver-blog" },
+    { src: "/hero-webapp.jpg", label: "웹 서비스", href: "/lectures/vibe-coding" },
+  ];
+
   return (
     <>
       {/* ── Premium Hero ── */}
@@ -83,8 +91,21 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Course showcase cards */}
+          <div className="hero-showcase mt-10 pb-4">
+            <p className="mb-4 text-center text-xs font-bold uppercase tracking-widest text-muted">이런 걸 만듭니다</p>
+            <div className="hero-showcase-track">
+              {HERO_COURSES.map(({ src, label, href }) => (
+                <Link key={label} href={href} className="hero-showcase-card group">
+                  <Image src={src} alt={label} width={320} height={213} className="hero-showcase-img" />
+                  <span className="hero-showcase-label">{label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* Stats bar */}
-          <div className="hero-stats mt-12 grid grid-cols-2 gap-3 pb-12 sm:grid-cols-4 sm:gap-4">
+          <div className="hero-stats mt-6 grid grid-cols-2 gap-3 pb-12 sm:grid-cols-4 sm:gap-4">
             {[
               ["9개 강좌", "랜딩페이지 · 홈페이지 · 쇼츠 · 블로그 · SNS 등"],
               ["15+ 사례", "복사해서 바로 쓰는 프롬프트 템플릿"],
