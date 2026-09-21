@@ -75,10 +75,10 @@ export const COURSES: Course[] = [
     title: "Claude Aside 완전 가이드",
     tagline: "Browser·Computer Use·MCP·스킬로 SEO·SNS·블로그·영상을 자동화",
     description:
-      "Claude Code 데스크탑 앱의 Aside Browser, Computer Use, MCP 서버, Chrome Extension을 완전히 익히고 실전 자동화에 적용합니다. 서치 콘솔 자동 등록(SEO), 인스타·X·카카오채널 자동 배포(SNS), 네이버·티스토리 자동 포스팅(블로그), YouTube·쇼츠·릴스·틱톡 영상 파이프라인까지. 마지막에는 반복 작업을 스킬(SKILL.md)로 저장해 '스킬 써줘' 한 줄로 전체 파이프라인을 실행합니다.",
+      "Claude Code 데스크탑 앱의 Aside Browser, Computer Use, MCP 서버, Chrome Extension을 완전히 익히고 실전 자동화에 적용합니다. 서치 콘솔 자동 등록(SEO), 인스타·X·카카오채널 자동 배포(SNS), 네이버·티스토리 자동 포스팅(블로그), YouTube·쇼츠·릴스·틱톡 영상 파이프라인, HyperFrames(/hyperframes)로 모션그래픽, Remotion으로 데이터 기반 반복 렌더까지. 마지막에는 반복 작업을 스킬(SKILL.md)로 저장해 한 줄 호출로 실행합니다.",
     level: "입문+",
     audience: "홈페이지·서비스를 만든 뒤 운영을 자동화하고 싶은 사람",
-    outcome: "Computer Use 자동화, SEO 루틴, SNS 5채널 배포, 블로그 원클릭 발행, 유튜브·쇼츠 파이프라인, 스킬 파일로 원클릭 자동화",
+    outcome: "Computer Use 자동화, SEO 루틴, SNS 5채널 배포, 블로그 원클릭 발행, 유튜브·쇼츠 파이프라인, HyperFrames 모션그래픽, Remotion 데이터 영상, 스킬 파일로 원클릭 자동화",
     parts: ["1부 · Aside 도구 기초", "2부 · SEO 자동화", "3부 · SNS 자동 배포", "4부 · 블로그 자동화", "5부 · 영상 자동화"],
     badge: "Windows · macOS",
   },
