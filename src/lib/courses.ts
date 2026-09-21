@@ -8,7 +8,8 @@ export type Course = {
   outcome: string;
   parts: readonly string[];
   badge?: string;
-  relatedSkills?: readonly string[]; // skill slugs
+  relatedSkills?: readonly string[];
+  highlights?: readonly string[];
 };
 
 export const COURSES: Course[] = [
@@ -23,6 +24,16 @@ export const COURSES: Course[] = [
     outcome: "내 도메인으로 공개된 여러 페이지짜리 홈페이지",
     parts: ["1부 · 준비", "2부 · 만들기", "3부 · 공개"],
     badge: "Windows · macOS",
+    highlights: [
+      "Claude Code 설치부터 첫 대화까지 5분 세팅",
+      "HTML·CSS 없이 AI 대화만으로 페이지 구성",
+      "사진 갤러리, 카카오 지도, 문의 폼 추가",
+      "GitHub 연결 → Vercel 무료 배포",
+      "내 도메인 연결 및 HTTPS 자동 적용",
+      "반응형 — 폰·태블릿·PC 자동 대응",
+      "SEO 기초 — 구글·네이버 검색 등록",
+      "CLAUDE.md 규칙 파일로 AI 품질 관리",
+    ],
     relatedSkills: [
       "install-and-first-run",
       "desktop-app-vs-cli",
@@ -45,6 +56,17 @@ export const COURSES: Course[] = [
     outcome: "지도 API, 방문자 통계, MCP 자동화, 어드민 대시보드, 카카오 로그인, SEO 고급, 검색 등록, 통합 관리 대시보드",
     parts: ["고급 · 도구 활용", "고급 · 어드민 & 인증", "고급 · SEO & 대시보드"],
     badge: "고급 · Windows · macOS",
+    highlights: [
+      "네이버·카카오 지도 API 연동 (마커·인포윈도우)",
+      "Vercel Analytics로 방문자·페이지뷰 추적",
+      "Chrome Extension 사이드 패널에서 Claude 사용",
+      "Aside Browser + Computer Use 자동 조작",
+      "MCP 서버로 Playwright·검색·파일 시스템 확장",
+      "Pocketbase / Supabase 어드민 대시보드 구축",
+      "카카오 OAuth 소셜 로그인",
+      "JSON-LD 구조화 데이터, Core Web Vitals 최적화",
+      "구글 서치 콘솔 · 네이버 서치 어드바이저 연동",
+    ],
     relatedSkills: [
       "mcp-and-tools",
       "desktop-app-vs-cli",
@@ -65,6 +87,16 @@ export const COURSES: Course[] = [
     outcome: "30개 키워드 캘린더, 주제만 넣으면 에디터에 원고가 채워지는 파이프라인, 첫 글 3편",
     parts: ["1부 · 준비", "2부 · 파이프라인 만들기", "3부 · 자동화와 운영"],
     badge: "Windows · macOS",
+    highlights: [
+      "네이버 키워드 도구로 검색량·경쟁도 분석",
+      "30개 주제 키워드 캘린더 한 번에 생성",
+      "Claude Code 리서치 → 출처 달린 초안 자동 작성",
+      "OG 이미지·본문 삽입 이미지 자동 생성",
+      "스마트에디터에 브라우저 자동화로 원고 채우기",
+      "발행 전 사람이 검토하는 안전 장치",
+      "네이버 C-Rank·D.I.A. 알고리즘 이해",
+      "저품질 블로그를 피하는 경계선과 규칙",
+    ],
     relatedSkills: [
       "prompt-writing",
       "plan-mode-and-context",
@@ -85,6 +117,16 @@ export const COURSES: Course[] = [
     outcome: "주제만 넣으면 돌아가는 쇼츠 제작 파이프라인과 첫 영상 1편",
     parts: ["1부 · 준비", "2부 · 파이프라인 만들기", "3부 · 자동화와 운영"],
     badge: "Windows · macOS",
+    highlights: [
+      "레퍼런스 채널 분석 → 구조·후크 패턴 추출",
+      "22컷 대본 + 비주얼 프롬프트 자동 생성",
+      "Google Flow / Veo로 9:16 AI 클립 생성",
+      "Typecast(한국어) · ElevenLabs(다국어) 더빙 비교·선택",
+      "ffmpeg 한 줄로 클립 + 음성 + BGM + 자막 합성",
+      "호흡 맞추기 — 대본·속도·무음 패딩 3단계",
+      "스킬 파일로 전체 파이프라인 원클릭 저장",
+      "주 1편 자동 생산 운영 루틴",
+    ],
     relatedSkills: [
       "prompt-writing",
       "plan-mode-and-context",
@@ -105,6 +147,16 @@ export const COURSES: Course[] = [
     outcome: "채널별 변환 규칙, 이미지 카드 템플릿, '이 글 배포해줘' 한 줄로 도는 파이프라인",
     parts: ["1부 · 준비", "2부 · 파이프라인 만들기", "3부 · 자동화와 운영"],
     badge: "Windows · macOS",
+    highlights: [
+      "원본 콘텐츠 → 5개 채널 형식 자동 변환",
+      "X (280자) · 스레드 · 인스타 · 링크드인 · 카카오채널",
+      "채널별 이미지 카드 자동 생성 (비율·크기 맞춤)",
+      "Buffer·Publer 등 스케줄러 API 예약 발행",
+      "Computer Use로 인스타·카카오 직접 예약",
+      "주간 성과 리포트 → 잘 된 후크 패턴 분석",
+      "규칙 파일에 성과 피드백 자동 반영",
+      "콘텐츠 캘린더 + 주간 배포 루틴",
+    ],
     relatedSkills: [
       "prompt-writing",
       "skill-system",
@@ -125,6 +177,19 @@ export const COURSES: Course[] = [
     outcome: "Computer Use 자동화, SEO 루틴, SNS 5채널 배포, 블로그 원클릭 발행, 유튜브·쇼츠 파이프라인, HyperFrames 모션그래픽, Remotion 데이터 영상, 스킬 파일로 원클릭 자동화",
     parts: ["1부 · Aside 도구 기초", "2부 · SEO 자동화", "3부 · SNS 자동 배포", "4부 · 블로그 자동화", "5부 · 영상 자동화"],
     badge: "Windows · macOS",
+    highlights: [
+      "Aside Browser — 앱 안의 브라우저로 외부 사이트 탐색",
+      "Computer Use — Claude가 클릭·입력·스크롤 직접 조작",
+      "MCP 서버 연결 — Playwright·검색·파일 시스템 확장",
+      "Chrome Extension 사이드 패널 활용",
+      "구글 서치 콘솔·네이버 서치 어드바이저 자동 등록(SEO)",
+      "Core Web Vitals 분석 및 최적화",
+      "인스타·X·카카오 등 5채널 SNS 자동 배포",
+      "네이버·티스토리 블로그 자동 포스팅",
+      "YouTube Studio 업로드·썸네일·예약 자동화",
+      "HyperFrames 모션그래픽, Remotion 데이터 영상 렌더",
+      "SKILL.md로 전체 파이프라인 원클릭 실행",
+    ],
     relatedSkills: [
       "desktop-app-vs-cli",
       "mcp-and-tools",
@@ -146,6 +211,17 @@ export const COURSES: Course[] = [
     audience: "홈페이지를 넘어 '서비스'를 만들고 싶은 사람",
     outcome: "로그인·데이터 저장이 되는 웹 서비스와 폰에 설치되는 PWA",
     parts: ["1부 · 준비", "2부 · 기획과 프롬프트", "3부 · 만들기", "4부 · 세상에 내놓기"],
+    highlights: [
+      "아이디어 → PLAN.md 기획 문서 작성",
+      "Next.js 프로젝트 생성과 폴더 구조 이해",
+      "AI 대화로 UI 컴포넌트·페이지 자동 생성",
+      "Supabase 데이터베이스 테이블 설계·연동",
+      "이메일·소셜 로그인 (Supabase Auth)",
+      "데이터 CRUD — 등록·조회·수정·삭제",
+      "Vercel 배포와 환경변수 관리",
+      "PWA 설정 — 폰 홈 화면에 앱 아이콘 추가",
+      "사용자 피드백 루프와 점진적 개선",
+    ],
     relatedSkills: [
       "install-and-first-run",
       "permissions-and-safety",

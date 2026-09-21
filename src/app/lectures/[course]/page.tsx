@@ -58,6 +58,21 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
         )}
       </header>
 
+      {/* Highlights */}
+      {c.highlights && c.highlights.length > 0 && (
+        <section className="mt-10 rounded-2xl border border-line bg-surface p-6 sm:p-8">
+          <h2 className="text-lg font-black tracking-tight">핵심 내용</h2>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            {c.highlights.map((h) => (
+              <li key={h} className="flex items-start gap-2 text-sm leading-relaxed">
+                <span className="mt-0.5 shrink-0 text-accent">✓</span>
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {/* Lesson list by part */}
       <div className="mt-12 space-y-12">
         {c.parts.map((part) => {
