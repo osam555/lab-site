@@ -62,8 +62,6 @@ export function CobeGlobe() {
           width: "100%",
           height: "100%",
           contain: "layout paint size",
-          opacity: 0,
-          animation: "fade-in 1s ease forwards",
         }}
       />
     </div>
