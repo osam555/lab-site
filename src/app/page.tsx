@@ -69,8 +69,11 @@ export default function Home() {
                 랜딩페이지, 홈페이지, 웹 서비스를 만들고 쇼츠·블로그·SNS 콘텐츠까지 자동으로 생산합니다.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link href="/lectures/landing-page" className="hero-cta-primary rounded-xl bg-accent px-6 py-3.5 font-bold text-white transition">
-                  랜딩페이지부터 시작 →
+                <Link
+                  href="/lectures/homepage#samples"
+                  className="hero-cta-primary rounded-xl bg-accent px-6 py-3.5 font-bold text-white transition"
+                >
+                  홈페이지 샘플 보기 ↗
                 </Link>
                 <Link
                   href="/lectures/landing-page#samples"
