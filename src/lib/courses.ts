@@ -14,6 +14,38 @@ export type Course = {
 
 export const COURSES: Course[] = [
   {
+    slug: "landing-page",
+    title: "랜딩페이지 만들기",
+    tagline: "15가지 사례로 배우는, 전환율 높은 한 페이지 만들기",
+    description:
+      "제품 출시, 강좌 모집, 앱 다운로드, 이벤트 프로모션, 포트폴리오까지 — 5가지 유형 15개 실전 사례를 Claude Code로 만듭니다. 준비물 정리부터 CTA 최적화, Vercel 배포, 전환 추적까지 8강으로 끝냅니다.",
+    level: "완전 초보",
+    audience: "상품·서비스·강좌·이벤트를 알리는 한 페이지가 당장 필요한 사람",
+    outcome: "전환율 높은 랜딩페이지 1개 + 15가지 사례 템플릿",
+    parts: ["1부 · 구조와 준비", "2부 · 유형별 실전", "3부 · 최적화와 공개"],
+    badge: "Windows · macOS",
+    highlights: [
+      "랜딩페이지 vs 홈페이지 — 목적과 구조의 차이",
+      "전환율을 결정하는 7가지 블록 공식",
+      "제품·SaaS·핸드메이드·구독 서비스 출시 사례",
+      "강좌·워크숍·부트캠프 수강생 모집 사례",
+      "앱 다운로드·사전예약·크라우드펀딩 사례",
+      "세미나·할인 프로모션·뉴스레터 구독 사례",
+      "프리랜서·컨설턴트·작가 개인 브랜딩 사례",
+      "CTA 색상·문구·위치 최적화",
+      "Vercel 배포 + 도메인 연결 + 전환 추적(GA4)",
+      "A/B 테스트로 헤드라인·CTA 비교",
+    ],
+    relatedSkills: [
+      "install-and-first-run",
+      "prompt-writing",
+      "images-and-files",
+      "git-workflow",
+      "one-slice-loop",
+      "error-debugging",
+    ],
+  },
+  {
     slug: "homepage",
     title: "홈페이지 만들기",
     tagline: "가게·개인·포트폴리오 홈페이지를 10일 만에 내 주소로",
