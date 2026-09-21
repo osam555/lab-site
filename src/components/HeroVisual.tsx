@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { CobeGlobe } from "./CobeGlobe";
 
 const SCENES = [
   { key: "globe", src: "/hero-globe.jpg", alt: "디지털 지구본 — 코드 네트워크", label: "🌍 Globe" },
@@ -17,31 +16,18 @@ export function HeroVisual() {
     <div className="hero-visual" aria-hidden="true">
       {/* Glow backdrop */}
       <div className="hv-glow" />
-      {/* Wave animation SVG Filter */}
-      <svg style={{ position: 'absolute', width: 0, height: 0 }} aria-hidden="true">
-        <filter id="wave-ripple">
-          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="1" result="noise">
-            <animate attributeName="baseFrequency" values="0.01 0.02; 0.015 0.03; 0.01 0.02" dur="8s" repeatCount="indefinite" />
-          </feTurbulence>
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-      </svg>
 
       {/* Main visual image — switches between globe/wave */}
       <div className="hv-main-image">
-        {scene.key === "globe" ? (
-          <CobeGlobe />
-        ) : (
-          <Image
-            key={scene.key}
-            src={scene.src}
-            alt={scene.alt}
-            width={720}
-            height={540}
-            className="hv-main-img anim-wave"
-            priority
-          />
-        )}
+        <Image
+          key={scene.key}
+          src={scene.src}
+          alt={scene.alt}
+          width={720}
+          height={540}
+          className="hv-main-img"
+          priority
+        />
       </div>
 
       {/* Scene toggle pills */}
