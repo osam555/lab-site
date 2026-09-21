@@ -109,15 +109,51 @@ export default function Home() {
           {/* Stats bar */}
           <div className="hero-stats mt-6 grid grid-cols-2 gap-3 pb-12 sm:grid-cols-4 sm:gap-4">
             {[
-              ["9개 강좌", "랜딩페이지 · 홈페이지 · 쇼츠 · 블로그 · SNS 등"],
-              ["15+ 사례", "복사해서 바로 쓰는 프롬프트 템플릿"],
-              ["0줄 암기", "외워야 하는 코드 문법"],
-              ["Win · Mac", "두 운영체제 모두 안내"],
-            ].map(([n, label]) => (
-              <div key={label} className="hero-stat-card rounded-xl border border-line/50 bg-card/60 p-4 backdrop-blur-md">
-                <div className="text-xl font-black text-accent sm:text-2xl">{n}</div>
-                <div className="mt-1 text-xs text-muted sm:text-sm">{label}</div>
-              </div>
+              {
+                num: "9개 강좌",
+                label: "랜딩페이지 · 홈페이지 · 쇼츠 등",
+                href: "#courses",
+                badge: "강좌 목록 ↓",
+              },
+              {
+                num: "15+ 사례",
+                label: "복사해서 바로 쓰는 프롬프트 템플릿",
+                href: "/prompts",
+                badge: "실제 사례 보기 ↗",
+                highlight: true,
+              },
+              {
+                num: "0줄 암기",
+                label: "외워야 하는 코드 문법 없이 완성",
+                href: "/skills",
+                badge: "스킬 가이드 ↗",
+              },
+              {
+                num: "Win · Mac",
+                label: "Windows & macOS 두 운영체제 지원",
+                href: "/lectures/homepage",
+                badge: "시작 가이드 ↗",
+              },
+            ].map((stat) => (
+              <Link
+                key={stat.num}
+                href={stat.href}
+                className={`group hero-stat-card flex flex-col justify-between rounded-xl border p-4 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${
+                  stat.highlight
+                    ? "border-accent/40 bg-accent-soft/30 hover:border-accent hover:bg-accent-soft/50 ring-1 ring-accent/20"
+                    : "border-line/50 bg-card/60 hover:border-accent"
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-1">
+                    <div className="text-xl font-black text-accent sm:text-2xl">{stat.num}</div>
+                    <span className="text-[11px] font-bold text-accent opacity-80 transition-opacity group-hover:opacity-100 group-hover:underline">
+                      {stat.badge}
+                    </span>
+                  </div>
+                  <div className="mt-1.5 text-xs leading-relaxed text-muted sm:text-sm">{stat.label}</div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

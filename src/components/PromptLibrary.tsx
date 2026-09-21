@@ -29,10 +29,12 @@ function CopyButton({ text }: { text: string }) {
 export function PromptLibrary({ prompts, categories }: { prompts: Prompt[]; categories: readonly string[] }) {
   const [cat, setCat] = useState<string>("전체");
   const [q, setQ] = useState("");
+  const [activeTab, setActiveTab] = useState<Record<string, "template" | "example">>({});
+
   const shown = prompts.filter(
     (p) =>
       (cat === "전체" || p.category === cat) &&
-      (q === "" || (p.title + p.when + p.body).toLowerCase().includes(q.toLowerCase())),
+      (q === "" || (p.title + p.when + p.body + (p.example || "")).toLowerCase().includes(q.toLowerCase())),
   );
 
   return (
@@ -41,7 +43,7 @@ export function PromptLibrary({ prompts, categories }: { prompts: Prompt[]; cate
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="검색: 버그, 테이블, 배포…"
+          placeholder="검색: 버그, 테이블, 배포, 실제 사례…"
           className="w-full rounded-lg border border-line bg-card px-3 py-2 text-sm outline-none focus:border-accent sm:max-w-xs"
         />
         <div className="flex flex-wrap gap-1.5">
@@ -68,21 +70,55 @@ export function PromptLibrary({ prompts, categories }: { prompts: Prompt[]; cate
       {shown.length === 0 && <p className="py-12 text-center text-muted">검색 결과가 없습니다.</p>}
 
       <div className="grid gap-4 md:grid-cols-2">
-        {shown.map((p) => (
-          <article key={p.id} id={p.id} className="flex flex-col rounded-xl border border-line bg-card">
-            <div className="flex items-start justify-between gap-3 p-5 pb-3">
-              <div>
-                <div className="text-[11px] font-bold uppercase tracking-wide text-accent">{p.category}</div>
-                <h3 className="mt-1 font-bold">{p.title}</h3>
-                <p className="mt-1 text-sm text-muted">{p.when}</p>
+        {shown.map((p) => {
+          const currentMode = activeTab[p.id] || (p.example ? "example" : "template");
+          const displayText = currentMode === "example" && p.example ? p.example : p.body;
+
+          return (
+            <article key={p.id} id={p.id} className="flex flex-col rounded-xl border border-line bg-card overflow-hidden">
+              <div className="flex items-start justify-between gap-3 p-5 pb-3">
+                <div>
+                  <div className="text-[11px] font-bold uppercase tracking-wide text-accent">{p.category}</div>
+                  <h3 className="mt-1 font-bold">{p.title}</h3>
+                  <p className="mt-1 text-sm text-muted">{p.when}</p>
+                </div>
+                <CopyButton text={displayText} />
               </div>
-              <CopyButton text={p.body} />
-            </div>
-            <pre className="m-0 flex-1 whitespace-pre-wrap rounded-b-xl border-t border-line bg-background px-5 py-4 font-sans text-[13.5px] leading-relaxed">
-              {p.body}
-            </pre>
-          </article>
-        ))}
+
+              {p.example && (
+                <div className="flex items-center gap-1.5 border-t border-line/60 bg-muted/5 px-4 py-1.5 text-xs font-semibold">
+                  <span className="text-[11px] text-muted mr-1">보기:</span>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab((prev) => ({ ...prev, [p.id]: "example" }))}
+                    className={`rounded-md px-2.5 py-1 transition ${
+                      currentMode === "example"
+                        ? "bg-accent-soft font-bold text-accent shadow-xs"
+                        : "text-muted hover:text-foreground"
+                    }`}
+                  >
+                    ✨ 실제 작성 사례
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab((prev) => ({ ...prev, [p.id]: "template" }))}
+                    className={`rounded-md px-2.5 py-1 transition ${
+                      currentMode === "template"
+                        ? "bg-accent-soft font-bold text-accent shadow-xs"
+                        : "text-muted hover:text-foreground"
+                    }`}
+                  >
+                    📋 기본 템플릿 [대괄호]
+                  </button>
+                </div>
+              )}
+
+              <pre className="m-0 flex-1 whitespace-pre-wrap border-t border-line bg-background px-5 py-4 font-sans text-[13.5px] leading-relaxed">
+                {displayText}
+              </pre>
+            </article>
+          );
+        })}
       </div>
     </div>
   );
