@@ -19,6 +19,30 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   return c ? { title: c.title, description: c.tagline } : {};
 }
 
+const LANDING_SAMPLES = [
+  {
+    title: "SaaS / 서비스 소개",
+    tag: "SaaS 템플릿",
+    description: "직관적인 가치 제안, 기능 카드, 가격 정책 및 CTA 중심 구성",
+    image: "/landing_sample_saas.jpg",
+    url: "/examples/landing-saas.html",
+  },
+  {
+    title: "온라인 강좌 모집",
+    tag: "교육 / 부트캠프",
+    description: "상세 커리큘럼, 수강 혜택, 등록 전환을 유도하는 구성",
+    image: "/landing_sample_course.jpg",
+    url: "/examples/landing-course.html",
+  },
+  {
+    title: "뉴스레터 구독",
+    tag: "구독 / 리드 수집",
+    description: "핵심 메시지와 간결한 이메일 구독 폼 중심의 고전환 페이지",
+    image: "/landing_sample_newsletter.jpg",
+    url: "/examples/landing-newsletter.html",
+  },
+];
+
 export default async function CoursePage({ params }: { params: Promise<Params> }) {
   const { course } = await params;
   const c = getCourse(course);
@@ -60,27 +84,77 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
       </header>
 
       {course === "landing-page" && (
-        <section className="mt-12 rounded-2xl bg-surface p-6 sm:p-8">
-          <h2 className="text-xl font-black tracking-tight mb-6">다양한 랜딩페이지 샘플 미리보기</h2>
+        <section className="mt-12 rounded-2xl border border-line bg-card p-6 sm:p-8 shadow-xs">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+            <div>
+              <div className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-bold text-accent mb-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+                실제 동작하는 라이브 예시
+              </div>
+              <h2 className="text-xl font-black tracking-tight sm:text-2xl">
+                실제 제작 랜딩페이지 예시 미리보기
+              </h2>
+              <p className="mt-1 text-sm text-muted">
+                강좌를 통해 직접 제작하게 되는 3가지 대표 완성형 웹페이지입니다. 아래 버튼을 눌러 직접 확인해보세요.
+              </p>
+            </div>
+          </div>
+
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="flex flex-col gap-3">
-              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-line shadow-sm">
-                <Image src="/landing_sample_saas.jpg" alt="SaaS 랜딩페이지 샘플" fill className="object-cover" />
+            {LANDING_SAMPLES.map((sample) => (
+              <div
+                key={sample.title}
+                className="group flex flex-col justify-between rounded-xl border border-line bg-surface/50 p-4 transition duration-200 hover:border-accent hover:shadow-md"
+              >
+                <div>
+                  <a
+                    href={sample.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block aspect-video w-full overflow-hidden rounded-lg border border-line bg-muted/10"
+                    title={`${sample.title} 실제 페이지 보기`}
+                  >
+                    <Image
+                      src={sample.image}
+                      alt={sample.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/35 opacity-0 transition-opacity duration-200 group-hover:opacity-100 flex items-center justify-center">
+                      <span className="rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-gray-900 shadow">
+                        새 탭에서 열기 ↗
+                      </span>
+                    </div>
+                  </a>
+
+                  <div className="mt-3.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="font-bold text-foreground leading-snug">{sample.title}</h3>
+                      <span className="shrink-0 text-[11px] font-semibold text-accent bg-accent-soft px-2 py-0.5 rounded-md">
+                        {sample.tag}
+                      </span>
+                    </div>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted">
+                      {sample.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-line/60">
+                  <a
+                    href={sample.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-accent px-4 py-2.5 text-xs sm:text-sm font-bold text-white shadow-xs transition hover:opacity-90 active:scale-[0.99]"
+                  >
+                    <span>실제 예시 보기</span>
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <span className="text-sm font-bold text-center">SaaS / 서비스 소개</span>
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-line shadow-sm">
-                <Image src="/landing_sample_course.jpg" alt="강좌 모집 랜딩페이지 샘플" fill className="object-cover" />
-              </div>
-              <span className="text-sm font-bold text-center">온라인 강좌 모집</span>
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-line shadow-sm">
-                <Image src="/landing_sample_newsletter.jpg" alt="뉴스레터 구독 랜딩페이지 샘플" fill className="object-cover" />
-              </div>
-              <span className="text-sm font-bold text-center">뉴스레터 구독</span>
-            </div>
+            ))}
           </div>
         </section>
       )}
