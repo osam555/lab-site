@@ -48,22 +48,26 @@ export function CobeGlobe() {
   return (
     <div style={{
       width: "100%",
-      maxWidth: 720,
-      aspectRatio: 1,
-      margin: "0 auto",
+      height: "100%",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      position: "relative",
     }}>
-      <canvas
-        ref={canvasRef}
-        style={{
-          width: "100%",
-          height: "100%",
-          contain: "layout paint size",
-        }}
-      />
+      <div style={{
+        width: "100%",
+        maxWidth: "400px",
+        aspectRatio: "1 / 1",
+        position: "relative",
+      }}>
+        <canvas
+          ref={canvasRef}
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "block",
+          }}
+        />
+      </div>
     </div>
   );
 }
