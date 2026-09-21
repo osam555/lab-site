@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aether Solutions — 기업용 클라우드 & AI 인프라 솔루션</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0b0f19;--surface:#111827;--card:#1f2937;--line:#374151;--text:#f3f4f6;--muted:#9ca3af;--accent:#10b981;--accent-glow:#34d399}
+body{font-family:'Pretendard',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{border-bottom:1px solid var(--line);background:rgba(11,15,25,.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-size:20px;font-weight:900;letter-spacing:-0.5px;color:#fff;display:flex;align-items:center;gap:10px}
+.logo-mark{width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#000;font-size:16px;font-weight:900}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:600;color:var(--muted)}
+.nav-links a:hover{color:#fff}
+.nav-cta{padding:9px 18px;background:var(--accent);color:#000;border-radius:8px;font-size:13px;font-weight:800;transition:.2s}
+.nav-cta:hover{background:var(--accent-glow)}
+
+/* Hero */
+.hero{padding:90px 0 70px;text-align:center;background:radial-gradient(ellipse at 50% 10%,rgba(16,185,129,.12),transparent 70%)}
+.hero-badge{display:inline-block;background:rgba(16,185,129,.1);color:var(--accent-glow);font-size:13px;font-weight:700;padding:6px 16px;border-radius:99px;margin-bottom:24px;border:1px solid rgba(16,185,129,.2)}
+.hero h1{font-size:clamp(32px,5vw,54px);font-weight:900;line-height:1.15;letter-spacing:-1px}
+.hero h1 span{background:linear-gradient(135deg,#34d399,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:var(--muted);margin:20px auto 36px;max-width:620px}
+.hero-cta{display:inline-block;padding:16px 36px;background:var(--accent);color:#000;font-weight:800;font-size:16px;border-radius:10px;transition:.2s}
+.hero-cta:hover{background:var(--accent-glow);transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,.35)}
+
+/* Metrics */
+.metrics{padding:40px 0 70px}
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.metric-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;text-align:center}
+.metric-card strong{display:block;font-size:38px;font-weight:900;color:var(--accent-glow)}
+.metric-card span{font-size:14px;color:var(--muted);margin-top:4px;display:block}
+
+/* Services */
+.section{padding:80px 0}
+.sec-tag{font-size:12px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;text-align:center}
+.sec-title{font-size:32px;font-weight:900;text-align:center;margin:8px 0 48px}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.serv-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px;transition:.2s}
+.serv-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.serv-icon{font-size:32px;margin-bottom:16px}
+.serv-card h3{font-size:20px;font-weight:800;margin-bottom:10px}
+.serv-card p{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* Contact / Form */
+.form-box{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:48px;max-width:700px;margin:40px auto 0}
+.form-box h3{font-size:24px;font-weight:800;text-align:center;margin-bottom:8px}
+.form-box p{color:var(--muted);text-align:center;font-size:14px;margin-bottom:28px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.input{width:100%;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:8px;color:#fff;font-size:14px}
+.input:focus{outline:none;border-color:var(--accent)}
+textarea.input{resize:none;height:100px;margin-bottom:16px}
+.btn-submit{width:100%;padding:14px;background:var(--accent);color:#000;font-weight:800;border:none;border-radius:8px;cursor:pointer;font-size:15px;transition:.2s}
+.btn-submit:hover{background:var(--accent-glow)}
+
+footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">
+      <span class="logo-mark">▲</span>
+      <span>AETHER SOLUTIONS</span>
+    </div>
+    <div class="nav-links">
+      <a href="#services">솔루션</a>
+      <a href="#metrics">성과 지표</a>
+      <a href="#contact">도입 문의</a>
+    </div>
+    <a href="#contact" class="nav-cta">무료 컨설팅 신청</a>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <span class="hero-badge">엔터프라이즈 DX & 클라우드 현대화 파트너</span>
+    <h1>디지털 혁신을 위한<br><span>차세대 클라우드 & AI 솔루션</span></h1>
+    <p>에테르는 스타트업부터 대기업까지 복잡한 인프라를 단순화하고, AI 기반 엔지니어링으로 비즈니스 속도를 10배 끌어올립니다.</p>
+    <a href="#contact" class="hero-cta">도입 상담 신청하기 →</a>
+  </section>
+
+  <section id="metrics" class="metrics">
+    <div class="metric-grid">
+      <div class="metric-card">
+        <strong>250+</strong>
+        <span>완료된 엔터프라이즈 프로젝트</span>
+      </div>
+      <div class="metric-card">
+        <strong>99.99%</strong>
+        <span>인프라 가동률 보장 (SLA)</span>
+      </div>
+      <div class="metric-card">
+        <strong>40%</strong>
+        <span>평균 클라우드 비용 절감 효과</span>
+      </div>
+      <div class="metric-card">
+        <strong>98%</strong>
+        <span>고객사 재계약 및 유지율</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="sec-tag">WHAT WE DO</div>
+    <h2 class="sec-title">에테르의 핵심 비즈니스 솔루션</h2>
+    <div class="serv-grid">
+      <div class="serv-card">
+        <div class="serv-icon">☁️</div>
+        <h3>Cloud Architecture</h3>
+        <p>AWS, GCP 멀티 클라우드 환경 설계 및 무중단 마이그레이션을 지원합니다.</p>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon">⚡</div>
+        <h3>DevOps & CI/CD</h3>
+        <p>코드 작성부터 프로덕션 배포까지 자동화된 파이프라인을 구축해 출시 주기를 단축합니다.</p>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon">🤖</div>
+        <h3>Enterprise AI Integration</h3>
+        <p>자사 사내 데이터와 최신 LLM을 결합한 사내 전용 AI 어시스턴트 및 자동화 봇을 구축합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="form-box">
+      <h3>전문 컨설턴트와 상담하기</h3>
+      <p>비즈니스 요구사항을 남겨주시면 24시간 이내에 전담 엔지니어가 연락드립니다.</p>
+      <form onsubmit="event.preventDefault(); alert('문의가 접수되었습니다. 담당자가 곧 연락드리겠습니다.');">
+        <div class="form-row">
+          <input type="text" class="input" placeholder="이름 (담당자명)" required>
+          <input type="email" class="input" placeholder="회사 이메일" required>
+        </div>
+        <div class="form-row">
+          <input type="text" class="input" placeholder="회사명" required>
+          <input type="tel" class="input" placeholder="연락처">
+        </div>
+        <textarea class="input" placeholder="도입을 고민 중이신 프로젝트 내용이나 문의 사항을 적어주세요."></textarea>
+        <button type="submit" class="btn-submit">도입 상담 신청하기</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Aether Solutions Co., Ltd. All rights reserved. | 바이브 코딩 기업 홈페이지 실습 예시</p>
+  </div>
+</footer>
+
+</body>
+</html>

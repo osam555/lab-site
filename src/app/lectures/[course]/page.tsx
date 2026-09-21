@@ -43,6 +43,53 @@ const LANDING_SAMPLES = [
   },
 ];
 
+const HOMEPAGE_SAMPLES = [
+  {
+    title: "가게 · 카페 / 베이커리",
+    tag: "매장 / 사업",
+    description: "따뜻한 브랜드 스토리, 시그니처 메뉴판, 매장 위치 및 예약 안내",
+    image: "/homepage_sample_cafe.jpg",
+    url: "/examples/homepage-cafe.html",
+  },
+  {
+    title: "개인 · 포트폴리오",
+    tag: "디자이너 / 개발자",
+    description: "선별된 프로젝트 갤러리, 보유 기술 스택, 자기소개 및 협업 문의 폼",
+    image: "/homepage_sample_portfolio.jpg",
+    url: "/examples/homepage-portfolio.html",
+  },
+  {
+    title: "기업 · IT 솔루션",
+    tag: "회사 / 전문 서비스",
+    description: "핵심 비즈니스 솔루션, 프로젝트 성과 지표, 도입 상담 신청 폼",
+    image: "/homepage_sample_company.jpg",
+    url: "/examples/homepage-company.html",
+  },
+];
+
+const COURSE_SAMPLES: Record<
+  string,
+  {
+    badge: string;
+    title: string;
+    description: string;
+    items: Array<{ title: string; tag: string; description: string; image: string; url: string }>;
+  }
+> = {
+  "landing-page": {
+    badge: "실제 동작하는 라이브 예시",
+    title: "실제 제작 랜딩페이지 예시 미리보기",
+    description: "강좌를 통해 직접 제작하게 되는 3가지 대표 완성형 웹페이지입니다. 아래 버튼을 눌러 직접 확인해보세요.",
+    items: LANDING_SAMPLES,
+  },
+  homepage: {
+    badge: "실제 동작하는 라이브 예시",
+    title: "실제 제작 홈페이지 예시 미리보기",
+    description: "강좌를 통해 단계별로 완성하게 되는 3가지 대표 홈페이지입니다. 아래 버튼을 눌러 직접 확인해보세요.",
+    items: HOMEPAGE_SAMPLES,
+  },
+};
+
 export default async function CoursePage({ params }: { params: Promise<Params> }) {
   const { course } = await params;
   const c = getCourse(course);
@@ -56,6 +103,8 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
   const relatedSkills = (c.relatedSkills ?? [])
     .map((slug) => allSkills.find((s) => s.slug === slug))
     .filter(Boolean) as (typeof allSkills)[number][];
+
+  const courseSampleData = COURSE_SAMPLES[course];
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
@@ -83,25 +132,25 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
         )}
       </header>
 
-      {course === "landing-page" && (
+      {courseSampleData && (
         <section id="samples" className="mt-12 scroll-mt-20 rounded-2xl border border-line bg-card p-6 sm:p-8 shadow-xs">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
             <div>
               <div className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-bold text-accent mb-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-                실제 동작하는 라이브 예시
+                {courseSampleData.badge}
               </div>
               <h2 className="text-xl font-black tracking-tight sm:text-2xl">
-                실제 제작 랜딩페이지 예시 미리보기
+                {courseSampleData.title}
               </h2>
               <p className="mt-1 text-sm text-muted">
-                강좌를 통해 직접 제작하게 되는 3가지 대표 완성형 웹페이지입니다. 아래 버튼을 눌러 직접 확인해보세요.
+                {courseSampleData.description}
               </p>
             </div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {LANDING_SAMPLES.map((sample) => (
+            {courseSampleData.items.map((sample) => (
               <div
                 key={sample.title}
                 className="group flex flex-col justify-between rounded-xl border border-line bg-surface/50 p-4 transition duration-200 hover:border-accent hover:shadow-md"

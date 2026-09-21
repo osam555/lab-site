@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Park — Creative Developer & UI/UX Designer Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#121316;--surface:#1a1c22;--surface-hover:#242832;--line:#2e333d;--text:#e4e6eb;--muted:#9ba1b0;--accent:#3b82f6;--accent-glow:#60a5fa}
+body{font-family:'Pretendard',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{border-bottom:1px solid var(--line);background:rgba(18,19,22,.85);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:18px;font-weight:900;letter-spacing:-0.5px;color:#fff}
+.nav-links{display:flex;gap:24px;font-size:14px;font-weight:600;color:var(--muted)}
+.nav-links a:hover{color:#fff}
+.nav-cta{padding:8px 16px;background:#fff;color:#000;border-radius:8px;font-size:13px;font-weight:700;transition:.2s}
+.nav-cta:hover{background:var(--accent-glow);color:#fff}
+
+/* Hero */
+.hero{padding:80px 0 60px}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#34d399;background:rgba(52,211,153,.1);padding:4px 12px;border-radius:99px;margin-bottom:20px;border:1px solid rgba(52,211,153,.2)}
+.dot{width:6px;height:6px;background:#34d399;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.15;letter-spacing:-1px}
+.hero h1 span{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:var(--muted);margin:20px 0 32px;max-width:600px}
+.hero-stats{display:flex;gap:36px;margin-top:40px;border-top:1px solid var(--line);padding-top:28px}
+.stat strong{display:block;font-size:28px;font-weight:900;color:#fff}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* Projects */
+.section{padding:70px 0}
+.sec-title{font-size:28px;font-weight:900;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.project-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:all .25s ease}
+.project-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.project-preview{height:200px;background:#15181f;display:flex;align-items:center;justify-content:center;font-size:48px;border-bottom:1px solid var(--line);position:relative}
+.project-tag{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.1);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;color:#fff}
+.project-content{padding:24px}
+.project-content h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.project-content p{font-size:14px;color:var(--muted);line-height:1.6}
+.project-techs{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.tech-pill{font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;background:rgba(255,255,255,.06);color:var(--muted)}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.skill-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.skill-box h4{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px}
+.skill-box p{font-size:13px;color:var(--muted)}
+
+/* Contact */
+.contact-box{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(167,139,250,.05));border:1px solid var(--line);border-radius:20px;padding:48px;text-align:center;margin:60px 0}
+.contact-box h2{font-size:32px;font-weight:900;color:#fff}
+.contact-box p{color:var(--muted);margin:12px auto 28px;max-width:500px}
+.btn-email{display:inline-block;padding:14px 32px;background:var(--accent);color:#fff;font-weight:700;border-radius:10px;transition:.2s}
+.btn-email:hover{background:var(--accent-glow);box-shadow:0 8px 24px rgba(59,130,246,.4)}
+
+footer{padding:40px 0;text-align:center;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">ALEX.PARK</div>
+    <div class="nav-links">
+      <a href="#work">프로젝트</a>
+      <a href="#skills">기술 스택</a>
+      <a href="#about">소개</a>
+    </div>
+    <a href="#contact" class="nav-cta">프로젝트 문의</a>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      새로운 프로젝트 의뢰 수락 가능
+    </div>
+    <h1>디자인과 기술을 연결하는<br><span>크리에이티브 개발자</span> 박준형입니다.</h1>
+    <p>아름다운 시각 디자인과 탄탄한 웹 프론트엔드 엔지니어링을 결합하여, 사용자가 머물고 싶어 하는 디지털 제품을 만듭니다.</p>
+    
+    <div class="hero-stats">
+      <div class="stat">
+        <strong>5년+</strong>
+        <span>디자인 & 개발 경력</span>
+      </div>
+      <div class="stat">
+        <strong>30+</strong>
+        <span>런칭 완료 프로젝트</span>
+      </div>
+      <div class="stat">
+        <strong>100%</strong>
+        <span>만족도 및 납기 준수</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="sec-title">
+      <h2>선별된 대표 프로젝트</h2>
+    </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-preview">📊<span class="project-tag">SaaS Dashboard</span></div>
+        <div class="project-content">
+          <h3>Aetheris Analytics 대시보드</h3>
+          <p>기업 고객을 위한 실시간 데이터 분석 플랫폼. 30개 이상의 차트와 인터랙티브 필터 설계.</p>
+          <div class="project-techs">
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">TailwindCSS</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-preview">🛍️<span class="project-tag">E-Commerce</span></div>
+        <div class="project-content">
+          <h3>NOVA 브랜드 스토어</h3>
+          <p>미니멀 스트리트 패션 브랜드의 온라인 플래그십 스토어. 결제 연동 및 애니메이션 인터랙션.</p>
+          <div class="project-techs">
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Shopify API</span>
+            <span class="tech-pill">Framer Motion</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-preview">📱<span class="project-tag">Mobile App</span></div>
+        <div class="project-content">
+          <h3>Synapse 습관 관리 앱</h3>
+          <p>사용자 피드백 기반 직관적인 온보딩과 루틴 트래커. 첫 달 1만 다운로드 달성.</p>
+          <div class="project-techs">
+            <span class="tech-pill">React Native</span>
+            <span class="tech-pill">Figma</span>
+            <span class="tech-pill">Supabase</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="sec-title">
+      <h2>핵심 역량 및 도구</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h4>🎨 UI / UX Design</h4>
+        <p>사용자 리서치, 와이어프레임, 디자인 시스템 구축 (Figma, Protopie)</p>
+      </div>
+      <div class="skill-box">
+        <h4>💻 Modern Frontend</h4>
+        <p>Next.js, React, TailwindCSS, 성능 최적화 및 반응형 웹 구축</p>
+      </div>
+      <div class="skill-box">
+        <h4>🤖 AI-Augmented Coding</h4>
+        <p>Claude Code, GitHub Copilot 기반 고속 프로토타이핑 및 배포</p>
+      </div>
+      <div class="skill-box">
+        <h4>🚀 Deployment & SEO</h4>
+        <p>Vercel, 도메인 설정, 오픈그래프 최적화, 구글 검색 등록</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-box">
+    <h2>함께 멋진 프로젝트를 시작해볼까요?</h2>
+    <p>웹사이트 제작, 디자인 시스템 개편, 협업 제안 등 언제든 편하게 연락주세요.</p>
+    <a href="mailto:alex@example.com" class="btn-email">alex@example.com 으로 메일 보내기</a>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Alex Park. All rights reserved. | 바이브 코딩 포트폴리오 실습 예시</p>
+  </div>
+</footer>
+
+</body>
+</html>
