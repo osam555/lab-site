@@ -3,6 +3,7 @@ import Image from "next/image";
 import { COURSES } from "@/lib/courses";
 import { getAllLessons } from "@/lib/lessons";
 import { CourseCard } from "@/components/CourseCard";
+import { HeroVisual } from "@/components/HeroVisual";
 
 const MORE = [
   { href: "/skills", tag: "Skills", title: "바이브 스킬", desc: "Claude Code의 승인 모드, 계획 모드, 규칙 파일, 외부 연결까지 실전 가이드 6편." },
@@ -77,17 +78,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Hero Graphic */}
+            {/* Right: Animated Hero Visual */}
             <div className="hero-image-wrapper relative mx-auto w-full max-w-lg lg:max-w-none">
-              <div className="hero-image-glow" />
-              <Image
-                src="/hero-graphic.jpg"
-                alt="AI 코딩으로 홈페이지와 서비스를 만드는 모습"
-                width={720}
-                height={405}
-                className="hero-image relative z-10 rounded-2xl"
-                priority
-              />
+              <HeroVisual />
             </div>
           </div>
 
