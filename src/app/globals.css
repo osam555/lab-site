@@ -390,19 +390,30 @@ html[data-os="mac"] [data-os-block="windows"] {
     0 12px 40px rgba(0,0,0,.2),
     0 0 60px rgba(95,201,139,.08);
   border: 1px solid rgba(255,255,255,.06);
-  animation: hv-slow-rotate 30s linear infinite;
   transition: opacity .5s ease;
 }
+
+.anim-globe {
+  animation: hv-globe-spin 90s linear infinite;
+  border-radius: 50%; /* Make rotation smooth at edges */
+}
+@keyframes hv-globe-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.anim-wave {
+  filter: url(#wave-ripple);
+  animation: hv-wave-breathe 8s ease-in-out infinite;
+}
+@keyframes hv-wave-breathe {
+  0%,100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.02) translateY(-10px); }
+}
+
 @keyframes hv-img-float {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
-}
-@keyframes hv-slow-rotate {
-  0% { transform: rotate(0deg) scale(1); }
-  25% { transform: rotate(.5deg) scale(1.005); }
-  50% { transform: rotate(0deg) scale(1.01); }
-  75% { transform: rotate(-.5deg) scale(1.005); }
-  100% { transform: rotate(0deg) scale(1); }
 }
 
 /* ── Toggle pills ── */
