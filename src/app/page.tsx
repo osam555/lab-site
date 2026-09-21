@@ -116,7 +116,7 @@ export default function Home() {
 
       <section id="courses" className="mx-auto max-w-5xl px-4 py-16">
         <h2 className="text-2xl font-black tracking-tight sm:text-3xl">바이브 코딩 강좌</h2>
-        <p className="mt-2 text-muted">처음이라면 홈페이지 만들기부터. 전부 무료입니다.</p>
+        <p className="mt-2 text-muted">처음이라면 홈페이지 만들기부터.</p>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {COURSES.map((c) => (
             <CourseCard key={c.slug} course={c} lessonCount={getAllLessons(c.slug).length} />

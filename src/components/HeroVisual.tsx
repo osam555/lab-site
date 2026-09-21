@@ -43,29 +43,6 @@ export function HeroVisual() {
         ))}
       </div>
 
-      {/* Overlay: Floating terminal */}
-      <div className="hv-terminal hv-float-2">
-        <div className="hv-term-bar">
-          <span className="hv-dot-r" />
-          <span className="hv-dot-y" />
-          <span className="hv-dot-g" />
-        </div>
-        <div className="hv-term-body">
-          <div className="hv-term-line hv-type-1">
-            <span className="hv-prompt">$</span> claude &quot;홈페이지 만들어줘&quot;
-          </div>
-          <div className="hv-term-line hv-type-2">
-            <span className="hv-ok">✓</span> index.html 생성 완료
-          </div>
-          <div className="hv-term-line hv-type-3">
-            <span className="hv-ok">✓</span> style.css 적용
-          </div>
-          <div className="hv-term-line hv-type-4">
-            <span className="hv-ok">✓</span> 배포 → my-site.vercel.app
-          </div>
-        </div>
-      </div>
-
       {/* Floating particles */}
       <div className="hv-particle hv-p1" />
       <div className="hv-particle hv-p2" />
