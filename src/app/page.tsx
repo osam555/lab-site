@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { COURSES } from "@/lib/courses";
 import { getAllLessons } from "@/lib/lessons";
 import { CourseCard } from "@/components/CourseCard";
@@ -33,41 +34,69 @@ const FAQ = [
 export default function Home() {
   return (
     <>
-      <section className="mx-auto max-w-5xl px-4 pt-16 pb-12 sm:pt-24">
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-soft px-3 py-1 text-xs font-bold text-accent">
-          무료 · 입문자용 · 하루 1강
-        </p>
-        <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl">
-          코딩을 몰라도,
-          <br />
-          내 홈페이지와 내 서비스를 만듭니다.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-          Claude Code에게 방향을 알려주고 결과를 확인하는 방식으로 하루 한 강씩.
-          홈페이지와 웹 서비스를 만들고, 쇼츠·네이버 블로그·SNS 콘텐츠를 자동으로 찍어내는 파이프라인까지. 주제만 넣으면 돌아가는 자동화 공장을 직접 짓습니다.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/lectures/homepage" className="rounded-lg bg-accent px-5 py-3 font-bold text-white transition hover:opacity-90">
-            홈페이지 만들기부터 시작
-          </Link>
-          <Link href="/lectures" className="rounded-lg border border-line bg-card px-5 py-3 font-bold transition hover:border-accent">
-            전체 강좌 보기
-          </Link>
-        </div>
-      </section>
+      {/* ── Premium Hero ── */}
+      <section className="hero-section relative overflow-hidden">
+        {/* Background layers */}
+        <div className="hero-bg-gradient" />
+        <div className="hero-bg-grid" />
 
-      <section className="border-y border-line bg-card">
-        <div className="mx-auto grid max-w-5xl gap-6 px-4 py-10 sm:grid-cols-3">
-          {[
-            ["5개 강좌", "홈페이지 · 웹 서비스 · 쇼츠 · 네이버 블로그 · SNS"],
-            ["0줄", "외워야 하는 문법"],
-            ["Win · Mac", "두 운영체제 모두 안내"],
-          ].map(([n, label]) => (
-            <div key={label}>
-              <div className="text-3xl font-black text-accent">{n}</div>
-              <div className="mt-1 text-sm text-muted">{label}</div>
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 pb-0 sm:pt-20">
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+            {/* Left: Text */}
+            <div>
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent-soft px-4 py-1.5 text-xs font-bold text-accent">
+                <span className="hero-dot" />
+                무료 · 입문자용 · 하루 1강
+              </p>
+              <h1 className="text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+                코딩을 몰라도,
+                <br />
+                <span className="hero-text-gradient">내 홈페이지와 내 서비스</span>를
+                <br />
+                만듭니다.
+              </h1>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+                Claude Code에게 방향을 알려주고 결과를 확인하는 방식으로 하루 한 강씩.
+                랜딩페이지, 홈페이지, 웹 서비스를 만들고 쇼츠·블로그·SNS 콘텐츠까지 자동으로 생산합니다.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/lectures/landing-page" className="hero-cta-primary rounded-xl bg-accent px-6 py-3.5 font-bold text-white transition">
+                  랜딩페이지부터 시작 →
+                </Link>
+                <Link href="/lectures" className="rounded-xl border border-line bg-card/80 px-6 py-3.5 font-bold backdrop-blur-sm transition hover:border-accent">
+                  전체 강좌 보기
+                </Link>
+              </div>
             </div>
-          ))}
+
+            {/* Right: Hero Graphic */}
+            <div className="hero-image-wrapper relative mx-auto w-full max-w-lg lg:max-w-none">
+              <div className="hero-image-glow" />
+              <Image
+                src="/hero-graphic.jpg"
+                alt="AI 코딩으로 홈페이지와 서비스를 만드는 모습"
+                width={720}
+                height={405}
+                className="hero-image relative z-10 rounded-2xl"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Stats bar */}
+          <div className="hero-stats mt-12 grid grid-cols-2 gap-3 pb-12 sm:grid-cols-4 sm:gap-4">
+            {[
+              ["9개 강좌", "랜딩페이지 · 홈페이지 · 쇼츠 · 블로그 · SNS 등"],
+              ["15+ 사례", "복사해서 바로 쓰는 프롬프트 템플릿"],
+              ["0줄 암기", "외워야 하는 코드 문법"],
+              ["Win · Mac", "두 운영체제 모두 안내"],
+            ].map(([n, label]) => (
+              <div key={label} className="hero-stat-card rounded-xl border border-line/50 bg-card/60 p-4 backdrop-blur-md">
+                <div className="text-xl font-black text-accent sm:text-2xl">{n}</div>
+                <div className="mt-1 text-xs text-muted sm:text-sm">{label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
