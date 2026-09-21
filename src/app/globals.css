@@ -380,8 +380,7 @@ html[data-os="mac"] [data-os-block="windows"] {
   align-items: center;
   justify-content: center;
   z-index: 2;
-  perspective: 1000px;
-  animation: hv-img-float 6s ease-in-out infinite;
+  animation: hv-img-float 8s ease-in-out infinite;
 }
 .hv-main-img {
   width: 100%;
@@ -389,19 +388,21 @@ html[data-os="mac"] [data-os-block="windows"] {
   border-radius: 20px;
   box-shadow:
     0 12px 40px rgba(0,0,0,.2),
-    0 0 60px rgba(95,201,139,.1);
-  border: 1px solid rgba(255,255,255,.08);
-  animation: hv-slow-rotate 15s ease-in-out infinite;
+    0 0 60px rgba(95,201,139,.08);
+  border: 1px solid rgba(255,255,255,.06);
+  animation: hv-slow-rotate 30s linear infinite;
   transition: opacity .5s ease;
 }
 @keyframes hv-img-float {
-  0%,100% { transform: translateY(0) scale(1); filter: brightness(1); }
-  50% { transform: translateY(-20px) scale(1.02); filter: brightness(1.05); }
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 @keyframes hv-slow-rotate {
-  0%,100% { transform: rotate(0deg) rotateX(2deg) rotateY(-2deg) scale(1); box-shadow: 0 12px 40px rgba(0,0,0,.2), 0 0 60px rgba(95,201,139,.1); }
-  33% { transform: rotate(1.5deg) rotateX(-2deg) rotateY(3deg) scale(1.04); box-shadow: 0 24px 60px rgba(0,0,0,.3), 0 0 100px rgba(95,201,139,.15); }
-  66% { transform: rotate(-1deg) rotateX(3deg) rotateY(1deg) scale(1.02); box-shadow: 0 16px 50px rgba(0,0,0,.25), 0 0 80px rgba(95,201,139,.12); }
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(.5deg) scale(1.005); }
+  50% { transform: rotate(0deg) scale(1.01); }
+  75% { transform: rotate(-.5deg) scale(1.005); }
+  100% { transform: rotate(0deg) scale(1); }
 }
 
 /* ── Toggle pills ── */
