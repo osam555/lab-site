@@ -4,6 +4,7 @@ import Link from "next/link";
 import "./globals.css";
 import { NavLinks } from "@/components/NavLinks";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Analytics } from "@vercel/analytics/react";
 
 const sans = Noto_Sans_KR({
   variable: "--font-sans-kr",
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <p>© {new Date().getFullYear()} 바이브 코딩 랩. 모든 강의는 무료로 공개됩니다.</p>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
