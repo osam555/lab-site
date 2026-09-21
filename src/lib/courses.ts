@@ -70,6 +70,30 @@ export const COURSES: Course[] = [
     parts: ["1부 · 준비", "2부 · 파이프라인 만들기", "3부 · 자동화와 운영"],
     badge: "Windows · macOS",
   },
+  {
+    slug: "aside",
+    title: "Claude Aside 완전 가이드",
+    tagline: "Browser·Computer Use·MCP·스킬로 SEO·SNS·블로그·영상을 자동화",
+    description:
+      "Claude Code 데스크탑 앱의 Aside Browser, Computer Use, MCP 서버, Chrome Extension을 완전히 익히고 실전 자동화에 적용합니다. 서치 콘솔 자동 등록(SEO), 인스타·X·카카오채널 자동 배포(SNS), 네이버·티스토리 자동 포스팅(블로그), YouTube·쇼츠·릴스·틱톡 영상 파이프라인까지. 마지막에는 반복 작업을 스킬(SKILL.md)로 저장해 '스킬 써줘' 한 줄로 전체 파이프라인을 실행합니다.",
+    level: "입문+",
+    audience: "홈페이지·서비스를 만든 뒤 운영을 자동화하고 싶은 사람",
+    outcome: "Computer Use 자동화, SEO 루틴, SNS 5채널 배포, 블로그 원클릭 발행, 유튜브·쇼츠 파이프라인, 스킬 파일로 원클릭 자동화",
+    parts: ["1부 · Aside 도구 기초", "2부 · SEO 자동화", "3부 · SNS 자동 배포", "4부 · 블로그 자동화", "5부 · 영상 자동화"],
+    badge: "Windows · macOS",
+  },
+  {
+    slug: "homepage-cli",
+    title: "홈페이지 만들기 — 고급",
+    tagline: "지도 API·Analytics·MCP·어드민·SEO·대시보드까지",
+    description:
+      "기본 홈페이지 과정을 마친 뒤 한 단계 더. 네이버·카카오 지도 API, Vercel Analytics, Chrome Extension + Aside Browser(Computer Use), MCP 확장, 도메인 고급 설정, Pocketbase/Supabase 어드민, 카카오 OAuth, SEO 고급(JSON-LD·Core Web Vitals), 구글·네이버 서치 어드바이저, 통합 관리 대시보드까지 단계별로 다룹니다.",
+    level: "입문+",
+    audience: "홈페이지 과정을 마쳤고 더 많은 기능을 원하는 사람",
+    outcome: "지도 API, 방문자 통계, MCP 자동화, 어드민 대시보드, 카카오 로그인, SEO 고급, 검색 등록, 통합 관리 대시보드",
+    parts: ["고급 · 도구 활용", "고급 · 어드민 & 인증", "고급 · SEO & 대시보드"],
+    badge: "고급 · Windows · macOS",
+  },
 ];
 
 export function getCourse(slug: string) {

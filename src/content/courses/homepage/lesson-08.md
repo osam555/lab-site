@@ -7,6 +7,30 @@ minutes: 45
 part: 3부 · 공개
 ---
 
+## 이번 강에서만 터미널을 씁니다
+
+GitHub에 파일을 올리는 작업은 터미널 명령이 필요합니다. 딱 이 강에서만 씁니다. 명령은 네 줄이 전부입니다.
+
+**터미널 여는 법**
+
+::: windows
+시작 메뉴에서 **"PowerShell"** 을 검색해 실행합니다.
+:::
+
+::: mac
+`Cmd + Space` → **"터미널"** 검색해 실행합니다.
+:::
+
+터미널이 열리면 `my-site` 폴더로 이동합니다:
+
+```bash
+cd ~/Desktop/my-site
+```
+
+`Desktop/my-site`가 아닌 다른 곳에 폴더를 만들었다면 그 경로를 씁니다.
+
+---
+
 ## 두 단계
 
 1. **GitHub**: 내 파일을 보관하는 인터넷 창고. 백업이자 Vercel이 파일을 가져가는 곳.
@@ -23,7 +47,7 @@ part: 3부 · 공개
 
 ## 2. 내 컴퓨터와 GitHub 연결
 
-`my-site` 터미널에서 GitHub 화면의 세 줄을 순서대로 붙여넣습니다. 이런 모양입니다.
+앞서 연 터미널에서 GitHub 화면의 세 줄을 순서대로 붙여넣습니다. 이런 모양입니다:
 
 ```bash
 git remote add origin https://github.com/내아이디/my-site.git
@@ -31,42 +55,40 @@ git branch -M main
 git push -u origin main
 ```
 
+> `git remote add origin ...`은 내 폴더와 GitHub 창고를 처음 연결하는 명령입니다. 한 번만 합니다.
+
 ::: windows
-처음 push하면 **"Connect to GitHub"** 창이 뜹니다. **Sign in with your browser** → 브라우저에서 승인. 이 창은 Git 설치 때 같이 들어온 Git Credential Manager이고, 한 번 하면 다시 안 물어봅니다.
+처음 push하면 **"Connect to GitHub"** 창이 뜹니다. **Sign in with your browser** → 브라우저에서 승인. 한 번 하면 다시 안 물어봅니다.
 :::
 
 ::: mac
-처음 push하면 터미널에서 **Username**과 **Password**를 묻습니다. Password는 GitHub 비밀번호가 **아니라** 토큰입니다. 편한 방법은 GitHub CLI 설치:
-
-```bash
-brew install gh
-gh auth login
-```
-
-(`brew`가 없으면 Claude Code에게 "Homebrew 설치 명령어 알려줘".) `gh auth login`은 질문 몇 개 → 브라우저 승인. 끝나면 다시 `git push -u origin main`.
+처음 push하면 터미널에서 Username과 Password를 묻습니다. Password는 GitHub 비밀번호가 **아니라** 토큰입니다. 편한 방법은 GitHub 웹사이트 → Settings → Developer Settings → Personal access tokens → 토큰 발급 후 입력. 또는 Claude Code에게 "Mac에서 git push 인증 어떻게 해?"라고 물어보세요.
 :::
 
-막히면 Claude Code에게: "git push 했더니 이런 에러가 나: [붙여넣기]".
+막히면 Claude Code 대화창에: "git push 했더니 이런 에러가 나: [붙여넣기]"
 
 성공하면 GitHub 페이지를 새로고침하세요. 내 파일들이 보입니다.
 
-## 3. Vercel 연결
+## 3. Vercel 연결 (웹 대시보드)
 
-1. vercel.com → **Continue with GitHub**로 가입 (GitHub 계정 연결 승인)
+터미널 없이 클릭만으로 배포합니다.
+
+1. vercel.com → **Continue with GitHub** 로 가입 (GitHub 계정 연결 승인)
 2. **Add New… → Project**
 3. `my-site` 저장소 옆 **Import**
-4. 설정은 건드리지 않고 **Deploy**. Framework Preset이 "Other"면 정상입니다 (프레임워크 없이 HTML만 쓰니까요)
+4. 설정은 건드리지 않고 **Deploy**
+   - Framework Preset이 "Other"면 정상입니다 (프레임워크 없이 HTML만 쓰니까요)
 5. 30초쯤 뒤 축하 화면과 함께 주소가 나옵니다: `my-site-xxxx.vercel.app`
 
 **폰으로 열어보세요.** 여러분이 만든 홈페이지가 인터넷 어디서나 보입니다. 친구에게 링크를 보내보세요.
 
 ## 4. 수정 → 반영 리듬
 
-이제부터 수정은 이렇게 됩니다.
+이제부터 수정할 때는:
 
-1. Claude Code에게 고쳐달라고 함
-2. 브라우저에서 확인
-3. 커밋 + push
+1. 앱 대화창에서 Claude Code에게 고쳐달라고 함
+2. 미리보기에서 확인
+3. 앱 터미널 탭에서 커밋 + push
 
 ```bash
 git add .
@@ -74,7 +96,9 @@ git commit -m "영업시간 수정"
 git push
 ```
 
-push하면 Vercel이 자동으로 알아채고 1분 안에 새 버전을 올립니다. 이 세 줄이 귀찮으면 Claude Code에게 "지금까지 바뀐 거 커밋하고 push해줘"라고 하면 됩니다.
+push하면 Vercel이 자동으로 알아채고 1분 안에 새 버전을 올립니다.
+
+세 줄이 귀찮으면 Claude Code에게 "지금까지 바뀐 거 커밋하고 push해줘"라고 하면 됩니다.
 
 지금 바로 한 번 해보세요. 하단 문구를 하나 바꾸고 → 커밋 → push → 1분 뒤 폰에서 새로고침.
 
