@@ -1,51 +1,105 @@
 ---
 number: 6
-title: ElevenLabs 더빙과 호흡 맞추기
-subtitle: 컷마다 음성 하나, 그리고 사람의 귀
-goal: ElevenLabs API 스크립트로 컷별 나레이션을 생성하고, 각 음성 길이를 재어 4초 호흡에 맞지 않는 컷을 손봅니다.
-minutes: 50
+title: 더빙 — ElevenLabs & Typecast 선택하기
+subtitle: 한국어 자연스러움은 Typecast, 다국어·감정 표현은 ElevenLabs
+goal: ElevenLabs와 Typecast 두 서비스의 특징을 비교하고, 내 쇼츠에 맞는 목소리를 선택해 컷별 음성을 자동 생성합니다. 길이가 안 맞는 컷을 손보는 호흡 맞추기까지 완료합니다.
+minutes: 55
 part: 2부 · 파이프라인 만들기
 ---
 
-## 왜 컷별로 나누나요?
+## 두 서비스 비교
 
-나레이션을 한 덩어리로 만들면 클립과 타이밍을 맞추기가 어렵습니다. **컷 하나 = 음성 파일 하나**로 만들면 7강에서 클립과 음성을 1:1로 붙이기만 하면 됩니다. 어색한 컷도 그 컷만 다시 만들면 되고요.
+| | **Typecast** | **ElevenLabs** |
+|---|---|---|
+| **개발사** | 네오사피엔스 (한국) | ElevenLabs (미국) |
+| **한국어 품질** | ⭐⭐⭐⭐⭐ 네이티브 수준 | ⭐⭐⭐ 다국어 모델 |
+| **한국어 목소리** | 100+ (성별·나이·톤 다양) | 20개 내외 |
+| **감정 표현** | 보통 | 매우 풍부 |
+| **가격** | 무료 플랜 있음, 월정액 | 무료 1만 자/월, 이후 유료 |
+| **API** | REST API 제공 | REST API 제공 |
+| **적합한 쇼츠** | 한국어 지식·일상 쇼츠 | 영어 혼용·감정 강조 쇼츠 |
 
-## 목소리 고르기
+**권장**: 한국어 쇼츠 → **Typecast 우선**, 영어·다국어 → ElevenLabs
 
-elevenlabs.io → Voices에서 들어보고 하나를 고릅니다. 지식 쇼츠엔 **차분하고 또렷한 목소리**가 맞습니다. 고른 목소리의 **Voice ID**를 복사해 `.env`에 추가:
+---
+
+## Typecast 설정
+
+### 1. 가입 및 목소리 선택
+
+1. [typecast.ai](https://typecast.ai) 가입
+2. **목소리 탐색** → 카테고리(전문가·청년·중년 등)로 필터
+3. 미리듣기 → 마음에 드는 목소리의 **Actor ID** 복사
+
+`.env`에 추가:
 
 ```
-ELEVENLABS_VOICE_ID=여기에
+TYPECAST_API_TOKEN=여기에
+TYPECAST_ACTOR_ID=여기에
 ```
 
-한국어 품질은 다국어 모델(예: `eleven_multilingual_v2` 계열)이 좋습니다. 모델 이름은 ElevenLabs 문서에서 현재 것을 확인하세요. Claude Code에게 "ElevenLabs API 문서에서 한국어 지원 최신 모델 이름 확인해줘"라고 해도 됩니다.
+### 2. Typecast 더빙 스크립트
 
-## 따라하기 1: 더빙 스크립트
-
-> scripts/dub.py (또는 dub.mjs)를 만들어줘.
-> - script.json을 읽어 각 컷의 ko 텍스트를 ElevenLabs API로 음성 변환, voice/cut-NN.mp3로 저장
-> - 키와 voice id는 환경변수 ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID에서
-> - 실행 전에 총 글자 수와 예상 소모량을 출력하고 y를 입력해야 진행
-> - 이미 있는 mp3는 건너뛰고, `--only 5,12` 처럼 특정 컷만 다시 만들 수 있게
+> scripts/dub-typecast.py를 만들어줘.
+> - script.json을 읽어 각 컷의 ko 텍스트를 Typecast API로 음성 변환
+> - 출력: voice/cut-NN.mp3
+> - API 토큰·Actor ID는 .env의 TYPECAST_API_TOKEN, TYPECAST_ACTOR_ID에서
+> - 진행 전 총 글자 수와 예상 크레딧 소모를 출력하고 y 확인 후 실행
+> - 이미 있는 mp3는 건너뛰기, --only 5,12 옵션으로 특정 컷만 재생성
+> - Typecast API는 비동기이므로 작업 ID를 받아 3초마다 완료 여부를 폴링
 > - 각 파일 생성 후 ffprobe로 길이를 재서 voice/durations.json에 기록
-> - 실패한 컷은 번호를 모아 마지막에 출력
+> - 실패한 컷 번호를 모아 마지막에 출력
 
 실행:
 
 ```bash
-python3 scripts/dub.py
+python3 scripts/dub-typecast.py
 ```
 
 ::: windows
-`python3`이 없다는 에러가 나면 `python scripts/dub.py`로. 그래도 없으면 Microsoft Store에서 Python 3 설치 (또는 Claude에게 node 버전으로 만들어 달라고).
+`python3`이 없다는 에러가 나면 `python scripts/dub-typecast.py`로. 그래도 없으면 Microsoft Store에서 Python 3 설치.
 :::
 
 ::: mac
 macOS에는 python3이 기본으로 있습니다. `ModuleNotFoundError`가 나면 Claude가 알려주는 `pip3 install ...`을 실행하세요.
 :::
 
-## 따라하기 2: 길이 점검
+---
+
+## ElevenLabs 설정 (대안)
+
+한국어 품질이 Typecast보다 낮지만, 영어 혼용이나 특별한 감정 표현이 필요할 때 사용합니다.
+
+`.env`에 추가:
+
+```
+ELEVENLABS_API_KEY=여기에
+ELEVENLABS_VOICE_ID=여기에
+```
+
+> scripts/dub-elevenlabs.py를 만들어줘.
+> - script.json의 ko 텍스트를 ElevenLabs API로 변환
+> - 모델: eleven_multilingual_v2 (한국어 품질 최적)
+> - 나머지 옵션은 dub-typecast.py와 동일하게
+
+한국어 품질이 어색하면 `voice_settings`의 `stability`를 0.7 이상으로 올려보세요.
+
+---
+
+## 두 서비스를 컷별로 다르게 쓰기
+
+> script.json의 각 컷에 "tts" 필드를 추가해줘. 값: "typecast" 또는 "elevenlabs".
+> dub.py를 만들어서 컷마다 지정된 서비스를 자동으로 골라 실행해줘.
+
+예: 일반 나레이션은 Typecast, 숫자 강조 컷은 ElevenLabs.
+
+---
+
+## 길이 점검 및 호흡 맞추기
+
+두 서비스 모두 동일한 방법으로 확인합니다.
+
+### 길이 확인
 
 > voice/durations.json을 표로 보여주고, 4.0초를 넘거나 3.0초에 못 미치는 컷을 표시해줘.
 
@@ -55,43 +109,41 @@ macOS에는 python3이 기본으로 있습니다. `ModuleNotFoundError`가 나�
 | 5 | 19 | 4.4s | 김 |
 | 9 | 11 | 2.4s | 짧음 |
 
-## 휴먼 터치: 호흡 맞추기
+### 호흡 맞추기 — 우선순위
 
-여기가 **사람이 꼭 개입해야 하는 지점**입니다. 기계적으로 속도를 바꾸면 티가 납니다. 순서대로:
+**1순위: 대본 다듬기** (가장 자연스러움)
 
-### 1순위: 대본을 다듬는다
-가장 자연스럽습니다. 긴 컷은 조사·수식어를 빼고, 짧은 컷은 여운 한 마디를 더합니다.
+> 5번 컷 "위에는 무려 600만 톤의 돌이 얹혀 있는데"를 "위엔 돌 600만 톤이 얹혀 있는데"로 script.json에서 고치고, 5번만 다시 더빙해줘.
 
-> 5번 컷 "위에는 무려 600만 톤의 돌이 얹혀 있는데" 를 "위엔 돌 600만 톤이 얹혀 있는데" 로 script.json에서 고치고, 5번만 다시 더빙해줘.
+**2순위: 무음 패딩** (짧은 컷)
 
-3강에서 "대본 확정 후 바꾸면 클립도 바뀐다"고 했지만, **의미가 같은 문장 다듬기는 클립에 영향이 없습니다.** 프롬프트를 안 건드리니까요.
+> 9번 컷은 2.4초라 짧아. 앞뒤에 0.5초씩 무음을 붙여 3.4초로 만들어줘.
 
-### 2순위: 음성 속도를 미세 조정한다
-ElevenLabs의 속도 설정이나 ffmpeg의 `atempo`로 ±10% 이내. 그 이상은 부자연스럽습니다.
+**3순위: 클립 길이를 음성에 맞추기** (7강에서 처리)
 
-> 9번 컷은 2.4초라 짧아. 대본은 그대로 두고 앞뒤에 0.5초씩 무음을 붙여 3.4초로 만들어줘.
+전체 길이가 60~90초를 벗어나지 않는지만 확인합니다.
 
-짧은 컷은 **무음을 붙이는 게** 속도를 늦추는 것보다 낫습니다. 잠깐의 침묵은 강조가 됩니다.
+---
 
-### 3순위: 클립 길이를 음성에 맞춘다
-7강에서 클립을 음성 길이에 맞춰 잘라 붙이면, 3.6초 음성 컷은 3.6초 클립이 됩니다. 이 방법을 쓰면 위 두 단계를 덜 해도 됩니다. 단, 전체 길이가 80~100초를 벗어나지 않는지만 확인.
-
-## 따라하기 3: 이어 듣기
+## 이어 듣기 확인
 
 > voice/의 mp3를 번호순으로 이어 붙여 voice/preview.mp3를 만들어줘. 컷 사이에 0.3초 무음.
 
-**눈 감고 끝까지 들어보세요.** 발음이 이상한 단어(고유명사, 숫자)가 있으면:
+눈 감고 끝까지 들어보세요. 발음이 어색한 단어는:
 
-> 12번 컷의 "쿠푸"를 "쿠푸 왕"으로, 3번 컷의 "2.3m"를 "2.3미터"로 고치고 그 두 컷만 다시 더빙.
+> 12번 컷의 "쿠푸"를 "쿠푸 왕"으로, 3번 컷의 "2.3m"를 "2.3미터"로 고치고 그 두 컷만 다시 더빙해줘.
 
-숫자와 단위는 **한글로 풀어 쓰면** 읽기가 안정됩니다.
+숫자·단위는 한글로 풀어 쓰면 두 서비스 모두 읽기가 안정됩니다.
+
+---
 
 ## 오늘의 체크리스트
 
-- [ ] `voice/cut-01.mp3` ~ `cut-22.mp3`가 있다
-- [ ] durations.json에서 모든 컷이 3.0~4.2초 안에 있다 (또는 3순위 방식을 쓰기로 정했다)
-- [ ] preview.mp3를 끝까지 듣고 발음 문제를 고쳤다
-- [ ] 커밋했다 (`voice/`도 `.gitignore`에)
+- [ ] Typecast 또는 ElevenLabs 중 하나를 선택하고 .env를 설정했다
+- [ ] `voice/cut-01.mp3` ~ `cut-NN.mp3`가 생성됐다
+- [ ] durations.json에서 모든 컷이 3.0~4.2초 안에 있다
+- [ ] preview.mp3를 끝까지 듣고 발음 문제를 수정했다
+- [ ] 커밋했다 (`voice/`는 `.gitignore`에 추가)
 
 ## 다음 강의
 
