@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { InteractiveGlobe } from "./InteractiveGlobe";
 
 const SCENES = [
   { key: "globe", src: "/hero-globe.jpg", alt: "디지털 지구본 — 코드 네트워크", label: "🌍 Globe" },
@@ -19,15 +20,19 @@ export function HeroVisual() {
 
       {/* Main visual image — switches between globe/wave */}
       <div className="hv-main-image">
-        <Image
-          key={scene.key}
-          src={scene.src}
-          alt={scene.alt}
-          width={720}
-          height={540}
-          className="hv-main-img"
-          priority
-        />
+        {scene.key === "globe" ? (
+          <InteractiveGlobe />
+        ) : (
+          <Image
+            key={scene.key}
+            src={scene.src}
+            alt={scene.alt}
+            width={720}
+            height={540}
+            className="hv-main-img"
+            priority
+          />
+        )}
       </div>
 
       {/* Scene toggle pills */}
@@ -44,15 +49,15 @@ export function HeroVisual() {
       </div>
 
       {/* Floating particles */}
-      <div className="hv-particle hv-p1" />
-      <div className="hv-particle hv-p2" />
-      <div className="hv-particle hv-p3" />
-      <div className="hv-particle hv-p4" />
-      <div className="hv-particle hv-p5" />
+      <div className="hv-particle hv-p1 pointer-events-none" />
+      <div className="hv-particle hv-p2 pointer-events-none" />
+      <div className="hv-particle hv-p3 pointer-events-none" />
+      <div className="hv-particle hv-p4 pointer-events-none" />
+      <div className="hv-particle hv-p5 pointer-events-none" />
 
       {/* Floating badges */}
-      <div className="hv-badge hv-badge-1">🚀 배포 완료</div>
-      <div className="hv-badge hv-badge-2">✨ 반응형</div>
+      <div className="hv-badge hv-badge-1 pointer-events-none">🚀 배포 완료</div>
+      <div className="hv-badge hv-badge-2 pointer-events-none">✨ 반응형</div>
     </div>
   );
 }
