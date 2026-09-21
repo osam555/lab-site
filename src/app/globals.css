@@ -394,12 +394,12 @@ html[data-os="mac"] [data-os-block="windows"] {
 }
 
 .anim-globe {
-  animation: hv-globe-spin 90s linear infinite;
-  border-radius: 50%; /* Make rotation smooth at edges */
+  animation: hv-globe-spin 12s ease-in-out infinite;
+  transform-style: preserve-3d;
 }
 @keyframes hv-globe-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  0%,100% { transform: perspective(1200px) rotateY(-2deg) rotateX(1deg) translateY(0); }
+  50% { transform: perspective(1200px) rotateY(2deg) rotateX(-1deg) translateY(-8px); }
 }
 
 .anim-wave {
