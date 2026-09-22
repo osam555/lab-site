@@ -19,7 +19,7 @@ const mono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "바이브코딩 랩 대충영어 오쌤",
+    default: "바이브코딩 랩 · 대충영어 오쌤",
     template: "%s · 바이브코딩 랩 대충영어 오쌤",
   },
   description:
@@ -44,10 +44,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <header className="sticky top-0 z-20 border-b border-line bg-background/85 backdrop-blur">
           <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
-            <Link href="/" className="flex items-center gap-2 font-black tracking-tight">
-              <span className="inline-block h-6 w-6 rounded-md bg-accent" aria-hidden />
-              <span>바이브코딩 랩 대충영어 오쌤</span>
-            </Link>
+            <div className="flex items-center gap-2.5">
+              <Link href="/" className="flex items-center gap-2 font-black tracking-tight hover:opacity-90 transition-opacity">
+                <span className="inline-block h-6 w-6 rounded-md bg-accent" aria-hidden />
+                <span>바이브코딩 랩</span>
+              </Link>
+              <a
+                href="https://brain-hz.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-full bg-accent/10 text-accent hover:bg-accent hover:text-white transition-all"
+                title="대충영어 오쌤 공식 사이트"
+              >
+                대충영어 오쌤 ↗
+              </a>
+            </div>
             <div className="flex items-center gap-3">
               <NavLinks />
               <ThemeToggle />
@@ -57,7 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <footer className="border-t border-line">
           <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-muted">
-            <p>© {new Date().getFullYear()} 바이브코딩 랩 대충영어 오쌤. 모든 강의는 무료로 공개됩니다.</p>
+            <p>© {new Date().getFullYear()} 바이브코딩 랩 · <a href="https://brain-hz.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accent underline font-medium">대충영어 오쌤</a>. 모든 강의는 무료로 공개됩니다.</p>
           </div>
         </footer>
         <Analytics />
