@@ -23,6 +23,19 @@ part: 2부 · 만들기
 
 ### 🏪 가게·매장 (카페, 식당, 미용실, 꽃집 등)
 
+<div class="not-prose my-4">
+  <div class="tip-box">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div>
+        <span class="font-bold text-accent">☕ 카페/매장 샘플:</span> 감성 카페 홈페이지 라이브 미리보기
+      </div>
+      <a href="/examples/homepage-cafe.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+        완성 샘플 미리보기 ↗
+      </a>
+    </div>
+  </div>
+</div>
+
 **준비할 파일** — `my-site/` 폴더에 넣어두세요:
 
 | 준비물 | 설명 | 파일명 예시 |
@@ -64,6 +77,19 @@ SNS: (인스타그램, 카카오채널 등)
 
 ### 👤 포트폴리오·이력서 (디자이너, 프리랜서, 작가 등)
 
+<div class="not-prose my-4">
+  <div class="tip-box">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div>
+        <span class="font-bold text-accent">💼 포트폴리오 샘플:</span> 모던 개발자/디자이너 포트폴리오 미리보기
+      </div>
+      <a href="/examples/homepage-portfolio.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+        완성 샘플 미리보기 ↗
+      </a>
+    </div>
+  </div>
+</div>
+
 **준비할 파일:**
 
 | 준비물 | 설명 | 파일명 예시 |
@@ -102,6 +128,19 @@ SNS/링크: (GitHub, Behance, LinkedIn 등)
 ---
 
 ### 🏢 소규모 사업체·회사 (학원, 사무소, 공방 등)
+
+<div class="not-prose my-4">
+  <div class="tip-box">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div>
+        <span class="font-bold text-accent">🏢 기업/소호 샘플:</span> IT 테크 소규모 회사 홈페이지 미리보기
+      </div>
+      <a href="/examples/homepage-company.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+        완성 샘플 미리보기 ↗
+      </a>
+    </div>
+  </div>
+</div>
 
 **준비할 파일:**
 

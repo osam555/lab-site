@@ -38,6 +38,19 @@ part: 2부 · 유형별 실전
 
 ## 사례 C: 뉴스레터 구독
 
+<div class="not-prose my-4">
+  <div class="tip-box">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div>
+        <span class="font-bold text-accent">🎨 대표 실습 샘플:</span> 뉴스레터 구독 랜딩페이지 미리보기
+      </div>
+      <a href="/examples/landing-newsletter.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+        실제 결과물 완성 샘플 보기 ↗
+      </a>
+    </div>
+  </div>
+</div>
+
 > index.html을 만들어줘. "주간 AI 트렌드" 뉴스레터 구독 랜딩페이지.
 > 1. 히어로: "매주 월요일, AI 소식을 5분으로 정리해드립니다" + 이메일 입력 + "무료 구독" 버튼. 아래 "구독자 2,400명이 읽고 있습니다"
 > 2. 최근 뉴스레터 3개: 제목 + 날짜 + 요약 1줄. 클릭하면 샘플 볼 수 있게 (별도 HTML 또는 외부 링크)
@@ -63,6 +76,15 @@ part: 2부 · 유형별 실전
 - [ ] **혜택이 명확**: 할인율, 사은품, 무료 콘텐츠
 - [ ] **폼이 짧다**: 이름·이메일만. 많으면 이탈
 - [ ] **사회적 증거**: "342명 신청", "2,400명 구독 중"
+
+<div class="not-prose my-6">
+  <div class="help-box">
+    <div class="font-bold text-amber-400 text-sm mb-1">🚨 카운트다운 타이머가 안 움직이나요?</div>
+    <div class="text-sm text-text-muted">
+      AI가 작성한 JavaScript 카운트다운 날짜가 과거로 설정되어 있으면 "00일 00시간 00분"으로 고정될 수 있습니다. AI에게 <i>"카운트다운 목표 날짜를 오늘부터 7일 뒤로 자동 계산하도록 수정해줘"</i>라고 요청하세요.
+    </div>
+  </div>
+</div>
 
 ## 다음 강의
 

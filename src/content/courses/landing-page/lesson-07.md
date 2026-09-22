@@ -23,6 +23,19 @@ part: 2부 · 유형별 실전
 
 ## 사례 A: 프리랜서 디자이너
 
+<div class="not-prose my-4">
+  <div class="tip-box">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div>
+        <span class="font-bold text-accent">🎨 대표 실습 샘플:</span> 디자이너/프리랜서 포트폴리오 랜딩 미리보기
+      </div>
+      <a href="/examples/homepage-portfolio.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+        실제 결과물 완성 샘플 보기 ↗
+      </a>
+    </div>
+  </div>
+</div>
+
 > index.html을 만들어줘. 프리랜서 브랜드 디자이너 랜딩페이지.
 > 1. 히어로: 왼쪽에 images/profile.jpg 원형 + "매출을 올리는 브랜드 디자인" + "프로젝트 의뢰하기" 버튼, 오른쪽에 대표 작업물 3개 작은 미리보기
 > 2. 실적 숫자: "프로젝트 120+" / "재의뢰율 87%" / "경력 8년"
@@ -62,6 +75,15 @@ part: 2부 · 유형별 실전
 - [ ] **가격을 명시**: 숨기면 문의 자체가 줄어듦
 - [ ] **프로세스를 보여줘**: 의뢰하면 어떻게 진행되는지
 - [ ] **CTA가 구체적**: "문의하기"보다 "무료 30분 상담 신청"
+
+<div class="not-prose my-6">
+  <div class="help-box">
+    <div class="font-bold text-amber-400 text-sm mb-1">🚨 내 프로필 사진이나 작업 사진이 준비 안 되었다면?</div>
+    <div class="text-sm text-text-muted">
+      무료 고화질 이미지 사이트인 <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" class="text-accent underline font-semibold">Unsplash</a>에서 원하는 이미지를 다운로드하거나, AI에게 <i>"SVG 그래픽 아이콘으로 대체해줘"</i>라고 지시하세요.
+    </div>
+  </div>
+</div>
 
 ## 다음 강의
 

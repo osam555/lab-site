@@ -65,11 +65,29 @@ macOS는 8강에서 처음 `git` 명령을 입력할 때 자동으로 설치 안
 미리 하고 싶다면: `Cmd + Space` → "터미널" 실행 → `git -v` 입력 → 설치 창이 뜨면 **설치**.
 :::
 
+<div class="not-prose my-6">
+  <div class="tip-box">
+    <div class="font-bold text-accent text-sm mb-1">💡 초보자 참고 팁</div>
+    <div class="text-sm text-text-muted">
+      Mac 사용자 중 <code class="text-accent">.dmg</code> 파일이 실행되지 않는 경우: [시스템 설정] → [개인정보보호 및 보안]에서 "확인되지 않은 개발자" 설치 허용 버튼을 눌러주세요.
+    </div>
+  </div>
+</div>
+
 ## 설치 문제가 생기면
 
 에러 메시지를 **그대로 복사**해서 claude.ai 채팅창에 붙여넣고 물어보세요.
 
 > "Claude Code 앱 설치 중 이런 오류가 나왔어: [에러 메시지]. 어떻게 해?"
+
+<div class="not-prose my-6">
+  <div class="help-box">
+    <div class="font-bold text-amber-400 text-sm mb-1">🚨 로그인 창에서 계속 대기 상태가 되나요?</div>
+    <div class="text-sm text-text-muted">
+      기본 브라우저(Chrome/Safari 등)의 팝업 차단 기능 때문일 수 있습니다. 주소창 우측 팝업 허용 버튼을 누르거나 로그인 링크 URL을 직접 복사해 주소창에 붙여넣어 보세요.
+    </div>
+  </div>
+</div>
 
 ## 오늘의 체크리스트
 

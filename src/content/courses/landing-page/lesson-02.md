@@ -147,6 +147,11 @@ CTA: (상담 신청, 포트폴리오 다운로드 등)
 
 ---
 
+<div class="tip-box not-prose">
+  <div class="tip-box-title">💡 초보자를 위한 준비물 팁</div>
+  <p><strong>적당한 사진이 없다면?</strong> 걱정마세요! Unsplash(unsplash.com) 같은 무료 스톡 이미지 사이트에서 검색해 다운받으시거나, 텍스트 형태의 플레이스홀더 이미지를 사용하셔도 됩니다.</p>
+</div>
+
 ## 사진 파일 규칙
 
 1. **이름**: 영어 소문자 + 하이픈. `제품사진.jpg` ❌ → `product.jpg` ✅

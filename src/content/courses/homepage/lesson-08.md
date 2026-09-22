@@ -114,9 +114,27 @@ PC의 폰 모드와 진짜 폰은 다릅니다. 폰에서 직접:
 
 문제가 있으면 폰 화면을 캡처해서 Claude Code에 붙여넣고 "폰에서 이렇게 보여. 고쳐줘".
 
+<div class="not-prose my-6">
+  <div class="tip-box">
+    <div class="font-bold text-accent text-sm mb-1">💡 초보자 배포 팁</div>
+    <div class="text-sm text-text-muted">
+      GitHub 업로드가 낯설더라도 딱한 번만 연결해두면, 이후로는 터미널에서 <code class="text-accent">git push</code> 한 줄만 치거나 AI에게 <i>"배포해줘"</i>라고 말하면 몇 초 만에 홈페이지가 실시간 업데이트됩니다!
+    </div>
+  </div>
+</div>
+
 ## Vercel 주소가 마음에 안 든다면
 
 Vercel 프로젝트 → **Settings → Domains**에서 `원하는이름.vercel.app`으로 바꿀 수 있습니다 (남이 안 쓴 이름이면). 진짜 내 도메인은 9강에서.
+
+<div class="not-prose my-6">
+  <div class="help-box">
+    <div class="font-bold text-amber-400 text-sm mb-1">🚨 git push 할 때 인증 에러가 뜨나요?</div>
+    <div class="text-sm text-text-muted">
+      GitHub 비밀번호 대신 <b>Personal Access Token (PAT)</b>을 입력해야 할 수 있습니다. 초보자분들은 Vercel 웹사이트에서 직접 GitHub 계정을 싱크하는 방식을 권장합니다.
+    </div>
+  </div>
+</div>
 
 ## 오늘의 체크리스트
 

@@ -49,12 +49,30 @@ part: 2부 · 유형별 실전
 > 7. "와디즈에서 후원하기" 버튼 + 펀딩 마감일
 > 제품 중심 미니멀 디자인. 흰 배경.
 
+<div class="not-prose my-6">
+  <div class="tip-box">
+    <div class="font-bold text-accent text-sm mb-1">💡 초보자 참고 팁</div>
+    <div class="text-sm text-text-muted">
+      앱 랜딩페이지에서는 모바일 화면 목업(Mockup) 프레임 안에 스크린샷 이미지(<code class="text-accent">images/screen-1.png</code> 등)를 넣는 것이 핵심입니다. 이미지 파일이 아직 없다면 AI에게 <i>"임시 폰 목업 CSS 디자인으로 보여줘"</i>라고 요청해도 됩니다!
+    </div>
+  </div>
+</div>
+
 ## 앱·사전예약 랜딩페이지 팁
 
 - **폰 스크린샷은 목업 안에**: 실제 폰 안에 들어간 것처럼 보이면 전환율 ↑
 - **숫자를 크게**: 다운로드 수, 별점, 달성률
 - **긴급성**: 카운트다운, 남은 자리, 마감일
 - **다운로드 버튼은 브랜드 색 그대로**: App Store 검정, Play Store 초록
+
+<div class="not-prose my-6">
+  <div class="help-box">
+    <div class="font-bold text-amber-400 text-sm mb-1">🚨 다운로드 버튼 링크 동작이 안 되나요?</div>
+    <div class="text-sm text-text-muted">
+      아직 실제 App Store / Play Store 링크가 없다면 버튼의 <code class="text-accent">href="#"</code> 속성을 유지해두고, AI에게 <i>"버튼 클릭 시 '준비 중입니다' 알림(alert)창이 뜨게 해줘"</i>라고 지시하면 테스트하기 편합니다.
+    </div>
+  </div>
+</div>
 
 ## 다음 강의
 

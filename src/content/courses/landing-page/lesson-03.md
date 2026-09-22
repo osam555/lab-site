@@ -13,6 +13,16 @@ part: 2부 · 유형별 실전
 - "지금 시작하기", "구매하기" 버튼을 누르게 하고 싶을 때
 - 킥스타터·텀블벅 같은 펀딩 페이지 대신 내 페이지가 필요할 때
 
+<div class="tip-box not-prose">
+  <div class="tip-box-title">💡 실제 완성된 라이브 예시 미리보기</div>
+  <p>이 프롬프트로 완성된 실제 결과물을 <a href="/examples/landing-saas.html" target="_blank" class="font-bold text-accent underline">SaaS 랜딩페이지 라이브 데모 ↗</a>를 클릭해 새 탭에서 바로 체험해보세요.</p>
+</div>
+
+<div class="help-box not-prose">
+  <div class="help-box-title">❓ 초보자 질문: Claude Code가 만든 화면은 어떻게 보나요?</div>
+  <p><code>index.html</code> 파일이 생성되면, 내 컴퓨터의 폴더에서 <code>index.html</code>을 더블클릭하거나 브라우저(Chrome) 창으로 드래그해 놓으시면 즉시 화면 결과를 확인하실 수 있습니다.</p>
+</div>
+
 ## 사례 A: SaaS 도구
 
 > CLAUDE.md를 만들어줘. 이 프로젝트는 SaaS 서비스 랜딩페이지다. HTML과 CSS만 쓴다. 나는 코딩을 모른다. 한국어로 설명해줘.

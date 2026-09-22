@@ -69,6 +69,15 @@ git push -u origin main
 3. **Framework Preset: Other** → **Deploy**
 4. 30초 후 `https://my-landing-xxxxx.vercel.app`으로 공개
 
+<div class="not-prose my-6">
+  <div class="tip-box">
+    <div class="font-bold text-accent text-sm mb-1">💡 초보자 배포 팁</div>
+    <div class="text-sm text-text-muted">
+      HTML/CSS로 만든 정적 페이지는 Vercel 설정 중 <b>Framework Preset</b>을 <code class="text-accent">Other</code> (또는 Build Command 비워두기)로 지정하면 단 몇 초 만에 무료 배포 URL이 생성됩니다!
+    </div>
+  </div>
+</div>
+
 ### 도메인 연결
 
 > 내 도메인 my-product.com을 Vercel에 연결하는 순서를 알려줘.
@@ -135,6 +144,15 @@ SNS에 둘 다 올려서 어느 쪽이 더 클릭이 많은지 비교. 이긴 �
 - [ ] GitHub에 올렸다
 - [ ] Vercel에 배포됐다
 - [ ] 전환 추적(Analytics)이 켜져 있다
+
+<div class="not-prose my-6">
+  <div class="help-box">
+    <div class="font-bold text-amber-400 text-sm mb-1">🎉 축하합니다! 완강을 축하드립니다!</div>
+    <div class="text-sm text-text-muted">
+      이제 여러분만의 첫 번째 멋진 랜딩페이지가 세상에 공개되었습니다! 만든 사이트 주소를 블로그나 SNS에 공유하여 첫 고객 반응을 직접 테스트해 보세요.
+    </div>
+  </div>
+</div>
 
 ## 과정 완료!
 

@@ -70,6 +70,15 @@ Claude가 "알겠습니다"라고 답하면 준비 끝입니다.
 
 **되돌리기**: 잘못됐다 싶으면 대화창에 "방금 한 거 되돌려줘"라고 말하면 됩니다.
 
+<div class="not-prose my-6">
+  <div class="tip-box">
+    <div class="font-bold text-accent text-sm mb-1">💡 초보자 추천 프롬프트</div>
+    <div class="text-sm text-text-muted">
+      "나는 코딩을 처음 하는 초보자야. 앞으로 쉬운 한국어로 설명해주고 명령어 실행 전에 꼭 물어봐줘!" 라고 말해두면 AI가 친절하게 단계를 나누어 도와줍니다.
+    </div>
+  </div>
+</div>
+
 ## 오늘의 체크리스트
 
 - [ ] 바탕화면에 `my-site` 폴더가 있다

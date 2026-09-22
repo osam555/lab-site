@@ -27,6 +27,11 @@ part: 2부 · 유형별 실전
 8. FAQ
 9. 마지막 CTA
 
+<div class="tip-box not-prose">
+  <div class="tip-box-title">💡 완성된 라이브 예시 미리보기</div>
+  <p>강좌 및 부트캠프 모집 랜딩페이지 완성본을 <a href="/examples/landing-course.html" target="_blank" class="font-bold text-accent underline">강좌 모집 랜딩페이지 라이브 데모 ↗</a>에서 새 탭으로 직접 체험해보세요.</p>
+</div>
+
 ## 사례 A: 온라인 강좌
 
 > index.html을 만들어줘. "바이브코딩 홈페이지 만들기" 수강생 모집 페이지야.

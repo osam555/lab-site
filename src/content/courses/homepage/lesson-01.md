@@ -40,9 +40,69 @@ part: 1부 · 준비
 |---|---|---|
 | **가게·사업** | 소개 / 메뉴·서비스 / 오시는 길 / 문의 | 카페, 미용실, 공방, 학원 |
 | **개인·프리랜서** | 소개 / 하는 일 / 작업 사례 / 연락 | 디자이너, 강사, 사진가 |
-| **모임·행사** | 소개 / 일정 / 참가 신청 / 장소 | 독서 모임, 지역 행사 |
+| **기업·비즈니스** | 핵심 솔루션 / 성과 지표 / 고객 문의 | IT 회사, 컨설팅, 신규 서비스 |
 
 **없는 가게를 상상해도 됩니다.** 연습이니까요. 다만 실제로 쓸 것이 있으면 동기가 훨씬 강합니다.
+
+### 실제 완성 예시 미리보기
+
+이 과정에서 완성하게 될 홈페이지 샘플입니다. 각 항목의 **[보기]** 버튼을 클릭해 브라우저에서 직접 체험해보세요.
+
+<div class="sample-preview-list not-prose">
+  <div class="sample-preview-card">
+    <div class="sample-info">
+      <div class="sample-title">
+        <span>☕</span>
+        <span>가게 · 카페 / 베이커리</span>
+      </div>
+      <div class="sample-desc">감성 브랜드 스토리, 시그니처 메뉴, 위치 지도, 예약 버튼</div>
+    </div>
+    <a href="/examples/homepage-cafe.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
+      <span>보기</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  </div>
+
+  <div class="sample-preview-card">
+    <div class="sample-info">
+      <div class="sample-title">
+        <span>🎨</span>
+        <span>개인 · 포트폴리오</span>
+      </div>
+      <div class="sample-desc">대표 프로젝트 갤러리, 기술 스택, 경력, 협업 문의 폼</div>
+    </div>
+    <a href="/examples/homepage-portfolio.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
+      <span>보기</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  </div>
+
+  <div class="sample-preview-card">
+    <div class="sample-info">
+      <div class="sample-title">
+        <span>🏢</span>
+        <span>기업 · IT 솔루션</span>
+      </div>
+      <div class="sample-desc">핵심 솔루션, 프로젝트 성과 지표, 상담 신청 폼</div>
+    </div>
+    <a href="/examples/homepage-company.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
+      <span>보기</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  </div>
+</div>
 
 ## 따라하기: 종이에 그리기
 

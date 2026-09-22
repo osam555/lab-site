@@ -105,6 +105,42 @@ body {
 .prose-lesson blockquote p {
   margin: 0.25rem 0;
 }
+
+/* Beginner guidance callout boxes */
+.help-box {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-left: 4px solid #f59e0b;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+.help-box-title {
+  font-weight: 800;
+  color: #d97706;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tip-box {
+  background: var(--accent-soft);
+  border: 1px solid rgba(47, 143, 91, 0.3);
+  border-left: 4px solid var(--accent);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+.tip-box-title {
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .prose-lesson code {
   font-family: var(--font-mono);
   font-size: 0.875em;
