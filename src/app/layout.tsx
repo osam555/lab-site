@@ -19,8 +19,8 @@ const mono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "바이브 코딩 랩",
-    template: "%s · 바이브 코딩 랩",
+    default: "바이브코딩 랩 대충영어 오쌤",
+    template: "%s · 바이브코딩 랩 대충영어 오쌤",
   },
   description:
     "코딩을 몰라도 Claude Code와 함께 홈페이지와 서비스를 만드는 무료 강의.",
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
             <Link href="/" className="flex items-center gap-2 font-black tracking-tight">
               <span className="inline-block h-6 w-6 rounded-md bg-accent" aria-hidden />
-              <span>바이브 코딩 랩</span>
+              <span>바이브코딩 랩 대충영어 오쌤</span>
             </Link>
             <div className="flex items-center gap-3">
               <NavLinks />
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <footer className="border-t border-line">
           <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-muted">
-            <p>© {new Date().getFullYear()} 바이브 코딩 랩. 모든 강의는 무료로 공개됩니다.</p>
+            <p>© {new Date().getFullYear()} 바이브코딩 랩 대충영어 오쌤. 모든 강의는 무료로 공개됩니다.</p>
           </div>
         </footer>
         <Analytics />
