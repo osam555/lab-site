@@ -57,12 +57,13 @@ export default function Home() {
                 <span className="hero-dot" />
                 무료 · 입문자용 · 하루 1강
               </p>
-              <h1 className="text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+              <h1 className="text-3xl font-black leading-[1.2] tracking-tight break-keep sm:text-4xl lg:text-[3.2rem]">
                 코딩을 몰라도,
                 <br />
-                <span className="hero-text-gradient">내 홈페이지와 내 서비스</span>를
-                <br />
-                만듭니다.
+                <span className="hero-text-gradient">내 홈페이지</span>와{" "}
+                <span className="inline-block whitespace-nowrap">
+                  <span className="hero-text-gradient">내 서비스</span>를 만듭니다.
+                </span>
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                 Claude Code에게 방향을 알려주고 결과를 확인하는 방식으로 하루 한 강씩.
