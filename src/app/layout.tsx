@@ -54,9 +54,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-full bg-accent/10 text-accent hover:bg-accent hover:text-white transition-all"
-                title="대충영어 오쌤 공식 사이트"
+                title="대충영어 오쌤 (brain-hz.com)"
               >
-                대충영어 오쌤 ↗
+                대충영어 오쌤 (brain-hz.com) ↗
               </a>
             </div>
             <div className="flex items-center gap-3">
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <footer className="border-t border-line">
           <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-muted">
-            <p>© {new Date().getFullYear()} 바이브코딩 랩 · <a href="https://brain-hz.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accent underline font-medium">대충영어 오쌤</a>. 모든 강의는 무료로 공개됩니다.</p>
+            <p>© {new Date().getFullYear()} 바이브코딩 랩 · <a href="https://brain-hz.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accent underline font-medium">대충영어 오쌤 (brain-hz.com)</a>. 모든 강의는 무료로 공개됩니다.</p>
           </div>
         </footer>
         <Analytics />
