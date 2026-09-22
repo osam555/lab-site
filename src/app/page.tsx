@@ -49,7 +49,7 @@ export default function Home() {
         <div className="hero-bg-gradient" />
         <div className="hero-bg-grid" />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 pb-0 sm:pt-20">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pt-6 pb-0 sm:pt-8">
           <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
             {/* Left: Text */}
             <div>
