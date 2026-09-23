@@ -58,7 +58,7 @@ index.html을 만들어줘. "연말 감사 세일" 쇼핑몰 프로모션 랜딩
       <div>
         <span class="font-bold text-accent">🎨 대표 실습 샘플:</span> 뉴스레터 구독 랜딩페이지 미리보기
       </div>
-      <a href="/examples/landing-newsletter.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+      <a href="/examples/landing-newsletter.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent rounded-lg hover:opacity-90 transition-opacity" style="color:#fff">
         실제 결과물 완성 샘플 보기 ↗
       </a>
     </div>

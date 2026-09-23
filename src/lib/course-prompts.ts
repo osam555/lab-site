@@ -3,6 +3,8 @@ import { getAllLessons } from "./lessons";
 export type CoursePrompt = {
   /** e.g. "3-2" */
   id: string;
+  /** 강좌 전체 통합 일련번호 (1부터 시작) */
+  seq: number;
   lessonNumber: number;
   lessonTitle: string;
   lessonSlug: string;
@@ -19,10 +21,12 @@ const LEVEL_MAP: Record<string, { level: CoursePrompt["level"]; label: string }>
 
 /**
  * Extracts all prompts from a course's lessons by parsing the HTML prompt-box divs.
+ * Each prompt gets a sequential `seq` number across the entire course.
  */
 export function getCoursePrompts(courseSlug: string): CoursePrompt[] {
   const lessons = getAllLessons(courseSlug);
   const prompts: CoursePrompt[] = [];
+  let seq = 1;
 
   for (const lesson of lessons) {
     // Match prompt-box divs with data attributes
@@ -39,6 +43,7 @@ export function getCoursePrompts(courseSlug: string): CoursePrompt[] {
 
       prompts.push({
         id,
+        seq: seq++,
         lessonNumber: lesson.number,
         lessonTitle: lesson.title,
         lessonSlug: lesson.slug,
@@ -50,6 +55,12 @@ export function getCoursePrompts(courseSlug: string): CoursePrompt[] {
   }
 
   return prompts;
+}
+
+/** Get prompts for a specific lesson, with course-wide sequential numbering */
+export function getPromptsByLesson(courseSlug: string, lessonSlug: string): CoursePrompt[] {
+  const all = getCoursePrompts(courseSlug);
+  return all.filter((p) => p.lessonSlug === lessonSlug);
 }
 
 /** Group prompts by lesson number */

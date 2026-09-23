@@ -29,7 +29,7 @@ part: 2부 · 유형별 실전
       <div>
         <span class="font-bold text-accent">🎨 대표 실습 샘플:</span> 디자이너/프리랜서 포트폴리오 랜딩 미리보기
       </div>
-      <a href="/examples/homepage-portfolio.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+      <a href="/examples/homepage-portfolio.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent rounded-lg hover:opacity-90 transition-opacity" style="color:#fff">
         실제 결과물 완성 샘플 보기 ↗
       </a>
     </div>

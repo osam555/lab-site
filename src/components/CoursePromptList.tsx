@@ -5,6 +5,7 @@ import Link from "next/link";
 
 type Prompt = {
   id: string;
+  seq: number;
   lessonNumber: number;
   lessonTitle: string;
   lessonSlug: string;
@@ -230,6 +231,7 @@ export function CoursePromptList({
                               href={`/lectures/${courseSlug}/${g.slug}#prompt-${p.id}`}
                               className="font-mono text-xs font-bold text-accent hover:underline"
                             >
+                              <span className="inline-flex items-center justify-center rounded bg-accent text-white text-[10px] font-black px-1.5 py-0.5 mr-1.5">#{p.seq}</span>
                               프롬프트 {p.id}
                             </Link>
                             <span

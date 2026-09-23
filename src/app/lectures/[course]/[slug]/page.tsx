@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { COURSES, getCourse } from "@/lib/courses";
 import { getAllLessons, getLesson, lessonHref } from "@/lib/lessons";
+import { getPromptsByLesson } from "@/lib/course-prompts";
 import { Markdown } from "@/components/Markdown";
 import { OsSwitch } from "@/components/OsSwitch";
+import { LessonPromptToc } from "@/components/LessonPromptToc";
 
 type Params = { course: string; slug: string };
 
@@ -30,6 +32,13 @@ export default async function LessonPage({ params }: { params: Promise<Params> }
   const prev = idx > 0 ? all[idx - 1] : undefined;
   const next = idx < all.length - 1 ? all[idx + 1] : undefined;
 
+  // Get prompts for this lesson (with course-wide seq numbers)
+  const lessonPrompts = getPromptsByLesson(course, slug);
+  const seqMap: Record<string, number> = {};
+  for (const p of lessonPrompts) {
+    seqMap[p.id] = p.seq;
+  }
+
   return (
     <article className="mx-auto max-w-3xl px-4 py-12">
       <nav className="text-sm text-muted">
@@ -49,9 +58,16 @@ export default async function LessonPage({ params }: { params: Promise<Params> }
         </div>
       </header>
 
+      {/* Prompt TOC — 이 강의에서 사용하는 프롬프트 목차 */}
+      <LessonPromptToc
+        prompts={lessonPrompts}
+        courseSlug={course}
+        lessonSlug={slug}
+      />
+
       <div className="mt-8">
         {lesson.hasOs && <OsSwitch />}
-        <Markdown>{lesson.content}</Markdown>
+        <Markdown seqMap={seqMap}>{lesson.content}</Markdown>
       </div>
 
       <nav className="mt-16 grid gap-3 border-t border-line pt-8 sm:grid-cols-2">
@@ -77,3 +93,4 @@ export default async function LessonPage({ params }: { params: Promise<Params> }
     </article>
   );
 }
+

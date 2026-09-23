@@ -106,6 +106,126 @@ body {
   margin: 0.25rem 0;
 }
 
+/* ── Prompt TOC (lesson-level) ── */
+.prompt-toc {
+  margin-top: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--card);
+}
+.prompt-toc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+.prompt-toc-icon {
+  font-size: 1rem;
+}
+.prompt-toc-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.prompt-toc-count {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+.prompt-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+.prompt-toc-item {
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.prompt-toc-item:last-child {
+  border-bottom: none;
+}
+.prompt-toc-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+  font-size: 0.82rem;
+}
+.prompt-toc-link:hover {
+  background: var(--accent-soft);
+}
+.prompt-toc-seq {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.3rem;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.prompt-toc-id {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  flex-shrink: 0;
+  min-width: 2.2rem;
+}
+.prompt-toc-level {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.prompt-toc-preview {
+  color: var(--muted);
+  font-size: 0.78rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* ── Prompt Seq Badge (in-content) ── */
+.prompt-seq-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+/* Smooth scroll anchor offset for prompt boxes */
+.prompt-box[id] {
+  scroll-margin-top: 5rem;
+}
+
 /* ── Prompt Box ── */
 .prompt-box {
   border: 2px solid var(--accent);

@@ -29,7 +29,7 @@ part: 2부 · 만들기
       <div>
         <span class="font-bold text-accent">☕ 카페/매장 샘플:</span> 감성 카페 홈페이지 라이브 미리보기
       </div>
-      <a href="/examples/homepage-cafe.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+      <a href="/examples/homepage-cafe.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent rounded-lg hover:opacity-90 transition-opacity" style="color:#fff">
         완성 샘플 미리보기 ↗
       </a>
     </div>
@@ -90,7 +90,7 @@ index.html을 만들어줘. [가게이름] 홈페이지야. 한 페이지에 위
       <div>
         <span class="font-bold text-accent">💼 포트폴리오 샘플:</span> 모던 개발자/디자이너 포트폴리오 미리보기
       </div>
-      <a href="/examples/homepage-portfolio.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+      <a href="/examples/homepage-portfolio.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent rounded-lg hover:opacity-90 transition-opacity" style="color:#fff">
         완성 샘플 미리보기 ↗
       </a>
     </div>
@@ -149,7 +149,7 @@ index.html을 만들어줘. [이름]의 포트폴리오 홈페이지야.
       <div>
         <span class="font-bold text-accent">🏢 기업/소호 샘플:</span> IT 테크 소규모 회사 홈페이지 미리보기
       </div>
-      <a href="/examples/homepage-company.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent text-white rounded-lg hover:opacity-90 transition-opacity">
+      <a href="/examples/homepage-company.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-accent rounded-lg hover:opacity-90 transition-opacity" style="color:#fff">
         완성 샘플 미리보기 ↗
       </a>
     </div>

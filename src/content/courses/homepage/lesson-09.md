@@ -1,9 +1,9 @@
 ---
 number: 9
-title: 내 도메인과 검색 노출
-subtitle: mycafe.kr로 들어오고, 구글에서 찾아지게
-goal: 도메인을 사서 Vercel에 연결하고, 검색 엔진과 SNS 공유에 필요한 정보를 홈페이지에 넣습니다.
-minutes: 50
+title: 내 도메인 연결하기
+subtitle: mycafe.kr로 들어오고, 카톡 공유에 미리보기가 뜨게
+goal: 도메인을 사서 Vercel에 연결하고, SNS 공유에 필요한 정보를 홈페이지에 넣습니다.
+minutes: 45
 part: 3부 · 공개
 ---
 
@@ -17,22 +17,53 @@ part: 3부 · 공개
 
 고르는 기준: **짧고, 말로 전했을 때 헷갈리지 않고, 가게 이름과 같은 것.** 하이픈과 숫자는 피하세요.
 
-구입처는 가비아·후이즈(국내), Namecheap·Cloudflare(해외) 어디든 됩니다. 이후 단계는 같습니다.
+## 도메인 구매 (가비아 예시)
 
-## Vercel에 연결
+국내에서 가장 많이 쓰는 **가비아(gabia.com)** 를 예로 설명합니다. 후이즈, Namecheap, Cloudflare 등 다른 곳에서 사도 이후 과정은 같습니다.
 
-1. Vercel 프로젝트 → **Settings → Domains** → 산 도메인 입력 → **Add**
-2. Vercel이 **DNS 레코드** 두 줄을 알려줍니다. 대략 이런 모양:
+1. [gabia.com](https://www.gabia.com) 접속 → 회원가입 / 로그인
+2. 상단 검색창에 원하는 도메인 입력 (예: `mycafe`) → **검색**
+3. 사용 가능한 도메인 중 원하는 것을 선택 → **신청하기**
+4. 등록 기간(1년 추천), 결제 정보 입력 → **결제**
+5. **My 가비아 → 도메인 관리** 에서 방금 산 도메인이 보이면 성공
+
+> [!TIP]
+> `.kr` 도메인은 개인도 등록 가능합니다. 사업자 등록이 필요 없습니다.
+
+## Vercel에 도메인 연결
+
+1. Vercel 프로젝트 → **Settings → Domains** → 산 도메인 입력 (예: `mycafe.kr`) → **Add**
+2. Vercel이 **DNS 레코드** 두 줄을 알려줍니다:
 
 | Type | Name | Value |
 |---|---|---|
 | A | @ | 76.76.21.21 |
 | CNAME | www | cname.vercel-dns.com |
 
-3. **도메인을 산 사이트**로 가서 "DNS 관리" 또는 "네임서버/레코드 설정" 메뉴를 찾아 위 두 줄을 그대로 추가합니다.
-4. 몇 분~몇 시간 뒤 Vercel 화면의 도메인 옆에 체크가 뜨면 연결 완료. HTTPS(자물쇠)는 Vercel이 자동으로 붙입니다.
+## 가비아에서 DNS 설정
 
-DNS 설정 화면은 업체마다 생김새가 다릅니다. 헷갈리면 **그 화면을 캡처해서** Claude Code에 붙여넣으세요.
+이제 가비아에서 위 두 줄을 입력합니다.
+
+1. **My 가비아 → 도메인 관리** → 도메인 선택 → **DNS 관리** 클릭
+2. **DNS 설정** 탭 → **레코드 추가**
+
+**첫 번째 레코드 (A 레코드):**
+- 타입: **A**
+- 호스트: **@**
+- 값: **76.76.21.21**
+- TTL: 기본값 (3600)
+
+**두 번째 레코드 (CNAME 레코드):**
+- 타입: **CNAME**
+- 호스트: **www**
+- 값: **cname.vercel-dns.com**
+- TTL: 기본값
+
+3. **저장** 클릭
+4. 몇 분~몇 시간 뒤 Vercel 화면의 도메인 옆에 **체크(✓)** 가 뜨면 연결 완료. HTTPS(자물쇠)는 Vercel이 자동으로 붙입니다.
+
+> [!TIP]
+> DNS 설정 화면은 업체마다 다릅니다. 헷갈리면 **그 화면을 캡처해서** Claude Code에 붙여넣으세요.
 
 <div class="prompt-box not-prose" data-prompt="9-1" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -58,11 +89,10 @@ vercel.json 파일을 만들어서 `.html` 없이 접속되게 해줘 (cleanUrls
 
 커밋 → push → `mycafe.kr/menu`로 열리는지 확인.
 
-## 검색에 찾아지게
+## 검색과 공유를 위한 준비
 
-홈페이지가 있어도 구글·네이버가 모르면 안 찾아집니다.
+### 페이지마다 제목과 설명
 
-### 1. 페이지마다 제목과 설명
 검색 결과에 나오는 파란 제목과 회색 설명입니다.
 
 <div class="prompt-box not-prose" data-prompt="9-3" data-level="advanced">
@@ -89,7 +119,8 @@ sitemap.xml 과 robots.txt도 만들어줘. 페이지 4개, 도메인은 https:/
 
 커밋 → push.
 
-### 2. 카톡·인스타에 공유했을 때 미리보기
+### 카톡·인스타에 공유했을 때 미리보기
+
 링크를 보내면 뜨는 사진과 제목입니다. **Open Graph**라고 합니다.
 
 <div class="prompt-box not-prose" data-prompt="9-5" data-level="advanced">
@@ -100,66 +131,6 @@ sitemap.xml 과 robots.txt도 만들어줘. 페이지 4개, 도메인은 https:/
 
 </div>
 </div>
-
-### 3. 구글 서치 콘솔 등록
-
-구글에 내 홈페이지를 알리고 검색 성과를 확인합니다.
-
-**소유 확인**
-1. [search.google.com/search-console](https://search.google.com/search-console) 접속
-2. **속성 추가** → **도메인** 탭 → `mycafe.kr` 입력 → **계속**
-3. DNS TXT 레코드 값을 복사
-4. 도메인 구입처 DNS 관리 → TXT 레코드 추가: 호스트 `@`, 값 복사한 것
-5. Search Console로 돌아와 **확인** → 성공
-
-**sitemap 제출**
-1. 왼쪽 메뉴 **Sitemaps** → `sitemap.xml` 입력 → **제출**
-2. 상태가 "성공"으로 바뀌면 완료
-
-**수동 색인 요청 (빠르게 찾히게)**
-1. 왼쪽 **URL 검사** → 내 도메인 입력 → Enter
-2. **색인 생성 요청** 클릭
-3. 메인 페이지, 메뉴, 오시는 길 각각 반복
-
-**검색 성능 리포트 읽는 법**
-- **클릭수**: 실제로 방문한 횟수
-- **노출수**: 검색 결과에 뜬 횟수
-- **CTR**: 뜬 것 중 클릭한 비율 (3% 이상이면 양호)
-- **평균 게재 순위**: 낮을수록 위에 표시 (10위 이하 → 첫 페이지)
-
-### 4. 네이버 서치 어드바이저 등록
-
-네이버 검색에서도 찾히게 합니다. 절차가 구글과 비슷합니다.
-
-**사이트 등록**
-1. [searchadvisor.naver.com](https://searchadvisor.naver.com) 접속 → 네이버 로그인
-2. **웹 마스터 도구** → **사이트 추가** → 내 도메인 입력
-3. 소유 확인 방법 선택:
-   - **HTML 파일**: 확인용 파일을 받아 my-site 폴더 최상위에 넣고 push
-   - **HTML 태그**: `<meta name="naver-site-verification" ...>` 를 index.html에 추가
-   - Claude Code에게: "네이버 서치 어드바이저 소유 확인 meta 태그 [값]을 index.html에 넣어줘"
-4. **확인** 버튼 → 소유 확인 완료
-
-**sitemap 제출**
-1. 사이트 선택 → 왼쪽 메뉴 **요청 → 사이트맵 제출**
-2. `https://mycafe.kr/sitemap.xml` 입력 → **확인**
-
-**검색 현황 확인**
-- **검색 현황**: 내 사이트가 네이버에 얼마나 노출되는지
-- **콘텐츠 현황**: 색인된 페이지 수
-- **403/404 오류**: 깨진 링크 확인
-
-> [!TIP]
-> 네이버 블로그나 카페에 가게 이름 + 도메인을 한 번 언급하면 색인 속도가 빨라집니다.
-
-### 5. 비즈니스 프로필 등록 (지도 노출)
-
-검색보다 지도에서 먼저 발견되는 경우가 더 많습니다.
-
-- **네이버 스마트플레이스** (smartplace.naver.com): 네이버 지도·로컬 검색 노출. 홈페이지 주소 입력란에 내 도메인 넣기.
-- **구글 비즈니스 프로필** (business.google.com): 구글 지도·검색 노출. 마찬가지로 홈페이지 주소 등록.
-
-두 곳 모두 무료이고, 등록하면 "[동네] [업종]" 검색 시 지도에서 홈페이지 링크가 뜹니다.
 
 ## 확인하기
 
@@ -175,15 +146,12 @@ git push
 
 ## 오늘의 체크리스트
 
+- [ ] 도메인을 구매했다 (가비아 또는 다른 곳)
 - [ ] 내 도메인으로 홈페이지가 열리고 자물쇠가 있다
 - [ ] `/menu`처럼 `.html` 없이 열린다
 - [ ] 카톡으로 보냈을 때 사진과 제목이 뜬다
 - [ ] sitemap.xml 과 robots.txt 가 도메인에서 열린다
-- [ ] 구글 서치 콘솔에 sitemap을 제출했다
-- [ ] 구글 서치 콘솔에서 URL 색인 생성 요청을 했다
-- [ ] 네이버 서치 어드바이저에 사이트를 등록하고 sitemap을 제출했다
-- [ ] 네이버 스마트플레이스 또는 구글 비즈니스 프로필에 홈페이지 주소를 넣었다
 
 ## 다음 강의
 
-마지막 10강. 문의 폼을 붙이고, 앞으로 혼자서 유지·수정하는 루틴을 정리합니다.
+10강에서는 구글 서치 콘솔과 네이버 서치 어드바이저에 홈페이지를 등록해서 검색에 나오게 합니다.

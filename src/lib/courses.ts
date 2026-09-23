@@ -48,7 +48,7 @@ export const COURSES: Course[] = [
   {
     slug: "homepage",
     title: "홈페이지 만들기",
-    tagline: "가게·개인·포트폴리오 홈페이지를 10일 만에 내 주소로",
+    tagline: "가게·개인·포트폴리오 홈페이지를 11일 만에 내 주소로",
     description:
       "완전 초보자를 위한 과정입니다. 프레임워크 없이 HTML 한 장부터 시작해 사진, 지도, 문의 폼이 있는 홈페이지를 만들고 내 도메인으로 공개합니다. 모든 설치·터미널 단계는 Windows와 macOS를 나란히 안내합니다.",
     level: "완전 초보",
@@ -61,9 +61,9 @@ export const COURSES: Course[] = [
       "HTML·CSS 없이 AI 대화만으로 페이지 구성",
       "사진 갤러리, 카카오 지도, 문의 폼 추가",
       "GitHub 연결 → Vercel 무료 배포",
-      "내 도메인 연결 및 HTTPS 자동 적용",
+      "가비아 도메인 구매 → Vercel 연결 (DNS 설정 상세)",
       "반응형 — 폰·태블릿·PC 자동 대응",
-      "SEO 기초 — 구글·네이버 검색 등록",
+      "구글 서치 콘솔·네이버 서치 어드바이저 검색 등록",
       "CLAUDE.md 규칙 파일로 AI 품질 관리",
     ],
     relatedSkills: [
