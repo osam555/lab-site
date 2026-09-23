@@ -7,6 +7,7 @@ import { getPromptsByLesson } from "@/lib/course-prompts";
 import { Markdown } from "@/components/Markdown";
 import { OsSwitch } from "@/components/OsSwitch";
 import { LessonPromptToc } from "@/components/LessonPromptToc";
+import { PromptCopyHandler } from "@/components/PromptCopyHandler";
 
 type Params = { course: string; slug: string };
 
@@ -41,6 +42,7 @@ export default async function LessonPage({ params }: { params: Promise<Params> }
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12">
+      <PromptCopyHandler />
       <nav className="text-sm text-muted">
         <Link href={`/lectures/${course}`} className="hover:text-foreground">← {c.title}</Link>
         <span className="mx-2">·</span>
