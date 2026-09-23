@@ -2,12 +2,20 @@
 
 import { useEffect } from "react";
 
+const LABEL_DEFAULT = "복사 📋";
+const LABEL_COPIED = "복사됨 ✅";
+
 /**
  * Attaches copy-to-clipboard handlers to all .prompt-copy-btn buttons
  * via event delegation. Needed because rehype-raw strips inline onclick.
  */
 export function PromptCopyHandler() {
   useEffect(() => {
+    // Set initial label on all copy buttons
+    document.querySelectorAll(".prompt-copy-btn").forEach((btn) => {
+      btn.textContent = LABEL_DEFAULT;
+    });
+
     function handleClick(e: MouseEvent) {
       const btn = (e.target as HTMLElement).closest(".prompt-copy-btn");
       if (!btn) return;
@@ -23,9 +31,9 @@ export function PromptCopyHandler() {
       navigator.clipboard
         .writeText(text)
         .then(() => {
-          btn.textContent = "✅";
+          btn.textContent = LABEL_COPIED;
           setTimeout(() => {
-            btn.textContent = "📋";
+            btn.textContent = LABEL_DEFAULT;
           }, 1500);
         })
         .catch(() => {
@@ -38,9 +46,9 @@ export function PromptCopyHandler() {
           ta.select();
           document.execCommand("copy");
           document.body.removeChild(ta);
-          btn.textContent = "✅";
+          btn.textContent = LABEL_COPIED;
           setTimeout(() => {
-            btn.textContent = "📋";
+            btn.textContent = LABEL_DEFAULT;
           }, 1500);
         });
     }
@@ -51,3 +59,4 @@ export function PromptCopyHandler() {
 
   return null;
 }
+
