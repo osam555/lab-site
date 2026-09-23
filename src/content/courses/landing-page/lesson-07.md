@@ -36,38 +36,59 @@ part: 2부 · 유형별 실전
   </div>
 </div>
 
-> index.html을 만들어줘. 프리랜서 브랜드 디자이너 랜딩페이지.
-> 1. 히어로: 왼쪽에 images/profile.jpg 원형 + "매출을 올리는 브랜드 디자인" + "프로젝트 의뢰하기" 버튼, 오른쪽에 대표 작업물 3개 작은 미리보기
-> 2. 실적 숫자: "프로젝트 120+" / "재의뢰율 87%" / "경력 8년"
-> 3. 서비스 패키지 3개: 카드형. 로고 디자인 ₩300,000 / 브랜드 패키지 ₩800,000 / 월 구독 ₩150,000. 각각 포함 항목 체크리스트 + "문의하기" 버튼
-> 4. 대표 작업물: 카드 4개 (images/work-1~4.jpg + 클라이언트명 + 성과 한 줄 "매출 40% 상승")
-> 5. 작업 프로세스: 4단계 타임라인 (상담 → 기획 → 디자인 → 납품)
-> 6. 클라이언트 후기: 카드 3개 (회사명 + 담당자 + 후기)
-> 7. "프로젝트를 시작하세요" + "무료 상담 신청" 버튼 + 카카오톡·이메일
-> 모던 포트폴리오 스타일. 검은 배경 + 노란 포인트.
+<div class="prompt-box not-prose" data-prompt="7-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. 프리랜서 브랜드 디자이너 랜딩페이지.
+1. 히어로: 왼쪽에 images/profile.jpg 원형 + "매출을 올리는 브랜드 디자인" + "프로젝트 의뢰하기" 버튼, 오른쪽에 대표 작업물 3개 작은 미리보기
+2. 실적 숫자: "프로젝트 120+" / "재의뢰율 87%" / "경력 8년"
+3. 서비스 패키지 3개: 카드형. 로고 디자인 ₩300,000 / 브랜드 패키지 ₩800,000 / 월 구독 ₩150,000. 각각 포함 항목 체크리스트 + "문의하기" 버튼
+4. 대표 작업물: 카드 4개 (images/work-1~4.jpg + 클라이언트명 + 성과 한 줄 "매출 40% 상승")
+5. 작업 프로세스: 4단계 타임라인 (상담 → 기획 → 디자인 → 납품)
+6. 클라이언트 후기: 카드 3개 (회사명 + 담당자 + 후기)
+7. "프로젝트를 시작하세요" + "무료 상담 신청" 버튼 + 카카오톡·이메일
+모던 포트폴리오 스타일. 검은 배경 + 노란 포인트.
+
+</div>
+</div>
 
 ## 사례 B: 컨설턴트·코치
 
-> index.html을 만들어줘. 비즈니스 코칭 서비스 랜딩페이지.
-> 1. 히어로: "당신의 사업에 1:1 코치가 필요한 순간" + "무료 진단 신청" 버튼 + images/profile.jpg
-> 2. 이런 고민이 있다면: 체크리스트 5개 (✓ 매출 정체 ✓ 팀 관리 어려움 ✓ 방향을 모르겠음 ✓ 혼자 결정하는 게 불안 ✓ 사업 확장 시점)
-> 3. 코칭 프로그램: 카드 3개 (1회 상담 ₩50,000 / 4주 집중 ₩350,000 / 3개월 동행 ₩900,000)
-> 4. 코칭 후 변화: 사례 3개 (업종 + 고민 + 결과. "카페 운영 3개월 만에 월 매출 2배")
-> 5. 코치 소개: 경력 + 자격 + 미디어 출연
-> 6. 진행 방식: Zoom 1:1 / 주 1회 / 숙제+피드백 / 카톡 수시 질문
-> 7. "무료 30분 진단 상담" + 캘린더 예약 링크
-> 전문적이고 따뜻한 느낌. 딥 블루 + 흰색.
+<div class="prompt-box not-prose" data-prompt="7-2" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. 비즈니스 코칭 서비스 랜딩페이지.
+1. 히어로: "당신의 사업에 1:1 코치가 필요한 순간" + "무료 진단 신청" 버튼 + images/profile.jpg
+2. 이런 고민이 있다면: 체크리스트 5개 (✓ 매출 정체 ✓ 팀 관리 어려움 ✓ 방향을 모르겠음 ✓ 혼자 결정하는 게 불안 ✓ 사업 확장 시점)
+3. 코칭 프로그램: 카드 3개 (1회 상담 ₩50,000 / 4주 집중 ₩350,000 / 3개월 동행 ₩900,000)
+4. 코칭 후 변화: 사례 3개 (업종 + 고민 + 결과. "카페 운영 3개월 만에 월 매출 2배")
+5. 코치 소개: 경력 + 자격 + 미디어 출연
+6. 진행 방식: Zoom 1:1 / 주 1회 / 숙제+피드백 / 카톡 수시 질문
+7. "무료 30분 진단 상담" + 캘린더 예약 링크
+전문적이고 따뜻한 느낌. 딥 블루 + 흰색.
+
+</div>
+</div>
 
 ## 사례 C: 작가·크리에이터
 
-> index.html을 만들어줘. 푸드 포토그래퍼 작업 의뢰 랜딩페이지.
-> 1. 히어로: 대표 사진 전체 화면 + "맛있는 순간을 기록합니다" + "촬영 문의" 버튼
-> 2. 포트폴리오 갤러리: 사진 8장 그리드 (2x4). 호버하면 클라이언트명
-> 3. 촬영 메뉴: 카드 3개 (메뉴 촬영 ₩200,000~ / 매장 촬영 ₩300,000~ / 월 정기촬영 ₩150,000~)
-> 4. 촬영 후기: 카드 3개 (식당명 + 사장님 한 줄 후기 + before/after 비교)
-> 5. 촬영 과정: 문의 → 사전 미팅 → 촬영 → 보정·납품 (3영업일)
-> 6. "촬영 문의하기" + 카카오톡 + 인스타그램 DM 링크
-> 사진이 주인공. 흰 배경. 최소한의 텍스트.
+<div class="prompt-box not-prose" data-prompt="7-3" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. 푸드 포토그래퍼 작업 의뢰 랜딩페이지.
+1. 히어로: 대표 사진 전체 화면 + "맛있는 순간을 기록합니다" + "촬영 문의" 버튼
+2. 포트폴리오 갤러리: 사진 8장 그리드 (2x4). 호버하면 클라이언트명
+3. 촬영 메뉴: 카드 3개 (메뉴 촬영 ₩200,000~ / 매장 촬영 ₩300,000~ / 월 정기촬영 ₩150,000~)
+4. 촬영 후기: 카드 3개 (식당명 + 사장님 한 줄 후기 + before/after 비교)
+5. 촬영 과정: 문의 → 사전 미팅 → 촬영 → 보정·납품 (3영업일)
+6. "촬영 문의하기" + 카카오톡 + 인스타그램 DM 링크
+사진이 주인공. 흰 배경. 최소한의 텍스트.
+
+</div>
+</div>
 
 ## 개인 브랜딩 핵심 체크
 

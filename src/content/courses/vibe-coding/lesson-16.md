@@ -33,7 +33,14 @@ npm run build
 
 빨간 에러가 나면 배포도 실패합니다. 흔한 것은 TypeScript 타입 에러와 사용하지 않는 변수 경고. 에러를 복사해 AI에게 주면 됩니다.
 
-> "npm run build 에러야. 고쳐줘. 기능은 바꾸지 말고."
+<div class="prompt-box not-prose" data-prompt="16-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"npm run build 에러야. 고쳐줘. 기능은 바꾸지 말고."
+
+</div>
+</div>
 
 ## 3. 미리보기 배포 활용하기
 
@@ -73,7 +80,14 @@ DNS 설정이 헷갈리면 화면을 캡처해서 AI에게 "Vercel이 이 값을
 
 탭 제목/아이콘은 AI에게:
 
-> "브라우저 탭 제목을 '[서비스 이름]'으로, 설명(description)을 PLAN.md의 한 줄 설명으로, 파비콘은 초록 원 하나로 간단히 만들어줘. layout.tsx의 metadata를 수정."
+<div class="prompt-box not-prose" data-prompt="16-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"브라우저 탭 제목을 '[서비스 이름]'으로, 설명(description)을 PLAN.md의 한 줄 설명으로, 파비콘은 초록 원 하나로 간단히 만들어줘. layout.tsx의 metadata를 수정."
+
+</div>
+</div>
 
 ## 6. 무슨 일이 생기는지 보이게
 

@@ -31,13 +31,20 @@ my-site/
 
 ## 따라하기 1: 나누기
 
-> index.html을 네 페이지로 나눠줘.
-> - index.html: 상단 메뉴 + 첫 화면 + 대표 메뉴 3개(전체 메뉴 보기 링크) + 하단
-> - menu.html: 상단 메뉴 + 전체 메뉴 목록 + 하단. 메뉴는 [커피 / 디저트 / 브런치] 세 묶음으로
-> - location.html: 상단 메뉴 + 지도 + 주소 + 영업시간 + 주차 안내 + 하단
-> - contact.html: 상단 메뉴 + "문의" 제목 + 전화·인스타 링크 + 하단 (폼은 다음에)
-> 상단 메뉴의 링크는 각 페이지로. 현재 페이지 메뉴는 강조색으로 표시.
-> style.css는 전부 공유.
+<div class="prompt-box not-prose" data-prompt="7-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 네 페이지로 나눠줘.
+- index.html: 상단 메뉴 + 첫 화면 + 대표 메뉴 3개(전체 메뉴 보기 링크) + 하단
+- menu.html: 상단 메뉴 + 전체 메뉴 목록 + 하단. 메뉴는 [커피 / 디저트 / 브런치] 세 묶음으로
+- location.html: 상단 메뉴 + 지도 + 주소 + 영업시간 + 주차 안내 + 하단
+- contact.html: 상단 메뉴 + "문의" 제목 + 전화·인스타 링크 + 하단 (폼은 다음에)
+상단 메뉴의 링크는 각 페이지로. 현재 페이지 메뉴는 강조색으로 표시.
+style.css는 전부 공유.
+
+</div>
+</div>
 
 새로고침 → 상단 메뉴를 눌러 네 페이지가 오가는지 확인.
 
@@ -48,7 +55,14 @@ my-site/
 해결 방법은 두 가지입니다.
 
 ### 방법 A: Claude에게 한꺼번에 시키기 (지금은 이걸로)
-> 모든 html 파일의 하단 전화번호를 [새 번호]로 바꿔줘.
+<div class="prompt-box not-prose" data-prompt="7-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+모든 html 파일의 하단 전화번호를 [새 번호]로 바꿔줘.
+
+</div>
+</div>
 
 Claude Code는 파일 여러 개를 한 번에 고칠 수 있습니다. 페이지가 5개 이하면 이걸로 충분합니다.
 
@@ -59,23 +73,37 @@ Claude Code는 파일 여러 개를 한 번에 고칠 수 있습니다. 페이�
 
 메뉴 페이지는 가장 자주 보는 페이지입니다.
 
-> menu.html에서:
-> - 묶음(커피/디저트/브런치)마다 제목과 짧은 설명
-> - 각 메뉴는 이름 왼쪽, 가격 오른쪽 정렬
-> - 품절이나 계절 메뉴는 작은 태그로 표시할 수 있게
-> - 폰에서 세로로 길어도 읽기 편하게
+<div class="prompt-box not-prose" data-prompt="7-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+menu.html에서:
+- 묶음(커피/디저트/브런치)마다 제목과 짧은 설명
+- 각 메뉴는 이름 왼쪽, 가격 오른쪽 정렬
+- 품절이나 계절 메뉴는 작은 태그로 표시할 수 있게
+- 폰에서 세로로 길어도 읽기 편하게
+
+</div>
+</div>
 
 ## 따라하기 3: 가격표 같은 반복 내용
 
 메뉴가 30개라면 30번 말하기 힘듭니다. **표로 주고 옮기게** 하세요.
 
-> 아래 표대로 menu.html의 메뉴를 전부 교체해줘. 형식은 지금 있는 것과 같게.
->
-> | 묶음 | 이름 | 가격 | 설명 |
-> |---|---|---|---|
-> | 커피 | 아메리카노 | 4,500 | 산미 있는 원두 |
-> | 커피 | 라떼 | 5,000 | |
-> | 디저트 | 바스크 치즈케이크 | 7,000 | 매일 아침 구움 |
+<div class="prompt-box not-prose" data-prompt="7-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+아래 표대로 menu.html의 메뉴를 전부 교체해줘. 형식은 지금 있는 것과 같게.
+
+| 묶음 | 이름 | 가격 | 설명 |
+|---|---|---|---|
+| 커피 | 아메리카노 | 4,500 | 산미 있는 원두 |
+| 커피 | 라떼 | 5,000 | |
+| 디저트 | 바스크 치즈케이크 | 7,000 | 매일 아침 구움 |
+
+</div>
+</div>
 
 엑셀이나 메모장에 정리해둔 걸 붙여넣으면 됩니다. 나중에 가격이 바뀌어도 같은 방식으로.
 

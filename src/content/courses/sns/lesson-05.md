@@ -15,26 +15,47 @@ part: 2부 · 파이프라인 만들기
 
 한 원본을 모든 채널에 같은 시각에 올리면 서로 잡아먹습니다. 채널별로 시간을 흩뿌립니다.
 
-> channels.json의 best_times와 오늘 날짜를 기준으로 posts/2025-01-camping-chair/schedule.json을 만들어줘.
-> - 채널마다 첫 발행 시각 하나, 서로 최소 3시간 간격
-> - X·스레드 시리즈는 첫 글 시각에 한 번에 (연속 글은 스케줄러가 순서대로)
-> - 인스타는 저녁, 링크드인은 평일 오전, 스레드는 점심·밤
-> - 3일 뒤 "재활용" 슬롯 1개: 다른 후크 후보로 스레드 재게시
-> 표로 보여줘. 아직 API는 호출하지 마.
+<div class="prompt-box not-prose" data-prompt="5-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+channels.json의 best_times와 오늘 날짜를 기준으로 posts/2025-01-camping-chair/schedule.json을 만들어줘.
+- 채널마다 첫 발행 시각 하나, 서로 최소 3시간 간격
+- X·스레드 시리즈는 첫 글 시각에 한 번에 (연속 글은 스케줄러가 순서대로)
+- 인스타는 저녁, 링크드인은 평일 오전, 스레드는 점심·밤
+- 3일 뒤 "재활용" 슬롯 1개: 다른 후크 후보로 스레드 재게시
+표로 보여줘. 아직 API는 호출하지 마.
+
+</div>
+</div>
 
 표를 보고 시간을 조정합니다. "링크드인은 화요일 오전 8시로."
 
 ## 따라하기 2: 업로드 → 예약 ⏸
 
-> schedule.json과 variants.json, cards/를 바탕으로 스케줄러 API에 예약을 등록해줘.
-> 1. 먼저 전체 내용을 표로 보여줘: 채널 / 시각 / 첫 줄 / 글자 수 / 이미지 파일 / 링크(UTM)
-> 2. 내가 "예약해"라고 하면 그때 등록. 채널 하나씩, 결과(ID·상태)를 출력
-> 3. 등록 후 각 항목을 schedule.json에 scheduled_id, status: "scheduled"로 기록
-> 4. 실패한 채널은 건너뛰고 마지막에 목록으로
+<div class="prompt-box not-prose" data-prompt="5-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+schedule.json과 variants.json, cards/를 바탕으로 스케줄러 API에 예약을 등록해줘.
+1. 먼저 전체 내용을 표로 보여줘: 채널 / 시각 / 첫 줄 / 글자 수 / 이미지 파일 / 링크(UTM)
+2. 내가 "예약해"라고 하면 그때 등록. 채널 하나씩, 결과(ID·상태)를 출력
+3. 등록 후 각 항목을 schedule.json에 scheduled_id, status: "scheduled"로 기록
+4. 실패한 채널은 건너뛰고 마지막에 목록으로
+
+</div>
+</div>
 
 표를 **읽으세요.** 글자 수 초과, 잘못된 링크, 인스타 캡션에 URL이 들어간 경우가 여기서 걸립니다. 확인했으면:
 
-> 예약해.
+<div class="prompt-box not-prose" data-prompt="5-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+예약해.
+
+</div>
+</div>
 
 스케줄러 화면을 열어 캘린더에 5개가 보이는지 확인합니다. **첫 주는 발행 시각에 실제로 올라갔는지도 채널에서 확인**하세요.
 
@@ -42,7 +63,14 @@ part: 2부 · 파이프라인 만들기
 
 X의 API 티어 문제, 카카오 채널처럼 스케줄러가 지원하지 않는 곳은 반자동으로:
 
-> scripts/clip.py를 만들어줘. `python3 scripts/clip.py posts/XXX x` 처럼 채널을 지정하면 그 채널의 최종 텍스트를 클립보드에 복사하고, 이미지 파일 경로를 열어줘(폴더를 열거나 경로 출력). 시리즈면 한 번 실행마다 다음 글을 복사.
+<div class="prompt-box not-prose" data-prompt="5-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/clip.py를 만들어줘. `python3 scripts/clip.py posts/XXX x` 처럼 채널을 지정하면 그 채널의 최종 텍스트를 클립보드에 복사하고, 이미지 파일 경로를 열어줘(폴더를 열거나 경로 출력). 시리즈면 한 번 실행마다 다음 글을 복사.
+
+</div>
+</div>
 
 ::: windows
 클립보드 복사는 `clip` 명령, 폴더 열기는 `explorer`. Claude가 알아서 쓰지만 안 되면 이 두 이름을 알려주세요.

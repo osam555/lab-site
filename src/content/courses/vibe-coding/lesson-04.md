@@ -68,7 +68,14 @@ Claude Code는 파일을 고치거나 명령을 실행하기 전에 **무엇을 
 
 VS Code 글자 크기, 자동 저장, 탭 크기 같은 설정은 사실 `settings.json`이라는 파일입니다. 메뉴를 뒤질 필요 없이 Claude Code에게 말하면 됩니다.
 
-> "VS Code 설정에서 글자 크기를 15로, 저장할 때 자동 정렬되게, 탭은 2칸으로 바꿔줘. settings.json을 직접 수정해줘."
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"VS Code 설정에서 글자 크기를 15로, 저장할 때 자동 정렬되게, 탭은 2칸으로 바꿔줘. settings.json을 직접 수정해줘."
+
+</div>
+</div>
 
 Claude Code 자신의 설정도 마찬가지입니다. `/config`로 메뉴를 열어도 되고, "Claude Code 응답을 항상 한국어로 하게 설정해줘"라고 해도 됩니다.
 

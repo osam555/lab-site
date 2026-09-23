@@ -66,7 +66,14 @@ AI 코딩 도구는 대화가 새로 시작되면 이전 대화를 잊습니다.
 
 AI에게 시키세요.
 
-> "PLAN.md를 읽고, 이 프로젝트의 CLAUDE.md를 만들어줘. 항목은 '프로젝트 소개, 기술, 작업 규칙, 하지 말 것, 명령' 5개. 작업 규칙에는 '요청한 파일만 수정', '새 라이브러리는 허락 후 설치', '완료 후 확인 방법 3단계 안내', '한국어로 짧게'를 넣어줘."
+<div class="prompt-box not-prose" data-prompt="9-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"PLAN.md를 읽고, 이 프로젝트의 CLAUDE.md를 만들어줘. 항목은 '프로젝트 소개, 기술, 작업 규칙, 하지 말 것, 명령' 5개. 작업 규칙에는 '요청한 파일만 수정', '새 라이브러리는 허락 후 설치', '완료 후 확인 방법 3단계 안내', '한국어로 짧게'를 넣어줘."
+
+</div>
+</div>
 
 만들어진 파일을 **직접 읽어보고** 고치세요. 이 파일만큼은 여러분이 내용을 다 알아야 합니다.
 
@@ -74,7 +81,14 @@ AI에게 시키세요.
 
 새 대화를 시작하고 규칙을 전혀 언급하지 않은 채 요청해보세요.
 
-> "메뉴 카드 컴포넌트 만들어줘."
+<div class="prompt-box not-prose" data-prompt="9-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"메뉴 카드 컴포넌트 만들어줘."
+
+</div>
+</div>
 
 AI가 알아서 한국어로 짧게 설명하고, 다른 파일을 안 건드리고, 확인 방법을 알려주면 성공입니다.
 

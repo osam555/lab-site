@@ -40,7 +40,14 @@ claude.ai 에 접속해 **다운로드** 버튼을 누릅니다. 내 운영체�
 2. 브라우저가 열리면 claude.ai 계정으로 로그인 → **"허용"** 클릭
 3. 앱으로 자동 복귀. 앱 화면이 뜨면 로그인 성공
 
-> Claude 계정이 없다면 claude.ai에서 무료 가입합니다. Claude Code를 쓰려면 **Pro 구독($20/월)** 또는 **API 결제**가 필요합니다. 과정 시작 전에 준비해두세요.
+<div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Claude 계정이 없다면 claude.ai에서 무료 가입합니다. Claude Code를 쓰려면 **Pro 구독($20/월)** 또는 **API 결제**가 필요합니다. 과정 시작 전에 준비해두세요.
+
+</div>
+</div>
 
 ## 2. Git
 

@@ -29,13 +29,20 @@ CSV를 미리보기로 열면 깨져 보일 수 있지만 상관없습니다. "~
 
 ## 따라하기 2: 분석
 
-> keywords/의 CSV를 전부 읽고 분석해줘.
-> 1. 월간 검색수(PC+모바일) 300 이상, 경쟁 정도 '낮음' 또는 '중간'인 것만
-> 2. blog-plan.md의 분야·독자에 맞지 않는 것 제외 (예: 판매·도매·B2B 키워드)
-> 3. 검색 의도별로 분류: 정보(뭐가 좋아?), 비교(A vs B), 방법(어떻게), 후기(써봤더니), 장소(어디)
-> 4. 각 키워드에 "내가 경험으로 쓸 수 있는가" 판단 근거를 blog-plan.md 기준으로 한 줄
-> 5. 점수 = 검색수 × 경쟁 가중치 × 경험 적합도 로 상위 50개
-> 결과를 keywords/analysis.md 표로. 아직 캘린더는 만들지 마.
+<div class="prompt-box not-prose" data-prompt="3-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+keywords/의 CSV를 전부 읽고 분석해줘.
+1. 월간 검색수(PC+모바일) 300 이상, 경쟁 정도 '낮음' 또는 '중간'인 것만
+2. blog-plan.md의 분야·독자에 맞지 않는 것 제외 (예: 판매·도매·B2B 키워드)
+3. 검색 의도별로 분류: 정보(뭐가 좋아?), 비교(A vs B), 방법(어떻게), 후기(써봤더니), 장소(어디)
+4. 각 키워드에 "내가 경험으로 쓸 수 있는가" 판단 근거를 blog-plan.md 기준으로 한 줄
+5. 점수 = 검색수 × 경쟁 가중치 × 경험 적합도 로 상위 50개
+결과를 keywords/analysis.md 표로. 아직 캘린더는 만들지 마.
+
+</div>
+</div>
 
 표를 읽고 **직접 30개를 고르세요.** 기준은 하나: **이 키워드로 내 경험이 담긴 글을 쓸 수 있는가.** 검색량이 아무리 커도 경험이 없으면 빼세요. 그 글은 AI 티가 납니다.
 
@@ -51,14 +58,21 @@ CSV를 미리보기로 열면 깨져 보일 수 있지만 상관없습니다. "~
 
 ## 따라하기 3: 캘린더
 
-> 내가 고른 30개 키워드야: [붙여넣기]
-> 한 달 캘린더를 keywords/calendar-2025-01.md로 만들어줘.
-> - 주 3편, 월·수·금
-> - 같은 주에 같은 의도(정보/비교/…)가 몰리지 않게
-> - 시리즈가 될 수 있는 것은 2주 간격으로 배치 (예: 1편 추천 → 2편 사용기)
-> - 계절 키워드는 데이터랩 추세를 고려해 앞뒤로 (내가 확인한 추세: [예: 차박은 4~5월 급상승])
-> - 각 행: 날짜 / 키워드 / 의도 / 글 형태 / 가제 / 필요한 사진
-> 그리고 각 키워드를 posts/ 폴더로 미리 만들고 meta.json에 keyword, intent, status: "planned"를 넣어줘.
+<div class="prompt-box not-prose" data-prompt="3-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+내가 고른 30개 키워드야: [붙여넣기]
+한 달 캘린더를 keywords/calendar-2025-01.md로 만들어줘.
+- 주 3편, 월·수·금
+- 같은 주에 같은 의도(정보/비교/…)가 몰리지 않게
+- 시리즈가 될 수 있는 것은 2주 간격으로 배치 (예: 1편 추천 → 2편 사용기)
+- 계절 키워드는 데이터랩 추세를 고려해 앞뒤로 (내가 확인한 추세: [예: 차박은 4~5월 급상승])
+- 각 행: 날짜 / 키워드 / 의도 / 글 형태 / 가제 / 필요한 사진
+그리고 각 키워드를 posts/ 폴더로 미리 만들고 meta.json에 keyword, intent, status: "planned"를 넣어줘.
+
+</div>
+</div>
 
 ## 주제 일관성 점검
 

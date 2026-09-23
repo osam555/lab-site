@@ -26,17 +26,38 @@ Finder에서 `데스크탑/my-site` 열기 → 새 폴더 `images` → 사진을
 ### 크기 줄이기 — 중요
 폰으로 찍은 사진은 5MB가 넘습니다. 그대로 넣으면 홈페이지가 느려집니다. Claude Code에게 시키세요.
 
-> images 폴더의 사진들을 가로 최대 1600px, 용량 300KB 이하로 줄여줘. 원본은 images/original 폴더에 옮겨두고. 필요한 도구가 있으면 설명하고 설치해줘.
+<div class="prompt-box not-prose" data-prompt="5-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+images 폴더의 사진들을 가로 최대 1600px, 용량 300KB 이하로 줄여줘. 원본은 images/original 폴더에 옮겨두고. 필요한 도구가 있으면 설명하고 설치해줘.
+
+</div>
+</div>
 
 도구 설치 허락을 물어보면 Yes. 끝나면 파일 크기가 확 줄어 있습니다.
 
 ## 사진 넣기
 
-> 첫 화면의 회색 상자를 images/hero.jpg로 바꿔줘. 사진 위의 글자가 잘 보이게 사진을 살짝 어둡게. 메뉴 3개의 사진 자리도 images/menu-1.jpg, menu-2.jpg, menu-3.jpg로.
+<div class="prompt-box not-prose" data-prompt="5-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+첫 화면의 회색 상자를 images/hero.jpg로 바꿔줘. 사진 위의 글자가 잘 보이게 사진을 살짝 어둡게. 메뉴 3개의 사진 자리도 images/menu-1.jpg, menu-2.jpg, menu-3.jpg로.
+
+</div>
+</div>
 
 새로고침. 사진이 늘어나 보이거나 잘리면:
 
-> 메뉴 사진이 찌그러져. 비율은 유지하고 정사각형으로 잘라서 보여줘.
+<div class="prompt-box not-prose" data-prompt="5-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+메뉴 사진이 찌그러져. 비율은 유지하고 정사각형으로 잘라서 보여줘.
+
+</div>
+</div>
 
 ## 지도 넣기
 
@@ -48,8 +69,15 @@ Finder에서 `데스크탑/my-site` 열기 → 새 폴더 `images` → 사진을
 2. 가게 이름 클릭 → **공유** → **지도 퍼가기** → `<iframe>` 코드 복사
 3. Claude Code에게:
 
-> 오시는 길의 회색 상자를 이 지도로 바꿔줘: [복사한 코드 붙여넣기]
-> 폰에서는 가로 꽉 차게, PC에서는 최대 800px.
+<div class="prompt-box not-prose" data-prompt="5-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+오시는 길의 회색 상자를 이 지도로 바꿔줘: [복사한 코드 붙여넣기]
+폰에서는 가로 꽉 차게, PC에서는 최대 800px.
+
+</div>
+</div>
 
 ### 카카오맵 (선택)
 
@@ -63,11 +91,25 @@ Finder에서 `데스크탑/my-site` 열기 → 새 폴더 `images` → 사진을
 
 홈페이지에서 가장 많이 읽히는 건 **첫 화면 한 줄**과 **메뉴/서비스 설명**입니다. 직접 써도 좋고 Claude Code에게 초안을 받아도 됩니다.
 
-> 첫 화면 한 줄 소개를 3가지 버전으로 제안해줘. 우리 가게는 [특징 2~3개]. 손님은 주로 [누구]. 20자 이내로. 아직 파일은 고치지 마.
+<div class="prompt-box not-prose" data-prompt="5-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+첫 화면 한 줄 소개를 3가지 버전으로 제안해줘. 우리 가게는 [특징 2~3개]. 손님은 주로 [누구]. 20자 이내로. 아직 파일은 고치지 마.
+
+</div>
+</div>
 
 마음에 드는 걸 고르고:
 
-> 2번으로 바꿔줘.
+<div class="prompt-box not-prose" data-prompt="5-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+2번으로 바꿔줘.
+
+</div>
+</div>
 
 메뉴 설명도 마찬가지입니다. "각 메뉴에 한 줄 설명을 추가해줘. [메뉴1은 …, 메뉴2는 …]".
 
@@ -75,7 +117,14 @@ Finder에서 `데스크탑/my-site` 열기 → 새 폴더 `images` → 사진을
 
 전화번호와 인스타그램을 **누르면 동작하게** 만듭니다.
 
-> 하단의 전화번호는 누르면 전화가 걸리게, 인스타그램은 누르면 새 탭으로 열리게 해줘. 예약하기 버튼은 일단 전화 걸기로.
+<div class="prompt-box not-prose" data-prompt="5-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+하단의 전화번호는 누르면 전화가 걸리게, 인스타그램은 누르면 새 탭으로 열리게 해줘. 예약하기 버튼은 일단 전화 걸기로.
+
+</div>
+</div>
 
 폰에서 확인하려면 8강까지 기다려야 하지만, PC 브라우저에서 링크에 마우스를 올려보면 왼쪽 아래에 `tel:010…`이 보이면 됩니다.
 

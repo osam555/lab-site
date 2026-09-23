@@ -24,7 +24,14 @@ Aside 패널 → **MCP 탭**에서 연결된 서버 목록과 상태를 확인�
 
 또는 Claude Code 대화창에:
 
-> MCP 설정 파일 위치를 알려주고, 아래 서버를 추가해줘.
+<div class="prompt-box not-prose" data-prompt="3-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+MCP 설정 파일 위치를 알려주고, 아래 서버를 추가해줘.
+
+</div>
+</div>
 
 ---
 
@@ -35,17 +42,45 @@ Aside 패널 → **MCP 탭**에서 연결된 서버 목록과 상태를 확인�
 1. [brave.com/search/api](https://brave.com/search/api) → 무료 API 키 발급 (월 2,000건 무료)
 2. Claude Code에:
 
-> Brave Search MCP를 추가해줘. API 키는 [발급한 키]야.
+<div class="prompt-box not-prose" data-prompt="3-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Brave Search MCP를 추가해줘. API 키는 [발급한 키]야.
+
+</div>
+</div>
 
 **Aside 패널 확인**: MCP 탭에서 `● Brave Search 연결됨` 확인.
 
 **활용 예시**
 
-> 지금 내 블로그에 올릴 "[주제]" 관련 최신 정보를 검색해서 핵심 3가지를 정리해줘.
+<div class="prompt-box not-prose" data-prompt="3-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 우리 동네 경쟁 카페 홈페이지를 3개 찾아서 메뉴 구성과 디자인을 비교해줘.
+지금 내 블로그에 올릴 "[주제]" 관련 최신 정보를 검색해서 핵심 3가지를 정리해줘.
 
-> 이번 주 "[업종]" 관련 뉴스를 검색해서 SNS에 쓸 만한 소재 5개를 골라줘.
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+우리 동네 경쟁 카페 홈페이지를 3개 찾아서 메뉴 구성과 디자인을 비교해줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이번 주 "[업종]" 관련 뉴스를 검색해서 SNS에 쓸 만한 소재 5개를 골라줘.
+
+</div>
+</div>
 
 ---
 
@@ -55,17 +90,45 @@ Computer Use보다 빠른 **헤드리스 브라우저** 자동화입니다. 화�
 
 **설치**
 
-> Playwright MCP 서버를 Claude Code에 추가해줘.
+<div class="prompt-box not-prose" data-prompt="3-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Playwright MCP 서버를 Claude Code에 추가해줘.
+
+</div>
+</div>
 
 **활용 예시**
 
-> 내 홈페이지(mycafe.kr)의 모든 링크를 클릭해서 404 오류가 있는지 확인해줘.
+<div class="prompt-box not-prose" data-prompt="3-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 네이버 블로그에 글을 올릴 때 에디터에 본문을 자동으로 채워줘.
-> 에디터 URL: [내 블로그 글쓰기 URL]
-> 제목: "[제목]", 본문: [아래 내용]
+내 홈페이지(mycafe.kr)의 모든 링크를 클릭해서 404 오류가 있는지 확인해줘.
 
-> 내 홈페이지 모바일 화면을 캡처해서 images/mobile-preview.png로 저장해줘.
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-8" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-8</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+네이버 블로그에 글을 올릴 때 에디터에 본문을 자동으로 채워줘.
+에디터 URL: [내 블로그 글쓰기 URL]
+제목: "[제목]", 본문: [아래 내용]
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-9" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-9</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+내 홈페이지 모바일 화면을 캡처해서 images/mobile-preview.png로 저장해줘.
+
+</div>
+</div>
 
 ---
 
@@ -75,16 +138,44 @@ Computer Use보다 빠른 **헤드리스 브라우저** 자동화입니다. 화�
 
 **설치**
 
-> 파일 시스템 MCP를 추가해줘.
-> 접근 허용 경로: ~/Desktop/my-site, ~/Documents/blog-drafts, ~/Downloads
+<div class="prompt-box not-prose" data-prompt="3-10" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-10</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+파일 시스템 MCP를 추가해줘.
+접근 허용 경로: ~/Desktop/my-site, ~/Documents/blog-drafts, ~/Downloads
+
+</div>
+</div>
 
 **활용 예시**
 
-> Downloads 폴더의 최신 사진들을 my-site/images로 복사하고, 각각 1600px·300KB 이하로 최적화해줘.
+<div class="prompt-box not-prose" data-prompt="3-11" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-11</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> Documents/blog-drafts 폴더의 마크다운 파일들을 읽어서 홈페이지 소식 페이지용 HTML로 변환해줘.
+Downloads 폴더의 최신 사진들을 my-site/images로 복사하고, 각각 1600px·300KB 이하로 최적화해줘.
 
-> my-site 전체를 오늘 날짜로 Documents/backups에 백업해줘.
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-12" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-12</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Documents/blog-drafts 폴더의 마크다운 파일들을 읽어서 홈페이지 소식 페이지용 HTML로 변환해줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-13" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-13</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+my-site 전체를 오늘 날짜로 Documents/backups에 백업해줘.
+
+</div>
+</div>
 
 ---
 

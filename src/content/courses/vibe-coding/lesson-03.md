@@ -82,7 +82,14 @@ claude
 claude --version
 ```
 
-> 다른 터미널형 AI 도구(Codex CLI, Gemini CLI 등)를 써도 강의 내용은 대부분 그대로 적용됩니다. 단, 4강의 조작법은 Claude Code 기준입니다.
+<div class="prompt-box not-prose" data-prompt="3-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+다른 터미널형 AI 도구(Codex CLI, Gemini CLI 등)를 써도 강의 내용은 대부분 그대로 적용됩니다. 단, 4강의 조작법은 Claude Code 기준입니다.
+
+</div>
+</div>
 
 ## 6. 첫 프로젝트 폴더 만들기
 

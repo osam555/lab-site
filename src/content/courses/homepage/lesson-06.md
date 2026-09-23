@@ -23,7 +23,14 @@ part: 2부 · 만들기
 
 색을 고르기 어려우면 가게 사진 한 장을 Claude Code에 붙여넣고 물어보세요.
 
-> 이 사진 분위기에 맞는 바탕색, 글자색, 강조색을 각각 색 코드(#…)로 제안해줘. 3세트.
+<div class="prompt-box not-prose" data-prompt="6-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이 사진 분위기에 맞는 바탕색, 글자색, 강조색을 각각 색 코드(#…)로 제안해줘. 3세트.
+
+</div>
+</div>
 
 ## 결정 2: 글꼴 하나
 
@@ -39,23 +46,44 @@ part: 2부 · 만들기
 
 결정을 파일로 남깁니다. 이 파일이 있으면 앞으로 어떤 화면을 추가해도 같은 규칙이 적용됩니다.
 
-> DESIGN.md 파일을 만들어줘:
-> - 바탕색 [#…], 글자색 [#…], 보조 글자색(연하게) [#…], 강조색 [#…]
-> - 강조색은 버튼·링크·활성 상태에만. 그라데이션 금지
-> - 글꼴: [Pretendard], 굵기 400/700만. 크기는 14/16/20/32px 네 단계만
-> - 여백은 8, 16, 24, 32, 48, 64px만 사용. 섹션 사이는 64px
-> - 이모지를 아이콘 대신 쓰지 않는다
-> - 가운데 정렬은 첫 화면에만
->
-> 그리고 CLAUDE.md에 "화면을 만들거나 고칠 때 DESIGN.md를 따른다"를 추가해줘.
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+DESIGN.md 파일을 만들어줘:
+- 바탕색 [#…], 글자색 [#…], 보조 글자색(연하게) [#…], 강조색 [#…]
+- 강조색은 버튼·링크·활성 상태에만. 그라데이션 금지
+- 글꼴: [Pretendard], 굵기 400/700만. 크기는 14/16/20/32px 네 단계만
+- 여백은 8, 16, 24, 32, 48, 64px만 사용. 섹션 사이는 64px
+- 이모지를 아이콘 대신 쓰지 않는다
+- 가운데 정렬은 첫 화면에만
+
+그리고 CLAUDE.md에 "화면을 만들거나 고칠 때 DESIGN.md를 따른다"를 추가해줘.
+
+</div>
+</div>
 
 ## 따라하기 2: 적용
 
-> DESIGN.md 규칙대로 style.css를 다시 정리해줘. 내용과 구조는 바꾸지 말고 색·글꼴·간격만.
+<div class="prompt-box not-prose" data-prompt="6-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+DESIGN.md 규칙대로 style.css를 다시 정리해줘. 내용과 구조는 바꾸지 말고 색·글꼴·간격만.
+
+</div>
+</div>
 
 새로고침. 한 번에 확 달라집니다. 이상한 부분이 있으면 하나씩:
 
-> 메뉴 가격이 너무 흐려. 글자색으로.
+<div class="prompt-box not-prose" data-prompt="6-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+메뉴 가격이 너무 흐려. 글자색으로.
+
+</div>
+</div>
 
 ## 따라하기 3: 폰 화면
 

@@ -31,9 +31,16 @@ part: 고급 · 도구 활용
 
 Analytics보다 한 줄의 코드가 필요합니다. Claude Code에게:
 
-> Vercel Speed Insights를 내 홈페이지에 추가해줘.
-> index.html, menu.html, location.html, contact.html 모든 페이지에.
-> 스크립트 한 줄이면 된다고 알고 있어.
+<div class="prompt-box not-prose" data-prompt="12-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Vercel Speed Insights를 내 홈페이지에 추가해줘.
+index.html, menu.html, location.html, contact.html 모든 페이지에.
+스크립트 한 줄이면 된다고 알고 있어.
+
+</div>
+</div>
 
 Claude가 각 HTML 파일 `</body>` 앞에 Vercel Speed Insights 스크립트를 삽입합니다.
 
@@ -72,7 +79,14 @@ push 후 Vercel 대시보드 → **Speed Insights** 탭에서 LCP·FID·CLS가 �
 
 LCP가 느리면:
 
-> Speed Insights에서 LCP가 4초야. hero 이미지 때문인 것 같아. 개선 방법 알려줘.
+<div class="prompt-box not-prose" data-prompt="12-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Speed Insights에서 LCP가 4초야. hero 이미지 때문인 것 같아. 개선 방법 알려줘.
+
+</div>
+</div>
 
 ## 4. 전화·예약 버튼 클릭 추적 (Conversion Goal)
 
@@ -82,10 +96,17 @@ LCP가 느리면:
 
 Claude Code에게:
 
-> Vercel Analytics 커스텀 이벤트를 추가해줘.
-> - 전화번호를 클릭하면 'phone_click' 이벤트를 보내
-> - 예약하기 버튼을 클릭하면 'reservation_click' 이벤트를 보내
-> - 인스타그램 링크를 클릭하면 'instagram_click' 이벤트를 보내
+<div class="prompt-box not-prose" data-prompt="12-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Vercel Analytics 커스텀 이벤트를 추가해줘.
+- 전화번호를 클릭하면 'phone_click' 이벤트를 보내
+- 예약하기 버튼을 클릭하면 'reservation_click' 이벤트를 보내
+- 인스타그램 링크를 클릭하면 'instagram_click' 이벤트를 보내
+
+</div>
+</div>
 
 커밋 → push 후 Vercel Analytics 대시보드 → **Custom Events**에서 클릭 수를 볼 수 있습니다.
 

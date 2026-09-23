@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 import { COURSES, getCourse } from "@/lib/courses";
 import { getAllLessons, lessonHref } from "@/lib/lessons";
 import { loadCollection, type Skill } from "@/lib/content";
+import { getCoursePrompts, groupByLesson } from "@/lib/course-prompts";
 import { LessonCard } from "@/components/LessonCard";
+import { CoursePromptList } from "@/components/CoursePromptList";
 
 type Params = { course: string };
 
@@ -208,20 +210,7 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
         </section>
       )}
 
-      {/* Highlights */}
-      {c.highlights && c.highlights.length > 0 && (
-        <section className="mt-10 rounded-2xl border border-line bg-surface p-6 sm:p-8">
-          <h2 className="text-lg font-black tracking-tight">핵심 내용</h2>
-          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-            {c.highlights.map((h) => (
-              <li key={h} className="flex items-start gap-2 text-sm leading-relaxed">
-                <span className="mt-0.5 shrink-0 text-accent">✓</span>
-                <span>{h}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      {/* Highlights — now integrated into prompt list below */}
 
       {/* Lesson list by part */}
       <div className="mt-12 space-y-12">
@@ -240,6 +229,22 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
           );
         })}
       </div>
+
+      {/* Course prompt library with highlights */}
+      {(() => {
+        const prompts = getCoursePrompts(course);
+        const promptGroups = groupByLesson(prompts);
+        if (promptGroups.length === 0) return null;
+        return (
+          <section className="mt-16 border-t border-line pt-12">
+            <CoursePromptList
+              courseSlug={course}
+              groups={JSON.parse(JSON.stringify(promptGroups))}
+              highlights={c.highlights}
+            />
+          </section>
+        );
+      })()}
 
       {/* Related skills section */}
       {relatedSkills.length > 0 && (

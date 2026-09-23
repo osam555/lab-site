@@ -54,11 +54,25 @@ part: 1부 · 준비
 
 가운데 대화창에 입력하고 Enter (또는 전송 버튼):
 
-> 안녕! 이 폴더에 뭐가 있어?
+<div class="prompt-box not-prose" data-prompt="3-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+안녕! 이 폴더에 뭐가 있어?
+
+</div>
+</div>
 
 "비어 있다"고 답하면 성공입니다. 이제 앞으로의 작업 방식을 알려줍니다:
 
-> 나는 코딩을 전혀 모르는 사람이야. 앞으로 한국어로, 짧게, 전문 용어는 풀어서 설명해줘. 파일을 만들거나 고치기 전에 뭘 할 건지 먼저 알려줘.
+<div class="prompt-box not-prose" data-prompt="3-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+나는 코딩을 전혀 모르는 사람이야. 앞으로 한국어로, 짧게, 전문 용어는 풀어서 설명해줘. 파일을 만들거나 고치기 전에 뭘 할 건지 먼저 알려줘.
+
+</div>
+</div>
 
 Claude가 "알겠습니다"라고 답하면 준비 끝입니다.
 

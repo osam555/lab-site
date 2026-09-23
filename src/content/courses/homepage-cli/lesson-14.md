@@ -83,7 +83,14 @@ Vercel이 도메인 등록 서비스를 제공합니다. 구입부터 연결까�
 
 DNS 관리 화면을 열고 Chrome Extension 사이드 패널에서:
 
-> 이 화면에서 A 레코드에 76.76.21.21을 추가하고 싶어. 어디를 눌러야 해? [화면 공유]
+<div class="prompt-box not-prose" data-prompt="14-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이 화면에서 A 레코드에 76.76.21.21을 추가하고 싶어. 어디를 눌러야 해? [화면 공유]
+
+</div>
+</div>
 
 또는 Aside Browser Computer Use에게 직접 맡기기 (13강 참고).
 
@@ -124,12 +131,19 @@ nslookup mycafe.kr
 
 Claude Code에게:
 
-> vercel.json에 리다이렉트를 추가해줘:
-> - /instagram → https://instagram.com/내아이디 (302)
-> - /order → https://주문링크 (302)
-> - /naver → https://naver.me/내링크 (302)
-> - cleanUrls: true (.html 숨기기)
-> - www → www 없는 주소로 301
+<div class="prompt-box not-prose" data-prompt="14-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+vercel.json에 리다이렉트를 추가해줘:
+- /instagram → https://instagram.com/내아이디 (302)
+- /order → https://주문링크 (302)
+- /naver → https://naver.me/내링크 (302)
+- cleanUrls: true (.html 숨기기)
+- www → www 없는 주소로 301
+
+</div>
+</div>
 
 `mycafe.kr/instagram` 을 명함에 인쇄하면 인스타 주소가 바뀌어도 여기만 수정하면 됩니다.
 

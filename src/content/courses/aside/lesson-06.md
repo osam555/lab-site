@@ -19,37 +19,72 @@ part: 2부 · SEO 자동화
 
 ## 1. 현재 점수 측정 — Aside로 자동화
 
-> [Aside 브라우저]: https://pagespeed.web.dev
->
-> Computer Use로 mycafe.kr 을 PageSpeed Insights에서 분석해줘.
-> 모바일·데스크탑 각각 점수와 주요 개선 항목을 알려줘.
+<div class="prompt-box not-prose" data-prompt="6-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+[Aside 브라우저]: https://pagespeed.web.dev
+
+Computer Use로 mycafe.kr 을 PageSpeed Insights에서 분석해줘.
+모바일·데스크탑 각각 점수와 주요 개선 항목을 알려줘.
+
+</div>
+</div>
 
 결과를 보고 Claude Code에게:
 
 **LCP > 2.5초 (이미지 느림)**
 
-> hero 이미지 LCP가 3.8초야. 다음을 적용해줘:
-> 1. hero img 태그에 fetchpriority="high" 추가
-> 2. head에 preload link 태그 추가
-> 3. hero.jpg를 WebP로 변환 (cwebp 또는 ImageMagick 사용)
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+hero 이미지 LCP가 3.8초야. 다음을 적용해줘:
+1. hero img 태그에 fetchpriority="high" 추가
+2. head에 preload link 태그 추가
+3. hero.jpg를 WebP로 변환 (cwebp 또는 ImageMagick 사용)
+
+</div>
+</div>
 
 **CLS > 0.1 (레이아웃 밀림)**
 
-> CLS가 0.18이야. 모든 img 태그에 실제 width·height 속성을 명시해줘.
-> 폰트 로딩으로 인한 FOUT도 방지해줘 (font-display: swap).
+<div class="prompt-box not-prose" data-prompt="6-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CLS가 0.18이야. 모든 img 태그에 실제 width·height 속성을 명시해줘.
+폰트 로딩으로 인한 FOUT도 방지해줘 (font-display: swap).
+
+</div>
+</div>
 
 **INP > 200ms (반응 느림)**
 
-> JavaScript 이벤트 처리가 느려. 불필요한 인라인 이벤트를 addEventListener로 바꾸고,
-> 외부 스크립트는 defer 속성을 달아줘.
+<div class="prompt-box not-prose" data-prompt="6-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+JavaScript 이벤트 처리가 느려. 불필요한 인라인 이벤트를 addEventListener로 바꾸고,
+외부 스크립트는 defer 속성을 달아줘.
+
+</div>
+</div>
 
 ---
 
 ## 2. 이미지 최적화 자동화
 
-> MCP 파일 시스템으로 images 폴더를 열어서 1MB 이상인 파일을 찾아줘.
-> 찾은 파일을 모두 WebP로 변환하고 가로 1200px 이하·300KB 이하로 줄여줘.
-> HTML에서 img src도 .webp로 바꿔줘.
+<div class="prompt-box not-prose" data-prompt="6-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+MCP 파일 시스템으로 images 폴더를 열어서 1MB 이상인 파일을 찾아줘.
+찾은 파일을 모두 WebP로 변환하고 가로 1200px 이하·300KB 이하로 줄여줘.
+HTML에서 img src도 .webp로 바꿔줘.
+
+</div>
+</div>
 
 ---
 
@@ -65,16 +100,37 @@ part: 2부 · SEO 자동화
 
 ### 지역 키워드 자동 발굴
 
-> Brave Search MCP로 "[동네] [업종]" 네이버 검색에서 상위 노출된 블로그 포스팅 제목을 5개 찾아줘.
-> 공통으로 쓰인 키워드 패턴을 분석해줘.
+<div class="prompt-box not-prose" data-prompt="6-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 분석한 키워드를 바탕으로 location.html의 텍스트를 자연스럽게 업데이트해줘.
-> 지하철역·버스정류장·주요 랜드마크를 텍스트로 명시해줘.
+Brave Search MCP로 "[동네] [업종]" 네이버 검색에서 상위 노출된 블로그 포스팅 제목을 5개 찾아줘.
+공통으로 쓰인 키워드 패턴을 분석해줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="6-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+분석한 키워드를 바탕으로 location.html의 텍스트를 자연스럽게 업데이트해줘.
+지하철역·버스정류장·주요 랜드마크를 텍스트로 명시해줘.
+
+</div>
+</div>
 
 ### 네이버 블로그 바이럴 활용
 
-> Brave Search MCP로 "[가게 이름]"을 네이버에서 검색했을 때 나오는 블로그 포스팅을 찾아줘.
-> 있으면 요약, 없으면 어떤 키워드로 블로그 포스팅을 만들면 좋을지 제안해줘.
+<div class="prompt-box not-prose" data-prompt="6-8" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Brave Search MCP로 "[가게 이름]"을 네이버에서 검색했을 때 나오는 블로그 포스팅을 찾아줘.
+있으면 요약, 없으면 어떤 키워드로 블로그 포스팅을 만들면 좋을지 제안해줘.
+
+</div>
+</div>
 
 ---
 
@@ -82,14 +138,28 @@ part: 2부 · SEO 자동화
 
 매주 1회 실행:
 
-> Playwright MCP로 mycafe.kr의 모든 페이지를 열어서:
-> 1. 404 링크가 있는지 확인
-> 2. 이미지가 깨진 게 있는지 확인
-> 3. 결과를 표로 정리해줘
+<div class="prompt-box not-prose" data-prompt="6-9" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-9</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Playwright MCP로 mycafe.kr의 모든 페이지를 열어서:
+1. 404 링크가 있는지 확인
+2. 이미지가 깨진 게 있는지 확인
+3. 결과를 표로 정리해줘
+
+</div>
+</div>
 
 오류 발견 시:
 
-> 발견된 오류를 모두 수정해줘. 커밋하고 push도.
+<div class="prompt-box not-prose" data-prompt="6-10" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-10</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+발견된 오류를 모두 수정해줘. 커밋하고 push도.
+
+</div>
+</div>
 
 ---
 
@@ -97,11 +167,18 @@ part: 2부 · SEO 자동화
 
 매주 월요일:
 
-> Aside에서 구글 서치 콘솔과 네이버 서치 어드바이저 모두 열어서
-> 지난 7일 주요 지표를 요약해줘:
-> - 구글: 클릭수, 노출수, CTR, 평균 순위
-> - 네이버: 클릭수, 조회수
-> 전주 대비 변화와 이번 주 해야 할 조치 1~2가지를 제안해줘.
+<div class="prompt-box not-prose" data-prompt="6-11" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-11</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Aside에서 구글 서치 콘솔과 네이버 서치 어드바이저 모두 열어서
+지난 7일 주요 지표를 요약해줘:
+- 구글: 클릭수, 노출수, CTR, 평균 순위
+- 네이버: 클릭수, 조회수
+전주 대비 변화와 이번 주 해야 할 조치 1~2가지를 제안해줘.
+
+</div>
+</div>
 
 ---
 

@@ -11,14 +11,28 @@ part: 2부 · 기획과 프롬프트
 
 아래 두 요청은 같은 AI에게 보냈지만 결과가 완전히 다릅니다.
 
-> ❌ "재료 입력하는 거 만들어줘"
+<div class="prompt-box not-prose" data-prompt="7-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> ✅ "재료를 입력하는 화면을 만들어줘.
-> - 텍스트 입력창 하나와 '추가' 버튼
-> - 추가하면 아래에 재료가 목록으로 쌓이고, 각 항목 옆에 삭제(×) 버튼
-> - 재료가 0개면 '추천받기' 버튼은 비활성화
-> - 스타일은 아직 신경 쓰지 말고 동작만
-> - 다른 파일은 건드리지 말고 `IngredientInput` 컴포넌트 하나만 만들어줘"
+❌ "재료 입력하는 거 만들어줘"
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="7-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+✅ "재료를 입력하는 화면을 만들어줘.
+- 텍스트 입력창 하나와 '추가' 버튼
+- 추가하면 아래에 재료가 목록으로 쌓이고, 각 항목 옆에 삭제(×) 버튼
+- 재료가 0개면 '추천받기' 버튼은 비활성화
+- 스타일은 아직 신경 쓰지 말고 동작만
+- 다른 파일은 건드리지 말고 `IngredientInput` 컴포넌트 하나만 만들어줘"
+
+</div>
+</div>
 
 첫 번째는 AI가 스무 가지를 추측해야 합니다. 두 번째는 추측할 게 없습니다.
 
@@ -56,7 +70,14 @@ AI는 친절해서 시키지 않은 것까지 합니다. 막아야 합니다.
 
 "다 됐어"라는 AI의 말을 믿지 마세요. 어떻게 확인할지 요청에 포함시키면 AI도 그 기준에 맞춰 작업합니다.
 
-> "완료되면, 내가 브라우저에서 무엇을 클릭해서 어떻게 확인하면 되는지 3단계로 알려줘."
+<div class="prompt-box not-prose" data-prompt="7-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"완료되면, 내가 브라우저에서 무엇을 클릭해서 어떻게 확인하면 되는지 3단계로 알려줘."
+
+</div>
+</div>
 
 ## 요청문 템플릿
 

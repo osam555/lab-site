@@ -33,12 +33,26 @@ Playwright MCP / Computer Use
 
 ## 1. 키워드 선정 — MCP로 분석
 
-> Brave Search MCP로 "[업종] 관련 네이버 블로그에서 잘 되는 키워드"를 찾아줘.
-> 조건: 검색량이 적당하고 (월 500~5000), 경쟁이 너무 세지 않은 것.
-> 10개 후보를 리스트로 줘.
+<div class="prompt-box not-prose" data-prompt="9-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 이 중에서 우리 [업종] 가게에 가장 맞는 3개를 골라줘.
-> 이유도 간단히 설명해줘.
+Brave Search MCP로 "[업종] 관련 네이버 블로그에서 잘 되는 키워드"를 찾아줘.
+조건: 검색량이 적당하고 (월 500~5000), 경쟁이 너무 세지 않은 것.
+10개 후보를 리스트로 줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="9-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이 중에서 우리 [업종] 가게에 가장 맞는 3개를 골라줘.
+이유도 간단히 설명해줘.
+
+</div>
+</div>
 
 ---
 
@@ -46,38 +60,73 @@ Playwright MCP / Computer Use
 
 선택한 키워드로:
 
-> Brave Search MCP로 "[키워드]" 네이버 검색 상위 5개 블로그 글의 제목과 구성을 분석해줘.
-> - 공통 소제목 구조
-> - 자주 등장하는 키워드
-> - 글 길이 (대략)
-> - 차별화할 수 있는 각도
+<div class="prompt-box not-prose" data-prompt="9-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 같은 키워드로 최신 정보(최근 3개월)를 검색해서 초안에 쓸 팩트를 5가지 찾아줘.
+Brave Search MCP로 "[키워드]" 네이버 검색 상위 5개 블로그 글의 제목과 구성을 분석해줘.
+- 공통 소제목 구조
+- 자주 등장하는 키워드
+- 글 길이 (대략)
+- 차별화할 수 있는 각도
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="9-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+같은 키워드로 최신 정보(최근 3개월)를 검색해서 초안에 쓸 팩트를 5가지 찾아줘.
+
+</div>
+</div>
 
 ---
 
 ## 3. SEO 최적화 초안 작성
 
-> 아래 조건으로 네이버 블로그 글 초안을 작성해줘:
->
-> 키워드: "[키워드]"
-> 분석 결과: [위에서 나온 구조]
-> 추가 팩트: [위에서 찾은 정보]
->
-> 형식:
-> - 제목: 키워드 포함, 클릭 유도, 30자 이내
-> - 본문: 1500자 이상, 소제목 4개, 이미지 자리표시자 3곳
-> - 마무리: CTA 포함 ("댓글로 알려주세요", "예약 문의는...")
-> - 태그: 관련 태그 10개
->
-> 아직 파일에 저장하지 마. 검토할게.
+<div class="prompt-box not-prose" data-prompt="9-5" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-5</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+아래 조건으로 네이버 블로그 글 초안을 작성해줘:
+
+키워드: "[키워드]"
+분석 결과: [위에서 나온 구조]
+추가 팩트: [위에서 찾은 정보]
+
+형식:
+- 제목: 키워드 포함, 클릭 유도, 30자 이내
+- 본문: 1500자 이상, 소제목 4개, 이미지 자리표시자 3곳
+- 마무리: CTA 포함 ("댓글로 알려주세요", "예약 문의는...")
+- 태그: 관련 태그 10개
+
+아직 파일에 저장하지 마. 검토할게.
+
+</div>
+</div>
 
 검토 후:
 
-> 2번 소제목을 더 구체적으로 바꿔줘.
-> 3번 팩트를 추가해줘.
+<div class="prompt-box not-prose" data-prompt="9-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 확정. blog-drafts/[날짜]-[키워드].md로 저장해줘.
+2번 소제목을 더 구체적으로 바꿔줘.
+3번 팩트를 추가해줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="9-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+확정. blog-drafts/[날짜]-[키워드].md로 저장해줘.
+
+</div>
+</div>
 
 ---
 
@@ -85,32 +134,53 @@ Playwright MCP / Computer Use
 
 ### Playwright MCP 방식 (빠름)
 
-> Playwright MCP로 네이버 블로그 글쓰기 페이지에 접속해서 초안을 입력해줘.
-> URL: https://blog.naver.com/[내아이디]/postwrite
-> 제목: [저장된 초안의 제목]
-> 본문: [저장된 초안의 본문]
-> 태그: [저장된 초안의 태그 10개]
-> 입력 완료 후 임시저장만 해줘. 발행은 하지 마.
+<div class="prompt-box not-prose" data-prompt="9-8" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Playwright MCP로 네이버 블로그 글쓰기 페이지에 접속해서 초안을 입력해줘.
+URL: https://blog.naver.com/[내아이디]/postwrite
+제목: [저장된 초안의 제목]
+본문: [저장된 초안의 본문]
+태그: [저장된 초안의 태그 10개]
+입력 완료 후 임시저장만 해줘. 발행은 하지 마.
+
+</div>
+</div>
 
 ### Computer Use 방식 (안전)
 
 1. Aside 브라우저: 네이버 블로그 로그인 → 글쓰기
 2. 대화창:
 
-> Computer Use로 스마트에디터에 초안을 입력해줘.
-> 제목: [제목]
-> 본문을 단락별로 입력해줘. 이미지 자리는 건너뛰고 "[이미지1]" 텍스트로 표시해줘.
-> 태그: [태그 목록]
-> 완료 후 임시저장.
+<div class="prompt-box not-prose" data-prompt="9-9" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-9</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 스마트에디터에 초안을 입력해줘.
+제목: [제목]
+본문을 단락별로 입력해줘. 이미지 자리는 건너뛰고 "[이미지1]" 텍스트로 표시해줘.
+태그: [태그 목록]
+완료 후 임시저장.
+
+</div>
+</div>
 
 ---
 
 ## 5. 이미지 준비 자동화
 
-> 이번 글에 넣을 이미지 3장을 준비해줘:
-> 1. 대표 이미지: "[키워드]" 관련 분위기, 16:9 비율 (Unsplash 검색어 알려줘)
-> 2. 본문 이미지 1: [소제목 2] 관련 설명 다이어그램 (텍스트 이미지로 만들어줘)
-> 3. 본문 이미지 2: [소제목 3] 관련 사진 (Unsplash 검색어)
+<div class="prompt-box not-prose" data-prompt="9-10" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-10</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이번 글에 넣을 이미지 3장을 준비해줘:
+1. 대표 이미지: "[키워드]" 관련 분위기, 16:9 비율 (Unsplash 검색어 알려줘)
+2. 본문 이미지 1: [소제목 2] 관련 설명 다이어그램 (텍스트 이미지로 만들어줘)
+3. 본문 이미지 2: [소제목 3] 관련 사진 (Unsplash 검색어)
+
+</div>
+</div>
 
 ---
 

@@ -60,7 +60,14 @@ AI에게 "여기 데이터 저장되게 해줘"라고 하면 AI는 되묻습니�
 
 AI에게 이렇게 물어보세요.
 
-> "API와 데이터베이스의 차이를 카페 사장님에게 설명하듯 알려줘. 각각 한 문단씩."
+<div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"API와 데이터베이스의 차이를 카페 사장님에게 설명하듯 알려줘. 각각 한 문단씩."
+
+</div>
+</div>
 
 돌아온 설명을 읽고, **내 말로 다시 한 문장씩** 노트에 적어보세요. 내 말로 못 적으면 아직 모르는 것입니다. 20개 전부 할 필요는 없고, 오늘은 5개만 하세요.
 

@@ -61,9 +61,16 @@ part: 1부 · 준비
 ### 3. 첫 영상 주제 3개
 "한 문장으로 궁금증이 생기는 것"이 좋은 주제입니다.
 
-> - 피라미드 왕의 방은 어떻게 4,500년을 버텼나
-> - 파르테논 기둥이 일부러 휘어 있는 이유
-> - 진시황 병마용 갱은 왜 무너지지 않았나
+<div class="prompt-box not-prose" data-prompt="1-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+- 피라미드 왕의 방은 어떻게 4,500년을 버텼나
+- 파르테논 기둥이 일부러 휘어 있는 이유
+- 진시황 병마용 갱은 왜 무너지지 않았나
+
+</div>
+</div>
 
 `topics.md` 파일에 적어두세요. 2강에서 프로젝트 폴더를 만들 때 넣습니다.
 

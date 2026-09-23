@@ -64,14 +64,21 @@ code .
 
 폴더 구조는 Claude Code에게 만들게 합니다. `claude` 실행 후:
 
-> 쇼츠 자동화 프로젝트 폴더 구조를 만들어줘:
-> - `topics.md` (내가 채울 주제 목록, 비워둬)
-> - `projects/` (영상 한 편당 폴더 하나. 예: projects/2025-01-pyramid/)
-> - 각 영상 폴더 안에는 `script.json`, `prompts/`, `clips/`, `voice/`, `output/`
-> - `assets/bgm/` (배경음악), `assets/fonts/` (자막 글꼴)
-> - `scripts/` (더빙·합성용 실행 스크립트, 나중에)
-> - `.env` 파일 (비워둬) 와 `.env`를 제외하는 `.gitignore`
-> - 지금은 폴더와 빈 파일만, 코드는 쓰지 마.
+<div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+쇼츠 자동화 프로젝트 폴더 구조를 만들어줘:
+- `topics.md` (내가 채울 주제 목록, 비워둬)
+- `projects/` (영상 한 편당 폴더 하나. 예: projects/2025-01-pyramid/)
+- 각 영상 폴더 안에는 `script.json`, `prompts/`, `clips/`, `voice/`, `output/`
+- `assets/bgm/` (배경음악), `assets/fonts/` (자막 글꼴)
+- `scripts/` (더빙·합성용 실행 스크립트, 나중에)
+- `.env` 파일 (비워둬) 와 `.env`를 제외하는 `.gitignore`
+- 지금은 폴더와 빈 파일만, 코드는 쓰지 마.
+
+</div>
+</div>
 
 `.env` 파일을 열어 키를 넣습니다.
 
@@ -90,26 +97,33 @@ ELEVENLABS_API_KEY=sk_여기에_붙여넣기
 
 이 프로젝트의 규칙 파일입니다. 파이프라인 프로젝트에서는 **폴더 규칙과 비용 규칙**이 특히 중요합니다.
 
-> CLAUDE.md를 만들어줘:
->
-> ## 프로젝트
-> 건축 지식 쇼츠(9:16, 80~100초) 자동 제작 파이프라인. 단계: 대본 → 비주얼 프롬프트 → Google Flow 클립 → ElevenLabs 더빙 → ffmpeg 합성.
->
-> ## 폴더 규칙
-> - 영상 한 편 = projects/YYYY-MM-주제/ 폴더 하나
-> - script.json이 그 영상의 유일한 진실. 컷 번호, 한국어 대본, 영문 프롬프트, 초 단위 길이를 담는다
-> - 클립은 clips/cut-01.mp4 형식, 음성은 voice/cut-01.mp3 형식. 번호는 두 자리
-> - 최종 결과물은 output/final.mp4
->
-> ## 작업 규칙
-> - 한국어로 짧게 설명, 코드 먼저
-> - 파일을 만들거나 고친 뒤 확인 방법을 알려준다
-> - 외부 API 호출(ElevenLabs 등)은 실행 전에 예상 소모량(글자 수·크레딧)을 알려주고 허락을 받는다
-> - 브라우저 자동화로 Google Flow를 조작할 때는 클립 하나를 먼저 만들어 확인받은 뒤 나머지를 진행한다
-> - .env 파일을 읽거나 출력하지 않는다. 키는 process.env / os.environ으로만 참조
->
-> ## 명령
-> - ffmpeg, python3 (또는 node) 사용 가능
+<div class="prompt-box not-prose" data-prompt="2-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CLAUDE.md를 만들어줘:
+
+## 프로젝트
+건축 지식 쇼츠(9:16, 80~100초) 자동 제작 파이프라인. 단계: 대본 → 비주얼 프롬프트 → Google Flow 클립 → ElevenLabs 더빙 → ffmpeg 합성.
+
+## 폴더 규칙
+- 영상 한 편 = projects/YYYY-MM-주제/ 폴더 하나
+- script.json이 그 영상의 유일한 진실. 컷 번호, 한국어 대본, 영문 프롬프트, 초 단위 길이를 담는다
+- 클립은 clips/cut-01.mp4 형식, 음성은 voice/cut-01.mp3 형식. 번호는 두 자리
+- 최종 결과물은 output/final.mp4
+
+## 작업 규칙
+- 한국어로 짧게 설명, 코드 먼저
+- 파일을 만들거나 고친 뒤 확인 방법을 알려준다
+- 외부 API 호출(ElevenLabs 등)은 실행 전에 예상 소모량(글자 수·크레딧)을 알려주고 허락을 받는다
+- 브라우저 자동화로 Google Flow를 조작할 때는 클립 하나를 먼저 만들어 확인받은 뒤 나머지를 진행한다
+- .env 파일을 읽거나 출력하지 않는다. 키는 process.env / os.environ으로만 참조
+
+## 명령
+- ffmpeg, python3 (또는 node) 사용 가능
+
+</div>
+</div>
 
 만들어진 파일을 **직접 읽어보세요.** 특히 "허락을 받는다" 두 줄은 크레딧과 돈을 지키는 규칙입니다.
 

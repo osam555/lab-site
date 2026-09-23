@@ -74,9 +74,16 @@ Claude Code에게 안내받거나 직접:
 
 ### SQL 방식 (Claude Code로)
 
-> Supabase SQL Editor에서 실행할 예약 테이블 SQL을 작성해줘.
-> 컬럼: id, name, phone, date, time, party_size, message, status(pending/confirmed/cancelled), created_at
-> status는 enum 타입으로, RLS(Row Level Security)는 일단 비활성화.
+<div class="prompt-box not-prose" data-prompt="17-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Supabase SQL Editor에서 실행할 예약 테이블 SQL을 작성해줘.
+컬럼: id, name, phone, date, time, party_size, message, status(pending/confirmed/cancelled), created_at
+status는 enum 타입으로, RLS(Row Level Security)는 일단 비활성화.
+
+</div>
+</div>
 
 ---
 
@@ -102,19 +109,33 @@ Supabase 대시보드 → **Auth → Providers → Kakao** → 토글 ON:
 
 ### 홈페이지에 카카오 로그인 버튼 추가
 
-> Supabase JS SDK를 써서 contact.html에 카카오 로그인 버튼을 추가해줘.
-> 로그인하면 예약 폼이 보이고, 이름과 이메일이 자동으로 채워지게.
-> 로그아웃 버튼도.
-> Supabase URL: [Settings → API에서 복사]
-> Supabase Anon Key: [Settings → API에서 복사]
+<div class="prompt-box not-prose" data-prompt="17-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Supabase JS SDK를 써서 contact.html에 카카오 로그인 버튼을 추가해줘.
+로그인하면 예약 폼이 보이고, 이름과 이메일이 자동으로 채워지게.
+로그아웃 버튼도.
+Supabase URL: [Settings → API에서 복사]
+Supabase Anon Key: [Settings → API에서 복사]
+
+</div>
+</div>
 
 ---
 
 ## 4. 예약 폼 → Supabase 저장
 
-> contact.html의 예약 폼을 Supabase reservations 테이블에 저장되게 수정해줘.
-> 저장 성공하면 "예약이 접수됐습니다. 확인 후 연락드리겠습니다." 표시.
-> 실패하면 "잠시 후 다시 시도해주세요." 표시.
+<div class="prompt-box not-prose" data-prompt="17-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+contact.html의 예약 폼을 Supabase reservations 테이블에 저장되게 수정해줘.
+저장 성공하면 "예약이 접수됐습니다. 확인 후 연락드리겠습니다." 표시.
+실패하면 "잠시 후 다시 시도해주세요." 표시.
+
+</div>
+</div>
 
 ---
 
@@ -129,10 +150,17 @@ Supabase 대시보드 → **Auth → Providers → Kakao** → 토글 ON:
 
 ### 예약 확인 이메일 자동 발송 (Edge Function)
 
-> Supabase Edge Function을 만들어줘.
-> reservations 테이블에 새 행이 들어오면 내 이메일([내 이메일])로
-> "새 예약: [이름], [날짜], [인원]" 알림을 보내줘.
-> Resend나 Supabase 내장 이메일을 써.
+<div class="prompt-box not-prose" data-prompt="17-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Supabase Edge Function을 만들어줘.
+reservations 테이블에 새 행이 들어오면 내 이메일([내 이메일])로
+"새 예약: [이름], [날짜], [인원]" 알림을 보내줘.
+Resend나 Supabase 내장 이메일을 써.
+
+</div>
+</div>
 
 ---
 
@@ -140,15 +168,36 @@ Supabase 대시보드 → **Auth → Providers → Kakao** → 토글 ON:
 
 Supabase 공식 MCP 서버를 사용하면 Claude Code가 Supabase를 직접 다룹니다.
 
-> Supabase MCP 서버를 Claude Code에 추가해줘.
-> 프로젝트 URL: [내 Supabase URL]
-> Service Role Key: [Settings → API → service_role 키]
+<div class="prompt-box not-prose" data-prompt="17-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Supabase MCP 서버를 Claude Code에 추가해줘.
+프로젝트 URL: [내 Supabase URL]
+Service Role Key: [Settings → API → service_role 키]
+
+</div>
+</div>
 
 설정 후:
 
-> reservations 테이블에서 오늘 예약을 가져와서 정리해줘.
+<div class="prompt-box not-prose" data-prompt="17-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> status가 pending인 예약이 5건 이상이면 나에게 알려줘.
+reservations 테이블에서 오늘 예약을 가져와서 정리해줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="17-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+status가 pending인 예약이 5건 이상이면 나에게 알려줘.
+
+</div>
+</div>
 
 ---
 
@@ -156,10 +205,17 @@ Supabase 공식 MCP 서버를 사용하면 Claude Code가 Supabase를 직접 다
 
 데이터를 외부에 노출하지 않으려면 RLS를 켭니다.
 
-> Supabase에서 reservations 테이블에 RLS를 설정해줘.
-> - 예약 삽입(insert): 누구나 가능 (로그인 없이 예약 폼 제출)
-> - 예약 조회(select): 관리자(service_role)만 가능
-> - 예약 수정(update): 관리자만 가능
+<div class="prompt-box not-prose" data-prompt="17-8" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Supabase에서 reservations 테이블에 RLS를 설정해줘.
+- 예약 삽입(insert): 누구나 가능 (로그인 없이 예약 폼 제출)
+- 예약 조회(select): 관리자(service_role)만 가능
+- 예약 수정(update): 관리자만 가능
+
+</div>
+</div>
 
 ---
 

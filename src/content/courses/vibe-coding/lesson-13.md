@@ -42,19 +42,33 @@ AI_API_KEY=sk-...
 
 ## 따라하기 2: 서버 라우트 만들기
 
-> "src/app/api/recommend/route.ts를 만들어줘.
-> - POST로 { ingredients: string[] }를 받는다
-> - process.env.AI_API_KEY로 [사용할 AI API]를 호출해서 '이 재료로 만들 수 있는 저녁 메뉴 3개를 JSON 배열로. 각 항목은 name, description(한 줄), time(분)' 을 요청한다
-> - 응답을 파싱해서 { menus: [...] }로 반환한다
-> - 재료가 비었거나 API가 실패하면 상태코드 400/500과 { error: '메시지' }를 반환한다
-> - 키는 절대 클라이언트로 보내지 않는다
-> 다른 파일은 건드리지 말고, 터미널에서 curl로 테스트하는 명령을 알려줘."
+<div class="prompt-box not-prose" data-prompt="13-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"src/app/api/recommend/route.ts를 만들어줘.
+- POST로 { ingredients: string[] }를 받는다
+- process.env.AI_API_KEY로 [사용할 AI API]를 호출해서 '이 재료로 만들 수 있는 저녁 메뉴 3개를 JSON 배열로. 각 항목은 name, description(한 줄), time(분)' 을 요청한다
+- 응답을 파싱해서 { menus: [...] }로 반환한다
+- 재료가 비었거나 API가 실패하면 상태코드 400/500과 { error: '메시지' }를 반환한다
+- 키는 절대 클라이언트로 보내지 않는다
+다른 파일은 건드리지 말고, 터미널에서 curl로 테스트하는 명령을 알려줘."
+
+</div>
+</div>
 
 AI가 알려준 curl 명령으로 터미널에서 먼저 테스트합니다. 화면과 분리해서 서버만 확인하는 습관입니다.
 
 ## 따라하기 3: 화면에 연결
 
-> "'추천받기' 버튼을 누르면 가짜 데이터 대신 /api/recommend를 POST로 호출하고, 응답의 menus를 카드로 보여줘. 호출 중에는 버튼을 비활성화하고 '추천 중…' 표시. 실패하면 빨간 글씨로 에러 메시지."
+<div class="prompt-box not-prose" data-prompt="13-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"'추천받기' 버튼을 누르면 가짜 데이터 대신 /api/recommend를 POST로 호출하고, 응답의 menus를 카드로 보여줘. 호출 중에는 버튼을 비활성화하고 '추천 중…' 표시. 실패하면 빨간 글씨로 에러 메시지."
+
+</div>
+</div>
 
 확인 → 커밋 → push → Vercel 환경변수에 `AI_API_KEY` 추가 → Redeploy → 폰에서 확인.
 

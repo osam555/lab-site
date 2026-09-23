@@ -16,27 +16,48 @@ part: 4부 · 블로그 자동화
 1. [tistory.com/guide/api](https://tistory.com/guide/api) → 앱 등록 → Client ID·Secret 발급
 2. Claude Code에게:
 
-> 티스토리 API를 사용해서 블로그에 글을 자동으로 발행하는 스크립트를 만들어줘.
-> Client ID: [발급한 ID]
-> Blog 주소: [내 블로그 주소]
-> 
-> 스크립트가 받는 인자:
-> - 제목
-> - 본문 (HTML 또는 마크다운)
-> - 태그 (쉼표 구분)
-> - 공개 여부 (0=비공개, 3=공개, 기본값: 0으로 임시저장)
->
-> 사용 예: node post-tistory.js "제목" content.md "태그1,태그2"
+<div class="prompt-box not-prose" data-prompt="10-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 실제로 테스트 글 하나를 비공개로 올려줘.
+티스토리 API를 사용해서 블로그에 글을 자동으로 발행하는 스크립트를 만들어줘.
+Client ID: [발급한 ID]
+Blog 주소: [내 블로그 주소]
+
+스크립트가 받는 인자:
+- 제목
+- 본문 (HTML 또는 마크다운)
+- 태그 (쉼표 구분)
+- 공개 여부 (0=비공개, 3=공개, 기본값: 0으로 임시저장)
+
+사용 예: node post-tistory.js "제목" content.md "태그1,태그2"
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="10-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+실제로 테스트 글 하나를 비공개로 올려줘.
+
+</div>
+</div>
 
 ### 방법 2 — Computer Use (API 없을 때)
 
 1. Aside 브라우저: `https://[내블로그].tistory.com/manage/post` → 로그인
 2. 대화창:
 
-> Computer Use로 티스토리 글쓰기 화면에서 초안을 입력해줘.
-> 제목, 본문, 태그를 채우고 임시저장.
+<div class="prompt-box not-prose" data-prompt="10-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 티스토리 글쓰기 화면에서 초안을 입력해줘.
+제목, 본문, 태그를 채우고 임시저장.
+
+</div>
+</div>
 
 ---
 
@@ -46,24 +67,38 @@ part: 4부 · 블로그 자동화
 
 ### 파이프라인 파일 만들기
 
-> deploy-content.md 파일을 만들어줘. 이 파일을 Claude Code에게 보여주면 아래 순서로 자동 실행하는 루틴이야:
->
-> 1. blog-drafts/[파일명].md 읽기
-> 2. 각 채널용 텍스트 변환 (sns-rules.md 참고)
-> 3. 인스타용 이미지 카드 생성
-> 4. 네이버 블로그 에디터 자동 입력 (임시저장)
-> 5. 티스토리 API로 비공개 발행
-> 6. 크리에이터 스튜디오에서 인스타 예약 (내일 11시)
-> 7. 카카오채널 예약 (내일 10시)
-> 8. X·스레드 텍스트를 클립보드에 복사
->
-> 각 단계 완료 후 체크리스트를 보여줘.
+<div class="prompt-box not-prose" data-prompt="10-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+deploy-content.md 파일을 만들어줘. 이 파일을 Claude Code에게 보여주면 아래 순서로 자동 실행하는 루틴이야:
+
+1. blog-drafts/[파일명].md 읽기
+2. 각 채널용 텍스트 변환 (sns-rules.md 참고)
+3. 인스타용 이미지 카드 생성
+4. 네이버 블로그 에디터 자동 입력 (임시저장)
+5. 티스토리 API로 비공개 발행
+6. 크리에이터 스튜디오에서 인스타 예약 (내일 11시)
+7. 카카오채널 예약 (내일 10시)
+8. X·스레드 텍스트를 클립보드에 복사
+
+각 단계 완료 후 체크리스트를 보여줘.
+
+</div>
+</div>
 
 ### 실행 방법
 
 이제 매번 이렇게만 하면 됩니다:
 
-> deploy-content.md 루틴을 실행해줘. 배포할 파일: blog-drafts/2024-12-신메뉴출시.md
+<div class="prompt-box not-prose" data-prompt="10-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+deploy-content.md 루틴을 실행해줘. 배포할 파일: blog-drafts/2024-12-신메뉴출시.md
+
+</div>
+</div>
 
 ---
 

@@ -23,11 +23,18 @@ part: 3부 · 만들기
 
 ## 따라하기 1: 로그인 화면
 
-> "Supabase Auth의 매직 링크 로그인을 추가해줘. @supabase/ssr 설치를 허락할게.
-> 1. /login 화면: 이메일 입력 + '로그인 링크 받기' 버튼. 보내면 '이메일을 확인하세요' 표시.
-> 2. 링크 클릭 후 돌아올 콜백 라우트를 만들어줘.
-> 3. layout.tsx 헤더에 로그인 상태면 이메일과 '로그아웃', 아니면 '로그인' 링크.
-> Next.js App Router에 맞는 서버/클라이언트 구분을 지켜줘. 완료 후 확인 방법을 알려줘."
+<div class="prompt-box not-prose" data-prompt="14-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"Supabase Auth의 매직 링크 로그인을 추가해줘. @supabase/ssr 설치를 허락할게.
+1. /login 화면: 이메일 입력 + '로그인 링크 받기' 버튼. 보내면 '이메일을 확인하세요' 표시.
+2. 링크 클릭 후 돌아올 콜백 라우트를 만들어줘.
+3. layout.tsx 헤더에 로그인 상태면 이메일과 '로그아웃', 아니면 '로그인' 링크.
+Next.js App Router에 맞는 서버/클라이언트 구분을 지켜줘. 완료 후 확인 방법을 알려줘."
+
+</div>
+</div>
 
 Supabase 대시보드 → Authentication → URL Configuration에 `http://localhost:3000`과 배포 주소를 등록해야 링크가 제대로 돌아옵니다. AI에게 "어디에 어떤 주소를 등록해야 하는지"를 물어보세요.
 
@@ -43,7 +50,14 @@ Supabase 대시보드 → Authentication → URL Configuration에 `http://localh
 
 그리고 코드:
 
-> "메뉴를 저장할 때 user_id에 현재 로그인한 사용자 id를 넣고, /menus는 로그인한 사용자의 메뉴만 보여줘. 로그인 안 했으면 /login으로 보내줘."
+<div class="prompt-box not-prose" data-prompt="14-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"메뉴를 저장할 때 user_id에 현재 로그인한 사용자 id를 넣고, /menus는 로그인한 사용자의 메뉴만 보여줘. 로그인 안 했으면 /login으로 보내줘."
+
+</div>
+</div>
 
 ## 따라하기 3: RLS 켜기 — 진짜 보안
 
@@ -51,7 +65,14 @@ Supabase 대시보드 → Authentication → URL Configuration에 `http://localh
 
 Supabase → Table Editor → `saved_menus` → **Enable RLS**. 그리고 정책(Policy)을 추가합니다. AI에게 SQL을 받아 SQL Editor에서 실행하면 됩니다.
 
-> "saved_menus 테이블에 RLS 정책 SQL을 만들어줘. 로그인한 사용자가 자신의 user_id 행만 select, insert, update, delete 할 수 있게."
+<div class="prompt-box not-prose" data-prompt="14-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"saved_menus 테이블에 RLS 정책 SQL을 만들어줘. 로그인한 사용자가 자신의 user_id 행만 select, insert, update, delete 할 수 있게."
+
+</div>
+</div>
 
 결과는 대략 이런 모양입니다.
 

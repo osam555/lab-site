@@ -26,13 +26,20 @@ output/thumb.jpg
 
 한 번에 다 시키지 말고 단계별로 만들어 확인합니다.
 
-> scripts/assemble.py를 만들어줘. 1단계만:
-> - script.json과 voice/durations.json을 읽어서
-> - 컷마다 clips/cut-NN.mp4를 음성 길이 + 0.3초로 자르고(클립이 짧으면 마지막 프레임을 늘려서), voice/cut-NN.mp3를 얹어 work/seg-NN.mp4로 저장
-> - 모든 세그먼트를 1080×1920, 30fps로 통일
-> - 세그먼트를 순서대로 이어 work/body.mp4 생성
-> - 각 컷의 시작 시각을 work/timeline.json에 기록 (자막용)
-> 실행 후 body.mp4 길이를 출력해줘.
+<div class="prompt-box not-prose" data-prompt="7-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/assemble.py를 만들어줘. 1단계만:
+- script.json과 voice/durations.json을 읽어서
+- 컷마다 clips/cut-NN.mp4를 음성 길이 + 0.3초로 자르고(클립이 짧으면 마지막 프레임을 늘려서), voice/cut-NN.mp3를 얹어 work/seg-NN.mp4로 저장
+- 모든 세그먼트를 1080×1920, 30fps로 통일
+- 세그먼트를 순서대로 이어 work/body.mp4 생성
+- 각 컷의 시작 시각을 work/timeline.json에 기록 (자막용)
+실행 후 body.mp4 길이를 출력해줘.
+
+</div>
+</div>
 
 ```bash
 python3 scripts/assemble.py
@@ -40,11 +47,25 @@ python3 scripts/assemble.py
 
 `work/body.mp4`를 열어 **끝까지 봅니다.** 확인: 컷 전환이 나레이션과 맞는가, 총 길이가 80~100초인가, 화면이 늘어지거나 검은 프레임이 없는가.
 
-> 세그먼트 사이에 0.2초 크로스 디졸브를 넣어줘. 컷 전환이 너무 딱딱해.
+<div class="prompt-box not-prose" data-prompt="7-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+세그먼트 사이에 0.2초 크로스 디졸브를 넣어줘. 컷 전환이 너무 딱딱해.
+
+</div>
+</div>
 
 ## 따라하기 2: BGM
 
-> assemble.py에 2단계 추가: assets/bgm/[파일명]을 body.mp4 길이에 맞춰 깔아줘. 볼륨은 나레이션 대비 -18dB, 나레이션이 나올 때 자동으로 더 줄어들게(sidechain ducking), 시작 1초 페이드인, 끝 2초 페이드아웃. 결과는 work/with-bgm.mp4.
+<div class="prompt-box not-prose" data-prompt="7-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+assemble.py에 2단계 추가: assets/bgm/[파일명]을 body.mp4 길이에 맞춰 깔아줘. 볼륨은 나레이션 대비 -18dB, 나레이션이 나올 때 자동으로 더 줄어들게(sidechain ducking), 시작 1초 페이드인, 끝 2초 페이드아웃. 결과는 work/with-bgm.mp4.
+
+</div>
+</div>
 
 들어보고 BGM이 크면 "-22dB로", 덕킹이 너무 티 나면 "덕킹 깊이를 절반으로".
 
@@ -52,22 +73,43 @@ python3 scripts/assemble.py
 
 쇼츠는 **무음으로 보는 사람이 많습니다.** 자막은 선택이 아닙니다.
 
-> 3단계: timeline.json과 script.json의 ko로 자막을 만들어 굽는다.
-> - 위치: 화면 세로 중앙보다 약간 아래 (하단 UI에 안 가리게, 아래에서 약 28% 지점)
-> - 글꼴: assets/fonts/의 볼드, 크기 64px, 흰색, 검은 외곽선 4px, 가로 여백 80px 안에서 최대 2줄
-> - 한 컷의 자막은 그 컷 음성 시작~끝 동안 표시
-> - ASS 형식으로 만든 뒤 굽기. 결과 output/final.mp4
+<div class="prompt-box not-prose" data-prompt="7-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+3단계: timeline.json과 script.json의 ko로 자막을 만들어 굽는다.
+- 위치: 화면 세로 중앙보다 약간 아래 (하단 UI에 안 가리게, 아래에서 약 28% 지점)
+- 글꼴: assets/fonts/의 볼드, 크기 64px, 흰색, 검은 외곽선 4px, 가로 여백 80px 안에서 최대 2줄
+- 한 컷의 자막은 그 컷 음성 시작~끝 동안 표시
+- ASS 형식으로 만든 뒤 굽기. 결과 output/final.mp4
+
+</div>
+</div>
 
 폰에서 확인하는 게 정확합니다. `final.mp4`를 폰으로 보내 세로로 보세요. 글자가 작으면 72px, 두 줄이 넘치면 3강 기준(12~18자)을 벗어난 컷입니다.
 
 ### 자막 스타일 한 번에 바꾸기
-> 자막 강조: 각 컷에서 숫자와 고유명사만 노란색(#FFD400)으로.
+<div class="prompt-box not-prose" data-prompt="7-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+자막 강조: 각 컷에서 숫자와 고유명사만 노란색(#FFD400)으로.
+
+</div>
+</div>
 
 이런 것도 script.json에 `highlight` 필드를 추가해 Claude가 처리하게 할 수 있습니다.
 
 ## 따라하기 4: 썸네일과 메타
 
-> 4단계: final.mp4에서 가장 극적인 프레임(훅 컷 근처)을 골라 output/thumb.jpg로, 제목 문구 "[제목]"을 상단에 크게 얹어서. 그리고 output/meta.md에 유튜브용 제목 3안, 설명문(첫 줄에 훅, 마지막에 해시태그 5개), 태그 15개를 script.json 기준으로 써줘.
+<div class="prompt-box not-prose" data-prompt="7-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+4단계: final.mp4에서 가장 극적인 프레임(훅 컷 근처)을 골라 output/thumb.jpg로, 제목 문구 "[제목]"을 상단에 크게 얹어서. 그리고 output/meta.md에 유튜브용 제목 3안, 설명문(첫 줄에 훅, 마지막에 해시태그 5개), 태그 15개를 script.json 기준으로 써줘.
+
+</div>
+</div>
 
 ## 최종 점검
 
@@ -85,7 +127,14 @@ python3 scripts/assemble.py
 
 네 단계가 각각 되면:
 
-> assemble.py를 `python3 scripts/assemble.py --all`로 1~4단계를 순서대로 실행하고, `--from 3`처럼 중간부터 실행할 수 있게 정리해줘. 각 단계 시작·완료를 출력.
+<div class="prompt-box not-prose" data-prompt="7-7" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-7</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+assemble.py를 `python3 scripts/assemble.py --all`로 1~4단계를 순서대로 실행하고, `--from 3`처럼 중간부터 실행할 수 있게 정리해줘. 각 단계 시작·완료를 출력.
+
+</div>
+</div>
 
 ```bash
 git add .

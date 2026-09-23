@@ -23,7 +23,14 @@ part: 3부 · 자동화와 운영
 
 가이드의 원래 명령 그대로:
 
-> 오늘 작업한 전체 과정을 '플로우 건축 쇼츠 제작 스킬'로 저장해줘.
+<div class="prompt-box not-prose" data-prompt="8-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+오늘 작업한 전체 과정을 '플로우 건축 쇼츠 제작 스킬'로 저장해줘.
+
+</div>
+</div>
 
 Claude Code가 `.claude/skills/` 아래에 스킬 파일을 만듭니다. 만들어진 파일을 **열어서 읽고** 아래 항목이 있는지 확인하세요. 없으면 추가를 요청합니다.
 
@@ -76,7 +83,14 @@ Claude Code가 `.claude/skills/` 아래에 스킬 파일을 만듭니다. 만들
 
 새 대화(`/clear`)에서:
 
-> 파르테논 신전 쇼츠 만들어줘.
+<div class="prompt-box not-prose" data-prompt="8-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+파르테논 신전 쇼츠 만들어줘.
+
+</div>
+</div>
 
 체크포인트마다 확인만 하면 됩니다. 첫 영상이 며칠 걸렸다면 두 번째는 **한두 시간**입니다. 막히는 곳이 있으면 스킬 파일의 해당 단계에 한 줄 추가 — 규칙 파일과 같은 원리입니다.
 
@@ -108,13 +122,20 @@ Claude Code가 `.claude/skills/` 아래에 스킬 파일을 만듭니다. 만들
 
 Claude Code에게 스크립트 생성을 요청합니다:
 
-> scripts/upload.py를 만들어줘.
-> - google-api-python-client, google-auth-oauthlib, google-auth-httplib2 사용
-> - client_secret.json으로 OAuth 2.0 인증 진행, 첫 인증 후 token.json으로 자동 저장·재사용
-> - output/meta.md 파일에서 제목, 설명, 태그를 자동으로 읽어오기
-> - output/final.mp4 동영상을 YouTube Data API videos.insert 메서드로 업로드
-> - 안전을 위해 초기 업로드 상태(privacyStatus)는 'private'(비공개) 또는 'unlisted'(일부공개)로 설정
-> - 업로드 완료 후 생성된 유튜브 URL(https://youtu.be/[video_id])을 출력
+<div class="prompt-box not-prose" data-prompt="8-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/upload.py를 만들어줘.
+- google-api-python-client, google-auth-oauthlib, google-auth-httplib2 사용
+- client_secret.json으로 OAuth 2.0 인증 진행, 첫 인증 후 token.json으로 자동 저장·재사용
+- output/meta.md 파일에서 제목, 설명, 태그를 자동으로 읽어오기
+- output/final.mp4 동영상을 YouTube Data API videos.insert 메서드로 업로드
+- 안전을 위해 초기 업로드 상태(privacyStatus)는 'private'(비공개) 또는 'unlisted'(일부공개)로 설정
+- 업로드 완료 후 생성된 유튜브 URL(https://youtu.be/[video_id])을 출력
+
+</div>
+</div>
 
 필요한 파이썬 라이브러리를 설치하고 실행합니다:
 

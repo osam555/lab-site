@@ -24,11 +24,32 @@ part: 1부 · Aside 도구 기초
 
 대화창에 다음 중 하나를 입력합니다:
 
-> "Aside 브라우저에서 직접 조작해줘"
+<div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> "Computer Use 모드로 [작업]을 해줘"
+"Aside 브라우저에서 직접 조작해줘"
 
-> "Aside 브라우저를 컨트롤해서 [작업]을 완료해줘"
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="2-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"Computer Use 모드로 [작업]을 해줘"
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="2-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"Aside 브라우저를 컨트롤해서 [작업]을 완료해줘"
+
+</div>
+</div>
 
 Claude가 Computer Use를 시작하면 Aside 브라우저에서 마우스 커서가 움직이는 것이 보입니다.
 
@@ -43,8 +64,15 @@ Claude가 Computer Use를 시작하면 Aside 브라우저에서 마우스 커서
 2. Vercel 계정으로 로그인 (직접)
 3. 대화창에:
 
-> Computer Use로 Vercel 대시보드에서 [프로젝트 이름] 프로젝트의 Analytics를 활성화해줘.
-> 지금 Aside 브라우저에 Vercel이 열려 있고 로그인돼 있어.
+<div class="prompt-box not-prose" data-prompt="2-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 Vercel 대시보드에서 [프로젝트 이름] 프로젝트의 Analytics를 활성화해줘.
+지금 Aside 브라우저에 Vercel이 열려 있고 로그인돼 있어.
+
+</div>
+</div>
 
 Claude가:
 - 프로젝트 카드 클릭
@@ -61,10 +89,17 @@ Claude가:
 1. Aside 브라우저에서 도메인 구입처 로그인
 2. DNS 관리 화면으로 이동
 
-> Computer Use로 지금 Aside 브라우저의 DNS 관리 화면에서 아래 두 레코드를 추가해줘:
-> - Type: A, Name: @, Value: 76.76.21.21, TTL: 3600
-> - Type: CNAME, Name: www, Value: cname.vercel-dns.com, TTL: 3600
-> 각 필드를 찾아서 입력하고 저장해줘.
+<div class="prompt-box not-prose" data-prompt="2-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 지금 Aside 브라우저의 DNS 관리 화면에서 아래 두 레코드를 추가해줘:
+- Type: A, Name: @, Value: 76.76.21.21, TTL: 3600
+- Type: CNAME, Name: www, Value: cname.vercel-dns.com, TTL: 3600
+각 필드를 찾아서 입력하고 저장해줘.
+
+</div>
+</div>
 
 ---
 
@@ -73,8 +108,15 @@ Claude가:
 1. Aside 브라우저에서 `https://search.google.com/search-console` 접속·로그인
 2. 대화창에:
 
-> Computer Use로 구글 서치 콘솔에서 내 사이트(mycafe.kr)에 sitemap.xml을 제출해줘.
-> 왼쪽 메뉴 Sitemaps로 가서 https://mycafe.kr/sitemap.xml 을 입력하고 제출해줘.
+<div class="prompt-box not-prose" data-prompt="2-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 구글 서치 콘솔에서 내 사이트(mycafe.kr)에 sitemap.xml을 제출해줘.
+왼쪽 메뉴 Sitemaps로 가서 https://mycafe.kr/sitemap.xml 을 입력하고 제출해줘.
+
+</div>
+</div>
 
 ---
 

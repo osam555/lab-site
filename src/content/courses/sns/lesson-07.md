@@ -9,7 +9,14 @@ part: 3부 · 자동화와 운영
 
 ## 스킬로 저장
 
-> 3강부터 6강까지의 과정을 'SNS 배포 스킬'로 저장해줘. 사용자가 원본 파일 경로나 링크를 주면서 "배포해줘"라고 하면 실행되게.
+<div class="prompt-box not-prose" data-prompt="7-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+3강부터 6강까지의 과정을 'SNS 배포 스킬'로 저장해줘. 사용자가 원본 파일 경로나 링크를 주면서 "배포해줘"라고 하면 실행되게.
+
+</div>
+</div>
 
 만들어진 파일을 열고 아래 구조를 확인·보강합니다.
 
@@ -51,7 +58,14 @@ part: 3부 · 자동화와 운영
 
 새 대화에서:
 
-> sources/winter-camping-tips.md 배포해줘.
+<div class="prompt-box not-prose" data-prompt="7-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+sources/winter-camping-tips.md 배포해줘.
+
+</div>
+</div>
 
 후크 고르고, 카드 보고, 표 확인하고 "예약해". **15분**입니다.
 

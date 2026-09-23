@@ -21,23 +21,51 @@ part: 2부 · 파이프라인 만들기
 
 ## 따라하기 1: 브랜드 값 정하기
 
-> templates/brand.json을 만들어줘: 배경색, 글자색, 강조색 각 1개(내 블로그/로고 색: [#…]), 글꼴(Pretendard), 로고 텍스트 또는 파일(assets/logo.png), 하단에 넣을 핸들(@내아이디).
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+templates/brand.json을 만들어줘: 배경색, 글자색, 강조색 각 1개(내 블로그/로고 색: [#…]), 글꼴(Pretendard), 로고 텍스트 또는 파일(assets/logo.png), 하단에 넣을 핸들(@내아이디).
+
+</div>
+</div>
 
 색이 없다면 [홈페이지 만들기 6강](/lectures/homepage/lesson-06)의 방법으로 세 가지만 정하세요.
 
 ## 따라하기 2: 템플릿
 
-> templates/quote.html을 만들어줘. brand.json 값을 쓰고, `{{hook}}`, `{{handle}}` 자리표시자. 1080×1080 기준으로 디자인하되 CSS로 1080×1350(4:5)과 1920×1080(16:9)도 같은 템플릿에서 클래스만 바꿔 대응되게. 글자는 길이에 따라 자동으로 줄어들게(최대 3줄). 여백 넉넉히, 강조색은 한 곳에만.
+<div class="prompt-box not-prose" data-prompt="4-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> templates/carousel.html도 만들어줘. 표지(제목) + 포인트 슬라이드(번호, 한 줄 제목, 두 줄 설명) + 마지막(CTA, 핸들). 1080×1350.
+templates/quote.html을 만들어줘. brand.json 값을 쓰고, `{{hook}}`, `{{handle}}` 자리표시자. 1080×1080 기준으로 디자인하되 CSS로 1080×1350(4:5)과 1920×1080(16:9)도 같은 템플릿에서 클래스만 바꿔 대응되게. 글자는 길이에 따라 자동으로 줄어들게(최대 3줄). 여백 넉넉히, 강조색은 한 곳에만.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="4-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+templates/carousel.html도 만들어줘. 표지(제목) + 포인트 슬라이드(번호, 한 줄 제목, 두 줄 설명) + 마지막(CTA, 핸들). 1080×1350.
+
+</div>
+</div>
 
 ## 따라하기 3: 렌더링 스크립트
 
-> scripts/render-cards.py를 만들어줘.
-> - posts/XXX/variants.json을 읽어 채널별로 필요한 카드를 결정 (channels.json의 image_ratio, image_count)
-> - 템플릿에 값을 넣고 Playwright로 해당 크기 스크린샷 → cards/{채널}-{번호}.png
-> - 한글 글꼴이 깨지지 않게 폰트 파일을 직접 로드
-> - 결과 목록과 각 파일 크기를 출력
+<div class="prompt-box not-prose" data-prompt="4-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/render-cards.py를 만들어줘.
+- posts/XXX/variants.json을 읽어 채널별로 필요한 카드를 결정 (channels.json의 image_ratio, image_count)
+- 템플릿에 값을 넣고 Playwright로 해당 크기 스크린샷 → cards/{채널}-{번호}.png
+- 한글 글꼴이 깨지지 않게 폰트 파일을 직접 로드
+- 결과 목록과 각 파일 크기를 출력
+
+</div>
+</div>
 
 ```bash
 python3 scripts/render-cards.py posts/2025-01-camping-chair
@@ -66,7 +94,14 @@ Playwright 브라우저가 없다는 에러가 나면 `python -m playwright inst
 
 원본에 사진이 있으면 카드 배경으로:
 
-> quote.html에 `{{bg_image}}` 옵션을 추가해줘. 있으면 사진을 어둡게 깔고 그 위에 글자. 없으면 지금처럼 단색.
+<div class="prompt-box not-prose" data-prompt="4-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+quote.html에 `{{bg_image}}` 옵션을 추가해줘. 있으면 사진을 어둡게 깔고 그 위에 글자. 없으면 지금처럼 단색.
+
+</div>
+</div>
 
 `variants.json`의 채널 항목에 `bg_image: "../sources/img/01.jpg"`를 넣으면 됩니다. 인스타는 사진 배경, 링크드인은 단색 — 이런 채널별 기본값도 channels.json에 넣을 수 있습니다.
 

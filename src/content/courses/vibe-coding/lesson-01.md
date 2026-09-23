@@ -35,9 +35,16 @@ part: 1부 · 준비
 
 노트를 펴고 아래 문장의 빈칸을 채워보세요. 완벽하지 않아도 됩니다. 6강에서 다듬을 거니까요.
 
-> **나는 [누구]를 위해 [무엇을 해주는] 서비스를 만든다.**
->
-> 예: 나는 *혼자 사는 직장인*을 위해 *냉장고 속 재료로 오늘 저녁 메뉴를 추천해주는* 서비스를 만든다.
+<div class="prompt-box not-prose" data-prompt="1-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+**나는 [누구]를 위해 [무엇을 해주는] 서비스를 만든다.**
+
+예: 나는 *혼자 사는 직장인*을 위해 *냉장고 속 재료로 오늘 저녁 메뉴를 추천해주는* 서비스를 만든다.
+
+</div>
+</div>
 
 이 한 줄이 20일 동안의 나침반입니다. 벽에 붙여두세요.
 

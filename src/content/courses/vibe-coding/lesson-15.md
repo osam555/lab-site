@@ -58,7 +58,14 @@ TypeError: Cannot read properties of undefined (reading 'map')
 
 빨간 글씨 없이 "그냥 안 됨"이면 **상태를 눈으로 보이게** 만듭니다.
 
-> "MenuList에서 Supabase 응답을 받은 직후에 console.log로 data와 error를 출력해줘."
+<div class="prompt-box not-prose" data-prompt="15-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"MenuList에서 Supabase 응답을 받은 직후에 console.log로 data와 error를 출력해줘."
+
+</div>
+</div>
 
 콘솔을 보면 `data: null, error: {...}` 처럼 실제 값이 보이고, 그 값을 AI에게 보내면 됩니다. 확인 후 "console.log 지워줘"를 잊지 마세요.
 

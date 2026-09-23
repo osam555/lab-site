@@ -14,12 +14,19 @@ part: 3부 · 공개
 1. 서비스 가입 → 새 폼 만들기 → **폼 주소**(endpoint) 또는 **키**를 복사
 2. Claude Code에게:
 
-> contact.html에 문의 폼을 넣어줘.
-> - 항목: 이름, 연락처(전화 또는 이메일), 문의 내용, [희망 날짜]
-> - 전송은 [서비스 이름] 사용, 주소는 [복사한 endpoint]
-> - 보내면 "접수됐습니다. 하루 안에 연락드릴게요" 표시
-> - 필수 항목이 비면 빨간 안내
-> - DESIGN.md 규칙대로 스타일
+<div class="prompt-box not-prose" data-prompt="10-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+contact.html에 문의 폼을 넣어줘.
+- 항목: 이름, 연락처(전화 또는 이메일), 문의 내용, [희망 날짜]
+- 전송은 [서비스 이름] 사용, 주소는 [복사한 endpoint]
+- 보내면 "접수됐습니다. 하루 안에 연락드릴게요" 표시
+- 필수 항목이 비면 빨간 안내
+- DESIGN.md 규칙대로 스타일
+
+</div>
+</div>
 
 3. 커밋 → push → 실제 도메인에서 **직접 테스트 전송** → 내 이메일에 도착하는지 확인
 

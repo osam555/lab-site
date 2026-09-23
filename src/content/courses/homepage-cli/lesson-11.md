@@ -32,19 +32,33 @@ part: 고급 · 도구 활용
 
 앱 대화창에:
 
-> 네이버 지도 JS API를 써서 오시는 길 섹션에 지도를 넣어줘.
-> - Client ID: [복사한 ID]
-> - 좌표: [가게 주소] (좌표를 모르면 네이버 지도에서 가게를 검색해서 URL에서 뽑아줘)
-> - 마커는 가게 로고색(#3B5E2B)으로
-> - 마커 클릭하면 팝업: 가게 이름, 영업시간(월~금 10:00~20:00), 전화(010-1234-5678)
-> - 팝업 아래 "카카오내비로 길찾기" 버튼 — 클릭하면 카카오내비 딥링크로 열기
-> - 폰에서 가로 꽉 차게, PC에서 최대 800px, 높이 400px
+<div class="prompt-box not-prose" data-prompt="11-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+네이버 지도 JS API를 써서 오시는 길 섹션에 지도를 넣어줘.
+- Client ID: [복사한 ID]
+- 좌표: [가게 주소] (좌표를 모르면 네이버 지도에서 가게를 검색해서 URL에서 뽑아줘)
+- 마커는 가게 로고색(#3B5E2B)으로
+- 마커 클릭하면 팝업: 가게 이름, 영업시간(월~금 10:00~20:00), 전화(010-1234-5678)
+- 팝업 아래 "카카오내비로 길찾기" 버튼 — 클릭하면 카카오내비 딥링크로 열기
+- 폰에서 가로 꽉 차게, PC에서 최대 800px, 높이 400px
+
+</div>
+</div>
 
 승인 → Yes → 미리보기 확인.
 
 ### 길찾기 버튼 딥링크
 
-> "네이버로 길찾기" 버튼도 추가해줘. 클릭하면 `nmap://` 딥링크로 네이버 지도 앱이 열리고, 앱이 없으면 `https://map.naver.com/...`으로 이동하게.
+<div class="prompt-box not-prose" data-prompt="11-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"네이버로 길찾기" 버튼도 추가해줘. 클릭하면 `nmap://` 딥링크로 네이버 지도 앱이 열리고, 앱이 없으면 `https://map.naver.com/...`으로 이동하게.
+
+</div>
+</div>
 
 ---
 
@@ -58,17 +72,31 @@ part: 고급 · 도구 활용
 
 ### Claude Code에게 넘기기
 
-> 카카오맵 API로 오시는 길 지도를 바꿔줘.
-> - JavaScript 키: [복사한 키]
-> - 좌표: 위도 [위도], 경도 [경도] (모르면 알려줘)
-> - 마커 커스텀 이미지는 images/marker.png 쓸 거야 (없으면 기본 마커)
-> - 클릭하면 카카오맵 앱으로 길찾기 열기
+<div class="prompt-box not-prose" data-prompt="11-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+카카오맵 API로 오시는 길 지도를 바꿔줘.
+- JavaScript 키: [복사한 키]
+- 좌표: 위도 [위도], 경도 [경도] (모르면 알려줘)
+- 마커 커스텀 이미지는 images/marker.png 쓸 거야 (없으면 기본 마커)
+- 클릭하면 카카오맵 앱으로 길찾기 열기
+
+</div>
+</div>
 
 ---
 
 ## 좌표 찾기가 막히면
 
-> 주소 "[가게 주소]"의 위도/경도를 알려줘. 네이버 지도 URL이나 카카오맵 API로 변환해줘.
+<div class="prompt-box not-prose" data-prompt="11-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+주소 "[가게 주소]"의 위도/경도를 알려줘. 네이버 지도 URL이나 카카오맵 API로 변환해줘.
+
+</div>
+</div>
 
 ---
 

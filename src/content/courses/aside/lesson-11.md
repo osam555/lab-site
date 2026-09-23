@@ -25,40 +25,68 @@ part: 5부 · 영상 자동화
 
 업로드 전에 제목에 쓸 키워드를 찾습니다.
 
-> Brave Search MCP로 "[영상 주제]" 유튜브 검색에서 상위 노출된 영상 제목 10개를 찾아줘.
-> 공통으로 쓰인 키워드 패턴과 후크 형식을 분석해줘.
+<div class="prompt-box not-prose" data-prompt="11-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 같은 주제로 조회수 10만 이상 영상들의 제목 구조를 분석해줘.
-> 어떤 패턴이 클릭을 유도하는지 알려줘.
+Brave Search MCP로 "[영상 주제]" 유튜브 검색에서 상위 노출된 영상 제목 10개를 찾아줘.
+공통으로 쓰인 키워드 패턴과 후크 형식을 분석해줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="11-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+같은 주제로 조회수 10만 이상 영상들의 제목 구조를 분석해줘.
+어떤 패턴이 클릭을 유도하는지 알려줘.
+
+</div>
+</div>
 
 ---
 
 ## 2. 제목·설명·태그 자동 작성
 
-> 아래 영상에 맞는 유튜브 메타데이터를 작성해줘:
->
-> 영상 주제: [주제]
-> 핵심 내용: [3가지]
-> 타깃 시청자: [누구]
-> 키워드: [MCP로 찾은 키워드]
->
-> 작성해줄 것:
-> - 제목 3가지 후보 (50자 이내, 클릭 유도 후크 포함)
-> - 설명 (첫 2줄에 핵심 키워드, 전체 300자 이상, 챕터 타임스탬프 포함)
-> - 해시태그 15개
-> - 태그 30개 (유튜브 태그, 쉼표 구분)
-> - 카드·자막 추천 위치
+<div class="prompt-box not-prose" data-prompt="11-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+아래 영상에 맞는 유튜브 메타데이터를 작성해줘:
+
+영상 주제: [주제]
+핵심 내용: [3가지]
+타깃 시청자: [누구]
+키워드: [MCP로 찾은 키워드]
+
+작성해줄 것:
+- 제목 3가지 후보 (50자 이내, 클릭 유도 후크 포함)
+- 설명 (첫 2줄에 핵심 키워드, 전체 300자 이상, 챕터 타임스탬프 포함)
+- 해시태그 15개
+- 태그 30개 (유튜브 태그, 쉼표 구분)
+- 카드·자막 추천 위치
+
+</div>
+</div>
 
 ---
 
 ## 3. 썸네일 자동 생성
 
-> 이 영상의 유튜브 썸네일을 만들어줘.
-> - 크기: 1280×720
-> - 배경: [영상 스틸컷 또는 색상]
-> - 큰 텍스트: "[제목 핵심 한 줄]" (빨간 강조)
-> - 오른쪽 하단: 채널 로고 또는 얼굴 사진 자리
-> - A/B 테스트용 2가지 버전
+<div class="prompt-box not-prose" data-prompt="11-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이 영상의 유튜브 썸네일을 만들어줘.
+- 크기: 1280×720
+- 배경: [영상 스틸컷 또는 색상]
+- 큰 텍스트: "[제목 핵심 한 줄]" (빨간 강조)
+- 오른쪽 하단: 채널 로고 또는 얼굴 사진 자리
+- A/B 테스트용 2가지 버전
+
+</div>
+</div>
 
 ---
 
@@ -68,16 +96,23 @@ part: 5부 · 영상 자동화
 2. 구글 계정 로그인 (직접)
 3. 대화창:
 
-> Computer Use로 YouTube Studio에서 새 동영상을 업로드해줘.
-> 파일: ~/Desktop/videos/[파일명].mp4
-> 제목: [선택한 제목]
-> 설명: [작성된 설명]
-> 태그: [태그 목록]
-> 썸네일: ~/Desktop/thumbnails/thumb-01.jpg
-> 공개 예약: [날짜] 오전 10시
-> 카테고리: [해당 카테고리]
->
-> 업로드 완료 후 URL을 알려줘.
+<div class="prompt-box not-prose" data-prompt="11-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 YouTube Studio에서 새 동영상을 업로드해줘.
+파일: ~/Desktop/videos/[파일명].mp4
+제목: [선택한 제목]
+설명: [작성된 설명]
+태그: [태그 목록]
+썸네일: ~/Desktop/thumbnails/thumb-01.jpg
+공개 예약: [날짜] 오전 10시
+카테고리: [해당 카테고리]
+
+업로드 완료 후 URL을 알려줘.
+
+</div>
+</div>
 
 ---
 
@@ -87,14 +122,28 @@ part: 5부 · 영상 자동화
 
 ### 방법 A — YouTube 자동 자막 수정
 
-> Computer Use로 YouTube Studio → 동영상 → [해당 영상] → 자막 탭으로 이동해줘.
-> 자동 생성 자막을 다운로드하고 내용을 알려줘.
-> 어색한 부분을 수정해서 srt 파일로 저장해줘.
+<div class="prompt-box not-prose" data-prompt="11-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 YouTube Studio → 동영상 → [해당 영상] → 자막 탭으로 이동해줘.
+자동 생성 자막을 다운로드하고 내용을 알려줘.
+어색한 부분을 수정해서 srt 파일로 저장해줘.
+
+</div>
+</div>
 
 ### 방법 B — 외부 도구 연동
 
-> MCP 웹검색으로 무료 자막 생성 서비스를 찾아줘.
-> [영상 파일] 또는 [유튜브 URL]에서 자막을 만드는 방법을 안내해줘.
+<div class="prompt-box not-prose" data-prompt="11-7" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-7</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+MCP 웹검색으로 무료 자막 생성 서비스를 찾아줘.
+[영상 파일] 또는 [유튜브 URL]에서 자막을 만드는 방법을 안내해줘.
+
+</div>
+</div>
 
 ---
 
@@ -102,25 +151,46 @@ part: 5부 · 영상 자동화
 
 ### 댓글 관리
 
-> Computer Use로 YouTube Studio → 댓글 탭에서 최근 7일 댓글을 보여줘.
-> 답글이 없는 댓글을 찾아서 각각 자연스러운 답글을 작성해줘.
-> 내가 검토 후 직접 올릴게.
+<div class="prompt-box not-prose" data-prompt="11-8" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 YouTube Studio → 댓글 탭에서 최근 7일 댓글을 보여줘.
+답글이 없는 댓글을 찾아서 각각 자연스러운 답글을 작성해줘.
+내가 검토 후 직접 올릴게.
+
+</div>
+</div>
 
 ### 분석 리포트
 
-> Aside에서 YouTube Studio 분석 탭을 열어줘.
-> 지난 28일 데이터:
-> - 조회수·시청 시간·구독자 변화
-> - 조회수 상위 5개 영상
-> - 트래픽 소스 (검색, 추천, 외부)
-> - 평균 시청 지속시간이 가장 높은 영상
-> 요약하고 다음 영상 주제 제안도 해줘.
+<div class="prompt-box not-prose" data-prompt="11-9" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-9</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Aside에서 YouTube Studio 분석 탭을 열어줘.
+지난 28일 데이터:
+- 조회수·시청 시간·구독자 변화
+- 조회수 상위 5개 영상
+- 트래픽 소스 (검색, 추천, 외부)
+- 평균 시청 지속시간이 가장 높은 영상
+요약하고 다음 영상 주제 제안도 해줘.
+
+</div>
+</div>
 
 ### 카드·자막·최종 화면 자동 추가
 
-> Computer Use로 [영상 URL] YouTube Studio에서:
-> 1. 최종 화면 추가: 마지막 20초에 구독 버튼 + 추천 영상 카드
-> 2. 정보 카드: 영상 중간에 채널 링크 카드 추가
+<div class="prompt-box not-prose" data-prompt="11-10" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-10</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 [영상 URL] YouTube Studio에서:
+1. 최종 화면 추가: 마지막 20초에 구독 버튼 + 추천 영상 카드
+2. 정보 카드: 영상 중간에 채널 링크 카드 추가
+
+</div>
+</div>
 
 ---
 

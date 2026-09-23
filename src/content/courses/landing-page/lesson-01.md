@@ -107,7 +107,14 @@ part: 1부 · 구조와 준비
   </div>
 </div>
 
-> 세 페이지 모두 **HTML + CSS 한 파일**로 만들어졌습니다. Claude Code에게 요청하면 이런 결과물이 나옵니다.
+<div class="prompt-box not-prose" data-prompt="1-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+세 페이지 모두 **HTML + CSS 한 파일**로 만들어졌습니다. Claude Code에게 요청하면 이런 결과물이 나옵니다.
+
+</div>
+</div>
 
 ## 오늘의 체크리스트
 

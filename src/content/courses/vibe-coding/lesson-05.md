@@ -79,7 +79,14 @@ git push -u origin main
 
 커밋 메시지는 "무엇을 했는지" 한 줄입니다. AI에게 시켜도 됩니다.
 
-> "지금까지 바뀐 내용으로 커밋해줘. 메시지는 한국어로."
+<div class="prompt-box not-prose" data-prompt="5-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"지금까지 바뀐 내용으로 커밋해줘. 메시지는 한국어로."
+
+</div>
+</div>
 
 좋은 리듬: **기능 하나가 동작하면 커밋.** "로그인 화면 추가", "메뉴 추천 API 연결", "버튼 색 수정". 하루에 3~10번이 자연스럽습니다.
 

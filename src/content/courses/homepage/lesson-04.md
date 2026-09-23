@@ -65,13 +65,20 @@ SNS: (인스타그램, 카카오채널 등)
 
 **프롬프트 예시:**
 
-> index.html을 만들어줘. [가게이름] 홈페이지야. 한 페이지에 위에서 아래로:
-> 1. 상단: 왼쪽에 가게 이름, 오른쪽에 "메뉴 / 오시는 길 / 문의" 링크
-> 2. 첫 화면: images/exterior.jpg 배경, 그 위에 "[한 줄 소개]", "[예약하기]" 버튼
-> 3. 대표 메뉴 [3]개: 각각 images/menu-N.jpg, 이름, 가격
-> 4. 오시는 길: 지도 자리 + 주소 "[주소]", 영업시간 "[시간]"
-> 5. 하단: 전화 "[번호]", 인스타 "[아이디]"
-> 스타일은 style.css에 따로. 폰에서도 보기 좋게.
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. [가게이름] 홈페이지야. 한 페이지에 위에서 아래로:
+1. 상단: 왼쪽에 가게 이름, 오른쪽에 "메뉴 / 오시는 길 / 문의" 링크
+2. 첫 화면: images/exterior.jpg 배경, 그 위에 "[한 줄 소개]", "[예약하기]" 버튼
+3. 대표 메뉴 [3]개: 각각 images/menu-N.jpg, 이름, 가격
+4. 오시는 길: 지도 자리 + 주소 "[주소]", 영업시간 "[시간]"
+5. 하단: 전화 "[번호]", 인스타 "[아이디]"
+스타일은 style.css에 따로. 폰에서도 보기 좋게.
+
+</div>
+</div>
 
 ---
 
@@ -117,13 +124,20 @@ SNS/링크: (GitHub, Behance, LinkedIn 등)
 
 **프롬프트 예시:**
 
-> index.html을 만들어줘. [이름]의 포트폴리오 홈페이지야.
-> 1. 상단: 이름 + 직함, "작업물 / 소개 / 연락" 링크
-> 2. 히어로: images/profile.jpg 원형, 한 줄 소개, "이력서 보기" 버튼 (files/resume.pdf 링크)
-> 3. 대표 작업물 [N]개: 카드형 그리드, 각각 이미지 + 제목 + 설명
-> 4. 소개: 경력 요약 2~3줄 + 기술 스택 태그
-> 5. 하단: 이메일, GitHub, LinkedIn 아이콘 링크
-> 깔끔한 모던 스타일. 다크모드 기본.
+<div class="prompt-box not-prose" data-prompt="4-2" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. [이름]의 포트폴리오 홈페이지야.
+1. 상단: 이름 + 직함, "작업물 / 소개 / 연락" 링크
+2. 히어로: images/profile.jpg 원형, 한 줄 소개, "이력서 보기" 버튼 (files/resume.pdf 링크)
+3. 대표 작업물 [N]개: 카드형 그리드, 각각 이미지 + 제목 + 설명
+4. 소개: 경력 요약 2~3줄 + 기술 스택 태그
+5. 하단: 이메일, GitHub, LinkedIn 아이콘 링크
+깔끔한 모던 스타일. 다크모드 기본.
+
+</div>
+</div>
 
 ---
 
@@ -170,14 +184,21 @@ SNS/링크: (GitHub, Behance, LinkedIn 등)
 
 **프롬프트 예시:**
 
-> index.html을 만들어줘. [회사이름] 홈페이지야.
-> 1. 상단: 로고(images/logo.png) + "서비스 / 소개 / 수강신청" 링크
-> 2. 히어로: images/main.jpg 배경, 슬로건 "[슬로건]", "상담 신청" 버튼
-> 3. 서비스 [N]개: 아이콘 또는 이미지 + 이름 + 대상 + 가격
-> 4. 회사 소개: 텍스트 + images/team.jpg
-> 5. 고객 후기: 카드 2~3개
-> 6. 하단: 주소, 전화, 이메일
-> 신뢰감 있는 깔끔한 디자인. 반응형.
+<div class="prompt-box not-prose" data-prompt="4-3" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. [회사이름] 홈페이지야.
+1. 상단: 로고(images/logo.png) + "서비스 / 소개 / 수강신청" 링크
+2. 히어로: images/main.jpg 배경, 슬로건 "[슬로건]", "상담 신청" 버튼
+3. 서비스 [N]개: 아이콘 또는 이미지 + 이름 + 대상 + 가격
+4. 회사 소개: 텍스트 + images/team.jpg
+5. 고객 후기: 카드 2~3개
+6. 하단: 주소, 전화, 이메일
+신뢰감 있는 깔끔한 디자인. 반응형.
+
+</div>
+</div>
 
 ---
 
@@ -209,14 +230,21 @@ RSVP 연락처:
 
 **프롬프트 예시:**
 
-> index.html을 만들어줘. [행사이름] 초대 페이지야.
-> 1. 히어로: images/main.jpg 배경, "[행사이름]", 날짜·시간 크게
-> 2. 장소: 지도 자리 + 주소 + 주차 안내
-> 3. 프로그램: 타임테이블 (시간 → 내용)
-> 4. 갤러리: 사진 5장 슬라이드
-> 5. 참석 여부: 이름·인원 입력 폼 (10강에서 연결)
-> 6. 하단: 연락처, 계좌 정보
-> 따뜻하고 우아한 느낌. 모바일 중심.
+<div class="prompt-box not-prose" data-prompt="4-4" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-4</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. [행사이름] 초대 페이지야.
+1. 히어로: images/main.jpg 배경, "[행사이름]", 날짜·시간 크게
+2. 장소: 지도 자리 + 주소 + 주차 안내
+3. 프로그램: 타임테이블 (시간 → 내용)
+4. 갤러리: 사진 5장 슬라이드
+5. 참석 여부: 이름·인원 입력 폼 (10강에서 연결)
+6. 하단: 연락처, 계좌 정보
+따뜻하고 우아한 느낌. 모바일 중심.
+
+</div>
+</div>
 
 ---
 
@@ -243,13 +271,20 @@ RSVP 연락처:
 
 **프롬프트 예시:**
 
-> index.html을 만들어줘. "[사이트이름]" 블로그형 홈페이지야.
-> 1. 상단: 사이트 이름 + "글 / 소개" 링크
-> 2. 히어로: 한 줄 소개 + 프로필 사진
-> 3. 최근 글 목록: 카드 3개 (제목, 날짜, 요약 2줄, 썸네일)
-> 4. 소개: 프로필 사진 + 자기 소개 3줄
-> 5. 하단: 이메일, RSS 아이콘
-> 깔끔한 미니멀 블로그 스타일. 본문 읽기 편한 폰트.
+<div class="prompt-box not-prose" data-prompt="4-5" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-5</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. "[사이트이름]" 블로그형 홈페이지야.
+1. 상단: 사이트 이름 + "글 / 소개" 링크
+2. 히어로: 한 줄 소개 + 프로필 사진
+3. 최근 글 목록: 카드 3개 (제목, 날짜, 요약 2줄, 썸네일)
+4. 소개: 프로필 사진 + 자기 소개 3줄
+5. 하단: 이메일, RSS 아이콘
+깔끔한 미니멀 블로그 스타일. 본문 읽기 편한 폰트.
+
+</div>
+</div>
 
 ---
 
@@ -264,7 +299,14 @@ RSVP 연락처:
 3. **폴더**: `my-site/images/` 폴더를 만들고 그 안에 넣으세요
 4. **사진이 없으면**: Claude Code에게 "사진 자리를 회색 상자로 해줘"라고 하면 됩니다. 나중에 교체합니다
 
-> images 폴더를 만들고 내가 넣은 사진 파일 이름을 확인해줘.
+<div class="prompt-box not-prose" data-prompt="4-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+images 폴더를 만들고 내가 넣은 사진 파일 이름을 확인해줘.
+
+</div>
+</div>
 
 ---
 
@@ -274,12 +316,19 @@ Claude Code는 대화가 끝나면 잊습니다. 그래서 프로젝트 폴더�
 
 앱 대화창에:
 
-> CLAUDE.md 파일을 만들어줘. 내용은:
-> - 이 프로젝트는 [가게 이름]의 홈페이지다. 프레임워크 없이 HTML과 CSS 파일만 쓴다.
-> - 나는 코딩을 모른다. 설명은 한국어로 짧게, 전문 용어는 풀어서.
-> - 파일을 만들거나 고친 뒤에는 미리보기에서 확인하는 방법을 알려준다.
-> - 요청한 것만 바꾼다. 다른 걸 바꿔야 하면 먼저 물어본다.
-> - 새 도구 설치가 필요하면 이유를 설명하고 허락을 받는다.
+<div class="prompt-box not-prose" data-prompt="4-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CLAUDE.md 파일을 만들어줘. 내용은:
+- 이 프로젝트는 [가게 이름]의 홈페이지다. 프레임워크 없이 HTML과 CSS 파일만 쓴다.
+- 나는 코딩을 모른다. 설명은 한국어로 짧게, 전문 용어는 풀어서.
+- 파일을 만들거나 고친 뒤에는 미리보기에서 확인하는 방법을 알려준다.
+- 요청한 것만 바꾼다. 다른 걸 바꿔야 하면 먼저 물어본다.
+- 새 도구 설치가 필요하면 이유를 설명하고 허락을 받는다.
+
+</div>
+</div>
 
 승인 창이 뜨면 내용을 읽고 **Yes**. 왼쪽 파일 트리에 `CLAUDE.md`가 나타납니다.
 
@@ -301,11 +350,25 @@ Claude Code가 `index.html`과 `style.css` 두 파일을 만듭니다. 승인 �
 
 마음에 안 드는 것 **하나씩** 말합니다:
 
-> 첫 화면의 한 줄 소개 글자를 더 크게, 버튼은 진한 갈색으로.
+<div class="prompt-box not-prose" data-prompt="4-8" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-8</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+첫 화면의 한 줄 소개 글자를 더 크게, 버튼은 진한 갈색으로.
+
+</div>
+</div>
 
 승인 → Yes → 미리보기 자동 갱신.
 
-> 메뉴 3개를 폰에서는 세로로, PC에서는 가로로 나란히.
+<div class="prompt-box not-prose" data-prompt="4-9" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-9</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+메뉴 3개를 폰에서는 세로로, PC에서는 가로로 나란히.
+
+</div>
+</div>
 
 규칙은 **한 요청에 하나만**. "이것도 저것도" 하면 어디가 잘못됐는지 못 찾습니다.
 
@@ -331,7 +394,14 @@ git commit -m "첫 홈페이지"
 
 일부러 망쳐봅니다. 대화창에:
 
-> index.html 내용을 전부 지우고 "망했다"만 남겨줘.
+<div class="prompt-box not-prose" data-prompt="4-10" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-10</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html 내용을 전부 지우고 "망했다"만 남겨줘.
+
+</div>
+</div>
 
 미리보기 → 정말 망했습니다. 앱 터미널에서:
 

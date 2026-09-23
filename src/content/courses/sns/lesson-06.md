@@ -23,20 +23,41 @@ part: 3부 · 자동화와 운영
 
 ## 따라하기 1: 수집
 
-> posts/2025-01-camping-chair/schedule.json의 예약 ID로 스케줄러 API에서 성과를 가져올 수 있으면 가져오고, 안 되는 채널은 내가 캡처를 줄게. 결과를 posts/…/metrics.json에 채널별로: impressions, likes, comments, shares, saves, link_clicks, 수집 시각.
+<div class="prompt-box not-prose" data-prompt="6-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+posts/2025-01-camping-chair/schedule.json의 예약 ID로 스케줄러 API에서 성과를 가져올 수 있으면 가져오고, 안 되는 채널은 내가 캡처를 줄게. 결과를 posts/…/metrics.json에 채널별로: impressions, likes, comments, shares, saves, link_clicks, 수집 시각.
+
+</div>
+</div>
 
 캡처를 붙여넣으며:
 
-> 이건 인스타 인사이트 캡처야. metrics.json의 instagram에 넣어줘.
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이건 인스타 인사이트 캡처야. metrics.json의 instagram에 넣어줘.
+
+</div>
+</div>
 
 ## 따라하기 2: 리포트
 
-> metrics.json과 variants.json으로 report.md를 만들어줘.
-> - 채널별 표: 노출 / 반응률(반응÷노출) / 클릭률
-> - 후크별 비교: 같은 원본의 채널별 후크와 반응률을 나란히
-> - 시간대: 발행 시각과 반응
-> - 한 줄 결론 3개: 잘 된 것, 안 된 것, 다음에 시험할 것
-> - 판단 근거가 약하면(노출 100 미만) "표본 부족"으로 표시
+<div class="prompt-box not-prose" data-prompt="6-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+metrics.json과 variants.json으로 report.md를 만들어줘.
+- 채널별 표: 노출 / 반응률(반응÷노출) / 클릭률
+- 후크별 비교: 같은 원본의 채널별 후크와 반응률을 나란히
+- 시간대: 발행 시각과 반응
+- 한 줄 결론 3개: 잘 된 것, 안 된 것, 다음에 시험할 것
+- 판단 근거가 약하면(노출 100 미만) "표본 부족"으로 표시
+
+</div>
+</div>
 
 한 편으로는 결론이 안 나옵니다. **4주치가 쌓이면** 패턴이 보입니다.
 
@@ -44,16 +65,30 @@ part: 3부 · 자동화와 운영
 
 4편 이상 쌓였을 때:
 
-> posts/*/report.md를 전부 읽고 종합해줘.
-> 1. 채널별로 반응률 상위 후크 5개의 공통점 (숫자로 시작? 질문? 실패담?)
-> 2. 채널별 실제 최적 시간대 (표본 충분한 것만)
-> 3. 클릭을 만든 CTA 문구
-> 4. 반응 없는 채널이 있으면 "줄이거나 접기" 제안
-> 이걸 바탕으로 channels.json의 best_times, cta, structure와 VOICE.md에 제안할 변경을 diff로 보여줘. 아직 적용하지 마.
+<div class="prompt-box not-prose" data-prompt="6-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+posts/*/report.md를 전부 읽고 종합해줘.
+1. 채널별로 반응률 상위 후크 5개의 공통점 (숫자로 시작? 질문? 실패담?)
+2. 채널별 실제 최적 시간대 (표본 충분한 것만)
+3. 클릭을 만든 CTA 문구
+4. 반응 없는 채널이 있으면 "줄이거나 접기" 제안
+이걸 바탕으로 channels.json의 best_times, cta, structure와 VOICE.md에 제안할 변경을 diff로 보여줘. 아직 적용하지 마.
+
+</div>
+</div>
 
 diff를 읽고 동의하는 것만:
 
-> 스레드 best_times와 인스타 structure 변경은 적용. 링크드인 접기는 보류.
+<div class="prompt-box not-prose" data-prompt="6-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+스레드 best_times와 인스타 structure 변경은 적용. 링크드인 접기는 보류.
+
+</div>
+</div>
 
 이렇게 규칙 파일이 **내 데이터로** 다듬어집니다. 3강에서 "일반적인 시작점"이었던 값이 한 달 뒤엔 내 채널의 값이 됩니다.
 
@@ -61,7 +96,14 @@ diff를 읽고 동의하는 것만:
 
 5강에서 넣은 "3일 뒤 재게시" 슬롯이 여기서 빛납니다. 같은 원본, 다른 후크의 성과를 비교하면 **원본이 아니라 후크가 문제**인지 알 수 있습니다.
 
-> camping-chair의 스레드 1차(후크 2번)와 재게시(후크 1번) 반응률을 비교해줘.
+<div class="prompt-box not-prose" data-prompt="6-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+camping-chair의 스레드 1차(후크 2번)와 재게시(후크 1번) 반응률을 비교해줘.
+
+</div>
+</div>
 
 ## 하지 말 것
 

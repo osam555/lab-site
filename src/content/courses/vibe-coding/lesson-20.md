@@ -33,15 +33,29 @@ part: 4부 · 세상에 내놓기
 
 512×512 PNG 하나면 됩니다. 18강 강조색 배경에 서비스 첫 글자 하나, 또는 간단한 도형. 이미지 생성 AI에게 부탁하거나, AI 코딩 도구에게 SVG를 만들게 한 뒤 PNG로 변환해도 됩니다.
 
-> "public/icon.svg를 만들어줘. 512×512, 배경은 #2f8f5b 둥근 사각형, 가운데 흰색 굵은 글자 '냉'. 그리고 이걸 512와 192 크기 PNG로 변환하는 방법을 알려줘."
+<div class="prompt-box not-prose" data-prompt="20-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 20-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"public/icon.svg를 만들어줘. 512×512, 배경은 #2f8f5b 둥근 사각형, 가운데 흰색 굵은 글자 '냉'. 그리고 이걸 512와 192 크기 PNG로 변환하는 방법을 알려줘."
+
+</div>
+</div>
 
 ## 따라하기 2: PWA 설정
 
-> "이 Next.js 앱을 PWA로 만들어줘.
-> - src/app/manifest.ts로 manifest를 만들어줘. 이름은 '[서비스 이름]', 짧은 이름 '[4글자]', 테마색 #2f8f5b, 배경 #fbfaf7, display는 standalone, 아이콘은 public/icon-192.png와 icon-512.png
-> - 오프라인에서 '인터넷 연결을 확인하세요' 화면이 보이도록 최소한의 서비스 워커
-> - iOS 홈 화면 추가에 필요한 meta 태그도 layout.tsx에 추가
-> 완료 후 폰에서 설치하는 방법을 Android와 iOS 각각 알려줘."
+<div class="prompt-box not-prose" data-prompt="20-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 20-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"이 Next.js 앱을 PWA로 만들어줘.
+- src/app/manifest.ts로 manifest를 만들어줘. 이름은 '[서비스 이름]', 짧은 이름 '[4글자]', 테마색 #2f8f5b, 배경 #fbfaf7, display는 standalone, 아이콘은 public/icon-192.png와 icon-512.png
+- 오프라인에서 '인터넷 연결을 확인하세요' 화면이 보이도록 최소한의 서비스 워커
+- iOS 홈 화면 추가에 필요한 meta 태그도 layout.tsx에 추가
+완료 후 폰에서 설치하는 방법을 Android와 iOS 각각 알려줘."
+
+</div>
+</div>
 
 ## 따라하기 3: 폰에 설치
 
@@ -56,7 +70,14 @@ push → 배포 → 폰 브라우저에서 열기:
 
 1강에서 적은 한 줄을 다시 읽어보세요.
 
-> 나는 [누구]를 위해 [무엇을 해주는] 서비스를 만든다.
+<div class="prompt-box not-prose" data-prompt="20-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 20-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+나는 [누구]를 위해 [무엇을 해주는] 서비스를 만든다.
+
+</div>
+</div>
 
 이제 여러분에게는:
 - 인터넷에 공개된 서비스와 폰에 설치된 앱

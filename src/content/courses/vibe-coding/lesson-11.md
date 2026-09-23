@@ -63,14 +63,21 @@ src/
 
 TODO.md에서 "화면만, 가짜 데이터" 조각을 하나 고르세요. 7강 템플릿으로 요청합니다. 예시:
 
-> "IngredientInput 컴포넌트를 src/components/에 만들어줘.
-> - 입력창 + '추가' 버튼. Enter로도 추가.
-> - 추가된 재료는 아래에 칩(둥근 태그) 형태로 나열, 각 칩에 × 삭제 버튼
-> - 빈 문자열이나 중복은 추가 안 됨
-> - 상태는 이 컴포넌트 안에서 useState로 관리
-> - Tailwind로 최소한만 스타일
-> - page.tsx에 이 컴포넌트를 배치해줘. 다른 파일은 건드리지 마.
-> - 완료 후 확인 방법 3단계"
+<div class="prompt-box not-prose" data-prompt="11-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"IngredientInput 컴포넌트를 src/components/에 만들어줘.
+- 입력창 + '추가' 버튼. Enter로도 추가.
+- 추가된 재료는 아래에 칩(둥근 태그) 형태로 나열, 각 칩에 × 삭제 버튼
+- 빈 문자열이나 중복은 추가 안 됨
+- 상태는 이 컴포넌트 안에서 useState로 관리
+- Tailwind로 최소한만 스타일
+- page.tsx에 이 컴포넌트를 배치해줘. 다른 파일은 건드리지 마.
+- 완료 후 확인 방법 3단계"
+
+</div>
+</div>
 
 브라우저에서 확인 → 커밋. 그리고 두 번째 조각(예: 가짜 메뉴 3개 카드로 보여주기)도 같은 리듬으로.
 

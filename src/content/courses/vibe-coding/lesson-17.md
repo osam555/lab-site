@@ -43,11 +43,18 @@ part: 4부 · 세상에 내놓기
 
 3명의 관찰 노트를 모아 AI에게 정리시킵니다.
 
-> "다음은 사용자 3명의 관찰 기록이야. [붙여넣기]
-> 1. 공통으로 막힌 지점을 뽑아줘.
-> 2. 각 문제를 '심각도(이탈 유발/불편/사소)'와 '고치는 비용(작음/중간/큼)'으로 분류해줘.
-> 3. 심각도 높고 비용 작은 것부터 순서를 매겨줘.
-> 아직 코드는 고치지 마."
+<div class="prompt-box not-prose" data-prompt="17-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 17-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"다음은 사용자 3명의 관찰 기록이야. [붙여넣기]
+1. 공통으로 막힌 지점을 뽑아줘.
+2. 각 문제를 '심각도(이탈 유발/불편/사소)'와 '고치는 비용(작음/중간/큼)'으로 분류해줘.
+3. 심각도 높고 비용 작은 것부터 순서를 매겨줘.
+아직 코드는 고치지 마."
+
+</div>
+</div>
 
 ## 우선순위 판단
 

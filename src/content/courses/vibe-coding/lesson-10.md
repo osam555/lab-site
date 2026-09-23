@@ -45,7 +45,14 @@ part: 2부 · 기획과 프롬프트
 
 `PLAN.md`의 핵심 기능 3개를 각각 3~5개 조각으로 쪼개세요. AI와 같이 하면 빠릅니다.
 
-> "PLAN.md의 핵심 기능 3개를 각각 '한 번의 대화로 완성되고 브라우저에서 확인 가능한' 작은 조각으로 쪼개줘. 각 조각은 한 줄로, 확인 방법을 괄호 안에 적어줘. 화면 먼저, 가짜 데이터로 동작시킨 뒤, 진짜 데이터로 바꾸는 순서로. 결과를 TODO.md로 저장해줘."
+<div class="prompt-box not-prose" data-prompt="10-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"PLAN.md의 핵심 기능 3개를 각각 '한 번의 대화로 완성되고 브라우저에서 확인 가능한' 작은 조각으로 쪼개줘. 각 조각은 한 줄로, 확인 방법을 괄호 안에 적어줘. 화면 먼저, 가짜 데이터로 동작시킨 뒤, 진짜 데이터로 바꾸는 순서로. 결과를 TODO.md로 저장해줘."
+
+</div>
+</div>
 
 나온 목록을 읽고 순서를 조정하세요. 기준은 **"이게 되면 다음에 뭐가 보고 싶지?"** 입니다.
 

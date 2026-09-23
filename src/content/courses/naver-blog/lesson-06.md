@@ -23,17 +23,38 @@ part: 2부 · 파이프라인 만들기
 
 ## 따라하기 1: 첫 자동 입력 — 제목과 본문만
 
-> 브라우저로 blog.naver.com 글쓰기 화면을 열어줘 (로그인된 프로필). 그리고 @posts/2025-01-camping-chair/ 의 meta.json 제목을 제목란에, editor.md의 본문을 **첫 두 단락만** 본문에 입력해줘. `## 소제목`은 에디터의 소제목 서식으로. 입력 후 멈추고 화면을 캡처해서 보여줘. 아직 저장하지 마.
+<div class="prompt-box not-prose" data-prompt="6-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+브라우저로 blog.naver.com 글쓰기 화면을 열어줘 (로그인된 프로필). 그리고 @posts/2025-01-camping-chair/ 의 meta.json 제목을 제목란에, editor.md의 본문을 **첫 두 단락만** 본문에 입력해줘. `## 소제목`은 에디터의 소제목 서식으로. 입력 후 멈추고 화면을 캡처해서 보여줘. 아직 저장하지 마.
+
+</div>
+</div>
 
 캡처를 보고 서식이 맞는지 확인합니다. 소제목이 본문처럼 들어갔다면:
 
-> 소제목이 일반 텍스트로 들어갔어. 에디터 상단 서식 메뉴에서 '소제목'을 적용하는 방식으로 다시.
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+소제목이 일반 텍스트로 들어갔어. 에디터 상단 서식 메뉴에서 '소제목'을 적용하는 방식으로 다시.
+
+</div>
+</div>
 
 에디터 UI는 바뀝니다. 첫 두 단락에서 방법을 잡아두면 나머지는 같은 방식입니다.
 
 ## 따라하기 2: 사진과 나머지
 
-> 좋아. 이어서 editor.md 나머지를 입력해줘. `{{image: 03.jpg}}`가 나오면 그 위치에서 사진 업로드 버튼으로 images/03.jpg를 올리고, meta.json의 그 사진 설명을 사진 설명란에 넣어줘. `{{quote}}` 문장은 인용구 서식. 맨 아래 참고 자료는 링크로. 다 되면 캡처.
+<div class="prompt-box not-prose" data-prompt="6-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+좋아. 이어서 editor.md 나머지를 입력해줘. `{{image: 03.jpg}}`가 나오면 그 위치에서 사진 업로드 버튼으로 images/03.jpg를 올리고, meta.json의 그 사진 설명을 사진 설명란에 넣어줘. `{{quote}}` 문장은 인용구 서식. 맨 아래 참고 자료는 링크로. 다 되면 캡처.
+
+</div>
+</div>
 
 ::: windows
 사진 업로드 대화상자가 Windows 탐색기 창으로 뜨면 자동화가 파일 경로를 직접 넣습니다. 경로에 한글 폴더가 있으면 가끔 실패하니 프로젝트는 영문 경로(`C:\Users\이름\Desktop\naver-blog-factory`)에 두세요. 사용자 이름이 한글이면 `C:\work\` 같은 곳으로 옮기는 게 안전합니다.
@@ -45,7 +66,14 @@ part: 2부 · 파이프라인 만들기
 
 ## 따라하기 3: 태그, 썸네일, 임시저장
 
-> 태그 입력란에 meta.json의 tags 10개를 넣고, 대표 이미지는 images/00-thumb.jpg로 설정해줘. 그리고 **임시저장** 버튼을 누르고 "임시저장 완료" 문구가 보이는지 확인해서 알려줘. 발행 버튼은 누르지 마.
+<div class="prompt-box not-prose" data-prompt="6-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+태그 입력란에 meta.json의 tags 10개를 넣고, 대표 이미지는 images/00-thumb.jpg로 설정해줘. 그리고 **임시저장** 버튼을 누르고 "임시저장 완료" 문구가 보이는지 확인해서 알려줘. 발행 버튼은 누르지 마.
+
+</div>
+</div>
 
 ## 따라하기 4: 사람이 확인하고 발행 ⏸
 
@@ -63,13 +91,27 @@ part: 2부 · 파이프라인 만들기
 
 발행 후:
 
-> meta.json의 status를 "published", published_at을 지금으로, url을 [발행된 주소]로 바꿔줘.
+<div class="prompt-box not-prose" data-prompt="6-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+meta.json의 status를 "published", published_at을 지금으로, url을 [발행된 주소]로 바꿔줘.
+
+</div>
+</div>
 
 ## 자동 입력을 스크립트로 굳히기
 
 세 번쯤 하고 나면 순서가 고정됩니다. 그때:
 
-> 지금까지 에디터 입력 과정을 scripts/fill-editor.md에 단계별 절차로 정리해줘 (어떤 버튼, 어떤 순서, 어디서 기다리는지). 다음부터 "fill-editor.md 절차대로 posts/XXX 입력해줘"로 실행할 수 있게.
+<div class="prompt-box not-prose" data-prompt="6-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+지금까지 에디터 입력 과정을 scripts/fill-editor.md에 단계별 절차로 정리해줘 (어떤 버튼, 어떤 순서, 어디서 기다리는지). 다음부터 "fill-editor.md 절차대로 posts/XXX 입력해줘"로 실행할 수 있게.
+
+</div>
+</div>
 
 7강의 스킬이 이 파일을 참조합니다.
 

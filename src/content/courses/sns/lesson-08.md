@@ -36,7 +36,14 @@ Facebook 페이지(예: "영어 듣기 대충영어" 같은 브랜드 페이지)
    - 토큰 받은 뒤 → `페이지 액세스 토큰으로 교환`: 드롭다운에서 페이지 선택
 5. **장기 토큰으로 교환**: 단기 토큰은 1~2시간 만료. Claude Code에게 시킵니다:
 
-> Graph API 탐색기에서 받은 단기 Page Access Token을 장기 토큰(60일)으로 교환하는 curl 명령을 만들어줘. 앱 ID와 앱 시크릿은 .env에서 읽어.
+<div class="prompt-box not-prose" data-prompt="8-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Graph API 탐색기에서 받은 단기 Page Access Token을 장기 토큰(60일)으로 교환하는 curl 명령을 만들어줘. 앱 ID와 앱 시크릿은 .env에서 읽어.
+
+</div>
+</div>
 
 `.env`에 추가:
 
@@ -49,13 +56,20 @@ FB_PAGE_ACCESS_TOKEN=장기토큰
 
 #### 따라하기 2: 포스팅 스크립트
 
-> scripts/fb-post.py를 만들어줘.
-> - .env에서 FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN 읽기
-> - variants.json의 facebook 항목에서 텍스트, 링크(UTM 포함) 가져오기
-> - Graph API의 `/{page-id}/feed` 엔드포인트로 POST
-> - 이미지가 있으면 `/{page-id}/photos`로 먼저 업로드 후 게시
-> - 성공하면 게시물 ID와 URL 출력, 실패하면 에러 메시지
-> - `--draft` 옵션: published=false로 비공개 게시 (검수용)
+<div class="prompt-box not-prose" data-prompt="8-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/fb-post.py를 만들어줘.
+- .env에서 FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN 읽기
+- variants.json의 facebook 항목에서 텍스트, 링크(UTM 포함) 가져오기
+- Graph API의 `/{page-id}/feed` 엔드포인트로 POST
+- 이미지가 있으면 `/{page-id}/photos`로 먼저 업로드 후 게시
+- 성공하면 게시물 ID와 URL 출력, 실패하면 에러 메시지
+- `--draft` 옵션: published=false로 비공개 게시 (검수용)
+
+</div>
+</div>
 
 ```bash
 python3 scripts/fb-post.py --draft     # 비공개로 먼저 확인
@@ -66,7 +80,14 @@ python3 scripts/fb-post.py              # 실제 발행
 
 Graph API는 예약 발행도 지원합니다:
 
-> fb-post.py에 `--schedule "2025-02-01 09:00"` 옵션을 추가해줘. scheduled_publish_time 파라미터로 Unix 타임스탬프 변환해서 보내고, published=false 설정.
+<div class="prompt-box not-prose" data-prompt="8-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+fb-post.py에 `--schedule "2025-02-01 09:00"` 옵션을 추가해줘. scheduled_publish_time 파라미터로 Unix 타임스탬프 변환해서 보내고, published=false 설정.
+
+</div>
+</div>
 
 ### 개인 프로필 — Aside 브라우저 방식
 
@@ -74,9 +95,16 @@ Graph API는 예약 발행도 지원합니다:
 
 현실적인 방법은 **Aside 브라우저(Computer Use)**입니다:
 
-> Computer Use로 facebook.com에서 내 개인 프로필에 글을 올려줘.
-> - variants.json의 facebook-personal 항목에서 텍스트와 이미지를 가져와
-> - 게시물 작성 → 텍스트 입력 → 이미지 첨부 → ⏸ "게시할까요?" 확인 후 게시 버튼
+<div class="prompt-box not-prose" data-prompt="8-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 facebook.com에서 내 개인 프로필에 글을 올려줘.
+- variants.json의 facebook-personal 항목에서 텍스트와 이미지를 가져와
+- 게시물 작성 → 텍스트 입력 → 이미지 첨부 → ⏸ "게시할까요?" 확인 후 게시 버튼
+
+</div>
+</div>
 
 개인 프로필 포스팅이 필요한 분만 하세요. 페이지 하나로 충분한 경우가 많습니다.
 
@@ -93,7 +121,14 @@ Meta는 Threads API를 공식 공개했습니다. 텍스트, 이미지, 링크 �
 3. **권한 설정**: `threads_basic`, `threads_content_publish` 스코프 추가
 4. **Access Token**: Facebook 로그인 플로우로 Threads 토큰을 발급받습니다
 
-> Threads API용 Access Token을 발급받는 절차를 알려줘. 앱 ID는 .env에서 읽고, OAuth 인증 URL을 브라우저에서 열어 코드를 받은 뒤 장기 토큰으로 교환하는 과정까지.
+<div class="prompt-box not-prose" data-prompt="8-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Threads API용 Access Token을 발급받는 절차를 알려줘. 앱 ID는 .env에서 읽고, OAuth 인증 URL을 브라우저에서 열어 코드를 받은 뒤 장기 토큰으로 교환하는 과정까지.
+
+</div>
+</div>
 
 `.env`에 추가:
 
@@ -104,15 +139,22 @@ THREADS_ACCESS_TOKEN=장기토큰
 
 ### 따라하기 5: Threads 포스팅 스크립트
 
-> scripts/threads-post.py를 만들어줘.
-> - .env에서 THREADS_USER_ID, THREADS_ACCESS_TOKEN 읽기
-> - variants.json의 threads 항목에서 텍스트, 링크 가져오기
-> - Threads API 2단계 발행:
->   1. `POST /{user-id}/threads` → media container ID 생성 (media_type=TEXT, text=내용, link_attachment=URL)
->   2. `POST /{user-id}/threads_publish` → container ID로 실제 발행
-> - 이미지 포함 시 media_type=IMAGE, image_url 사용
-> - 성공하면 스레드 ID와 URL 출력
-> - `--draft` 옵션: 1단계(컨테이너 생성)만 하고 발행은 안 함 (확인용)
+<div class="prompt-box not-prose" data-prompt="8-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/threads-post.py를 만들어줘.
+- .env에서 THREADS_USER_ID, THREADS_ACCESS_TOKEN 읽기
+- variants.json의 threads 항목에서 텍스트, 링크 가져오기
+- Threads API 2단계 발행:
+  1. `POST /{user-id}/threads` → media container ID 생성 (media_type=TEXT, text=내용, link_attachment=URL)
+  2. `POST /{user-id}/threads_publish` → container ID로 실제 발행
+- 이미지 포함 시 media_type=IMAGE, image_url 사용
+- 성공하면 스레드 ID와 URL 출력
+- `--draft` 옵션: 1단계(컨테이너 생성)만 하고 발행은 안 함 (확인용)
+
+</div>
+</div>
 
 ```bash
 python3 scripts/threads-post.py --draft   # 컨테이너만 생성
@@ -147,10 +189,17 @@ python3 scripts/threads-post.py            # 실제 발행
 
 channels.json에 Facebook과 Threads 직접 API 경로를 추가합니다:
 
-> channels.json에 facebook-page와 threads 채널을 추가해줘.
-> - facebook-page: max_chars 63206, image_ratio "1.91:1" 또는 "1:1", publish_method "graph_api"
-> - threads: max_chars 500, image_ratio "1:1", publish_method "threads_api"
-> - facebook-personal: publish_method "aside_browser" (수동)
+<div class="prompt-box not-prose" data-prompt="8-7" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-7</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+channels.json에 facebook-page와 threads 채널을 추가해줘.
+- facebook-page: max_chars 63206, image_ratio "1.91:1" 또는 "1:1", publish_method "graph_api"
+- threads: max_chars 500, image_ratio "1:1", publish_method "threads_api"
+- facebook-personal: publish_method "aside_browser" (수동)
+
+</div>
+</div>
 
 ## 토큰 만료 관리
 
@@ -160,7 +209,14 @@ channels.json에 Facebook과 Threads 직접 API 경로를 추가합니다:
 | Threads (장기) | 60일 | 같은 방식. `token_expires` 필드를 .env에 |
 | Facebook 개인 프로필 | — | Aside 방식이라 토큰 불필요 |
 
-> fb-post.py와 threads-post.py에 토큰 만료일 체크를 넣어줘. 7일 이내면 "⚠️ 토큰이 N일 뒤 만료됩니다. 갱신하세요." 경고.
+<div class="prompt-box not-prose" data-prompt="8-8" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+fb-post.py와 threads-post.py에 토큰 만료일 체크를 넣어줘. 7일 이내면 "⚠️ 토큰이 N일 뒤 만료됩니다. 갱신하세요." 경고.
+
+</div>
+</div>
 
 ## 오늘의 체크리스트
 

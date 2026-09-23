@@ -72,8 +72,15 @@ Claude Code 데스크탑 앱 오른쪽 패널의 **브라우저 탭**입니다.
 
 대화창에:
 
-> 지금 Aside 브라우저에서 내 Vercel 프로젝트를 보고 있어.
-> Analytics 탭을 찾아서 Enable 버튼이 어디 있는지 알려줘.
+<div class="prompt-box not-prose" data-prompt="13-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+지금 Aside 브라우저에서 내 Vercel 프로젝트를 보고 있어.
+Analytics 탭을 찾아서 Enable 버튼이 어디 있는지 알려줘.
+
+</div>
+</div>
 
 Claude가 현재 Aside 브라우저 화면을 보고 단계를 안내합니다.
 
@@ -83,8 +90,15 @@ Claude가 현재 Aside 브라우저 화면을 보고 단계를 안내합니다.
 
 대화창에:
 
-> Computer Use 모드로 Vercel 대시보드에서 Speed Insights를 켜줘.
-> 지금 Aside 브라우저에 Vercel이 열려 있어.
+<div class="prompt-box not-prose" data-prompt="13-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use 모드로 Vercel 대시보드에서 Speed Insights를 켜줘.
+지금 Aside 브라우저에 Vercel이 열려 있어.
+
+</div>
+</div>
 
 > [!IMPORTANT]
 > **로그인이 필요한 페이지는 반드시 사람이 먼저 로그인합니다.**
@@ -97,9 +111,16 @@ Claude가 현재 Aside 브라우저 화면을 보고 단계를 안내합니다.
 2. Aside 브라우저 주소창에 그 URL 입력 (또는 그 탭을 Aside로 드래그)
 3. 대화창에:
 
-> Vercel이 아래 두 레코드를 DNS에 넣으라고 해. Aside 브라우저에서 직접 추가해줘.
-> - Type: A, Name: @, Value: 76.76.21.21
-> - Type: CNAME, Name: www, Value: cname.vercel-dns.com
+<div class="prompt-box not-prose" data-prompt="13-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Vercel이 아래 두 레코드를 DNS에 넣으라고 해. Aside 브라우저에서 직접 추가해줘.
+- Type: A, Name: @, Value: 76.76.21.21
+- Type: CNAME, Name: www, Value: cname.vercel-dns.com
+
+</div>
+</div>
 
 Claude가 DNS 관리 화면에서 직접 필드를 찾아 입력하고 저장합니다.
 

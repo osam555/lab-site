@@ -42,8 +42,15 @@ Claude Code 앱은 `~/.claude/claude_desktop_config.json` (또는 앱 설정 폴
 
 Claude Code 대화창에:
 
-> 내 Claude Code 앱의 MCP 설정 파일 위치를 알려주고, 아래 MCP 서버를 추가해줘:
-> [서버 이름과 설정 붙여넣기]
+<div class="prompt-box not-prose" data-prompt="15-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+내 Claude Code 앱의 MCP 설정 파일 위치를 알려주고, 아래 MCP 서버를 추가해줘:
+[서버 이름과 설정 붙여넣기]
+
+</div>
+</div>
 
 ---
 
@@ -55,13 +62,34 @@ Claude Code 대화창에:
 
 **설치**:
 
-> MCP 설정에 Brave Search MCP를 추가해줘. API 키는 [brave.com/search/api에서 발급한 키] 야.
+<div class="prompt-box not-prose" data-prompt="15-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+MCP 설정에 Brave Search MCP를 추가해줘. API 키는 [brave.com/search/api에서 발급한 키] 야.
+
+</div>
+</div>
 
 **활용 예**:
 
-> 내 동네 카페 홈페이지를 3개 찾아서 디자인과 메뉴 구성을 분석해줘. 우리 홈페이지와 비교하면 뭘 보완하면 좋을까?
+<div class="prompt-box not-prose" data-prompt="15-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 2024년 카페 홈페이지 트렌드를 검색해서 index.html에 반영할 수 있는 아이디어 3가지 제안해줘.
+내 동네 카페 홈페이지를 3개 찾아서 디자인과 메뉴 구성을 분석해줘. 우리 홈페이지와 비교하면 뭘 보완하면 좋을까?
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="15-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+2024년 카페 홈페이지 트렌드를 검색해서 index.html에 반영할 수 있는 아이디어 3가지 제안해줘.
+
+</div>
+</div>
 
 ---
 
@@ -74,15 +102,43 @@ Claude Code 대화창에:
 
 **설치**:
 
-> Playwright MCP 서버를 Claude Code에 추가해줘.
+<div class="prompt-box not-prose" data-prompt="15-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Playwright MCP 서버를 Claude Code에 추가해줘.
+
+</div>
+</div>
 
 **활용 예**:
 
-> 내 홈페이지(mycafe.kr)의 모든 페이지를 열어서 404 링크가 있는지 확인해줘.
+<div class="prompt-box not-prose" data-prompt="15-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 메뉴 페이지에서 가격 정보를 모두 긁어와서 정리해줘. 다음에 가격 업데이트할 때 참고할 spreadsheet 형태로.
+내 홈페이지(mycafe.kr)의 모든 페이지를 열어서 404 링크가 있는지 확인해줘.
 
-> 홈페이지 모바일 화면을 캡처해서 images/screenshot-mobile.png로 저장해줘.
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="15-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+메뉴 페이지에서 가격 정보를 모두 긁어와서 정리해줘. 다음에 가격 업데이트할 때 참고할 spreadsheet 형태로.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="15-8" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-8</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+홈페이지 모바일 화면을 캡처해서 images/screenshot-mobile.png로 저장해줘.
+
+</div>
+</div>
 
 ---
 
@@ -92,13 +148,34 @@ Claude Code 대화창에:
 
 **설치**:
 
-> 파일 시스템 MCP를 추가해줘. 접근 허용 경로는 ~/Desktop/my-site 와 ~/Documents/cafe-backup 이야.
+<div class="prompt-box not-prose" data-prompt="15-9" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-9</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+파일 시스템 MCP를 추가해줘. 접근 허용 경로는 ~/Desktop/my-site 와 ~/Documents/cafe-backup 이야.
+
+</div>
+</div>
 
 **활용 예**:
 
-> Documents/cafe-backup 폴더에 오늘 날짜로 my-site 전체를 백업해줘.
+<div class="prompt-box not-prose" data-prompt="15-10" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-10</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> Downloads 폴더에 있는 사진들을 my-site/images에 복사하고, 각각 1600px·300KB 이하로 줄여줘.
+Documents/cafe-backup 폴더에 오늘 날짜로 my-site 전체를 백업해줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="15-11" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-11</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Downloads 폴더에 있는 사진들을 my-site/images에 복사하고, 각각 1600px·300KB 이하로 줄여줘.
+
+</div>
+</div>
 
 ---
 
@@ -124,10 +201,17 @@ Claude Code 대화창에서 `/ tools` 또는 `@` 를 입력하면 지금 사용 
 
 MCP를 모두 연결한 뒤 이런 요청이 가능해집니다:
 
-> 다음을 순서대로 해줘:
-> 1. 웹 검색으로 이번 주 우리 동네 카페 관련 뉴스나 이벤트 찾기
-> 2. 관련 있는 것만 골라 index.html 공지 영역에 추가
-> 3. 변경된 파일을 커밋하고 push
+<div class="prompt-box not-prose" data-prompt="15-12" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-12</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+다음을 순서대로 해줘:
+1. 웹 검색으로 이번 주 우리 동네 카페 관련 뉴스나 이벤트 찾기
+2. 관련 있는 것만 골라 index.html 공지 영역에 추가
+3. 변경된 파일을 커밋하고 push
+
+</div>
+</div>
 
 ---
 

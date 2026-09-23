@@ -26,22 +26,36 @@ part: 고급 · SEO & 대시보드
 
 Claude Code에게:
 
-> index.html에 JSON-LD 구조화 데이터를 추가해줘. LocalBusiness 타입으로:
-> - name: "[가게 이름]"
-> - description: "[한 줄 소개]"
-> - url: "https://mycafe.kr"
-> - telephone: "[전화번호]"
-> - address: 서울특별시 [구] [동] [상세주소]
-> - openingHours: Mo-Fr 10:00-20:00, Sa-Su 11:00-21:00
-> - priceRange: "₩₩"
-> - image: "https://mycafe.kr/images/og.jpg"
-> - geo: 위도 [위도], 경도 [경도]
-> 카페라면 CafeOrCoffeeShop 서브타입도 추가해줘.
+<div class="prompt-box not-prose" data-prompt="18-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html에 JSON-LD 구조화 데이터를 추가해줘. LocalBusiness 타입으로:
+- name: "[가게 이름]"
+- description: "[한 줄 소개]"
+- url: "https://mycafe.kr"
+- telephone: "[전화번호]"
+- address: 서울특별시 [구] [동] [상세주소]
+- openingHours: Mo-Fr 10:00-20:00, Sa-Su 11:00-21:00
+- priceRange: "₩₩"
+- image: "https://mycafe.kr/images/og.jpg"
+- geo: 위도 [위도], 경도 [경도]
+카페라면 CafeOrCoffeeShop 서브타입도 추가해줘.
+
+</div>
+</div>
 
 ### Menu 마크업 (메뉴 페이지)
 
-> menu.html에 Menu와 MenuItem JSON-LD를 추가해줘.
-> 메뉴 3개: [메뉴1 이름, 가격, 설명], [메뉴2], [메뉴3]
+<div class="prompt-box not-prose" data-prompt="18-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+menu.html에 Menu와 MenuItem JSON-LD를 추가해줘.
+메뉴 3개: [메뉴1 이름, 가격, 설명], [메뉴2], [메뉴3]
+
+</div>
+</div>
 
 ### 확인 방법
 
@@ -64,18 +78,39 @@ Claude Code에게:
 
 **LCP(가장 큰 요소 로딩) > 2.5초**
 
-> hero 이미지 LCP가 느려. 다음을 적용해줘:
-> 1. hero 이미지에 `loading="eager"` 와 `fetchpriority="high"` 속성 추가
-> 2. `<link rel="preload">` 태그를 head에 추가
-> 3. hero 이미지를 WebP 포맷으로 변환 (ImageMagick이나 cwebp 써도 됨)
+<div class="prompt-box not-prose" data-prompt="18-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+hero 이미지 LCP가 느려. 다음을 적용해줘:
+1. hero 이미지에 `loading="eager"` 와 `fetchpriority="high"` 속성 추가
+2. `<link rel="preload">` 태그를 head에 추가
+3. hero 이미지를 WebP 포맷으로 변환 (ImageMagick이나 cwebp 써도 됨)
+
+</div>
+</div>
 
 **CLS(레이아웃 밀림) > 0.1**
 
-> 이미지 태그에 width와 height 속성이 없어서 CLS가 높아. 모든 img 태그에 실제 크기를 명시해줘.
+<div class="prompt-box not-prose" data-prompt="18-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이미지 태그에 width와 height 속성이 없어서 CLS가 높아. 모든 img 태그에 실제 크기를 명시해줘.
+
+</div>
+</div>
 
 **INP(반응 속도) > 200ms**
 
-> 페이지 전환이나 클릭 반응이 느려. 불필요한 JavaScript를 async/defer로 바꾸고, 인라인 이벤트 핸들러를 정리해줘.
+<div class="prompt-box not-prose" data-prompt="18-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+페이지 전환이나 클릭 반응이 느려. 불필요한 JavaScript를 async/defer로 바꾸고, 인라인 이벤트 핸들러를 정리해줘.
+
+</div>
+</div>
 
 ---
 
@@ -94,21 +129,42 @@ Claude Code에게:
 
 Claude Code에게:
 
-> 우리 가게는 [동네]에 있는 [업종]이야.
-> 사람들이 검색할 법한 롱테일 키워드 20개를 만들어줘.
-> 예: "[동네] [업종] 추천", "[특징] [업종] [동네]"
-> 각 키워드를 어느 페이지에 넣으면 좋은지도 알려줘.
+<div class="prompt-box not-prose" data-prompt="18-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 제안한 키워드를 각 페이지의 title, meta description, h1, 본문에 자연스럽게 반영해줘. 억지스럽지 않게.
+우리 가게는 [동네]에 있는 [업종]이야.
+사람들이 검색할 법한 롱테일 키워드 20개를 만들어줘.
+예: "[동네] [업종] 추천", "[특징] [업종] [동네]"
+각 키워드를 어느 페이지에 넣으면 좋은지도 알려줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="18-7" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-7</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+제안한 키워드를 각 페이지의 title, meta description, h1, 본문에 자연스럽게 반영해줘. 억지스럽지 않게.
+
+</div>
+</div>
 
 ### 지역 SEO (Local SEO)
 
 같은 동네 사람들에게 먼저 노출되게 합니다.
 
-> 모든 페이지에 지역 키워드를 강화해줘.
-> - 메인: "[동네] [업종]"을 h1과 첫 문단에 포함
-> - 오시는 길: 주요 랜드마크(지하철역, 버스정류장)를 텍스트로 명시
-> - footer: 전체 주소를 텍스트로 (이미지 아니고)
+<div class="prompt-box not-prose" data-prompt="18-8" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-8</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+모든 페이지에 지역 키워드를 강화해줘.
+- 메인: "[동네] [업종]"을 h1과 첫 문단에 포함
+- 오시는 길: 주요 랜드마크(지하철역, 버스정류장)를 텍스트로 명시
+- footer: 전체 주소를 텍스트로 (이미지 아니고)
+
+</div>
+</div>
 
 ---
 
@@ -117,13 +173,27 @@ Claude Code에게:
 홈페이지 4개 페이지만으로는 검색 유입이 제한됩니다.
 **소식 페이지(news.html)** 를 추가하면 새 키워드로 유입됩니다.
 
-> news.html을 만들어줘. 가게 소식과 이벤트를 카드 형태로 나열.
-> 첫 소식 3개: [이벤트1], [이벤트2], [계절 메뉴 소개]
-> 각 소식마다 날짜, 제목, 짧은 설명, 이미지.
+<div class="prompt-box not-prose" data-prompt="18-9" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-9</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+news.html을 만들어줘. 가게 소식과 이벤트를 카드 형태로 나열.
+첫 소식 3개: [이벤트1], [이벤트2], [계절 메뉴 소개]
+각 소식마다 날짜, 제목, 짧은 설명, 이미지.
+
+</div>
+</div>
 
 소식을 올릴 때마다:
 
-> 새 소식을 추가해줘: 제목 "[제목]", 날짜 오늘, 내용 "[내용]". 커밋하고 push도.
+<div class="prompt-box not-prose" data-prompt="18-10" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-10</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+새 소식을 추가해줘: 제목 "[제목]", 날짜 오늘, 내용 "[내용]". 커밋하고 push도.
+
+</div>
+</div>
 
 ---
 
@@ -135,7 +205,14 @@ Claude Code에게:
 - **클릭수 감소**: 순위 하락 또는 경쟁 심화
 - **노출수 급증 but CTR 하락**: 제목/설명 개선 필요
 
-> 구글 서치 콘솔에서 클릭률이 낮은 쿼리 5개를 찾아줘. 해당 페이지의 제목과 meta description을 CTR을 높이는 방향으로 수정안을 제안해줘.
+<div class="prompt-box not-prose" data-prompt="18-11" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-11</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+구글 서치 콘솔에서 클릭률이 낮은 쿼리 5개를 찾아줘. 해당 페이지의 제목과 meta description을 CTR을 높이는 방향으로 수정안을 제안해줘.
+
+</div>
+</div>
 
 ### 네이버 서치 어드바이저 심화
 

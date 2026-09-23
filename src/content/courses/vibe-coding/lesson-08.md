@@ -46,7 +46,14 @@ npm run dev
 
 `PLAN.md`와 `PROMPT_TEMPLATE.md`를 이 폴더로 옮기세요. 그리고 AI 도구를 켜고:
 
-> "PLAN.md를 읽어줘. 그리고 src/app/page.tsx의 기본 내용을 전부 지우고, 서비스 이름과 한 줄 설명만 가운데에 크게 보여주는 화면으로 바꿔줘. 다른 파일은 건드리지 마."
+<div class="prompt-box not-prose" data-prompt="8-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"PLAN.md를 읽어줘. 그리고 src/app/page.tsx의 기본 내용을 전부 지우고, 서비스 이름과 한 줄 설명만 가운데에 크게 보여주는 화면으로 바꿔줘. 다른 파일은 건드리지 마."
+
+</div>
+</div>
 
 브라우저가 자동으로 새로고침되며 바뀐 화면이 보입니다. 이 즉시 반영을 **핫 리로드**라고 합니다.
 

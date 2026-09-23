@@ -11,7 +11,14 @@ part: 3부 · 최적화와 공개
 
 ### 색상
 
-> CTA 버튼 색을 페이지 배경과 가장 대비되는 색으로 바꿔줘. 나머지 색은 그대로.
+<div class="prompt-box not-prose" data-prompt="8-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CTA 버튼 색을 페이지 배경과 가장 대비되는 색으로 바꿔줘. 나머지 색은 그대로.
+
+</div>
+</div>
 
 규칙: **CTA 버튼은 페이지에서 유일하게 그 색을 쓰는 요소**여야 합니다.
 
@@ -29,17 +36,38 @@ part: 3부 · 최적화와 공개
 | "문의" | "무료 30분 상담 받기" |
 | "다운로드" | "앱 다운로드 — 30초면 끝" |
 
-> CTA 버튼 문구를 "[강한 CTA 문구]"로 바꿔줘.
+<div class="prompt-box not-prose" data-prompt="8-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CTA 버튼 문구를 "[강한 CTA 문구]"로 바꿔줘.
+
+</div>
+</div>
 
 ### 위치와 크기
 
-> CTA 버튼을 히어로, 가격 섹션, 페이지 맨 아래 — 최소 3곳에 넣어줘. 크기는 패딩 16px 24px, 글자 18px 이상으로.
+<div class="prompt-box not-prose" data-prompt="8-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CTA 버튼을 히어로, 가격 섹션, 페이지 맨 아래 — 최소 3곳에 넣어줘. 크기는 패딩 16px 24px, 글자 18px 이상으로.
+
+</div>
+</div>
 
 ### 주변 요소
 
 CTA 바로 위에 한 줄을 추가합니다:
 
-> CTA 버튼 바로 위에 "✓ 3일 무료 체험 · 언제든 해지 · 카드 등록 불필요" 같은 안심 문구를 작은 글씨로 넣어줘.
+<div class="prompt-box not-prose" data-prompt="8-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CTA 버튼 바로 위에 "✓ 3일 무료 체험 · 언제든 해지 · 카드 등록 불필요" 같은 안심 문구를 작은 글씨로 넣어줘.
+
+</div>
+</div>
 
 ---
 
@@ -53,7 +81,14 @@ git commit -m "랜딩페이지 완성"
 
 GitHub 연결:
 
-> GitHub에 my-landing 저장소를 만들고 push하는 명령을 알려줘.
+<div class="prompt-box not-prose" data-prompt="8-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+GitHub에 my-landing 저장소를 만들고 push하는 명령을 알려줘.
+
+</div>
+</div>
 
 ```bash
 git remote add origin https://github.com/[내아이디]/my-landing.git
@@ -80,7 +115,14 @@ git push -u origin main
 
 ### 도메인 연결
 
-> 내 도메인 my-product.com을 Vercel에 연결하는 순서를 알려줘.
+<div class="prompt-box not-prose" data-prompt="8-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+내 도메인 my-product.com을 Vercel에 연결하는 순서를 알려줘.
+
+</div>
+</div>
 
 Vercel 대시보드 → Settings → Domains → 도메인 입력 → DNS 설정 안내를 따르면 HTTPS까지 자동.
 
@@ -94,7 +136,14 @@ Vercel 대시보드 → Analytics → Enable. 방문자 수, 페이지뷰, 국�
 
 ### 방법 2: Google Analytics 이벤트
 
-> index.html의 head에 Google Analytics(GA4) 코드를 넣어줘. 측정 ID는 G-XXXXXXXXXX 야. CTA 버튼을 클릭하면 'cta_click' 이벤트가 발생하게 해줘.
+<div class="prompt-box not-prose" data-prompt="8-7" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-7</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html의 head에 Google Analytics(GA4) 코드를 넣어줘. 측정 ID는 G-XXXXXXXXXX 야. CTA 버튼을 클릭하면 'cta_click' 이벤트가 발생하게 해줘.
+
+</div>
+</div>
 
 이렇게 하면 GA4 대시보드에서 "CTA를 클릭한 사람 수"를 확인할 수 있습니다.
 
@@ -102,7 +151,14 @@ Vercel 대시보드 → Analytics → Enable. 방문자 수, 페이지뷰, 국�
 
 외부 도구 없이 하는 방법. CTA 링크에 UTM 파라미터를 붙입니다.
 
-> CTA 버튼 링크를 "https://내사이트.com/signup?utm_source=landing&utm_medium=cta&utm_campaign=launch"로 바꿔줘.
+<div class="prompt-box not-prose" data-prompt="8-8" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CTA 버튼 링크를 "https://내사이트.com/signup?utm_source=landing&utm_medium=cta&utm_campaign=launch"로 바꿔줘.
+
+</div>
+</div>
 
 가입 쪽에서 어디서 왔는지 추적 가능.
 
@@ -112,9 +168,16 @@ Vercel 대시보드 → Analytics → Enable. 방문자 수, 페이지뷰, 국�
 
 두 버전을 만들어 비교합니다.
 
-> index.html을 복사해서 index-b.html을 만들어줘. B 버전에서는:
-> 1. 헤드라인을 "[다른 헤드라인]"으로
-> 2. CTA 버튼 색을 [다른 색]으로
+<div class="prompt-box not-prose" data-prompt="8-9" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-9</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 복사해서 index-b.html을 만들어줘. B 버전에서는:
+1. 헤드라인을 "[다른 헤드라인]"으로
+2. CTA 버튼 색을 [다른 색]으로
+
+</div>
+</div>
 
 A 버전: `my-product.com/`
 B 버전: `my-product.com/index-b.html`

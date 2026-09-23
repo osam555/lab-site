@@ -28,23 +28,44 @@ part: 4부 · 세상에 내놓기
 
 `package.json`의 `scripts`에 자주 하는 명령을 등록하면 `npm run 이름`으로 실행됩니다.
 
-> "package.json scripts에 'check' 명령을 추가해줘. lint → 타입 검사 → build를 순서대로 실행하고, 하나라도 실패하면 멈추게."
+<div class="prompt-box not-prose" data-prompt="19-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 19-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"package.json scripts에 'check' 명령을 추가해줘. lint → 타입 검사 → build를 순서대로 실행하고, 하나라도 실패하면 멈추게."
+
+</div>
+</div>
 
 이제 push 전에 `npm run check` 한 줄. 16강의 "빌드 통과 확인"이 자동입니다.
 
 더 나아가 **커밋 전에 자동으로** 돌리게 할 수도 있습니다.
 
-> "커밋할 때 자동으로 npm run check가 돌게 git hook을 설정해줘. husky 설치를 허락할게."
+<div class="prompt-box not-prose" data-prompt="19-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 19-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"커밋할 때 자동으로 npm run check가 돌게 git hook을 설정해줘. husky 설치를 허락할게."
+
+</div>
+</div>
 
 ## 도구 2: 예약 작업 — 정해진 시간에 서버가 알아서
 
 "매일 아침 8시에 추천 메뉴 보내기" 같은 것은 **크론(cron)** 이라는 예약 작업입니다. Vercel은 `vercel.json`에 적으면 정해진 시간에 내 서버 라우트를 호출해줍니다.
 
-> "매일 아침 8시(KST)에 실행되는 Vercel Cron을 추가해줘.
-> - src/app/api/cron/daily/route.ts를 만들고
-> - CRON_SECRET 환경변수로 외부 호출을 막고
-> - 지금은 '실행됨' 로그만 남기게. 실제 동작은 다음에 붙일게.
-> vercel.json 설정과 Vercel에서 확인하는 방법을 알려줘."
+<div class="prompt-box not-prose" data-prompt="19-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 19-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"매일 아침 8시(KST)에 실행되는 Vercel Cron을 추가해줘.
+- src/app/api/cron/daily/route.ts를 만들고
+- CRON_SECRET 환경변수로 외부 호출을 막고
+- 지금은 '실행됨' 로그만 남기게. 실제 동작은 다음에 붙일게.
+vercel.json 설정과 Vercel에서 확인하는 방법을 알려줘."
+
+</div>
+</div>
 
 Supabase에도 `pg_cron`이라는 데이터베이스 안 예약 기능이 있습니다. "일주일 지난 데이터 삭제"처럼 데이터베이스만 관련된 작업은 이쪽이 간단합니다.
 

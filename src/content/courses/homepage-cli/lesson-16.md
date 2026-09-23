@@ -31,7 +31,14 @@ pocketbase (실행 파일 하나)
 
 Claude Code 대화창에:
 
-> Pocketbase를 내 컴퓨터에 다운로드해서 실행해줘. my-site 폴더 옆에 pb 폴더를 만들어서 거기에.
+<div class="prompt-box not-prose" data-prompt="16-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Pocketbase를 내 컴퓨터에 다운로드해서 실행해줘. my-site 폴더 옆에 pb 폴더를 만들어서 거기에.
+
+</div>
+</div>
 
 Claude Code가:
 1. Pocketbase 최신 바이너리를 받아 `pb/` 폴더에 저장
@@ -56,17 +63,38 @@ Settings     ← 이메일·OAuth 설정
 
 Claude Code에게:
 
-> Pocketbase 어드민(localhost:8090/_/)에서 menu 컬렉션을 만드는 방법을 알려줘.
-> 필드: name(텍스트), price(숫자), description(텍스트), image(파일), is_sold_out(체크박스), sort_order(숫자)
+<div class="prompt-box not-prose" data-prompt="16-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Pocketbase 어드민(localhost:8090/_/)에서 menu 컬렉션을 만드는 방법을 알려줘.
+필드: name(텍스트), price(숫자), description(텍스트), image(파일), is_sold_out(체크박스), sort_order(숫자)
+
+</div>
+</div>
 
 또는 Pocketbase API로 자동 생성:
 
-> Pocketbase REST API를 써서 menu 컬렉션을 생성하고, 현재 index.html의 메뉴 3개를 초기 데이터로 넣어줘.
+<div class="prompt-box not-prose" data-prompt="16-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Pocketbase REST API를 써서 menu 컬렉션을 생성하고, 현재 index.html의 메뉴 3개를 초기 데이터로 넣어줘.
+
+</div>
+</div>
 
 ### 문의 폼 컬렉션
 
-> contact_form 컬렉션을 만들어줘.
-> 필드: name, phone, message, created(날짜). 누구나 쓸 수 있게 권한은 public create.
+<div class="prompt-box not-prose" data-prompt="16-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+contact_form 컬렉션을 만들어줘.
+필드: name, phone, message, created(날짜). 누구나 쓸 수 있게 권한은 public create.
+
+</div>
+</div>
 
 ---
 
@@ -74,10 +102,17 @@ Claude Code에게:
 
 메뉴 데이터를 Pocketbase에서 가져와 HTML에 표시:
 
-> index.html의 메뉴 섹션을 Pocketbase API에서 menu 컬렉션을 가져와 동적으로 렌더링하게 바꿔줘.
-> API 주소는 http://localhost:8090 (나중에 배포 주소로 바꿀 거야).
-> is_sold_out이 true인 메뉴는 "품절" 배지를 보여줘.
-> sort_order 오름차순으로 정렬.
+<div class="prompt-box not-prose" data-prompt="16-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html의 메뉴 섹션을 Pocketbase API에서 menu 컬렉션을 가져와 동적으로 렌더링하게 바꿔줘.
+API 주소는 http://localhost:8090 (나중에 배포 주소로 바꿀 거야).
+is_sold_out이 true인 메뉴는 "품절" 배지를 보여줘.
+sort_order 오름차순으로 정렬.
+
+</div>
+</div>
 
 이제 어드민에서 메뉴를 바꾸면 홈페이지에 자동으로 반영됩니다.
 
@@ -87,8 +122,15 @@ Claude Code에게:
 
 Pocketbase는 서버가 필요합니다. **Fly.io**의 무료 플랜이 적합합니다.
 
-> Pocketbase를 Fly.io에 배포하는 Dockerfile과 fly.toml을 만들어줘.
-> 앱 이름은 mycafe-pb로.
+<div class="prompt-box not-prose" data-prompt="16-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Pocketbase를 Fly.io에 배포하는 Dockerfile과 fly.toml을 만들어줘.
+앱 이름은 mycafe-pb로.
+
+</div>
+</div>
 
 Claude Code가 배포 파일을 만들면:
 
@@ -102,7 +144,14 @@ fly deploy
 
 홈페이지 JS의 API 주소를 `localhost` → `mycafe-pb.fly.dev`로 교체:
 
-> API 주소를 환경변수로 분리해줘. 로컬은 http://localhost:8090, 배포는 https://mycafe-pb.fly.dev.
+<div class="prompt-box not-prose" data-prompt="16-7" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-7</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+API 주소를 환경변수로 분리해줘. 로컬은 http://localhost:8090, 배포는 https://mycafe-pb.fly.dev.
+
+</div>
+</div>
 
 ---
 

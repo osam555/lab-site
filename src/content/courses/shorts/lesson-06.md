@@ -40,15 +40,22 @@ TYPECAST_ACTOR_ID=여기에
 
 ### 2. Typecast 더빙 스크립트
 
-> scripts/dub-typecast.py를 만들어줘.
-> - script.json을 읽어 각 컷의 ko 텍스트를 Typecast API로 음성 변환
-> - 출력: voice/cut-NN.mp3
-> - API 토큰·Actor ID는 .env의 TYPECAST_API_TOKEN, TYPECAST_ACTOR_ID에서
-> - 진행 전 총 글자 수와 예상 크레딧 소모를 출력하고 y 확인 후 실행
-> - 이미 있는 mp3는 건너뛰기, --only 5,12 옵션으로 특정 컷만 재생성
-> - Typecast API는 비동기이므로 작업 ID를 받아 3초마다 완료 여부를 폴링
-> - 각 파일 생성 후 ffprobe로 길이를 재서 voice/durations.json에 기록
-> - 실패한 컷 번호를 모아 마지막에 출력
+<div class="prompt-box not-prose" data-prompt="6-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/dub-typecast.py를 만들어줘.
+- script.json을 읽어 각 컷의 ko 텍스트를 Typecast API로 음성 변환
+- 출력: voice/cut-NN.mp3
+- API 토큰·Actor ID는 .env의 TYPECAST_API_TOKEN, TYPECAST_ACTOR_ID에서
+- 진행 전 총 글자 수와 예상 크레딧 소모를 출력하고 y 확인 후 실행
+- 이미 있는 mp3는 건너뛰기, --only 5,12 옵션으로 특정 컷만 재생성
+- Typecast API는 비동기이므로 작업 ID를 받아 3초마다 완료 여부를 폴링
+- 각 파일 생성 후 ffprobe로 길이를 재서 voice/durations.json에 기록
+- 실패한 컷 번호를 모아 마지막에 출력
+
+</div>
+</div>
 
 실행:
 
@@ -77,10 +84,17 @@ ELEVENLABS_API_KEY=여기에
 ELEVENLABS_VOICE_ID=여기에
 ```
 
-> scripts/dub-elevenlabs.py를 만들어줘.
-> - script.json의 ko 텍스트를 ElevenLabs API로 변환
-> - 모델: eleven_multilingual_v2 (한국어 품질 최적)
-> - 나머지 옵션은 dub-typecast.py와 동일하게
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/dub-elevenlabs.py를 만들어줘.
+- script.json의 ko 텍스트를 ElevenLabs API로 변환
+- 모델: eleven_multilingual_v2 (한국어 품질 최적)
+- 나머지 옵션은 dub-typecast.py와 동일하게
+
+</div>
+</div>
 
 한국어 품질이 어색하면 `voice_settings`의 `stability`를 0.7 이상으로 올려보세요.
 
@@ -88,8 +102,15 @@ ELEVENLABS_VOICE_ID=여기에
 
 ## 두 서비스를 컷별로 다르게 쓰기
 
-> script.json의 각 컷에 "tts" 필드를 추가해줘. 값: "typecast" 또는 "elevenlabs".
-> dub.py를 만들어서 컷마다 지정된 서비스를 자동으로 골라 실행해줘.
+<div class="prompt-box not-prose" data-prompt="6-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+script.json의 각 컷에 "tts" 필드를 추가해줘. 값: "typecast" 또는 "elevenlabs".
+dub.py를 만들어서 컷마다 지정된 서비스를 자동으로 골라 실행해줘.
+
+</div>
+</div>
 
 예: 일반 나레이션은 Typecast, 숫자 강조 컷은 ElevenLabs.
 
@@ -101,7 +122,14 @@ ELEVENLABS_VOICE_ID=여기에
 
 ### 길이 확인
 
-> voice/durations.json을 표로 보여주고, 4.0초를 넘거나 3.0초에 못 미치는 컷을 표시해줘.
+<div class="prompt-box not-prose" data-prompt="6-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+voice/durations.json을 표로 보여주고, 4.0초를 넘거나 3.0초에 못 미치는 컷을 표시해줘.
+
+</div>
+</div>
 
 | 컷 | 글자 | 길이 | 판정 |
 |---|---|---|---|
@@ -113,11 +141,25 @@ ELEVENLABS_VOICE_ID=여기에
 
 **1순위: 대본 다듬기** (가장 자연스러움)
 
-> 5번 컷 "위에는 무려 600만 톤의 돌이 얹혀 있는데"를 "위엔 돌 600만 톤이 얹혀 있는데"로 script.json에서 고치고, 5번만 다시 더빙해줘.
+<div class="prompt-box not-prose" data-prompt="6-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+5번 컷 "위에는 무려 600만 톤의 돌이 얹혀 있는데"를 "위엔 돌 600만 톤이 얹혀 있는데"로 script.json에서 고치고, 5번만 다시 더빙해줘.
+
+</div>
+</div>
 
 **2순위: 무음 패딩** (짧은 컷)
 
-> 9번 컷은 2.4초라 짧아. 앞뒤에 0.5초씩 무음을 붙여 3.4초로 만들어줘.
+<div class="prompt-box not-prose" data-prompt="6-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+9번 컷은 2.4초라 짧아. 앞뒤에 0.5초씩 무음을 붙여 3.4초로 만들어줘.
+
+</div>
+</div>
 
 **3순위: 클립 길이를 음성에 맞추기** (7강에서 처리)
 
@@ -127,11 +169,25 @@ ELEVENLABS_VOICE_ID=여기에
 
 ## 이어 듣기 확인
 
-> voice/의 mp3를 번호순으로 이어 붙여 voice/preview.mp3를 만들어줘. 컷 사이에 0.3초 무음.
+<div class="prompt-box not-prose" data-prompt="6-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+voice/의 mp3를 번호순으로 이어 붙여 voice/preview.mp3를 만들어줘. 컷 사이에 0.3초 무음.
+
+</div>
+</div>
 
 눈 감고 끝까지 들어보세요. 발음이 어색한 단어는:
 
-> 12번 컷의 "쿠푸"를 "쿠푸 왕"으로, 3번 컷의 "2.3m"를 "2.3미터"로 고치고 그 두 컷만 다시 더빙해줘.
+<div class="prompt-box not-prose" data-prompt="6-8" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-8</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+12번 컷의 "쿠푸"를 "쿠푸 왕"으로, 3번 컷의 "2.3m"를 "2.3미터"로 고치고 그 두 컷만 다시 더빙해줘.
+
+</div>
+</div>
 
 숫자·단위는 한글로 풀어 쓰면 두 서비스 모두 읽기가 안정됩니다.
 

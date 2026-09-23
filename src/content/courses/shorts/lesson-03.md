@@ -21,24 +21,38 @@ mkdir -p projects/2025-01-pyramid
 
 Claude Code에 (`[대괄호]`는 내 것으로):
 
-> [레퍼런스 유튜브 URL: https://youtube.com/...]
->
-> 위 건축 쇼츠 유튜브 채널의 영상 스타일과 구성을 분석해줘. 훅(첫 3초)을 어떻게 잡는지, 컷 전환 리듬, 나레이션 톤(존댓말/반말, 속도), 마무리 방식.
->
-> 분석을 바탕으로 아래 조건에 맞는 9:16 쇼츠 대본과 Google Flow용 프롬프트를 작성해줘.
->
-> 1. 주제: [피라미드 왕의 방이 무너지지 않는 비밀]
-> 2. 구성: 4초 단위 조각 컷 총 20~25개 (약 80~100초)
-> 3. 추출 항목:
->    - 컷별 대본 (한국어, 4초 분량에 딱 맞는 호흡 — 12~18자, 한 문장)
->    - Google Flow 입력용 영문 비주얼 프롬프트 (건축 내부 구조, 도면, 하중 흐름 중심 표현)
-> 4. 더빙: ElevenLabs API 연동용으로 컷 번호 · 대본 · 예상 길이(초)를 구조화
->
-> 결과는 projects/2025-01-pyramid/script.json으로 저장. 형식:
-> `{ "title", "topic", "reference", "style_notes", "cuts": [ { "no", "ko", "prompt_en", "sec": 4 } ] }`
-> 그리고 사람이 읽기 좋게 같은 내용을 script.md로도 만들어줘.
+<div class="prompt-box not-prose" data-prompt="3-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> Claude Code가 유튜브 페이지를 직접 못 읽는 환경이면, 레퍼런스 영상 2~3개의 자막(유튜브 "스크립트 표시" 메뉴)을 복사해 `reference.txt`로 저장하고 "@reference.txt를 분석해줘"로 대신합니다. 브라우저 MCP가 연결되어 있으면 URL만으로 됩니다.
+[레퍼런스 유튜브 URL: https://youtube.com/...]
+
+위 건축 쇼츠 유튜브 채널의 영상 스타일과 구성을 분석해줘. 훅(첫 3초)을 어떻게 잡는지, 컷 전환 리듬, 나레이션 톤(존댓말/반말, 속도), 마무리 방식.
+
+분석을 바탕으로 아래 조건에 맞는 9:16 쇼츠 대본과 Google Flow용 프롬프트를 작성해줘.
+
+1. 주제: [피라미드 왕의 방이 무너지지 않는 비밀]
+2. 구성: 4초 단위 조각 컷 총 20~25개 (약 80~100초)
+3. 추출 항목:
+   - 컷별 대본 (한국어, 4초 분량에 딱 맞는 호흡 — 12~18자, 한 문장)
+   - Google Flow 입력용 영문 비주얼 프롬프트 (건축 내부 구조, 도면, 하중 흐름 중심 표현)
+4. 더빙: ElevenLabs API 연동용으로 컷 번호 · 대본 · 예상 길이(초)를 구조화
+
+결과는 projects/2025-01-pyramid/script.json으로 저장. 형식:
+`{ "title", "topic", "reference", "style_notes", "cuts": [ { "no", "ko", "prompt_en", "sec": 4 } ] }`
+그리고 사람이 읽기 좋게 같은 내용을 script.md로도 만들어줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Claude Code가 유튜브 페이지를 직접 못 읽는 환경이면, 레퍼런스 영상 2~3개의 자막(유튜브 "스크립트 표시" 메뉴)을 복사해 `reference.txt`로 저장하고 "@reference.txt를 분석해줘"로 대신합니다. 브라우저 MCP가 연결되어 있으면 URL만으로 됩니다.
+
+</div>
+</div>
 
 ## 결과 읽는 법
 
@@ -56,11 +70,32 @@ Claude Code에 (`[대괄호]`는 내 것으로):
 
 고치는 것도 Claude Code에게. 단, **script.json이 유일한 진실**이니 파일 기준으로 말합니다.
 
-> @script.json 5번 컷이 22자야. 두 컷으로 나누고 뒤 번호를 밀어줘. script.md도 갱신.
+<div class="prompt-box not-prose" data-prompt="3-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
 
-> 12번 컷의 "석회암" 은 "화강암"이 맞아. 고쳐줘. 관련된 영문 프롬프트도 같이.
+@script.json 5번 컷이 22자야. 두 컷으로 나누고 뒤 번호를 밀어줘. script.md도 갱신.
 
-> 전체 톤이 너무 설명조야. 레퍼런스처럼 짧은 반말 서술체로 다시. 사실은 바꾸지 마.
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+12번 컷의 "석회암" 은 "화강암"이 맞아. 고쳐줘. 관련된 영문 프롬프트도 같이.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="3-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+전체 톤이 너무 설명조야. 레퍼런스처럼 짧은 반말 서술체로 다시. 사실은 바꾸지 마.
+
+</div>
+</div>
 
 ## 대본 확정 규칙
 

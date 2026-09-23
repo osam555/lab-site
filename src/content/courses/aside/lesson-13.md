@@ -50,8 +50,15 @@ description: 원본 콘텐츠를 5개 채널 형식으로 변환하고 예약 �
 
 ## 스킬 1 — SNS 배포
 
-> 내 프로젝트 루트에 .agents/skills/sns-deploy/SKILL.md 파일을 만들어줘.
-> 아래 파이프라인을 스킬로 정의해줘:
+<div class="prompt-box not-prose" data-prompt="13-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+내 프로젝트 루트에 .agents/skills/sns-deploy/SKILL.md 파일을 만들어줘.
+아래 파이프라인을 스킬로 정의해줘:
+
+</div>
+</div>
 
 Claude Code에게 다음 내용으로 파일을 만들게 합니다:
 
@@ -112,7 +119,14 @@ SNS 배포 스킬을 써줘.
 
 ## 스킬 2 — 유튜브 업로드
 
-> .agents/skills/youtube-upload/SKILL.md 파일을 만들어줘.
+<div class="prompt-box not-prose" data-prompt="13-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+.agents/skills/youtube-upload/SKILL.md 파일을 만들어줘.
+
+</div>
+</div>
 
 ```markdown
 ---
@@ -171,7 +185,14 @@ Aside 브라우저로 YouTube Studio에 접속해서:
 
 ## 스킬 3 — 블로그 포스팅
 
-> .agents/skills/blog-post/SKILL.md 파일을 만들어줘.
+<div class="prompt-box not-prose" data-prompt="13-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+.agents/skills/blog-post/SKILL.md 파일을 만들어줘.
+
+</div>
+</div>
 
 ```markdown
 ---
@@ -224,7 +245,14 @@ Playwright MCP 또는 Aside Browser Computer Use로
 
 세 스킬을 하나로 묶는 마스터 스킬입니다.
 
-> .agents/skills/content-deploy/SKILL.md 파일을 만들어줘.
+<div class="prompt-box not-prose" data-prompt="13-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+.agents/skills/content-deploy/SKILL.md 파일을 만들어줘.
+
+</div>
+</div>
 
 ```markdown
 ---
@@ -265,14 +293,28 @@ description: 원본 하나로 블로그·SNS·유튜브를 한 번에 배포합�
 
 성과 데이터가 쌓이면 규칙을 업데이트합니다.
 
-> sns-deploy SKILL.md를 업데이트해줘.
-> 분석 결과 인스타는 오후 7시, 카카오는 오전 10시가 반응이 좋았어.
-> 예약 기본 시간을 그렇게 바꿔줘.
+<div class="prompt-box not-prose" data-prompt="13-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+sns-deploy SKILL.md를 업데이트해줘.
+분석 결과 인스타는 오후 7시, 카카오는 오전 10시가 반응이 좋았어.
+예약 기본 시간을 그렇게 바꿔줘.
+
+</div>
+</div>
 
 ### 스킬 목록 확인
 
-> .agents/skills 폴더의 스킬 목록을 보여줘.
-> 각 스킬의 이름과 설명을 표로 정리해줘.
+<div class="prompt-box not-prose" data-prompt="13-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+.agents/skills 폴더의 스킬 목록을 보여줘.
+각 스킬의 이름과 설명을 표로 정리해줘.
+
+</div>
+</div>
 
 ---
 

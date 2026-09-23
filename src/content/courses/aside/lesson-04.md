@@ -40,7 +40,14 @@ Claude Code 앱과 별개로, **Chrome 브라우저 자체**에 Claude 사이드
 
 사이드 패널 하단 **📷 화면 공유** 버튼 → **현재 탭 공유**
 
-> "이 화면에서 A 레코드를 어디에 추가하면 되는지 알려줘."
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"이 화면에서 A 레코드를 어디에 추가하면 되는지 알려줘."
+
+</div>
+</div>
 
 Claude가 지금 내 화면을 보고 정확한 위치를 가리켜 줍니다.
 
@@ -56,11 +63,25 @@ Claude가 지금 내 화면을 보고 정확한 위치를 가리켜 줍니다.
 
 가비아 DNS 관리 화면을 열고 사이드 패널에서:
 
-> [화면 공유 후] "Vercel이 A 레코드에 76.76.21.21을 넣으라고 했는데, 이 화면에서 어디를 눌러야 해?"
+<div class="prompt-box not-prose" data-prompt="4-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+[화면 공유 후] "Vercel이 A 레코드에 76.76.21.21을 넣으라고 했는데, 이 화면에서 어디를 눌러야 해?"
+
+</div>
+</div>
 
 ### 구글 서치 콘솔 처음 설정
 
-> [화면 공유 후] "도메인 속성을 추가하고 싶어. 이 화면에서 다음 단계는 뭐야?"
+<div class="prompt-box not-prose" data-prompt="4-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+[화면 공유 후] "도메인 속성을 추가하고 싶어. 이 화면에서 다음 단계는 뭐야?"
+
+</div>
+</div>
 
 ### Vercel 프로젝트 설정
 

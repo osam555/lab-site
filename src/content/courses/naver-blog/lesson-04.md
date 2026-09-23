@@ -18,12 +18,19 @@ AI가 못하는 것: **"제가 작년 겨울에 써봤더니"**.
 
 캘린더의 첫 글로 시작합니다. 예: `posts/2025-01-camping-chair/` (키워드: 캠핑의자 추천, 의도: 정보).
 
-> @posts/2025-01-camping-chair/meta.json 의 키워드로 리서치해줘.
-> 1. 네이버 검색 상위 10개 글의 소제목 구조만 정리 (내용 복사 금지). 공통으로 다루는 항목과 빠진 항목.
-> 2. 제품·수치·가격 등 사실은 제조사 페이지, 뉴스, 공식 문서에서. 각 사실 옆에 출처 URL.
-> 3. 검색 의도에서 사람들이 진짜 궁금해하는 질문 5개 (지식iN, 카페 질문 참고).
-> 4. 상위 글들이 안 다룬 빈틈 2개.
-> research.md로 저장. 출처 없는 숫자는 쓰지 마.
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+@posts/2025-01-camping-chair/meta.json 의 키워드로 리서치해줘.
+1. 네이버 검색 상위 10개 글의 소제목 구조만 정리 (내용 복사 금지). 공통으로 다루는 항목과 빠진 항목.
+2. 제품·수치·가격 등 사실은 제조사 페이지, 뉴스, 공식 문서에서. 각 사실 옆에 출처 URL.
+3. 검색 의도에서 사람들이 진짜 궁금해하는 질문 5개 (지식iN, 카페 질문 참고).
+4. 상위 글들이 안 다룬 빈틈 2개.
+research.md로 저장. 출처 없는 숫자는 쓰지 마.
+
+</div>
+</div>
 
 브라우저 MCP가 있으면 Claude가 직접 검색합니다. 없으면 검색 결과 페이지를 몇 개 저장해 `research-src/`에 넣고 "@research-src를 바탕으로"로 대신합니다.
 
@@ -31,37 +38,65 @@ AI가 못하는 것: **"제가 작년 겨울에 써봤더니"**.
 
 ## 따라하기 2: 아웃라인 → 초안
 
-> research.md와 VOICE.md를 바탕으로 draft.md를 써줘.
-> - 형태: [정보형: 선택 기준 3개 → 후보 3~5개 → 내 최종 선택]
-> - 길이 2,000자 내외, 소제목 4~6개, 단락은 3~4문장
-> - 첫 단락은 독자의 상황으로 시작 (검색한 사람이 "내 얘기네" 하게)
-> - `[내 경험: 무엇을 쓰면 좋을지 힌트]` 자리를 최소 2곳, 특히 결론 앞에 1곳
-> - `[사진: 어떤 사진]` 자리를 5~7곳
-> - 사실을 쓴 문장 끝에 출처 번호 [1], [2]…, 맨 아래 출처 목록
-> - VOICE.md의 "제거할 표현"은 쓰지 마
-> - 마지막 단락은 요약이 아니라 독자에게 하는 한 마디
+<div class="prompt-box not-prose" data-prompt="4-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+research.md와 VOICE.md를 바탕으로 draft.md를 써줘.
+- 형태: [정보형: 선택 기준 3개 → 후보 3~5개 → 내 최종 선택]
+- 길이 2,000자 내외, 소제목 4~6개, 단락은 3~4문장
+- 첫 단락은 독자의 상황으로 시작 (검색한 사람이 "내 얘기네" 하게)
+- `[내 경험: 무엇을 쓰면 좋을지 힌트]` 자리를 최소 2곳, 특히 결론 앞에 1곳
+- `[사진: 어떤 사진]` 자리를 5~7곳
+- 사실을 쓴 문장 끝에 출처 번호 [1], [2]…, 맨 아래 출처 목록
+- VOICE.md의 "제거할 표현"은 쓰지 마
+- 마지막 단락은 요약이 아니라 독자에게 하는 한 마디
+
+</div>
+</div>
 
 ## 따라하기 3: 내 경험 채우기 — 가장 중요한 15분
 
 `draft.md`를 열고 `[내 경험: …]` 자리를 **직접 타이핑**합니다. 잘 쓸 필요 없습니다. 구체적이면 됩니다.
 
-> ❌ 저도 써봤는데 좋았어요.
-> ✅ 작년 11월 가평에서 영하 3도였는데, 등받이 메쉬라 새벽에 등이 시렸습니다. 담요를 등 뒤에 끼우니 해결됐고, 그 뒤로 겨울엔 패브릭 의자만 가져갑니다.
+<div class="prompt-box not-prose" data-prompt="4-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+❌ 저도 써봤는데 좋았어요.
+✅ 작년 11월 가평에서 영하 3도였는데, 등받이 메쉬라 새벽에 등이 시렸습니다. 담요를 등 뒤에 끼우니 해결됐고, 그 뒤로 겨울엔 패브릭 의자만 가져갑니다.
+
+</div>
+</div>
 
 날짜, 장소, 숫자, 실패, 해결. 이 다섯 가지가 들어가면 어떤 AI도 못 쓰는 문장이 됩니다.
 
 다 채웠으면 Claude에게 문체만 맞추게 합니다.
 
-> draft.md에서 내가 채운 경험 단락을 읽고, 내용은 절대 바꾸지 말고 VOICE.md 문체와 앞뒤 단락과의 연결만 다듬어줘. 그리고 [내 경험] 표시는 지워줘.
+<div class="prompt-box not-prose" data-prompt="4-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+draft.md에서 내가 채운 경험 단락을 읽고, 내용은 절대 바꾸지 말고 VOICE.md 문체와 앞뒤 단락과의 연결만 다듬어줘. 그리고 [내 경험] 표시는 지워줘.
+
+</div>
+</div>
 
 ## 따라하기 4: AI 티 검사
 
-> draft.md를 다음 기준으로 검사하고 문제 문장을 표로 보여줘 (고치지는 말고):
-> 1. VOICE.md 제거 목록 표현
-> 2. "다양한", "효과적인", "~할 수 있습니다"가 연속되는 문장
-> 3. 근거 없는 최상급 ("최고의", "가장")
-> 4. 검색 상위 글과 소제목이 똑같은 것
-> 5. 출처 번호 없는 수치
+<div class="prompt-box not-prose" data-prompt="4-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+draft.md를 다음 기준으로 검사하고 문제 문장을 표로 보여줘 (고치지는 말고):
+1. VOICE.md 제거 목록 표현
+2. "다양한", "효과적인", "~할 수 있습니다"가 연속되는 문장
+3. 근거 없는 최상급 ("최고의", "가장")
+4. 검색 상위 글과 소제목이 똑같은 것
+5. 출처 번호 없는 수치
+
+</div>
+</div>
 
 표를 보고 "1, 3, 7번 고쳐줘"처럼 지시합니다. 전부 고치라고 하면 내 경험 문장까지 손댑니다.
 
@@ -69,7 +104,14 @@ AI가 못하는 것: **"제가 작년 겨울에 써봤더니"**.
 
 출처 목록의 URL을 **직접 3개 이상 열어** 숫자를 확인하세요. 가격, 무게, 출시년도. AI는 출처를 붙여놓고도 숫자를 틀립니다. 확인했으면 `final.md`로 저장:
 
-> draft.md를 final.md로 복사하고 meta.json의 status를 "written"으로.
+<div class="prompt-box not-prose" data-prompt="4-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+draft.md를 final.md로 복사하고 meta.json의 status를 "written"으로.
+
+</div>
+</div>
 
 ```bash
 git add .

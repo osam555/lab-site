@@ -9,7 +9,14 @@ part: 3부 · 자동화와 운영
 
 ## 스킬로 저장
 
-> 3강부터 6강까지 한 글 제작 과정을 '네이버 블로그 글 제작 스킬'로 저장해줘. 사용자가 키워드나 캘린더의 가제를 말하면 실행되게.
+<div class="prompt-box not-prose" data-prompt="7-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+3강부터 6강까지 한 글 제작 과정을 '네이버 블로그 글 제작 스킬'로 저장해줘. 사용자가 키워드나 캘린더의 가제를 말하면 실행되게.
+
+</div>
+</div>
 
 만들어진 `.claude/skills/…` 파일을 열고 아래 구조가 있는지 확인·보강합니다.
 
@@ -52,7 +59,14 @@ part: 3부 · 자동화와 운영
 
 새 대화에서:
 
-> 캘린더 1월 8일 "릴렉스체어 vs 로우체어" 써줘.
+<div class="prompt-box not-prose" data-prompt="7-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+캘린더 1월 8일 "릴렉스체어 vs 로우체어" 써줘.
+
+</div>
+</div>
 
 체크포인트마다 여러분이 개입하고, 나머지는 흘러갑니다. 첫 글이 이틀 걸렸다면 두 번째는 **40분**(경험 쓰는 15분 포함)입니다.
 
@@ -77,13 +91,27 @@ blog.naver.com → 내 블로그 → 통계.
 
 월 1회 Claude에게:
 
-> 통계 화면 캡처야. 유입 키워드 상위 10개와 사용 시간이 낮은 글 3개를 보고, 다음 달 캘린더에서 바꿀 것을 제안해줘.
+<div class="prompt-box not-prose" data-prompt="7-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+통계 화면 캡처야. 유입 키워드 상위 10개와 사용 시간이 낮은 글 3개를 보고, 다음 달 캘린더에서 바꿀 것을 제안해줘.
+
+</div>
+</div>
 
 ## 오래된 글 갱신
 
 발행 3개월 지난 글 중 유입이 있는 글은 **갱신이 새 글보다 효율이 좋습니다.**
 
-> posts/에서 published 3개월 이상이고 meta.json에 유입 기록이 있는 글 목록을 보여줘. 각각 갱신할 항목(가격 변동, 새 제품, 계절 정보)을 research 다시 해서 제안해줘.
+<div class="prompt-box not-prose" data-prompt="7-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+posts/에서 published 3개월 이상이고 meta.json에 유입 기록이 있는 글 목록을 보여줘. 각각 갱신할 항목(가격 변동, 새 제품, 계절 정보)을 research 다시 해서 제안해줘.
+
+</div>
+</div>
 
 갱신도 에디터 자동 입력 → 확인 → **수정 발행**은 손으로.
 

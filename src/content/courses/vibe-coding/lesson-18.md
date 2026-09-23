@@ -68,7 +68,14 @@ CLAUDE.md에 한 줄 추가: `- 화면을 만들거나 고칠 때 DESIGN.md를 �
 
 한 번에 전부 고치라고 하면 망가집니다. 화면 하나씩:
 
-> "DESIGN.md 규칙에 맞게 첫 화면(page.tsx)만 다시 스타일해줘. 구조와 기능은 바꾸지 말고 색·글꼴·간격만. 다른 파일은 건드리지 마."
+<div class="prompt-box not-prose" data-prompt="18-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"DESIGN.md 규칙에 맞게 첫 화면(page.tsx)만 다시 스타일해줘. 구조와 기능은 바꾸지 말고 색·글꼴·간격만. 다른 파일은 건드리지 마."
+
+</div>
+</div>
 
 확인 → 커밋 → 다음 화면. 화면이 4개면 요청 4번입니다.
 
@@ -76,7 +83,14 @@ CLAUDE.md에 한 줄 추가: `- 화면을 만들거나 고칠 때 DESIGN.md를 �
 
 17강에서 "폰에서 글자가 작다"는 피드백이 있었다면 지금 처리합니다.
 
-> "모든 화면을 폰(375px 너비)에서 확인해서, 버튼은 최소 높이 44px, 글자는 최소 16px, 가로 스크롤이 생기지 않게 고쳐줘."
+<div class="prompt-box not-prose" data-prompt="18-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 18-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"모든 화면을 폰(375px 너비)에서 확인해서, 버튼은 최소 높이 44px, 글자는 최소 16px, 가로 스크롤이 생기지 않게 고쳐줘."
+
+</div>
+</div>
 
 브라우저 `F12` → 왼쪽 위 폰 아이콘을 누르면 폰 화면으로 볼 수 있습니다.
 

@@ -41,13 +41,20 @@ Claude Code가 설치를 완료하면 터미널에서 `/hyperframes`가 활성�
 
 ### 기본 사용법 — 타이틀 카드 만들기
 
-> /hyperframes 신메뉴 출시 타이틀 카드를 만들어줘.
-> - 배경: 진한 에스프레소색 (#2C1810)
-> - 중앙 텍스트: "뱅쇼 라떼 출시" (흰색, 큰 글씨, 페이드인 애니메이션)
-> - 하단: "이번 겨울만 한정 판매" (작은 서브텍스트, 0.5초 딜레이)
-> - 로고: images/logo.png 우측 상단
-> - 길이: 3초, 9:16 비율
-> - 출력: videos/title-card.mp4
+<div class="prompt-box not-prose" data-prompt="14-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+/hyperframes 신메뉴 출시 타이틀 카드를 만들어줘.
+- 배경: 진한 에스프레소색 (#2C1810)
+- 중앙 텍스트: "뱅쇼 라떼 출시" (흰색, 큰 글씨, 페이드인 애니메이션)
+- 하단: "이번 겨울만 한정 판매" (작은 서브텍스트, 0.5초 딜레이)
+- 로고: images/logo.png 우측 상단
+- 길이: 3초, 9:16 비율
+- 출력: videos/title-card.mp4
+
+</div>
+</div>
 
 Claude Code가 HTML/CSS/JS 씬 파일을 작성하고, Playwright가 캡처하고, ffmpeg가 MP4로 합칩니다.
 
@@ -57,29 +64,50 @@ Claude Code가 HTML/CSS/JS 씬 파일을 작성하고, Playwright가 캡처하�
 
 **인스타 소식 카드**
 
-> /hyperframes 가게 주간 소식 영상을 만들어줘.
-> 씬 1 (2초): "이번 주 소식" 타이틀
-> 씬 2 (3초): "① 신메뉴 뱅쇼 라떼 출시" — 왼쪽에서 슬라이드인
-> 씬 3 (3초): "② 12월 5일 창립 기념 할인 20%" — 아래에서 등장
-> 씬 4 (2초): "@mycafe" 로고 + 아이콘 페이드아웃
-> 배경: 브랜드 색 그라디언트, 9:16
+<div class="prompt-box not-prose" data-prompt="14-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+/hyperframes 가게 주간 소식 영상을 만들어줘.
+씬 1 (2초): "이번 주 소식" 타이틀
+씬 2 (3초): "① 신메뉴 뱅쇼 라떼 출시" — 왼쪽에서 슬라이드인
+씬 3 (3초): "② 12월 5일 창립 기념 할인 20%" — 아래에서 등장
+씬 4 (2초): "@mycafe" 로고 + 아이콘 페이드아웃
+배경: 브랜드 색 그라디언트, 9:16
+
+</div>
+</div>
 
 **유튜브 오프닝 인트로**
 
-> /hyperframes 유튜브 채널 인트로를 만들어줘.
-> 채널명: "마이카페 일상"
-> 로고: images/logo.png
-> 인트로 길이: 5초
-> 스타일: 로고가 중앙에서 확대되며 등장, 채널명 타이핑 효과
-> 출력: videos/intro.mp4, 16:9
+<div class="prompt-box not-prose" data-prompt="14-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+/hyperframes 유튜브 채널 인트로를 만들어줘.
+채널명: "마이카페 일상"
+로고: images/logo.png
+인트로 길이: 5초
+스타일: 로고가 중앙에서 확대되며 등장, 채널명 타이핑 효과
+출력: videos/intro.mp4, 16:9
+
+</div>
+</div>
 
 **자막 바 (Lower Third)**
 
-> /hyperframes 인터뷰 자막 바를 만들어줘.
-> 텍스트: "김민준 대표 / 마이카페"
-> 스타일: 하단 왼쪽, 브랜드색 바 배경, 흰 글씨
-> 애니메이션: 왼쪽에서 슬라이드인, 3초 유지 후 페이드아웃
-> 투명 배경(알파채널) PNG 시퀀스로도 출력해줘.
+<div class="prompt-box not-prose" data-prompt="14-4" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-4</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+/hyperframes 인터뷰 자막 바를 만들어줘.
+텍스트: "김민준 대표 / 마이카페"
+스타일: 하단 왼쪽, 브랜드색 바 배경, 흰 글씨
+애니메이션: 왼쪽에서 슬라이드인, 3초 유지 후 페이드아웃
+투명 배경(알파채널) PNG 시퀀스로도 출력해줘.
+
+</div>
+</div>
 
 ---
 
@@ -87,10 +115,17 @@ Claude Code가 HTML/CSS/JS 씬 파일을 작성하고, Playwright가 캡처하�
 
 데이터만 바꿔서 매주 새 영상을 만듭니다.
 
-> /hyperframes 주간 메뉴 영상 템플릿을 만들어줘.
-> 데이터 파일(weekly-menu.json)을 읽어서 메뉴 이름과 가격을 씬에 넣어.
-> 씬마다 메뉴 하나씩, 총 5씬.
-> 템플릿이 완성되면 weekly-menu.json만 바꿔도 새 영상이 나와야 해.
+<div class="prompt-box not-prose" data-prompt="14-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+/hyperframes 주간 메뉴 영상 템플릿을 만들어줘.
+데이터 파일(weekly-menu.json)을 읽어서 메뉴 이름과 가격을 씬에 넣어.
+씬마다 메뉴 하나씩, 총 5씬.
+템플릿이 완성되면 weekly-menu.json만 바꿔도 새 영상이 나와야 해.
+
+</div>
+</div>
 
 매주:
 
@@ -104,7 +139,14 @@ Claude Code가 HTML/CSS/JS 씬 파일을 작성하고, Playwright가 캡처하�
 }
 ```
 
-> /hyperframes weekly-menu.json을 읽어서 주간 메뉴 영상을 렌더해줘.
+<div class="prompt-box not-prose" data-prompt="14-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+/hyperframes weekly-menu.json을 읽어서 주간 메뉴 영상을 렌더해줘.
+
+</div>
+</div>
 
 ---
 
@@ -132,13 +174,20 @@ cd video-remotion && npm run dev 으로 Remotion Studio를 열어줘.
 
 Claude Code에게 자연어로 요청하면 React 컴포넌트를 직접 작성합니다.
 
-> Remotion 스킬을 활성화해서 아래 영상을 만들어줘:
->
-> 가게 월간 리포트 영상 (30초, 16:9):
-> - 씬 1 (10초): 이번 달 방문자 수 카운트업 애니메이션 (0 → 1,247명)
-> - 씬 2 (10초): 인기 메뉴 Top 3 바 차트 (왼쪽에서 순서대로 등장)
-> - 씬 3 (10초): 다음 달 이벤트 예고 텍스트
-> 색상은 브랜드 색 (#2C1810, #D4A96A) 사용.
+<div class="prompt-box not-prose" data-prompt="14-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Remotion 스킬을 활성화해서 아래 영상을 만들어줘:
+
+가게 월간 리포트 영상 (30초, 16:9):
+- 씬 1 (10초): 이번 달 방문자 수 카운트업 애니메이션 (0 → 1,247명)
+- 씬 2 (10초): 인기 메뉴 Top 3 바 차트 (왼쪽에서 순서대로 등장)
+- 씬 3 (10초): 다음 달 이벤트 예고 텍스트
+색상은 브랜드 색 (#2C1810, #D4A96A) 사용.
+
+</div>
+</div>
 
 Claude가 React 컴포넌트(`src/compositions/MonthlyReport.tsx`)를 작성합니다.
 
@@ -148,15 +197,22 @@ Claude가 React 컴포넌트(`src/compositions/MonthlyReport.tsx`)를 작성합�
 
 숫자만 바꿔서 매달 새 영상을 자동 생성합니다.
 
-> Remotion 컴포넌트가 props로 데이터를 받도록 수정해줘:
-> - visitorCount: number
-> - topMenus: { name: string; count: number }[]
-> - nextEvent: string
->
-> 그 다음 아래 데이터로 렌더해줘:
-> visitorCount: 1247
-> topMenus: [{ name: "뱅쇼 라떼", count: 342 }, { name: "아메리카노", count: 289 }]
-> nextEvent: "12월 창립기념 20% 할인"
+<div class="prompt-box not-prose" data-prompt="14-8" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-8</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Remotion 컴포넌트가 props로 데이터를 받도록 수정해줘:
+- visitorCount: number
+- topMenus: { name: string; count: number }[]
+- nextEvent: string
+
+그 다음 아래 데이터로 렌더해줘:
+visitorCount: 1247
+topMenus: [{ name: "뱅쇼 라떼", count: 342 }, { name: "아메리카노", count: 289 }]
+nextEvent: "12월 창립기념 20% 할인"
+
+</div>
+</div>
 
 렌더 명령:
 
@@ -170,11 +226,18 @@ npx remotion render MonthlyReport out/report-dec.mp4 --props='{"visitorCount":12
 
 ### 쇼츠·릴스용 9:16 영상
 
-> Remotion으로 쇼츠용 영상을 만들어줘. 9:16 비율, 60초.
-> - 첫 3초: 강한 후크 텍스트 (큰 글씨, 배경 색 전환)
-> - 본문: 핵심 3가지를 순서대로 슬라이드 (각 15초)
-> - 마지막 12초: CTA 애니메이션 + 채널 로고
-> 내용: [원하는 내용 입력]
+<div class="prompt-box not-prose" data-prompt="14-9" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-9</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Remotion으로 쇼츠용 영상을 만들어줘. 9:16 비율, 60초.
+- 첫 3초: 강한 후크 텍스트 (큰 글씨, 배경 색 전환)
+- 본문: 핵심 3가지를 순서대로 슬라이드 (각 15초)
+- 마지막 12초: CTA 애니메이션 + 채널 로고
+내용: [원하는 내용 입력]
+
+</div>
+</div>
 
 ---
 
@@ -182,9 +245,16 @@ npx remotion render MonthlyReport out/report-dec.mp4 --props='{"visitorCount":12
 
 렌더 완료 후 바로 12강의 유튜브 업로드 스킬로 연결합니다.
 
-> video-remotion을 렌더해서 out/report-dec.mp4를 만들고,
-> 유튜브 업로드 스킬을 써서 바로 예약 업로드해줘.
-> 주제: 12월 카페 운영 리포트
+<div class="prompt-box not-prose" data-prompt="14-10" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-10</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+video-remotion을 렌더해서 out/report-dec.mp4를 만들고,
+유튜브 업로드 스킬을 써서 바로 예약 업로드해줘.
+주제: 12월 카페 운영 리포트
+
+</div>
+</div>
 
 ---
 
@@ -207,11 +277,18 @@ npx remotion render MonthlyReport out/report-dec.mp4 --props='{"visitorCount":12
 
 ## 완성 파이프라인
 
-> 이번 달 리포트 영상을 만들어줘:
-> 1. HyperFrames로 인트로 (5초) + 아웃트로 (3초) 렌더
-> 2. Remotion으로 데이터 본편 (30초) 렌더
-> 3. ffmpeg로 인트로 + 본편 + 아웃트로 합치기 → out/monthly-report.mp4
-> 4. 유튜브 업로드 스킬로 예약 업로드
+<div class="prompt-box not-prose" data-prompt="14-11" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-11</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이번 달 리포트 영상을 만들어줘:
+1. HyperFrames로 인트로 (5초) + 아웃트로 (3초) 렌더
+2. Remotion으로 데이터 본편 (30초) 렌더
+3. ffmpeg로 인트로 + 본편 + 아웃트로 합치기 → out/monthly-report.mp4
+4. 유튜브 업로드 스킬로 예약 업로드
+
+</div>
+</div>
 
 ---
 

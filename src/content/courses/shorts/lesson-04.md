@@ -32,11 +32,25 @@ part: 2부 · 파이프라인 만들기
 
 레퍼런스 분석(style_notes)을 바탕으로 앵커를 3개 받아 고릅니다.
 
-> @script.json 의 style_notes를 참고해서 모든 컷에 공통으로 붙일 스타일 앵커 문장을 영문으로 3가지 제안해줘. 각각 화풍·조명·색감·화면비(9:16 vertical)를 포함. 아직 파일은 고치지 마.
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+@script.json 의 style_notes를 참고해서 모든 컷에 공통으로 붙일 스타일 앵커 문장을 영문으로 3가지 제안해줘. 각각 화풍·조명·색감·화면비(9:16 vertical)를 포함. 아직 파일은 고치지 마.
+
+</div>
+</div>
 
 고른 앵커를 파일에 고정합니다.
 
-> 2번 앵커를 script.json 최상위에 "style_anchor"로 저장하고, 모든 컷의 prompt_en을 [앵커] + [장면] + [카메라] + [금지] 구조로 다시 써줘. 장면 묘사는 건축 내부 구조·단면·하중 흐름이 보이게. 금지 문구는 "no people, no text, no modern machinery, no watermark"로 통일.
+<div class="prompt-box not-prose" data-prompt="4-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+2번 앵커를 script.json 최상위에 "style_anchor"로 저장하고, 모든 컷의 prompt_en을 [앵커] + [장면] + [카메라] + [금지] 구조로 다시 써줘. 장면 묘사는 건축 내부 구조·단면·하중 흐름이 보이게. 금지 문구는 "no people, no text, no modern machinery, no watermark"로 통일.
+
+</div>
+</div>
 
 ## 따라하기 2: 컷별 점검
 
@@ -49,13 +63,27 @@ part: 2부 · 파이프라인 만들기
 
 부족한 컷은 번호로 지목합니다.
 
-> 8~10번 컷이 전부 static 정면이야. 9번은 slow orbit, 10번은 tilt up으로.
+<div class="prompt-box not-prose" data-prompt="4-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+8~10번 컷이 전부 static 정면이야. 9번은 slow orbit, 10번은 tilt up으로.
+
+</div>
+</div>
 
 ## 따라하기 3: 프롬프트 파일로 내보내기
 
 5강에서 클립을 만들 때 하나씩 복사하기 좋게 파일로 뽑습니다.
 
-> script.json의 각 컷 prompt_en을 prompts/cut-01.txt … cut-22.txt로 내보내줘. 그리고 전체를 한 파일에 번호와 함께 모은 prompts/all.md도.
+<div class="prompt-box not-prose" data-prompt="4-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+script.json의 각 컷 prompt_en을 prompts/cut-01.txt … cut-22.txt로 내보내줘. 그리고 전체를 한 파일에 번호와 함께 모은 prompts/all.md도.
+
+</div>
+</div>
 
 ## 첫 컷만 테스트 생성 (선택)
 

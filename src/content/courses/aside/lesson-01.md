@@ -40,8 +40,15 @@ Aside 브라우저에 복잡한 페이지를 열고, 대화창에서 질문합�
 [Aside 브라우저]: https://vercel.com/dashboard
 ```
 
-> 지금 Aside 브라우저에 Vercel 대시보드가 열려 있어.
-> Analytics 탭이 어디에 있는지 알려줘.
+<div class="prompt-box not-prose" data-prompt="1-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+지금 Aside 브라우저에 Vercel 대시보드가 열려 있어.
+Analytics 탭이 어디에 있는지 알려줘.
+
+</div>
+</div>
 
 Claude가 현재 Aside 화면을 보고 정확한 위치를 안내합니다.
 
@@ -53,7 +60,14 @@ Claude가 현재 Aside 화면을 보고 정확한 위치를 안내합니다.
 [Aside 브라우저]: https://map.naver.com/v5/search/[가게이름]
 ```
 
-> 이 검색 결과에서 우리 가게 좌표(위도/경도)를 찾아줘.
+<div class="prompt-box not-prose" data-prompt="1-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이 검색 결과에서 우리 가게 좌표(위도/경도)를 찾아줘.
+
+</div>
+</div>
 
 ### 패턴 3 — 탐색 안내
 
@@ -63,7 +77,14 @@ Claude가 현재 Aside 화면을 보고 정확한 위치를 안내합니다.
 [Aside 브라우저]: https://searchadvisor.naver.com
 ```
 
-> 네이버 서치 어드바이저에서 새 사이트를 등록하는 메뉴까지 가는 경로를 알려줘.
+<div class="prompt-box not-prose" data-prompt="1-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+네이버 서치 어드바이저에서 새 사이트를 등록하는 메뉴까지 가는 경로를 알려줘.
+
+</div>
+</div>
 
 ---
 

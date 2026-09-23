@@ -31,9 +31,16 @@ part: 5부 · 영상 자동화
 
 ## 1. 트렌드 리서치 — MCP로
 
-> Brave Search MCP로 "[주제]" 관련 유튜브와 쇼츠에서 이번 달 잘 된 영상을 찾아줘.
-> 조회수가 높은 영상의 제목·길이·포맷(토크/자막/B롤)을 분석해줘.
-> 우리가 차별화할 수 있는 각도 3가지를 제안해줘.
+<div class="prompt-box not-prose" data-prompt="12-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Brave Search MCP로 "[주제]" 관련 유튜브와 쇼츠에서 이번 달 잘 된 영상을 찾아줘.
+조회수가 높은 영상의 제목·길이·포맷(토크/자막/B롤)을 분석해줘.
+우리가 차별화할 수 있는 각도 3가지를 제안해줘.
+
+</div>
+</div>
 
 ---
 
@@ -41,36 +48,50 @@ part: 5부 · 영상 자동화
 
 하나의 주제로 두 가지 대본을 씁니다.
 
-> 아래 주제로 두 가지 대본을 작성해줘:
->
-> 주제: "[주제]"
-> 리서치 결과: [위에서 나온 내용]
-> 차별화 각도: [선택한 각도]
->
-> **대본 1 — 유튜브 롱폼 (5~10분)**
-> - 후크 (첫 15초): 호기심·문제·숫자로 시작
-> - 본론 3~4 섹션: 각 섹션 타이틀 + 내용
-> - 마무리: 구독 유도 + 다음 영상 예고
-> - 타임스탬프 표시
->
-> **대본 2 — 쇼츠 (60초 이내)**
-> - 첫 3초: 강한 후크
-> - 핵심 1가지만: 롱폼의 가장 임팩트 있는 부분
-> - 끝: "전체 영상은 링크에서" CTA
->
-> 각 대본마다 비주얼 지시사항 [자막/B롤/그래픽 위치]도 포함해줘.
+<div class="prompt-box not-prose" data-prompt="12-2" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+아래 주제로 두 가지 대본을 작성해줘:
+
+주제: "[주제]"
+리서치 결과: [위에서 나온 내용]
+차별화 각도: [선택한 각도]
+
+**대본 1 — 유튜브 롱폼 (5~10분)**
+- 후크 (첫 15초): 호기심·문제·숫자로 시작
+- 본론 3~4 섹션: 각 섹션 타이틀 + 내용
+- 마무리: 구독 유도 + 다음 영상 예고
+- 타임스탬프 표시
+
+**대본 2 — 쇼츠 (60초 이내)**
+- 첫 3초: 강한 후크
+- 핵심 1가지만: 롱폼의 가장 임팩트 있는 부분
+- 끝: "전체 영상은 링크에서" CTA
+
+각 대본마다 비주얼 지시사항 [자막/B롤/그래픽 위치]도 포함해줘.
+
+</div>
+</div>
 
 ---
 
 ## 3. 비주얼 프롬프트 + 썸네일
 
-> 대본을 기반으로 영상에 필요한 것들을 준비해줘:
->
-> 1. B롤 검색어: 각 섹션에 어울리는 Pexels·Pixabay 검색어 (영어)
-> 2. 자막 텍스트: 쇼츠에 넣을 핵심 문장 5개 (20자 이내)
-> 3. 썸네일 2가지:
->    - 롱폼용: 1280×720, 강렬한 색 배경, 큰 숫자 또는 키워드
->    - 쇼츠용: 9:16, 상단 1/3에 텍스트
+<div class="prompt-box not-prose" data-prompt="12-3" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+대본을 기반으로 영상에 필요한 것들을 준비해줘:
+
+1. B롤 검색어: 각 섹션에 어울리는 Pexels·Pixabay 검색어 (영어)
+2. 자막 텍스트: 쇼츠에 넣을 핵심 문장 5개 (20자 이내)
+3. 썸네일 2가지:
+   - 롱폼용: 1280×720, 강렬한 색 배경, 큰 숫자 또는 키워드
+   - 쇼츠용: 9:16, 상단 1/3에 텍스트
+
+</div>
+</div>
 
 ---
 
@@ -80,23 +101,44 @@ part: 5부 · 영상 자동화
 
 ### Google Vids / Flow (구글 계정)
 
-> Computer Use로 Google Vids(vids.google.com)에 접속해서 새 영상을 만들어줘.
-> 대본 [쇼츠 대본]을 넣고 자동 생성을 시작해줘.
+<div class="prompt-box not-prose" data-prompt="12-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 Google Vids(vids.google.com)에 접속해서 새 영상을 만들어줘.
+대본 [쇼츠 대본]을 넣고 자동 생성을 시작해줘.
+
+</div>
+</div>
 
 ### CapCut AI (쇼츠·릴스)
 
 1. Aside 브라우저: `https://www.capcut.com`
 2. 대화창:
 
-> Computer Use로 CapCut에서 스크립트 투 비디오 기능으로 쇼츠를 만들어줘.
-> 스크립트: [쇼츠 대본]
-> 비율: 9:16
-> AI 아바타: [선택 또는 텍스트 자막만]
+<div class="prompt-box not-prose" data-prompt="12-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 CapCut에서 스크립트 투 비디오 기능으로 쇼츠를 만들어줘.
+스크립트: [쇼츠 대본]
+비율: 9:16
+AI 아바타: [선택 또는 텍스트 자막만]
+
+</div>
+</div>
 
 ### Runway (고품질 B롤)
 
-> MCP 웹검색으로 Runway Gen-3에서 아래 장면용 B롤을 생성하는 방법 알려줘.
-> 장면: [비주얼 지시사항]
+<div class="prompt-box not-prose" data-prompt="12-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+MCP 웹검색으로 Runway Gen-3에서 아래 장면용 B롤을 생성하는 방법 알려줘.
+장면: [비주얼 지시사항]
+
+</div>
+</div>
 
 ---
 
@@ -106,48 +148,76 @@ part: 5부 · 영상 자동화
 
 ### YouTube (롱폼 + 쇼츠)
 
-> Computer Use로 YouTube Studio에 두 개를 업로드해줘:
-> 롱폼: ~/Desktop/videos/main.mp4
->   - 제목: [제목], 설명: [설명], 태그: [태그]
->   - 예약: [날짜] 오전 10시
-> 쇼츠: ~/Desktop/videos/shorts.mp4
->   - 제목: [쇼츠 제목 #Shorts], 설명: [쇼츠 설명]
->   - 예약: [날짜] 오전 9시 (쇼츠를 먼저)
+<div class="prompt-box not-prose" data-prompt="12-7" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-7</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 YouTube Studio에 두 개를 업로드해줘:
+롱폼: ~/Desktop/videos/main.mp4
+  - 제목: [제목], 설명: [설명], 태그: [태그]
+  - 예약: [날짜] 오전 10시
+쇼츠: ~/Desktop/videos/shorts.mp4
+  - 제목: [쇼츠 제목 #Shorts], 설명: [쇼츠 설명]
+  - 예약: [날짜] 오전 9시 (쇼츠를 먼저)
+
+</div>
+</div>
 
 ### 인스타그램 릴스
 
-> Computer Use로 크리에이터 스튜디오에서 릴스를 예약해줘.
-> 파일: ~/Desktop/videos/shorts.mp4 (9:16 버전)
-> 캡션: [인스타용 캡션 — 7강에서 생성한 것]
-> 예약: [날짜] 오전 11시
+<div class="prompt-box not-prose" data-prompt="12-8" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 크리에이터 스튜디오에서 릴스를 예약해줘.
+파일: ~/Desktop/videos/shorts.mp4 (9:16 버전)
+캡션: [인스타용 캡션 — 7강에서 생성한 것]
+예약: [날짜] 오전 11시
+
+</div>
+</div>
 
 ### 틱톡
 
-> Computer Use로 TikTok Studio(studio.tiktok.com)에서 영상을 업로드해줘.
-> 파일: ~/Desktop/videos/shorts.mp4
-> 설명: [틱톡용 캡션]
-> 해시태그: [틱톡 해시태그]
-> 예약: [날짜] 오후 7시
+<div class="prompt-box not-prose" data-prompt="12-9" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-9</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 TikTok Studio(studio.tiktok.com)에서 영상을 업로드해줘.
+파일: ~/Desktop/videos/shorts.mp4
+설명: [틱톡용 캡션]
+해시태그: [틱톡 해시태그]
+예약: [날짜] 오후 7시
+
+</div>
+</div>
 
 ---
 
 ## 6. 영상 파이프라인 마스터 파일
 
-> video-pipeline.md 파일을 만들어줘. 아래 단계를 순서대로 적어줘.
-> 이 파일을 Claude Code에 보여주면 전체 파이프라인을 실행해줘.
->
-> 입력: 주제 한 줄
-> 출력: 유튜브·인스타·틱톡 예약 완료
->
-> 1단계: MCP 트렌드 리서치
-> 2단계: 롱폼·쇼츠 대본 작성
-> 3단계: 썸네일 2가지 생성
-> 4단계: 비주얼 프롬프트 목록 생성
-> 5단계: [사람] 영상 촬영·편집 (또는 AI 도구 사용)
-> 6단계: YouTube 롱폼·쇼츠 예약 (Computer Use)
-> 7단계: 인스타 릴스 예약 (Computer Use)
-> 8단계: 틱톡 예약 (Computer Use)
-> 9단계: 블로그·SNS 텍스트 버전 배포 (9~10강 파이프라인 연동)
+<div class="prompt-box not-prose" data-prompt="12-10" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-10</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+video-pipeline.md 파일을 만들어줘. 아래 단계를 순서대로 적어줘.
+이 파일을 Claude Code에 보여주면 전체 파이프라인을 실행해줘.
+
+입력: 주제 한 줄
+출력: 유튜브·인스타·틱톡 예약 완료
+
+1단계: MCP 트렌드 리서치
+2단계: 롱폼·쇼츠 대본 작성
+3단계: 썸네일 2가지 생성
+4단계: 비주얼 프롬프트 목록 생성
+5단계: [사람] 영상 촬영·편집 (또는 AI 도구 사용)
+6단계: YouTube 롱폼·쇼츠 예약 (Computer Use)
+7단계: 인스타 릴스 예약 (Computer Use)
+8단계: 틱톡 예약 (Computer Use)
+9단계: 블로그·SNS 텍스트 버전 배포 (9~10강 파이프라인 연동)
+
+</div>
+</div>
 
 ---
 

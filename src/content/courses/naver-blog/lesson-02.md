@@ -22,14 +22,21 @@ code .
 
 `claude` 실행 후:
 
-> 네이버 블로그 자동화 프로젝트 폴더 구조를 만들어줘:
-> - `blog-plan.md` (내가 가져올 파일, 비워둬), `VOICE.md` (문체 규칙, 비워둬)
-> - `keywords/` (키워드 도구 CSV와 분석 결과)
-> - `posts/` (글 한 편당 폴더: posts/2025-01-camping-chair/ 안에 `research.md`, `draft.md`, `final.md`, `meta.json`, `images/`)
-> - `templates/` (썸네일 HTML 템플릿, 나중에)
-> - `scripts/` (도우미 스크립트, 나중에)
-> - `.env`, `.gitignore`(.env와 posts/*/images 제외)
-> 폴더와 빈 파일만, 코드는 쓰지 마.
+<div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+네이버 블로그 자동화 프로젝트 폴더 구조를 만들어줘:
+- `blog-plan.md` (내가 가져올 파일, 비워둬), `VOICE.md` (문체 규칙, 비워둬)
+- `keywords/` (키워드 도구 CSV와 분석 결과)
+- `posts/` (글 한 편당 폴더: posts/2025-01-camping-chair/ 안에 `research.md`, `draft.md`, `final.md`, `meta.json`, `images/`)
+- `templates/` (썸네일 HTML 템플릿, 나중에)
+- `scripts/` (도우미 스크립트, 나중에)
+- `.env`, `.gitignore`(.env와 posts/*/images 제외)
+폴더와 빈 파일만, 코드는 쓰지 마.
+
+</div>
+</div>
 
 1강의 `blog-plan.md`를 옮겨 넣으세요.
 
@@ -37,28 +44,42 @@ code .
 
 AI 초안이 "AI 티"가 나는 이유는 문체 규칙이 없어서입니다. 내가 쓴 글 2~3편(없으면 카톡에 길게 쓴 메시지라도)을 `samples/`에 넣고:
 
-> samples/의 내 글을 읽고 VOICE.md를 만들어줘. 항목: 존댓말/반말, 문장 길이, 자주 쓰는 표현, 안 쓰는 표현(예: "~하는 것이 좋습니다", "다양한", "효과적으로"), 이모지 사용 여부, 단락 길이, 소제목 스타일, 글 시작 방식과 끝맺음 방식. 마지막에 "AI 초안에서 반드시 제거할 표현 목록" 10개.
+<div class="prompt-box not-prose" data-prompt="2-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+samples/의 내 글을 읽고 VOICE.md를 만들어줘. 항목: 존댓말/반말, 문장 길이, 자주 쓰는 표현, 안 쓰는 표현(예: "~하는 것이 좋습니다", "다양한", "효과적으로"), 이모지 사용 여부, 단락 길이, 소제목 스타일, 글 시작 방식과 끝맺음 방식. 마지막에 "AI 초안에서 반드시 제거할 표현 목록" 10개.
+
+</div>
+</div>
 
 만들어진 파일을 읽고 아닌 건 고치세요. 이 파일이 4강에서 초안의 문체를 결정합니다.
 
 ## 3. CLAUDE.md
 
-> CLAUDE.md를 만들어줘:
->
-> ## 프로젝트
-> 네이버 블로그 글 제작 파이프라인. 키워드 → 리서치 → 초안 → 이미지·제목·태그 → 스마트에디터 입력(임시저장). 발행은 사람이 한다.
->
-> ## 규칙
-> - blog-plan.md의 분야·독자를 벗어나는 주제는 제안하지 않는다
-> - 초안은 VOICE.md를 따르고, "AI 초안에서 제거할 표현"은 쓰지 않는다
-> - 리서치의 모든 사실에는 출처 URL을 붙인다. 출처 없는 숫자는 쓰지 않는다
-> - 초안에는 반드시 `[내 경험: …]` 자리를 2곳 이상 남긴다. 이 자리는 내가 채운다
-> - 브라우저로 네이버 에디터를 조작할 때는 **임시저장까지만**. 발행 버튼은 절대 누르지 않는다
-> - 하루에 에디터 입력은 1편까지만 자동으로 한다
-> - .env는 읽지 않는다. 한국어로 짧게, 코드 먼저
->
-> ## 폴더
-> - 글 한 편 = posts/YYYY-MM-슬러그/, meta.json이 제목·태그·키워드·상태의 진실
+<div class="prompt-box not-prose" data-prompt="2-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+CLAUDE.md를 만들어줘:
+
+## 프로젝트
+네이버 블로그 글 제작 파이프라인. 키워드 → 리서치 → 초안 → 이미지·제목·태그 → 스마트에디터 입력(임시저장). 발행은 사람이 한다.
+
+## 규칙
+- blog-plan.md의 분야·독자를 벗어나는 주제는 제안하지 않는다
+- 초안은 VOICE.md를 따르고, "AI 초안에서 제거할 표현"은 쓰지 않는다
+- 리서치의 모든 사실에는 출처 URL을 붙인다. 출처 없는 숫자는 쓰지 않는다
+- 초안에는 반드시 `[내 경험: …]` 자리를 2곳 이상 남긴다. 이 자리는 내가 채운다
+- 브라우저로 네이버 에디터를 조작할 때는 **임시저장까지만**. 발행 버튼은 절대 누르지 않는다
+- 하루에 에디터 입력은 1편까지만 자동으로 한다
+- .env는 읽지 않는다. 한국어로 짧게, 코드 먼저
+
+## 폴더
+- 글 한 편 = posts/YYYY-MM-슬러그/, meta.json이 제목·태그·키워드·상태의 진실
+
+</div>
+</div>
 
 "발행 버튼은 절대 누르지 않는다"와 "하루 1편"이 1강의 경계를 코드로 옮긴 것입니다.
 
@@ -66,7 +87,14 @@ AI 초안이 "AI 티"가 나는 이유는 문체 규칙이 없어서입니다. �
 
 6강에서 Claude Code가 스마트에디터에 원고를 채웁니다. 그러려면 브라우저를 조작하는 연결(MCP)이 필요합니다. 연결 방법은 [바이브 스킬 — 외부 도구 연결하기](/skills/mcp-and-tools)를 따르되, 중요한 건 **네이버 로그인이 유지되는 브라우저 프로필**입니다.
 
-> Playwright MCP를 연결해줘. 헤드리스가 아니라 화면이 보이는 모드로, 그리고 로그인 상태가 유지되도록 전용 사용자 데이터 폴더를 쓰게 설정해줘. 폴더 위치는 프로젝트 밖의 [아래 경로].
+<div class="prompt-box not-prose" data-prompt="2-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Playwright MCP를 연결해줘. 헤드리스가 아니라 화면이 보이는 모드로, 그리고 로그인 상태가 유지되도록 전용 사용자 데이터 폴더를 쓰게 설정해줘. 폴더 위치는 프로젝트 밖의 [아래 경로].
+
+</div>
+</div>
 
 ::: windows
 프로필 폴더 예: `C:\Users\이름\naver-profile`. 프로젝트 폴더 안에 두면 Git에 세션이 들어갈 수 있으니 밖에 둡니다.
@@ -78,11 +106,25 @@ AI 초안이 "AI 티"가 나는 이유는 문체 규칙이 없어서입니다. �
 
 연결 후 테스트:
 
-> 브라우저를 열어 blog.naver.com 에 접속해줘. 로그인 화면이 나오면 멈추고 알려줘.
+<div class="prompt-box not-prose" data-prompt="2-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+브라우저를 열어 blog.naver.com 에 접속해줘. 로그인 화면이 나오면 멈추고 알려줘.
+
+</div>
+</div>
 
 로그인 화면이 뜨면 **그 창에서 직접 로그인**하세요 (2단계 인증 포함). 자동화로 아이디·비밀번호를 입력하지 않습니다. 한 번 로그인하면 프로필에 세션이 남아 다음부터는 바로 내 블로그가 열립니다.
 
-> 다시 blog.naver.com 열어서 내 블로그 이름이 보이는지 확인해줘.
+<div class="prompt-box not-prose" data-prompt="2-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+다시 blog.naver.com 열어서 내 블로그 이름이 보이는지 확인해줘.
+
+</div>
+</div>
 
 ## 5. 키워드 도구 준비
 
