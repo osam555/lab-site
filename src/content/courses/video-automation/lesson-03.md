@@ -71,7 +71,7 @@ python3 scripts/new_project.py --defaults
 
 ### 4. `storage` — R2 저장소
 
-2강 따라하기 4에서 메모한 세 값을 적습니다.
+2강 따라하기 4의 `setup_r2.py`(또는 아래 프롬프트 3-1)가 자동으로 채웁니다. 손으로 적을 일은 없고, 이런 모양인지 확인만 합니다.
 
 ```json
 "storage": {
@@ -111,7 +111,7 @@ python3 scripts/new_project.py --defaults
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode 스킬을 읽고 kit.config.json 을 채워줘. (1) aside repl 로 지금 열린 탭 목록을 읽어서 flow.google.com 탭 id 를 FLOW_TAB 환경변수로 영구 저장(Windows setx, mac ~/.zshrc)하고, studio.youtube.com 탭 id 를 channels.main.studio_tab_hint 에, 그 탭 주소에 있는 UC 로 시작하는 채널 ID 를 channels.main.channel_id 에 적어. (2) npx wrangler 가 로그인돼 있는지 확인하고(안 돼 있으면 로그인 명령을 알려 주고 기다려), wrangler r2 bucket create <버킷 이름> 으로 버킷을 만들고 wrangler r2 bucket dev-url enable <버킷 이름> 으로 공개 주소를 켠 다음 storage 칸에 r2_bucket·r2_prefix(episodes)·media_base_url(공개주소/episodes)을 채워. (3) 없는 칸은 python scripts/new_project.py --defaults 로 만들고 brand.name 은 "<내 채널 이름>" 으로 해. (4) 끝나면 kit.config.json 을 표로 요약하되 탭 id 와 키 값은 가려서 보여줘. characters 칸은 건드리지 마 — 그건 3-2 로 내가 따로 시킬게.
+clay-episode 스킬을 읽고 kit.config.json 을 채워줘. (1) aside repl 로 지금 열린 탭 목록을 읽어서 flow.google.com 탭 id 를 FLOW_TAB 환경변수로 영구 저장(Windows setx, mac ~/.zshrc)하고, studio.youtube.com 탭 id 를 channels.main.studio_tab_hint 에, 그 탭 주소에 있는 UC 로 시작하는 채널 ID 를 channels.main.channel_id 에 적어. (2) python scripts/setup_r2.py <버킷 이름> 을 돌려 R2 버킷·공개 주소·storage 칸을 채워(로그인이 안 돼 있다고 나오면 npx wrangler login 을 안내하고 내가 허용할 때까지 기다려). (3) 없는 칸은 python scripts/new_project.py --defaults 로 만들고 brand.name 은 "<내 채널 이름>" 으로 해. (4) 끝나면 kit.config.json 을 표로 요약하되 탭 id 와 키 값은 가려서 보여줘. characters 칸은 건드리지 마 — 그건 3-2 로 내가 따로 시킬게.
 
 </div>
 </div>

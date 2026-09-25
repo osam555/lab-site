@@ -121,39 +121,38 @@ Typecast 는 한국어 더빙 목소리를 만들어 주는 서비스입니다.
 
 ## 따라하기 4: Cloudflare R2 — 완성 영상을 잠깐 올려 두는 창고
 
-업로드 스크립트는 완성된 영상을 먼저 R2(클라우드 저장소)에 올리고, 거기서 파일을 가져가 유튜브에 올립니다. 무료 티어(10GB)로 충분합니다.
+업로드 스크립트는 완성된 영상을 먼저 R2(클라우드 저장소)에 올리고, 거기서 파일을 가져가 유튜브에 올립니다. 무료 티어(10GB)로 충분합니다. **대시보드를 클릭할 필요가 없습니다** — 가입과 로그인 허용만 사람이 하고, 버킷 생성·공개 주소·설정 기입은 명령 한 줄이 합니다.
 
-1. [cloudflare.com](https://dash.cloudflare.com/sign-up) 에서 무료 계정을 만듭니다(이메일 인증까지).
-2. 대시보드 왼쪽 메뉴에서 **R2 Object Storage** 를 누릅니다. 처음이면 결제 정보 등록 화면이 나오는데, 무료 한도 안에서는 청구되지 않습니다.
-3. **Create bucket** → 버킷 이름을 정합니다(예 `my-videos`, 소문자·숫자·하이픈만). 위치는 자동(Automatic) 그대로 → **Create**.
-4. 만든 버킷을 열고 **Settings** 탭 → **Public access** 의 **R2.dev subdomain → Allow Access** → 확인 문구 입력. 그러면 `https://pub-xxxxxxxx.r2.dev` 같은 **공개 주소**가 나옵니다. 이걸 복사해 둡니다.
-5. 터미널에서 wrangler(Cloudflare 명령줄 도구)를 로그인합니다. "wrangler 를 설치할까요?" 라고 물으면 `y`, 브라우저가 열리면 **Allow** 를 누릅니다.
+1. [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up) 에서 무료 계정을 만듭니다(이메일 인증까지). R2 는 결제 수단 등록을 요구하지만 무료 한도 안에서는 청구되지 않습니다.
+2. 터미널에서 로그인합니다. "wrangler 를 설치할까요?" 라고 물으면 `y`, 브라우저가 열리면 **Allow**.
 
 ::: windows
 ```powershell
 npx wrangler login
-npx wrangler r2 bucket list      # 방금 만든 버킷 이름이 보이면 성공
 ```
 :::
 
 ::: mac
 ```bash
 npx wrangler login
-npx wrangler r2 bucket list      # 방금 만든 버킷 이름이 보이면 성공
 ```
 :::
 
-6. 키트 설정 파일 `kit.config.json`(3강에서 만듭니다) 의 `storage` 칸에 세 값을 적습니다 — 지금은 메모만 해 두세요:
+3. 키트 폴더(따라하기 6 이후)에서 한 줄. 버킷 이름은 소문자·숫자·하이픈만(예 `my-videos`).
 
-```json
-"storage": {
-  "r2_bucket": "my-videos",
-  "r2_prefix": "episodes",
-  "media_base_url": "https://pub-xxxxxxxx.r2.dev/episodes"
-}
+::: windows
+```powershell
+python scripts/setup_r2.py my-videos
 ```
+:::
 
-`r2_bucket` 은 3번의 버킷 이름, `media_base_url` 은 4번의 공개 주소 뒤에 `/episodes`(버킷 안 폴더 이름) 를 붙인 것입니다.
+::: mac
+```bash
+python3 scripts/setup_r2.py my-videos
+```
+:::
+
+버킷을 만들고, `https://pub-….r2.dev` 공개 주소를 켜고, `kit.config.json` 의 `storage` 칸까지 채워 줍니다. 마지막 줄에 `kit.config.json storage 기입 완료` 가 나오면 끝입니다. 3강의 프롬프트 3-1 이 이 명령을 대신 돌려 주기도 합니다.
 
 ## 따라하기 5: Google Drive (선택)
 
@@ -296,7 +295,7 @@ clay-episode 스킬을 읽고, 그 안의 "0. 설치" 표에 있는 준비물이
 - [ ] `python --version`(또는 `python3`), `node -v`, `ffmpeg -version` 이 모두 출력된다
 - [ ] Aside 로그인 완료, Aside 안에서 Flow·Studio 로그인 완료, `FLOW_TAB` 영구 저장 완료, Studio 탭 id·채널 ID 메모
 - [ ] Typecast API 키가 `.env.local` 에만 있다 (커밋 안 됨), `ESBUILD` 영구 저장
-- [ ] R2 버킷을 만들고 공개 주소(`https://pub-….r2.dev`)를 메모했다, `npx wrangler r2 bucket list` 에 버킷이 보인다
+- [ ] `npx wrangler login` 완료, `setup_r2.py` 가 「storage 기입 완료」를 출력했다(또는 3강 3-1 에서 할 예정)
 - [ ] 키트 클론 완료, `.claude/skills/clay-episode/SKILL.md` 존재
 
 ## 다음 강의
