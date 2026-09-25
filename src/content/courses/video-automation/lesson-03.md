@@ -110,6 +110,27 @@ clay-episode 스킬을 읽고, kit.config.json 의 characters(등장인물 생�
 
 **사람이 확인해야 할 체크포인트**: 캐릭터 세 명(또는 그 이상)의 옷 색·머리 모양이 서로 겹치지 않는지 문장을 직접 읽고 확인합니다 — 겹치면 5강에서 인물이 서로 섞여 나옵니다.
 
+## 계정 연결·설정을 Claude 에게 맡기기
+
+`channels`(탭 id·채널 ID)·`storage`(R2 버킷·공개 주소)는 손으로 옮겨 적다 틀리기 쉽습니다. Aside 와 wrangler 에 로그인만 돼 있으면 Claude 가 읽어서 채웁니다.
+
+순서:
+
+1. 어디서: 키트 폴더에서 Claude Code 를 엽니다. Aside 앱에 Flow·Studio 탭이 로그인된 채 열려 있어야 합니다.
+2. 아래 프롬프트에서 `<버킷 이름>`·`<내 채널 이름>` 두 곳을 내 것으로 바꿔 붙여 넣습니다.
+3. Claude 가 보여 주는 설정 요약 표에서 채널 ID(UC…)가 내 채널이 맞는지 확인합니다.
+
+<div class="prompt-box not-prose" data-prompt="3-2" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고 kit.config.json 을 채워줘. (1) aside repl 로 지금 열린 탭 목록을 읽어서 flow.google.com 탭 id 를 FLOW_TAB 환경변수로 영구 저장(Windows setx, mac ~/.zshrc)하고, studio.youtube.com 탭 id 를 channels.main.studio_tab_hint 에, 그 탭 주소에 있는 UC 로 시작하는 채널 ID 를 channels.main.channel_id 에 적어. (2) npx wrangler 가 로그인돼 있는지 확인하고(안 돼 있으면 로그인 명령을 알려 주고 기다려), wrangler r2 bucket create <버킷 이름> 으로 버킷을 만들고 wrangler r2 bucket dev-url enable <버킷 이름> 으로 공개 주소를 켠 다음 storage 칸에 r2_bucket·r2_prefix(episodes)·media_base_url(공개주소/episodes)을 채워. (3) 없는 칸은 python scripts/new_project.py --defaults 로 만들고 brand.name 은 "<내 채널 이름>" 으로 해. (4) 끝나면 kit.config.json 을 표로 요약하되 탭 id 와 키 값은 가려서 보여줘. characters 칸은 건드리지 마 — 그건 3-1 로 내가 따로 시킬게.
+
+</div>
+</div>
+
+**사람이 확인해야 할 체크포인트**: 요약 표의 `channel_id` 가 내 채널의 UC… 와 같은지(YouTube Studio → 설정 → 채널 → 고급 설정), `media_base_url` 이 `https://pub-….r2.dev/episodes` 꼴인지 봅니다. `dev-url enable` 이 거부되면 2강 따라하기 4의 4번을 대시보드에서 손으로 합니다.
+
 ## 오늘의 체크리스트
 
 - [ ] `kit.config.json` 이 생성됐다

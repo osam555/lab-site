@@ -258,6 +258,27 @@ clay-episode 스킬을 읽고, 그 안의 "0. 설치" 표에 있는 준비물이
 
 **사람이 확인해야 할 체크포인트**: `.env.local` 의 API 키 값은 Claude가 화면에 출력하지 않았는지, 터미널 히스토리에도 안 남았는지 직접 확인합니다.
 
+## 설치를 Claude 에게 통째로 맡기기 (선택)
+
+위 따라하기 1·6(도구 설치, 키트 클론, ESBUILD, .env.local)은 Claude Code 가 대신 할 수 있습니다. 사람이 직접 해야 하는 건 **Aside 앱 설치·로그인, Typecast 키 복사, Cloudflare 가입** 뿐입니다. 직접 해 보고 싶으면 건너뛰고, 막히면 이 프롬프트로 시킵니다.
+
+순서:
+
+1. 어디서: 아무 폴더에서 Claude Code 를 엽니다(키트를 아직 안 받았어도 됩니다).
+2. 아래 프롬프트를 붙여 넣습니다. Claude 가 설치를 마치고 Typecast 키를 물으면, **그때 키를 붙여 넣습니다**(파일에만 저장됩니다).
+3. 끝나면 `python --version` 등 확인 명령 결과를 직접 봅니다.
+
+<div class="prompt-box not-prose" data-prompt="2-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+https://github.com/osam555/clay-episode-kit 을 클론하고 그 폴더로 들어가서 설치를 끝내줘. 순서: (1) python 3.12 이상, node 20 이상, ffmpeg 가 없으면 이 컴퓨터의 패키지 관리자(Windows 는 winget, mac 은 brew)로 설치하고 버전을 보여줘. (2) pip install -r requirements.txt, npm install, npx playwright install chromium 을 실행해. (3) ESBUILD 환경변수를 이 운영체제에 맞는 esbuild 실행파일 경로로 영구 저장(Windows 는 setx, mac 은 ~/.zshrc)하고 지금 터미널에도 적용해. (4) 다 되면 내가 Typecast API 키를 줄 테니, 그 키는 .env.local 파일에 TYPECAST_API_KEY=… 한 줄로만 저장하고 화면·로그·git 에 절대 남기지 마. 지금은 설치까지만 하고 키를 물어본 뒤 멈춰.
+
+</div>
+</div>
+
+**사람이 확인해야 할 체크포인트**: 키를 붙여 넣은 뒤 Claude 의 답변에 키 값이 그대로 보이지 않는지, `.env.local` 이 키트 폴더 안에 생겼는지 직접 확인합니다.
+
 ## 오늘의 체크리스트
 
 - [ ] `python --version`(또는 `python3`), `node -v`, `ffmpeg -version` 이 모두 출력된다
