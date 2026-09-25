@@ -57,8 +57,10 @@ ffmpeg -version
 
 ## 따라하기 2: Aside 설치와 로그인
 
-1. [aside.com/download](https://aside.com/download) 에서 내 운영체제용 설치 파일을 받습니다.
-2. 설치 후 터미널에서 로그인합니다.
+Aside 는 "Claude 가 대신 클릭해 주는 브라우저"입니다. 이 과정에서는 Google Flow 와 YouTube Studio 를 이 브라우저 안에서 자동 조작합니다.
+
+1. [aside.com/download](https://aside.com/download) 에서 내 운영체제용 설치 파일을 받아 설치합니다(Windows·macOS 둘 다 있습니다, 무료 플랜이면 충분).
+2. Aside 앱을 한 번 열어 계정을 만들고 로그인합니다. 그러면 터미널용 `aside` 명령도 함께 설치됩니다. 터미널을 **새로 열고** 로그인합니다:
 
 ::: windows
 ```powershell
@@ -72,7 +74,9 @@ aside login
 ```
 :::
 
-3. Aside 앱을 열고 탭을 두 개 엽니다: `https://flow.google.com`(Google Flow, **유료 플랜**이어야 Veo 영상이 나옵니다)과 `https://studio.youtube.com`(업로드할 채널). 각각 Google 로그인을 해둡니다.
+`aside` 명령을 찾을 수 없다고 나오면 앱 메뉴(설정 → CLI 설치)에서 명령줄 도구를 설치한 뒤 터미널을 다시 엽니다.
+
+3. Aside 앱 **안에서** 탭을 두 개 엽니다(일반 크롬이 아니라 Aside 창입니다): `https://flow.google.com`(Google Flow — **Google AI Pro 이상 구독**이 있는 Google 계정으로 로그인해야 영상이 생성됩니다)과 `https://studio.youtube.com`(업로드할 채널). 각각 Google 로그인을 해 둡니다.
 4. 터미널에서 탭 id 를 읽습니다:
 
 ::: windows
@@ -87,42 +91,69 @@ aside repl 'console.log(JSON.stringify((await listBrowserTabs()).map(t=>[t.targe
 ```
 :::
 
-`[["A1B2…","https://flow.google.com/"],["C3D4…","https://studio.youtube.com/channel/UC…"]]` 처럼 나옵니다. Flow 탭 id 는 환경변수로 저장합니다.
+`[["A1B2…","https://flow.google.com/"],["C3D4…","https://studio.youtube.com/channel/UC…"]]` 처럼 나옵니다. 앞의 긴 문자열이 **탭 id** 입니다. Flow 탭 id 는 환경변수 `FLOW_TAB` 로 저장합니다 — 터미널을 닫아도 남게 **영구 저장**합니다.
 
 ::: windows
 ```powershell
-$env:FLOW_TAB="A1B2…"
+setx FLOW_TAB "A1B2…"        # 영구 저장 (새 터미널부터 적용)
+$env:FLOW_TAB="A1B2…"        # 지금 열린 터미널에도 바로 적용
 ```
 :::
 
 ::: mac
 ```bash
-export FLOW_TAB=A1B2…
+echo 'export FLOW_TAB=A1B2…' >> ~/.zshrc   # 영구 저장
+export FLOW_TAB=A1B2…                     # 지금 열린 터미널에도 바로 적용
 ```
 :::
+
+`C3D4…`(Studio 탭 id)와 채널 ID(`UC…`, 주소에 보입니다)는 메모해 두었다가 3강의 설정 파일에 적습니다.
 
 Studio 탭 id 는 3강의 `kit.config.json` 에 적습니다. Aside 를 다시 열면 id 가 바뀌니, 나중에 "No open browser tab" 오류가 나면 이 단계를 다시 합니다.
 
 ## 따라하기 3: Typecast API 키
 
-typecast.ai 에 가입하고 API 키를 발급받습니다. **이 키는 대화창이나 코드에 절대 붙여넣지 않습니다** — 다음 단계에서 파일로만 저장합니다.
+Typecast 는 한국어 더빙 목소리를 만들어 주는 서비스입니다.
 
-## 따라하기 4: Cloudflare R2
+1. [typecast.ai](https://typecast.ai) 가입 → 유료 플랜 선택(API 사용은 유료 플랜에서 열립니다).
+2. 오른쪽 위 프로필 → **API** (또는 개발자/Developers) 메뉴 → **API 키 발급** → 키를 복사합니다.
+3. **이 키는 대화창·코드·GitHub 에 절대 붙여넣지 않습니다.** 따라하기 6에서 `.env.local` 파일에만 저장합니다.
 
-1. Cloudflare 무료 계정 → R2 → 버킷 하나 생성 → 공개 URL(Public Access) 켜기.
-2. wrangler 로그인:
+## 따라하기 4: Cloudflare R2 — 완성 영상을 잠깐 올려 두는 창고
+
+업로드 스크립트는 완성된 영상을 먼저 R2(클라우드 저장소)에 올리고, 거기서 파일을 가져가 유튜브에 올립니다. 무료 티어(10GB)로 충분합니다.
+
+1. [cloudflare.com](https://dash.cloudflare.com/sign-up) 에서 무료 계정을 만듭니다(이메일 인증까지).
+2. 대시보드 왼쪽 메뉴에서 **R2 Object Storage** 를 누릅니다. 처음이면 결제 정보 등록 화면이 나오는데, 무료 한도 안에서는 청구되지 않습니다.
+3. **Create bucket** → 버킷 이름을 정합니다(예 `my-videos`, 소문자·숫자·하이픈만). 위치는 자동(Automatic) 그대로 → **Create**.
+4. 만든 버킷을 열고 **Settings** 탭 → **Public access** 의 **R2.dev subdomain → Allow Access** → 확인 문구 입력. 그러면 `https://pub-xxxxxxxx.r2.dev` 같은 **공개 주소**가 나옵니다. 이걸 복사해 둡니다.
+5. 터미널에서 wrangler(Cloudflare 명령줄 도구)를 로그인합니다. "wrangler 를 설치할까요?" 라고 물으면 `y`, 브라우저가 열리면 **Allow** 를 누릅니다.
 
 ::: windows
 ```powershell
 npx wrangler login
+npx wrangler r2 bucket list      # 방금 만든 버킷 이름이 보이면 성공
 ```
 :::
 
 ::: mac
 ```bash
 npx wrangler login
+npx wrangler r2 bucket list      # 방금 만든 버킷 이름이 보이면 성공
 ```
 :::
+
+6. 키트 설정 파일 `kit.config.json`(3강에서 만듭니다) 의 `storage` 칸에 세 값을 적습니다 — 지금은 메모만 해 두세요:
+
+```json
+"storage": {
+  "r2_bucket": "my-videos",
+  "r2_prefix": "episodes",
+  "media_base_url": "https://pub-xxxxxxxx.r2.dev/episodes"
+}
+```
+
+`r2_bucket` 은 3번의 버킷 이름, `media_base_url` 은 4번의 공개 주소 뒤에 `/episodes`(버킷 안 폴더 이름) 를 붙인 것입니다.
 
 ## 따라하기 5: Google Drive (선택)
 
@@ -153,10 +184,17 @@ npm install
 npx playwright install chromium
 ```
 
-더빙에 필요한 esbuild 경로도 지정해둡니다:
+더빙에 필요한 esbuild 경로도 영구 저장해 둡니다(키트 폴더 안에서 실행):
 
 ```powershell
+setx ESBUILD "$PWD\node_modules\@esbuild\win32-x64\esbuild.exe"
 $env:ESBUILD="$PWD\node_modules\@esbuild\win32-x64\esbuild.exe"
+```
+
+Typecast 키 파일을 만듭니다(따옴표 안의 키 자리만 바꿉니다):
+
+```powershell
+Set-Content -Path .env.local -Value "TYPECAST_API_KEY=여기에_키"
 ```
 :::
 
@@ -169,14 +207,21 @@ npm install
 npx playwright install chromium
 ```
 
-Apple Silicon 기준 esbuild 경로:
+Apple Silicon 기준 esbuild 경로(영구 저장 + 지금 적용):
 
 ```bash
+echo "export ESBUILD=$PWD/node_modules/@esbuild/darwin-arm64/bin/esbuild" >> ~/.zshrc
 export ESBUILD=$PWD/node_modules/@esbuild/darwin-arm64/bin/esbuild
+```
+
+Typecast 키 파일을 만듭니다(키 자리만 바꿉니다):
+
+```bash
+echo "TYPECAST_API_KEY=여기에_키" > .env.local
 ```
 :::
 
-`.env.local` 파일을 프로젝트 루트에 만들고 Typecast 키를 한 줄 넣습니다: `TYPECAST_API_KEY=여기에_키`. 이 파일은 절대 GitHub 에 올리지 않습니다 — `.gitignore` 에 이미 들어 있는지 확인하세요.
+`.env.local` 은 키트 폴더 바로 안에 생깁니다. 절대 GitHub 에 올리지 않습니다(`.gitignore` 에 이미 들어 있습니다). **이 키트 폴더(`clay-episode-kit`)가 곧 여러분의 프로젝트 폴더**입니다 — 앞으로 모든 명령은 이 폴더 안에서 칩니다.
 
 ## 이 강에서 스킬 쓰기
 
@@ -216,9 +261,9 @@ clay-episode 스킬을 읽고, 그 안의 "0. 설치" 표에 있는 준비물이
 ## 오늘의 체크리스트
 
 - [ ] `python --version`(또는 `python3`), `node -v`, `ffmpeg -version` 이 모두 출력된다
-- [ ] Aside 로그인 완료, `FLOW_TAB` 환경변수 설정 완료
-- [ ] Typecast API 키가 `.env.local` 에만 있다 (커밋 안 됨)
-- [ ] R2 버킷 생성 + `wrangler login` 완료
+- [ ] Aside 로그인 완료, Aside 안에서 Flow·Studio 로그인 완료, `FLOW_TAB` 영구 저장 완료, Studio 탭 id·채널 ID 메모
+- [ ] Typecast API 키가 `.env.local` 에만 있다 (커밋 안 됨), `ESBUILD` 영구 저장
+- [ ] R2 버킷을 만들고 공개 주소(`https://pub-….r2.dev`)를 메모했다, `npx wrangler r2 bucket list` 에 버킷이 보인다
 - [ ] 키트 클론 완료, `.claude/skills/clay-episode/SKILL.md` 존재
 
 ## 다음 강의

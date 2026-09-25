@@ -88,7 +88,7 @@ clay-episode 스킬을 읽고, data/longform/volcano.json 의 script_v2 를 채�
 
 ### `map` — 대본 줄 1..N 전부에 컷 키
 
-이웃한 줄이 같은 컷을 써도 됩니다. 「같이 볼까요?」·핵심 원리 줄은 `diagram` 컷이 어울립니다. `map` 함수를 써서 연속된 줄에 같은 키를 몰아 쓸 수 있습니다.
+이웃한 줄이 같은 컷을 써도 됩니다. 「같이 볼까요?」·핵심 원리 줄은 `diagram` 컷이 어울립니다. 줄마다 `1:'Nvo_ask', 2:'Nvo_mom', …` 처럼 적거나, 연속된 줄은 `dict.fromkeys` 로 몰아 쓸 수 있습니다.
 
 ```python
 map={**dict.fromkeys(range(1,3), 'Nvo_ask'), **dict.fromkeys(range(5,7), 'Nvo_magma'), ...}

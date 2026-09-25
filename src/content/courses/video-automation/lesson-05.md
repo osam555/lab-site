@@ -23,7 +23,9 @@ python3 scripts/aside_flow_submit.py rainbow --thumbs
 ```
 :::
 
-첫 명령이 영상 컷 11개를 Flow 프로젝트로 제출합니다(크레딧 ~110). 터미널에 프로젝트 URL 이 출력되니 적어둡니다. 두 번째 명령은 썸네일 이미지 3장을 제출합니다(모드가 잠깐 이미지로 바뀌었다가 영상 모드로 복귀합니다, 무료).
+시작 전 확인: Aside 앱이 켜져 있고 Flow 탭에 로그인돼 있으며, `FLOW_TAB` 환경변수가 살아 있어야 합니다(Aside 를 다시 켰다면 2강 따라하기 2의 명령으로 탭 id 를 다시 읽습니다).
+
+첫 명령이 영상 컷 11개를 Flow 프로젝트로 제출합니다(크레딧 ~110). 터미널에 프로젝트 URL 이 출력되고, `scratch/flow_tools/flow_projects.txt` 에도 `rainbow <URL>` / `rainbow_thumbs <URL>` 줄로 기록되니 잊어도 됩니다. 두 번째 명령은 썸네일 이미지 3장을 제출합니다(모드가 잠깐 이미지로 바뀌었다가 영상 모드로 복귀합니다, 무료).
 
 **주의**: Aside 의 Flow 탭은 하나라 편 두 개를 동시에 돌리지 않습니다. 여러 편을 만들 땐 8강에서 다루는 순서(영상 제출 전부 먼저, 썸네일은 뒤에 몰아서)를 따릅니다.
 
@@ -33,8 +35,11 @@ python3 scripts/aside_flow_submit.py rainbow --thumbs
 
 ## 따라하기 2: 받기
 
+`<…URL>` 자리에는 `scratch/flow_tools/flow_projects.txt` 의 `rainbow` 줄과 `rainbow_thumbs` 줄에 적힌 주소를 넣습니다.
+
 ::: windows
 ```powershell
+type scratch\flow_tools\flow_projects.txt
 python scripts/aside_flow_dl.py <영상 프로젝트 URL> scratch\dl_rainbow
 python scripts/aside_flow_dl.py <썸네일 프로젝트 URL> scratch\dl_rainbow_thumbs
 ```
@@ -42,6 +47,7 @@ python scripts/aside_flow_dl.py <썸네일 프로젝트 URL> scratch\dl_rainbow_
 
 ::: mac
 ```bash
+cat scratch/flow_tools/flow_projects.txt
 python3 scripts/aside_flow_dl.py <영상 프로젝트 URL> scratch/dl_rainbow
 python3 scripts/aside_flow_dl.py <썸네일 프로젝트 URL> scratch/dl_rainbow_thumbs
 ```
@@ -108,7 +114,7 @@ clay-episode 스킬을 읽고, 편 키 rainbow 의 영상 컷 11개와 썸네일
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode 스킬을 읽고, 방금 제출한 편 키 rainbow 의 두 프로젝트(영상·썸네일)를 위에서 받은 프로젝트 URL 로 각각 scratch/dl_rainbow, scratch/dl_rainbow_thumbs 에 다운로드해줘. 받은 mp4 파일들은 data/longform/prompts/rainbow.json 의 new_prompts 캡션과 대조해서 assets/flow/rainbow/<컷키>.mp4 로 옮기고, jpg 3장은 a·b·c 로 assets/flow/rainbow/thumb/ 에 옮겨줘. 헷갈리는 파일은 ffmpeg 로 한 프레임 뽑아서 보고 판단해. 결과를 지어내지 말고, 옮긴 개수와 빠진 컷이 있으면 어떤 키인지만 표로 보여주고 멈춰 — 재제출은 내가 판단할게.
+clay-episode 스킬을 읽고, 편 키 rainbow 의 두 Flow 프로젝트(영상·썸네일)를 다운로드해줘. 프로젝트 URL 은 scratch/flow_tools/flow_projects.txt 의 rainbow 줄과 rainbow_thumbs 줄에서 읽고, 각각 scratch/dl_rainbow, scratch/dl_rainbow_thumbs 에 받아. 받은 mp4 파일들은 data/longform/prompts/rainbow.json 의 new_prompts 캡션과 대조해서 assets/flow/rainbow/<컷키>.mp4 로 옮기고, jpg 3장은 a·b·c 로 assets/flow/rainbow/thumb/ 에 옮겨줘. 헷갈리는 파일은 ffmpeg 로 한 프레임 뽑아서 보고 판단해. 결과를 지어내지 말고, 옮긴 개수와 빠진 컷이 있으면 어떤 키인지만 표로 보여주고 멈춰 — 재제출은 내가 판단할게.
 
 </div>
 </div>

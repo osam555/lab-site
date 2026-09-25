@@ -35,11 +35,11 @@ python3 scripts/sheet.py rainbow
 | `flow_assemble.py --deploy` | 롱폼(2~3분) 조립, 5~10분 소요 | `remotion/out/rainbow_deploy.mp4` 생성 |
 | `flow_assemble.py --short` | 세로 쇼츠 45초 조립 | `scratch/flow_rainbow/rainbow_short.mp4` 생성 |
 | `qa_gate.py post` | 완성 영상 자동 채점 | 8.0 이상 |
-| `sheet.py` | 12장면 시트 한 장 | 사람이 눈으로 확인 |
+| `sheet.py` | 12장면 시트 한 장 → `scratch/flow_tools/rainbow_sheet.jpg` | 사람이 눈으로 확인 |
 
 ## 눈으로 보는 4가지 체크포인트
 
-`sheet.py` 가 만든 시트를 열어 아래 네 가지만 봅니다. 자동 검사가 못 잡는 부분입니다.
+`sheet.py` 가 만든 시트(`scratch/flow_tools/rainbow_sheet.jpg`)를 열어 아래 네 가지만 봅니다. 자동 검사가 못 잡는 부분입니다.
 
 1. **가짜 글자** — 사물 위에 뜻 모를 글자·로고가 있나
 2. **어두운 장면** — 조명이 어둡거나 무서운 톤의 컷이 있나
@@ -64,7 +64,7 @@ python3 scripts/prep_more.py rainbow
 ```
 :::
 
-R2 에 영상을 올리고, 제목·설명·태그(`yt_meta.json`)를 생성하고, Google Drive 백업을 백그라운드로 시작합니다.
+3강의 `storage` 설정대로 R2 에 영상·쇼츠·썸네일을 올리고, 제목·설명·태그(`scratch/flow_tools/yt_meta.json`)를 생성합니다(`DRIVE_LIB` 를 설정했다면 Google Drive 백업도 백그라운드로 시작). 시작 전 Aside 의 Studio 탭이 로그인돼 있는지 확인합니다.
 
 큐 파일 `scratch/flow_tools/aside_queue.txt` 에 두 줄을 추가합니다: `rainbow long main`과 `rainbow short main`.
 

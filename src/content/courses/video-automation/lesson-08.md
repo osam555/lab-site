@@ -19,12 +19,12 @@ part: 3부 · 내 주제로 운영
 
 대본·컷 계획·최종 시트 확인은 사람(또는 상위 모델)이 하고, 더빙·제출·다운로드·정리·조립·검사·업로드 큐는 서브에이전트(가벼운 모델)에게 맡깁니다. 서브에이전트에게 시킬 때 꼭 넣을 두 문장이 있습니다.
 
-1. **"긴 대기는 폴링하지 말고 `until … ; do sleep 30; done` 한 번의 명령으로"** — Flow 생성 대기(3~5분)처럼 시간이 걸리는 단계를 반복 확인하며 대화 턴을 낭비하지 않습니다.
+1. **"긴 대기는 반복 확인하지 말고, 아래 같은 대기 명령 한 번으로"** — Flow 생성 대기(3~5분)처럼 시간이 걸리는 단계를 반복 확인하며 대화 턴을 낭비하지 않습니다.
 2. **"결과를 지어내지 말 것"** — 스크립트 출력(점수, 파일 개수, 통과 여부)을 실제로 읽고 보고하게 합니다. 특히 `qa_gate`·`cutplan_check` 의 점수는 절대 짐작해서 말하지 않게 합니다.
 
 ::: windows
 ```powershell
-until (Test-Path scratch\flow_tools\rainbow_done.flag) { Start-Sleep -Seconds 30 }
+while (-not (Test-Path scratch\flow_tools\rainbow_done.flag)) { Start-Sleep -Seconds 30 }
 ```
 :::
 
@@ -91,7 +91,9 @@ python3 scripts/drain_uploads.py
 | 받은 파일이 프롬프트 수보다 적음 | Flow 가 빼먹음 → 그 프롬프트만 재제출 |
 | 인물이 컷마다 다름 | `characters` 문구가 짧음 → 옷 색·머리·피부 명시 |
 | Studio 다이얼로그가 「Creating link…」에서 멈춤 | 그 채널 일일 한도 → 내일 |
-| Aside 탭 id 오류 "No open browser tab" | Aside 를 다시 열면 id 가 바뀜 → 2강의 명령으로 다시 읽어 `FLOW_TAB`/`channels` 갱신 |
+| Aside 탭 id 오류 "No open browser tab" | Aside 를 다시 열면 id 가 바뀜 → 2강의 명령으로 다시 읽어 `FLOW_TAB`(setx / ~/.zshrc)과 `channels.studio_tab_hint` 갱신 |
+| `bake_lines` 가 esbuild 를 못 찾음 | `ESBUILD` 환경변수가 이 터미널에 없음 → 2강 따라하기 6의 영구 저장 명령을 다시 |
+| `TYPECAST_API_KEY` 없음 | `.env.local` 이 키트 폴더 바로 안에 없음(다른 폴더에서 실행했거나 파일 이름이 `.env.local.txt`) |
 | Aside 를 못 쓰는 환경 | `npm install && npx playwright install chromium` 후 Playwright 폴백(SKILL.md §8) — 탭 id 대신 URL 일부나 탭 번호를 씀 |
 
 ## 이 강에서 스킬 쓰기
@@ -117,7 +119,7 @@ clay-episode 스킬을 읽고, volcano·ocean·star_sky 세 편을 한꺼번에 
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode 스킬을 읽고, 방금 제출한 volcano·ocean·star_sky 세 편을 위에서 받은 프로젝트 URL 로 각각 다운로드하고 컷 키 이름으로 정리해줘(영상은 assets/flow/<편 키>/, 썸네일은 assets/flow/<편 키>/thumb/). 긴 대기가 필요하면 반복 확인하지 말고 sleep 루프 한 번으로 기다린 뒤 결과만 보고해. 편마다 옮긴 파일 개수와 빠진 컷이 있는지 표로 보여주고, 점수나 개수를 지어내지 말고 스크립트 출력만 그대로 인용해. 여기까지만 하고 멈춰 — 조립·검사·업로드는 내가 편별로 따로 요청할게.
+clay-episode 스킬을 읽고, volcano·ocean·star_sky 세 편의 Flow 프로젝트를 각각 다운로드하고(프로젝트 URL 은 scratch/flow_tools/flow_projects.txt 에서 편 키 줄과 편키_thumbs 줄을 읽어서 써) 컷 키 이름으로 정리해줘(영상은 assets/flow/<편 키>/, 썸네일은 assets/flow/<편 키>/thumb/). 긴 대기가 필요하면 반복 확인하지 말고 sleep 루프 한 번으로 기다린 뒤 결과만 보고해. 편마다 옮긴 파일 개수와 빠진 컷이 있는지 표로 보여주고, 점수나 개수를 지어내지 말고 스크립트 출력만 그대로 인용해. 여기까지만 하고 멈춰 — 조립·검사·업로드는 내가 편별로 따로 요청할게.
 
 </div>
 </div>

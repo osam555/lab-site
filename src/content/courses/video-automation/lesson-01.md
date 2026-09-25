@@ -32,7 +32,7 @@ part: 1부 · 준비
 |---|---|---|---|
 | ① 대본 | 훅→반응→핵심→키워드→반전→복습→콜백 구조로 23~28줄 | 사람이 씀 (Claude Code 도움) | 내용·사실 확인 |
 | ② 더빙 | 대본을 문장별 wav 로 | Typecast API | 목소리 선택, 호흡 확인 |
-| ③ 컷 계획 | 대본 줄마다 어떤 6초 영상 컷을 보여줄지 + 영문 프롬프트 | 사람이 씀 (`top10_plan.py`) | **유일한 창작 단계** — 2강~7강의 핵심 |
+| ③ 컷 계획 | 대본 줄마다 어떤 6초 영상 컷을 보여줄지 + 영문 프롬프트 | 사람이 씀 (`top10_plan.py`) | **유일한 창작 단계** — 7강의 핵심 |
 | ④ Flow 생성 | 6초 클립 10~12개 + 썸네일 이미지 3장 | Google Flow(Veo), Aside 로 조작 | 5분 대기, 빠진 컷 재제출 |
 | ⑤ 조립·검사 | 클립+음성+자막+카드 합성, 자동 채점 | ffmpeg, `qa_gate.py` | 시트 한 장 눈으로 확인 |
 | ⑥ 업로드 | R2 업로드 → 큐 → Studio 자동 입력 | Aside, R2 | 최종 공개 확인 |
@@ -41,8 +41,8 @@ part: 1부 · 준비
 
 | 도구 | 역할 | 비용 |
 |---|---|---|
-| **Google Flow** | 영상 컷 생성(Veo) | 크레딧 **편당 110~130** (6초 컷당 10크레딧, 썸네일은 무료) |
-| **Typecast** | 한국어 더빙 | 유료 API 키 필요 |
+| **Google Flow** | 영상 컷 생성(Veo) | **Google AI Pro 이상 구독**이 있어야 씁니다(월 크레딧 지급). 크레딧 **편당 110~130** (6초 컷당 10크레딧, 썸네일은 무료) |
+| **Typecast** | 한국어 더빙 | 유료 플랜 + API 키(편당 24~28문장, 몇 분 분량) |
 | **Cloudflare R2** | 완성 영상 임시 저장소 | 무료 티어로 충분 |
 | **Aside** | 브라우저 자동화(Flow·Studio 조작) | 무료 플랜으로 시작 가능 |
 | **ffmpeg** | 로컬 합성 | 무료 |
@@ -80,7 +80,7 @@ part: 1부 · 준비
 
 순서:
 
-1. 어디서: 터미널에서 clay-episode-kit 저장소 폴더로 이동해 Claude Code 를 엽니다(아직 설치 전이라 이 폴더 안에서만 읽습니다).
+1. 어디서: 아직 키트를 내려받기 전이므로 아무 폴더에서나 Claude Code 를 엽니다(설명서를 GitHub 주소로 직접 읽게 합니다).
 2. 아래 프롬프트를 붙여 넣고 엔터.
 3. Claude 가 6단계 표를 보여주면, 이번 강 앞부분의 표와 직접 대조합니다.
 
@@ -88,7 +88,7 @@ part: 1부 · 준비
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode 스킬(이 영상 자동화 키트의 설명서 파일, skills/clay-episode/SKILL.md)을 읽고, 이 키트가 대본→더빙→컷 계획→Flow(구글의 영상 생성 서비스) 생성→조립→검사→업로드의 6단계를 어떻게 거치는지 표로 요약해줘. 표는 단계 이름·하는 일·쓰는 도구 세 칸으로 보여줘. 아직 아무것도 설치하거나 실행하지 말고 설명만 해줘 — 여기까지만 하고 멈춰, 설치는 다음 강에서 내가 직접 시킬게.
+https://raw.githubusercontent.com/osam555/clay-episode-kit/master/skills/clay-episode/SKILL.md 에 있는 설명서(clay-episode 스킬)를 읽고, 이 키트가 대본→더빙→컷 계획→Flow(구글의 영상 생성 서비스) 생성→조립→검사→업로드의 6단계를 어떻게 거치는지 표로 요약해줘. 표는 단계 이름·하는 일·쓰는 도구 세 칸으로 보여줘. 아직 아무것도 설치하거나 실행하지 말고 설명만 해줘 — 여기까지만 하고 멈춰, 설치는 다음 강에서 내가 직접 시킬게.
 
 </div>
 </div>

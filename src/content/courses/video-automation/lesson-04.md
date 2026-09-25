@@ -29,6 +29,8 @@ cp examples/generic_episode.json data/longform/rainbow.json
 
 ## 따라하기 2: 작업 파일 뽑기 + 더빙
 
+시작 전 확인: 키트 폴더 안이고, `.env.local` 에 Typecast 키가 있고, `ESBUILD` 환경변수가 살아 있어야 합니다(2강에서 영구 저장했다면 새 터미널에서도 됩니다). 더빙은 Typecast 사용량(이 편은 24문장)을 씁니다.
+
 ::: windows
 ```powershell
 python scripts/prepare_lines.py rainbow

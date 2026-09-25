@@ -2,7 +2,7 @@
 number: 3
 title: 내 프로젝트 만들기
 subtitle: kit.config.json — 캐릭터·브랜드·채널·그림체
-goal: new_project.py 마법사로 kit.config.json을 만들고, characters·brand·channels·style.tail·topic.kind 다섯 칸을 직접 채웁니다.
+goal: new_project.py 마법사로 kit.config.json을 만들고, characters·brand·channels·storage·style.tail·topic.kind 여섯 칸을 직접 채웁니다.
 minutes: 40
 part: 1부 · 준비
 ---
@@ -12,6 +12,8 @@ part: 1부 · 준비
 이 파일 하나가 모든 편의 **캐릭터 생김새·브랜드 이름·유튜브 채널·그림체**를 정합니다. 코드를 고칠 필요 없이 이 파일만 바꾸면 완전히 다른 주제·다른 채널로 전환됩니다.
 
 ## 따라하기 1: 마법사 실행
+
+키트 폴더(`clay-episode-kit`) 안에서 실행합니다. 설정 파일은 이 폴더에 생깁니다.
 
 ::: windows
 ```powershell
@@ -39,7 +41,7 @@ python3 scripts/new_project.py --defaults
 
 브랜드 이름·사이트 주소·해시태그·캐릭터를 묻습니다. `kit.config.json` 이 생성됩니다. 처음엔 `--defaults` 로 만들고 이 강을 읽으며 손으로 고쳐도 됩니다.
 
-## 꼭 손볼 다섯 칸
+## 꼭 손볼 여섯 칸
 
 ### 1. `characters` — 등장인물 생김새
 
@@ -53,11 +55,13 @@ python3 scripts/new_project.py --defaults
 
 ### 2. `brand`
 
-이름, 워드마크 PNG, 인트로/엔딩 MP4(없으면 마법사가 임시로 만든 것을 씁니다), 사이트 URL, 해시태그, 설명 꼬리줄.
+이름, 워드마크 PNG, 인트로/엔딩 MP4, 사이트 URL, 해시태그, 설명 꼬리줄. 워드마크·인트로가 없으면 마법사가 브랜드 이름으로 임시 파일을 만들어 둡니다(`assets/brand/`). 나중에 내 로고로 바꾸려면 같은 파일 이름으로 덮어쓰면 됩니다(워드마크: 가로로 긴 투명 배경 PNG, 인트로: 16:9 mp4 5~6초). 사이트가 없으면 `site_url` 은 채널 주소를 넣어도 됩니다.
 
 ### 3. `channels`
 
 유튜브 채널 ID(`UC…`)·재생목록·2강에서 읽어둔 Aside 의 Studio 탭 id. 채널이 하나면 `main` 하나만 채웁니다.
+
+채널 ID 찾는 법: YouTube Studio → 왼쪽 아래 **설정** → **채널** → **고급 설정** → 「채널 ID」(UC 로 시작하는 24자). `studio_tab_hint` 에는 2강에서 읽은 Studio 탭 id 를, `playlist` 에는 넣고 싶은 재생목록 이름(없으면 `null`)을 적습니다.
 
 ```json
 "channels": {
@@ -65,11 +69,23 @@ python3 scripts/new_project.py --defaults
 }
 ```
 
-### 4. `style.tail`
+### 4. `storage` — R2 저장소
+
+2강 따라하기 4에서 메모한 세 값을 적습니다.
+
+```json
+"storage": {
+  "r2_bucket": "my-videos",
+  "r2_prefix": "episodes",
+  "media_base_url": "https://pub-xxxxxxxx.r2.dev/episodes"
+}
+```
+
+### 5. `style.tail`
 
 그림체 문구입니다. 기본값은 파스텔 클레이 애니메이션 톤. 바꾸고 싶으면 이 한 문장만 바꾸면 전 컷에 적용됩니다. 처음엔 기본값을 그대로 두길 권합니다 — 4~6강에서 첫 편을 완성한 뒤에 실험하세요.
 
-### 5. `topic.kind`
+### 6. `topic.kind`
 
 기본값 `"generic"` 그대로 둡니다. 한자 어원 편을 만들 때만 `"hanja"` 로 바꿉니다(7강 마지막 절).
 
@@ -99,6 +115,7 @@ clay-episode 스킬을 읽고, kit.config.json 의 characters(등장인물 생�
 - [ ] `kit.config.json` 이 생성됐다
 - [ ] `characters` 에 최소 세 역할(아이·엄마·친구)의 생김새를 채웠다
 - [ ] `channels.main` 에 채널 ID 와 Studio 탭 id 를 채웠다
+- [ ] `storage` 에 R2 버킷 이름·공개 주소를 채웠다
 - [ ] `topic.kind` 는 `"generic"` 으로 뒀다(한자 편이 아니면)
 
 ## 다음 강의
