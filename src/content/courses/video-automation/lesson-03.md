@@ -1,0 +1,100 @@
+---
+number: 3
+title: 내 프로젝트 만들기
+subtitle: kit.config.json — 캐릭터·브랜드·채널·그림체
+goal: new_project.py 마법사로 kit.config.json을 만들고, characters·brand·channels·style.tail·topic.kind 다섯 칸을 직접 채웁니다.
+minutes: 40
+part: 1부 · 준비
+---
+
+## kit.config.json 이 하는 일
+
+이 파일 하나가 모든 편의 **캐릭터 생김새·브랜드 이름·유튜브 채널·그림체**를 정합니다. 코드를 고칠 필요 없이 이 파일만 바꾸면 완전히 다른 주제·다른 채널로 전환됩니다.
+
+## 따라하기 1: 마법사 실행
+
+::: windows
+```powershell
+python scripts/new_project.py
+```
+
+질문에 답하기 귀찮으면 일단 자리표시자로:
+
+```powershell
+python scripts/new_project.py --defaults
+```
+:::
+
+::: mac
+```bash
+python3 scripts/new_project.py
+```
+
+또는:
+
+```bash
+python3 scripts/new_project.py --defaults
+```
+:::
+
+브랜드 이름·사이트 주소·해시태그·캐릭터를 묻습니다. `kit.config.json` 이 생성됩니다. 처음엔 `--defaults` 로 만들고 이 강을 읽으며 손으로 고쳐도 됩니다.
+
+## 꼭 손볼 다섯 칸
+
+### 1. `characters` — 등장인물 생김새
+
+역할 키는 정해져 있습니다: `C2`(아이) `MP`(엄마) `DP`(아빠) `F2`(친구) `GRM`(할머니) `TEACH`(선생님). 각 값은 **영어 한 줄**로, 옷 색·머리 모양·피부색을 명시합니다. 이 문구가 모든 컷 프롬프트에 그대로 들어가서 **편이 달라도 같은 인물**이 나옵니다.
+
+```json
+"C2": "a round clay child with a simple round face, rosy cheeks, wearing a yellow raincoat, a small girl with light peach skin and two short black pigtails,"
+```
+
+요령: 다른 인물과 색·머리 모양이 겹치지 않게. **한 번 정하면 시리즈 내내 바꾸지 않습니다** — 바꾸면 이전 편과 인물이 달라 보입니다.
+
+### 2. `brand`
+
+이름, 워드마크 PNG, 인트로/엔딩 MP4(없으면 마법사가 임시로 만든 것을 씁니다), 사이트 URL, 해시태그, 설명 꼬리줄.
+
+### 3. `channels`
+
+유튜브 채널 ID(`UC…`)·재생목록·2강에서 읽어둔 Aside 의 Studio 탭 id. 채널이 하나면 `main` 하나만 채웁니다.
+
+```json
+"channels": {
+  "main": { "studio_tab_hint": "C3D4…", "channel_id": "UCxxxxxxxx", "playlist": null, "label": "내 채널" }
+}
+```
+
+### 4. `style.tail`
+
+그림체 문구입니다. 기본값은 파스텔 클레이 애니메이션 톤. 바꾸고 싶으면 이 한 문장만 바꾸면 전 컷에 적용됩니다. 처음엔 기본값을 그대로 두길 권합니다 — 4~6강에서 첫 편을 완성한 뒤에 실험하세요.
+
+### 5. `topic.kind`
+
+기본값 `"generic"` 그대로 둡니다. 한자 어원 편을 만들 때만 `"hanja"` 로 바꿉니다(7강 마지막 절).
+
+## 이 강에서 스킬 쓰기
+
+캐릭터 문구는 영어로 직접 쓰기 까다로우니 스킬에게 초안을 시킵니다. SKILL.md **§A(내 프로젝트 만들기)** 절의 "꼭 손볼 세 칸" 설명을 그대로 따르는 단계입니다.
+
+<div class="prompt-box not-prose" data-prompt="3-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+/clay-episode 로 SKILL.md §A 를 따라서 kit.config.json 의 characters 를 내 채널용으로 바꿔줘. 아이는 노란 우비를 입은 단발머리 여자아이, 엄마는 하늘색 앞치마, 친구는 초록 모자 쓴 남자아이. 옷 색·머리·피부색이 서로 안 겹치게 영어 한 줄씩으로, 키(C2·MP·F2)는 그대로 두고 값만 바꿔.
+
+</div>
+</div>
+
+**사람이 확인해야 할 체크포인트**: 캐릭터 세 명(또는 그 이상)의 옷 색·머리 모양이 서로 겹치지 않는지 문장을 직접 읽고 확인합니다 — 겹치면 5강에서 인물이 서로 섞여 나옵니다.
+
+## 오늘의 체크리스트
+
+- [ ] `kit.config.json` 이 생성됐다
+- [ ] `characters` 에 최소 세 역할(아이·엄마·친구)의 생김새를 채웠다
+- [ ] `channels.main` 에 채널 ID 와 Studio 탭 id 를 채웠다
+- [ ] `topic.kind` 는 `"generic"` 으로 뒀다(한자 편이 아니면)
+
+## 다음 강의
+
+4강에서 예시 대본 「무지개는 왜 생길까」로 대본→더빙→컷 계획까지 첫 편의 절반을 만듭니다.
