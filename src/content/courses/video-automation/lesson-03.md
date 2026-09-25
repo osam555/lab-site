@@ -75,13 +75,19 @@ python3 scripts/new_project.py --defaults
 
 ## 이 강에서 스킬 쓰기
 
-캐릭터 문구는 영어로 직접 쓰기 까다로우니 스킬에게 초안을 시킵니다. SKILL.md **§A(내 프로젝트 만들기)** 절의 "꼭 손볼 세 칸" 설명을 그대로 따르는 단계입니다.
+캐릭터 문구는 영어로 직접 쓰기 까다로우니 스킬에게 초안을 시킵니다. clay-episode 스킬의 "내 프로젝트 만들기" 절에 있는 "꼭 손볼 다섯 칸" 안내를 그대로 따르는 단계입니다.
+
+순서:
+
+1. 어디서: 내 프로젝트 폴더(kit.config.json 이 있는 곳)에서 Claude Code 를 엽니다.
+2. 아래 프롬프트를 붙여 넣고 엔터.
+3. Claude 가 characters 세 칸을 고친 내용을 보여주면, 옷 색·머리 모양이 인물마다 겹치지 않는지 직접 읽습니다.
 
 <div class="prompt-box not-prose" data-prompt="3-1" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-/clay-episode 로 SKILL.md §A 를 따라서 kit.config.json 의 characters 를 내 채널용으로 바꿔줘. 아이는 노란 우비를 입은 단발머리 여자아이, 엄마는 하늘색 앞치마, 친구는 초록 모자 쓴 남자아이. 옷 색·머리·피부색이 서로 안 겹치게 영어 한 줄씩으로, 키(C2·MP·F2)는 그대로 두고 값만 바꿔.
+clay-episode 스킬을 읽고, kit.config.json 의 characters(등장인물 생김새) 칸을 내 채널용으로 바꿔줘. 아이는 노란 우비를 입은 단발머리 여자아이, 엄마는 하늘색 앞치마, 친구는 초록 모자 쓴 남자아이로 하고, 옷 색·머리·피부색이 서로 안 겹치게 영어 한 줄씩으로 써줘. 키(C2·MP·F2)는 그대로 두고 값만 바꿔줘. 다 바꾸면 세 줄을 표로 보여줘 — 여기까지만 하고 멈춰, 다음 칸(brand·channels)은 내가 직접 확인한 뒤 시킬게.
 
 </div>
 </div>

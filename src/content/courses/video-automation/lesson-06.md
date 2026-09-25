@@ -98,13 +98,28 @@ Aside 의 Studio 탭이 움직이며 제목·설명·태그·재생목록·공�
 
 ## 이 강에서 스킬 쓰기
 
-이 단계는 SKILL.md **§5(썸네일·조립·검사)**와 **§6(올리기)**에 해당합니다.
+이 단계는 clay-episode 스킬의 "썸네일·조립·검사"와 "올리기" 절에 해당합니다. 조립·검사를 먼저 시키고 사람이 시트를 확인한 뒤에, 업로드는 별도 프롬프트로 따로 시킵니다.
+
+순서:
+
+1. 어디서: 키트 폴더에서 Claude Code 를 엽니다.
+2. 6-1을 붙여 넣어 썸네일·조립·검사까지 시키고, Claude 가 알려준 시트 경로의 이미지를 직접 엽니다.
+3. 시트가 문제없으면 6-2를 붙여 넣어 큐에 넣고 업로드까지 시킵니다.
 
 <div class="prompt-box not-prose" data-prompt="6-1" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-/clay-episode 로 SKILL.md §5~§6 순서대로 rainbow 편을 마무리해줘. make_thumb→flow_assemble --deploy→flow_assemble --short→qa_gate post 순서로 돌리고, qa_gate 점수와 sheet.py 가 만든 시트 경로를 알려줘. 8.0 미만이면 SKILL.md §7(문제) 표를 보고 원인을 짐작해서 알려주되, 재생성은 내가 확인한 뒤에 실행해. 업로드(prep_more·큐·drain_uploads)는 내가 시트를 확인한 다음에 따로 요청할게.
+clay-episode 스킬을 읽고, 편 키 rainbow 의 썸네일을 만들고 롱폼·쇼츠를 조립하고 자동 검사를 돌려줘. make_thumb→flow_assemble --deploy→flow_assemble --short→qa_gate post→sheet 순서로 실행하고, qa_gate 점수와 sheet.py 가 만든 시트 파일 경로를 스크립트 출력 그대로 알려줘. 점수를 지어내지 마. 8.0 미만이면 스킬 안의 문제 해결 표를 보고 원인을 짐작해서 알려주되, 재생성은 하지 말고 내가 확인한 뒤에 시킬게. 여기까지만 하고 멈춰 — 업로드는 내가 시트를 눈으로 확인한 다음 따로 요청할게.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, 편 키 rainbow 를 업로드해줘. prep_more.py 를 돌려 R2 업로드와 yt_meta.json(제목·설명·태그)을 만들고, 그 내용을 표로 보여줘. 그다음 큐 파일(scratch/flow_tools/aside_queue.txt)에 "rainbow long main"과 "rainbow short main" 두 줄을 추가하고 drain_uploads.py 를 돌려줘. 업로드는 공개로 가는 되돌리기 어려운 단계이니, yt_meta.json 내용을 보여준 다음 실제로 큐에 넣기 전에 한 번 멈춰서 내 확인을 기다려줘.
 
 </div>
 </div>

@@ -96,18 +96,33 @@ python3 scripts/drain_uploads.py
 
 ## 이 강에서 스킬 쓰기
 
-이 단계는 SKILL.md **§9(여러 편을 싸게 만드는 요령)**를 그대로 실천하는 것이고, 문제가 생기면 **§7(이럴 땐)**과 **§8(Aside 없이)**을 참고합니다.
+이 단계는 clay-episode 스킬의 "여러 편을 싸게 만드는 요령" 절을 그대로 실천하는 것이고, 문제가 생기면 스킬 안의 "이럴 땐"과 "Aside 없이" 절을 참고합니다.
+
+순서:
+
+1. 어디서: 키트 폴더에서 Claude Code 를 엽니다. volcano·ocean·star_sky 세 편 모두 컷 계획 검사(7강)를 통과한 상태여야 합니다.
+2. 8-1을 붙여 넣어 세 편의 영상·썸네일 제출을 한 번에 시키고, 프로젝트 URL 표를 확인합니다. Aside 창에서 다 찰 때까지 기다립니다.
+3. 8-2를 붙여 넣어 세 편을 한꺼번에 다운로드·정리시키고, 편마다 `assets/flow/<key>/` 폴더 파일 개수를 직접 세어 확인합니다.
 
 <div class="prompt-box not-prose" data-prompt="8-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-/clay-episode 로 SKILL.md §9 방식대로 volcano, ocean, star_sky 세 편을 한꺼번에 진행해줘. 컷 계획 검사(§2)가 셋 다 통과한 상태라고 가정하고, 영상 제출을 세 편 다 먼저 하고 썸네일은 마지막에 몰아서 제출해(§3). 다운로드·정리(§4)도 프로젝트 단위로 묶어서 처리해. 각 단계 대기는 sleep 루프 한 번으로 하고, 폴링하며 대화 턴을 쓰지 마. 점수나 파일 개수는 스크립트 출력을 그대로 인용하고 지어내지 마. 조립·업로드(§5~§6)는 내가 시트를 확인한 뒤 편별로 따로 요청할게.
+clay-episode 스킬을 읽고, volcano·ocean·star_sky 세 편을 한꺼번에 Flow(구글 영상 생성 서비스)에 제출해줘. 컷 계획 검사는 셋 다 이미 통과했다고 가정해. 영상 컷 제출을 세 편 다 먼저 끝내고, 썸네일 제출은 맨 마지막에 세 편 몰아서 해줘(Flow 의 모드 설정이 계정 전체에 걸리기 때문). 편마다 나온 프로젝트 URL(영상·썸네일)을 표로 정리해서 보여주고, 값을 지어내지 마. 제출만 하고 여기서 멈춰 — 대기와 완료 확인은 내가 Aside 창을 직접 보고 할게.
 
 </div>
 </div>
 
-**사람이 확인해야 할 체크포인트**: 서브에이전트가 "N편 모두 완료"라고 요약 보고해도, 실제로 `assets/flow/<key>/` 폴더별 파일 개수와 `qa_gate` 점수를 편마다 직접 한 번씩 훑어봅니다 — 묶어서 처리할수록 중간에 조용히 빠진 편을 놓치기 쉽습니다.
+<div class="prompt-box not-prose" data-prompt="8-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, 방금 제출한 volcano·ocean·star_sky 세 편을 위에서 받은 프로젝트 URL 로 각각 다운로드하고 컷 키 이름으로 정리해줘(영상은 assets/flow/<편 키>/, 썸네일은 assets/flow/<편 키>/thumb/). 긴 대기가 필요하면 반복 확인하지 말고 sleep 루프 한 번으로 기다린 뒤 결과만 보고해. 편마다 옮긴 파일 개수와 빠진 컷이 있는지 표로 보여주고, 점수나 개수를 지어내지 말고 스크립트 출력만 그대로 인용해. 여기까지만 하고 멈춰 — 조립·검사·업로드는 내가 편별로 따로 요청할게.
+
+</div>
+</div>
+
+**사람이 확인해야 할 체크포인트**: Claude가 "N편 모두 완료"라고 요약 보고해도, 실제로 `assets/flow/<key>/` 폴더별 파일 개수와 `qa_gate` 점수를 편마다 직접 한 번씩 훑어봅니다 — 묶어서 처리할수록 중간에 조용히 빠진 편을 놓치기 쉽습니다.
 
 ## 마지막 체크리스트
 

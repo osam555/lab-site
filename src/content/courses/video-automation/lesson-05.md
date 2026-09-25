@@ -87,18 +87,42 @@ ffmpeg -i in.mp4 -vf "crop=iw*0.68:ih*0.68:(iw-iw*0.68)/2:ih-ih*0.68,scale=1280:
 
 ## 이 강에서 스킬 쓰기
 
-이 단계는 SKILL.md **§3(Flow 생성)**과 **§4(받기·정리)**에 해당합니다. 제출과 대기는 사람이 직접 하고(터미널 명령), 정리는 스킬에게 맡깁니다.
+이 단계는 clay-episode 스킬의 "Flow 생성"과 "받기·정리" 절에 해당합니다. 제출→대기→다운로드·정리→(필요하면) 재제출 순서로, 아래 세 프롬프트를 하나씩 붙여 넣습니다.
+
+순서:
+
+1. 어디서: 키트 폴더에서 Claude Code 를 엽니다. Aside 창도 미리 띄워둡니다.
+2. 5-1을 붙여 넣고, Claude 가 프로젝트 URL 을 보고하면 멈춥니다. Aside 창에서 타일이 다 찰 때까지(3~5분) 기다립니다.
+3. 5-2를 붙여 넣어 받기·정리를 시키고, 개수를 직접 폴더에서 셉니다. 빠진 컷이 있으면 5-3을 붙여 넣습니다.
 
 <div class="prompt-box not-prose" data-prompt="5-1" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-/clay-episode 로 SKILL.md §4 절차대로, scratch/dl_rainbow/ 에 받은 mp4 파일들을 data/longform/prompts/rainbow.json 의 new_prompts 프롬프트·캡션과 대조해서 assets/flow/rainbow/<컷키>.mp4 로 옮겨줘. 헷갈리는 건 ffmpeg 로 한 프레임 뽑아서 보고 정해. 개수가 11개인지, 파일이 겹치지 않는지 확인하고, 빠진 컷이 있으면 어떤 키인지만 알려줘 — 재제출은 내가 판단할게. scratch/dl_rainbow_thumbs/ 의 jpg 3장은 a·b·c 로 assets/flow/rainbow/thumb/ 에.
+clay-episode 스킬을 읽고, 편 키 rainbow 의 영상 컷 11개와 썸네일 이미지 3장을 Flow(구글의 영상 생성 서비스)에 제출해줘. aside_flow_submit.py 를 영상용으로 한 번, --thumbs 옵션으로 썸네일용으로 한 번 돌리고, 화면에 나온 두 프로젝트 URL 을 그대로 보여줘. 값을 지어내지 말고 스크립트 출력만 그대로 인용해. 제출만 하고 여기서 멈춰 — 3~5분 대기와 완료 확인은 내가 Aside 창을 직접 보고 할게.
 
 </div>
 </div>
 
-**사람이 확인해야 할 체크포인트**: 정리된 파일 개수가 실제로 11개(+ 썸네일 3장)인지, 스킬이 "빠진 컷 없음"이라 보고해도 `assets/flow/rainbow/` 폴더를 직접 열어 개수를 셉니다.
+<div class="prompt-box not-prose" data-prompt="5-2" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, 방금 제출한 편 키 rainbow 의 두 프로젝트(영상·썸네일)를 위에서 받은 프로젝트 URL 로 각각 scratch/dl_rainbow, scratch/dl_rainbow_thumbs 에 다운로드해줘. 받은 mp4 파일들은 data/longform/prompts/rainbow.json 의 new_prompts 캡션과 대조해서 assets/flow/rainbow/<컷키>.mp4 로 옮기고, jpg 3장은 a·b·c 로 assets/flow/rainbow/thumb/ 에 옮겨줘. 헷갈리는 파일은 ffmpeg 로 한 프레임 뽑아서 보고 판단해. 결과를 지어내지 말고, 옮긴 개수와 빠진 컷이 있으면 어떤 키인지만 표로 보여주고 멈춰 — 재제출은 내가 판단할게.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="5-3" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, 편 키 rainbow 에서 방금 빠졌다고 보고한 컷들만 같은 Flow 프로젝트에 다시 제출해줘. 어떤 컷이 빠졌는지는 위 보고 내용을 그대로 쓰고 새로 지어내지 마. 재제출한 컷 키 목록을 표로 보여주고 멈춰 — 받기는 3~5분 뒤 내가 다시 시킬게.
+
+</div>
+</div>
+
+**사람이 확인해야 할 체크포인트**: 정리된 파일 개수가 실제로 11개(+ 썸네일 3장)인지, Claude가 "빠진 컷 없음"이라 보고해도 `assets/flow/rainbow/` 폴더를 직접 열어 개수를 셉니다.
 
 ## 오늘의 체크리스트
 

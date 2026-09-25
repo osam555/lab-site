@@ -55,11 +55,17 @@ python3 scripts/new_episode.py volcano --word "화산"
 
 전체를 손으로 쓰기보다, 소재를 주고 Claude Code 가 구조에 맞춰 초안을 뽑게 한 뒤 사실만 검토하는 게 빠릅니다.
 
+순서:
+
+1. 어디서: 키트 폴더에서 Claude Code 를 엽니다. `new_episode.py` 로 뼈대를 미리 만들어둡니다.
+2. 7-1을 붙여 넣어 대본을 채우고, 원리 설명이 사실과 맞는지 내가 직접 읽습니다.
+3. 대본이 확정되면 7-2를 붙여 넣어 컷 계획을 씁니다.
+
 <div class="prompt-box not-prose" data-prompt="7-1" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-data/longform/volcano.json 의 script_v2 를 채워줘. 주제는 "화산은 왜 터질까", 키워드는 마그마·분화구·용암·화산재 네 개. 이 과정 7강의 대본 구조(훅→반응→전환→핵심→키워드 4개→반전→복습→콜백, 23~28줄)를 그대로 따르고, 화자 태그 [[child]]/[[adult]]/[[friend]] 를 붙여줘. script_v2.cards 에 키워드 4개의 카드도 같이 채워줘. 사실 관계(화산 폭발 원리)는 내가 따로 검토할 테니 단정적인 의학·안전 약속 문구는 넣지 마.
+clay-episode 스킬을 읽고, data/longform/volcano.json 의 script_v2 를 채워줘. 주제는 "화산은 왜 터질까", 키워드는 마그마·분화구·용암·화산재 네 개. 대본은 훅→반응→전환→핵심→키워드 4개→반전→복습→콜백 순서(23~28줄)로 쓰고, 화자 태그 [[child]]/[[adult]]/[[friend]] 를 붙여줘. script_v2.cards 에 키워드 4개의 카드도 같이 채워줘. 단정적인 의학·안전 약속 문구는 넣지 마. 다 쓰면 대본 전체를 보여주고 멈춰 — 사실 관계(화산 폭발 원리)는 내가 직접 검토한 뒤 컷 계획은 따로 시킬게.
 
 </div>
 </div>
@@ -104,13 +110,13 @@ map={**dict.fromkeys(range(1,3), 'Nvo_ask'), **dict.fromkeys(range(5,7), 'Nvo_ma
 
 ## 이 강에서 스킬 쓰기
 
-이 단계는 SKILL.md **§1(대본 쓰기)**과 **§2(컷 계획 쓰기)**를 내 주제에 그대로 적용하는 것입니다. 4강에서는 이미 쓰인 예시 계획을 검사만 했지만, 이번에는 계획 자체를 만듭니다.
+이 단계는 clay-episode 스킬의 "대본 쓰기"와 "컷 계획 쓰기" 절을 내 주제에 그대로 적용하는 것입니다. 4강에서는 이미 쓰인 예시 계획을 검사만 했지만, 이번에는 계획 자체를 만듭니다.
 
 <div class="prompt-box not-prose" data-prompt="7-2" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-/clay-episode 로 SKILL.md §2 절차대로, volcano 편의 PLANS 블록을 scripts/top10_plan.py 에 추가해줘. PLANS['rainbow'] 를 참고 패턴으로 쓰되 volcano 대본에 맞게 컷 10~12개를 새로 짜고, 사람 나오는 컷은 반드시 {C2}/{MP}/{F2} 같은 kit.config.json 상수로만 묘사해(직접 "a boy" 식으로 쓰지 마). 다 쓴 다음 top10_plan.py→cutplan_check.py 를 돌려서 10.0점 나올 때까지 반복해줘.
+clay-episode 스킬을 읽고, 편 키 volcano 의 컷 계획(PLANS 블록)을 scripts/top10_plan.py 에 추가해줘. 기존 PLANS['rainbow'] 를 참고 패턴으로 쓰되 volcano 대본에 맞게 컷 10~12개를 새로 짜고, 사람이 나오는 컷은 반드시 {C2}/{MP}/{F2} 같은 kit.config.json 의 캐릭터 상수로만 묘사해(직접 "a boy" 식으로 쓰지 마). 다 쓴 다음 top10_plan.py→cutplan_check.py 를 돌려서 10.0점 나올 때까지 반복해줘. 점수를 지어내지 말고 스크립트 출력 그대로 알려줘. "10.0점 통과"가 나오면 멈춰 — 다음 단계(Flow 제출)는 내가 시킬게.
 
 </div>
 </div>

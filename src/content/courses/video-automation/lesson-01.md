@@ -78,11 +78,17 @@ part: 1부 · 준비
 
 이 키트에는 Claude Code 스킬(`skills/clay-episode/SKILL.md`)이 딸려 있습니다. 2강에서 내 프로젝트에 설치하고, 이후 강부터는 대화 대신 스킬을 불러 그 단계만 시킵니다. 이번 강은 설치 전이니 **설명만 시켜서 전체 그림을 확인**해 봅니다.
 
+순서:
+
+1. 어디서: 터미널에서 clay-episode-kit 저장소 폴더로 이동해 Claude Code 를 엽니다(아직 설치 전이라 이 폴더 안에서만 읽습니다).
+2. 아래 프롬프트를 붙여 넣고 엔터.
+3. Claude 가 6단계 표를 보여주면, 이번 강 앞부분의 표와 직접 대조합니다.
+
 <div class="prompt-box not-prose" data-prompt="1-1" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode-kit 저장소를 열어서 skills/clay-episode/SKILL.md 를 읽고, 대본→더빙→컷 계획→Flow 생성→조립→검사→업로드 6단계를 표로 요약해줘. 아직 설치는 하지 마.
+clay-episode 스킬(이 영상 자동화 키트의 설명서 파일, skills/clay-episode/SKILL.md)을 읽고, 이 키트가 대본→더빙→컷 계획→Flow(구글의 영상 생성 서비스) 생성→조립→검사→업로드의 6단계를 어떻게 거치는지 표로 요약해줘. 표는 단계 이름·하는 일·쓰는 도구 세 칸으로 보여줘. 아직 아무것도 설치하거나 실행하지 말고 설명만 해줘 — 여기까지만 하고 멈춰, 설치는 다음 강에서 내가 직접 시킬게.
 
 </div>
 </div>

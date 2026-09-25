@@ -196,13 +196,17 @@ cp skills/clay-episode/SKILL.md .claude/skills/clay-episode/SKILL.md
 ```
 :::
 
-복사가 끝나면 스킬에게 설치가 잘 됐는지 점검을 시킵니다. SKILL.md **§0(설치)** 절의 표와 실제 내 환경을 대조하는 단계입니다.
+복사가 끝났으면 Claude Code 에게 **설치 점검**을 시킵니다. 순서:
+
+1. 터미널에서 키트 폴더(`clay-episode-kit`)로 이동한 뒤 `claude` 를 쳐서 Claude Code 를 엽니다(데스크탑 앱이면 이 폴더를 열면 됩니다).
+2. 아래 프롬프트를 그대로 붙여 넣고 엔터.
+3. Claude 가 여섯 항목을 「있음/없음」 표로 보고합니다. 「없음」이 있으면 이 강의 해당 따라하기로 돌아가 설치합니다.
 
 <div class="prompt-box not-prose" data-prompt="2-1" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-/clay-episode 로 SKILL.md §0(설치)만 확인해줘 — python/node/ffmpeg 버전, .env.local 의 TYPECAST_API_KEY 존재 여부, FLOW_TAB 환경변수, wrangler 로그인 상태를 각각 있다/없다로만 보고해줘. 값 자체는 출력하지 말고.
+clay-episode 스킬을 읽고, 그 안의 "0. 설치" 표에 있는 준비물이 내 컴퓨터에 다 있는지 점검해줘. 확인할 것: (1) python 버전 3.12 이상, (2) node 버전 20 이상, (3) ffmpeg 실행 가능, (4) 프로젝트 폴더에 .env.local 파일이 있고 그 안에 TYPECAST_API_KEY 줄이 있는지, (5) FLOW_TAB 환경변수가 설정됐는지, (6) wrangler 가 로그인돼 있는지. 결과는 항목마다 「있음/없음 + 없으면 어떻게 설치하는지 한 줄」 표로만 보여줘. API 키나 탭 id 같은 값은 절대 화면에 출력하지 마.
 
 </div>
 </div>

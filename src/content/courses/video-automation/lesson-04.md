@@ -94,13 +94,19 @@ python3 scripts/cutplan_check.py rainbow
 
 ## 이 강에서 스킬 쓰기
 
-이 단계는 SKILL.md **B절(첫 편 30분 따라 하기)의 B-2~B-3**과 **§1(대본 쓰기)·§2(컷 계획 쓰기)**에 해당합니다. 예시 편은 컷 계획이 이미 있으니, 여기서는 검사 통과까지만 스킬에게 맡깁니다.
+이 단계는 clay-episode 스킬의 "첫 편 30분 따라 하기"와 "대본 쓰기·컷 계획 쓰기" 절에 해당합니다. 예시 편은 컷 계획이 이미 있으니, 여기서는 검사 통과까지만 스킬에게 맡깁니다.
+
+순서:
+
+1. 어디서: 키트 폴더(`clay-episode-kit`)에서 Claude Code 를 엽니다.
+2. 아래 프롬프트를 붙여 넣고 엔터.
+3. Claude 가 네 스크립트를 순서대로 돌리고 점수를 보고하면, 화면에 실제로 "10.0점 통과"가 찍혔는지 직접 확인합니다.
 
 <div class="prompt-box not-prose" data-prompt="4-1" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-/clay-episode 로 4단계(컷 계획)만 해줘 — 편 키 rainbow, cutplan_check 통과할 때까지. prepare_lines→bake_lines→top10_plan→cutplan_check 순서로 돌리고, ✗ 가 나오면 SKILL.md §2 의 표를 보고 고쳐서 다시 돌려. 값을 지어내지 말고 스크립트 출력만 보고 판단해.
+clay-episode 스킬을 읽고, 편 키 rainbow 의 컷 계획 검사만 통과시켜줘. prepare_lines→bake_lines→top10_plan→cutplan_check 스크립트를 순서대로 돌리고, ✗ 표시가 나오면 스킬 안의 검사 항목 표를 보고 원인을 고쳐서 다시 돌려. 값을 지어내지 말고 스크립트가 실제로 출력한 점수와 문장 수만 보고 판단해. cutplan_check 가 "10.0점 통과"를 출력하면 거기서 멈추고 결과를 보여줘 — 다음 단계(Flow 생성)는 내가 확인한 뒤 시킬게.
 
 </div>
 </div>
