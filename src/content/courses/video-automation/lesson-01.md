@@ -74,15 +74,17 @@ part: 1부 · 준비
 | **QA 게이트** | 자동 검사. 컷 계획과 완성 영상 둘 다 8.0점 이상이어야 다음 단계로 |
 | **큐·드레이너** | 업로드할 편을 텍스트 파일에 적어두면(큐) 스크립트가 순서대로 올리는(드레이너) 방식 |
 
-## 이 강에서 스킬 쓰기
+## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
 
-이 키트에는 Claude Code 스킬(`skills/clay-episode/SKILL.md`)이 딸려 있습니다. 2강에서 내 프로젝트에 설치하고, 이후 강부터는 대화 대신 스킬을 불러 그 단계만 시킵니다. 이번 강은 설치 전이니 **설명만 시켜서 전체 그림을 확인**해 봅니다.
+이 키트에는 Claude Code 스킬(`skills/clay-episode/SKILL.md`)이 딸려 있습니다. 2강에서 내 프로젝트에 설치하고, 이후 강부터는 대화 대신 스킬을 불러 그 단계만 시킵니다. 이번 강은 설치 전이니 **설명만 시켜서 전체 그림을 확인**해 봅니다. 이 스킬의 절차는 SKILL.md 의 §0(설치) → §A(내 프로젝트 만들기) → §B(첫 편 30분 따라 하기) 순서를 그대로 따릅니다. 2강부터는 이 절 번호를 그대로 언급하며 진행합니다.
 
-순서:
+### 프롬프트 1-1 · 6단계 설명만 듣기
 
-1. 어디서: 아직 키트를 내려받기 전이므로 아무 폴더에서나 Claude Code 를 엽니다(설명서를 GitHub 주소로 직접 읽게 합니다).
-2. 아래 프롬프트를 붙여 넣고 엔터.
-3. Claude 가 6단계 표를 보여주면, 이번 강 앞부분의 표와 직접 대조합니다.
+**① 준비 (사람이 먼저)**
+- [ ] 아직 키트를 내려받기 전이므로 아무 폴더에서나 Claude Code 를 엽니다
+- [ ] 인터넷 연결만 있으면 됩니다 — 설명서를 GitHub 원격 주소로 바로 읽게 시킵니다
+
+**② 스킬 (붙여 넣기)**
 
 <div class="prompt-box not-prose" data-prompt="1-1" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -93,9 +95,9 @@ https://raw.githubusercontent.com/osam555/clay-episode-kit/master/skills/clay-ep
 </div>
 </div>
 
-이 스킬의 절차는 SKILL.md 의 §0(설치) → §A(내 프로젝트 만들기) → §B(첫 편 30분 따라 하기) 순서를 그대로 따릅니다. 2강부터는 이 절 번호를 그대로 언급하며 진행합니다.
-
-**사람이 확인해야 할 체크포인트**: Claude가 요약한 6단계가 위 표와 실제로 일치하는지, 빠뜨린 단계가 없는지 직접 대조합니다.
+**③ 결과 확인**
+- [ ] Claude 가 단계 이름·하는 일·쓰는 도구 세 칸 표를 보여줬는지
+- [ ] **사람이 확인해야 할 체크포인트**: Claude가 요약한 6단계가 위 표와 실제로 일치하는지, 빠뜨린 단계가 없는지 직접 대조합니다.
 
 ## 오늘의 체크리스트
 

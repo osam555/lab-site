@@ -96,15 +96,18 @@ python3 scripts/drain_uploads.py
 | `TYPECAST_API_KEY` 없음 | `.env.local` 이 키트 폴더 바로 안에 없음(다른 폴더에서 실행했거나 파일 이름이 `.env.local.txt`) |
 | Aside 를 못 쓰는 환경 | `npm install && npx playwright install chromium` 후 Playwright 폴백(SKILL.md §8) — 탭 id 대신 URL 일부나 탭 번호를 씀 |
 
-## 이 강에서 스킬 쓰기
+## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
 
 이 단계는 clay-episode 스킬의 "여러 편을 싸게 만드는 요령" 절을 그대로 실천하는 것이고, 문제가 생기면 스킬 안의 "이럴 땐"과 "Aside 없이" 절을 참고합니다.
 
-순서:
+### 프롬프트 8-1 · 세 편 한꺼번에 제출
 
-1. 어디서: 키트 폴더에서 Claude Code 를 엽니다. volcano·ocean·star_sky 세 편 모두 컷 계획 검사(7강)를 통과한 상태여야 합니다.
-2. 8-1을 붙여 넣어 세 편의 영상·썸네일 제출을 한 번에 시키고, 프로젝트 URL 표를 확인합니다. Aside 창에서 다 찰 때까지 기다립니다.
-3. 8-2를 붙여 넣어 세 편을 한꺼번에 다운로드·정리시키고, 편마다 `assets/flow/<key>/` 폴더 파일 개수를 직접 세어 확인합니다.
+**① 준비 (사람이 먼저)**
+- [ ] 어디서: 키트 폴더에서 Claude Code 를 엽니다. Aside 창도 미리 띄워둡니다
+- [ ] volcano·ocean·star_sky 세 편 모두 컷 계획 검사(7강, "10.0점 통과")를 통과한 상태여야 합니다
+- [ ] Aside 앱이 켜져 있고 Flow 탭이 로그인돼 있는지 확인합니다
+
+**② 스킬 (붙여 넣기)**
 
 <div class="prompt-box not-prose" data-prompt="8-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -115,6 +118,18 @@ clay-episode 스킬을 읽고, volcano·ocean·star_sky 세 편을 한꺼번에 
 </div>
 </div>
 
+**③ 결과 확인**
+- [ ] 편마다 나온 프로젝트 URL(영상·썸네일) 표를 확인합니다
+- [ ] Aside 창에서 세 편 타일이 다 찰 때까지 기다립니다
+
+### 프롬프트 8-2 · 세 편 한꺼번에 받기·정리
+
+**① 준비 (사람이 먼저)**
+- [ ] 8-1 제출이 끝나고 Aside 창의 타일이 다 찼어야 합니다
+- [ ] `scratch/flow_tools/flow_projects.txt` 에 세 편의 프로젝트 URL 줄이 있는지 확인합니다
+
+**② 스킬 (붙여 넣기)**
+
 <div class="prompt-box not-prose" data-prompt="8-2" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
@@ -124,7 +139,9 @@ clay-episode 스킬을 읽고, volcano·ocean·star_sky 세 편의 Flow 프로�
 </div>
 </div>
 
-**사람이 확인해야 할 체크포인트**: Claude가 "N편 모두 완료"라고 요약 보고해도, 실제로 `assets/flow/<key>/` 폴더별 파일 개수와 `qa_gate` 점수를 편마다 직접 한 번씩 훑어봅니다 — 묶어서 처리할수록 중간에 조용히 빠진 편을 놓치기 쉽습니다.
+**③ 결과 확인**
+- [ ] 편마다 `assets/flow/<key>/` 폴더 파일 개수를 직접 세어 확인합니다
+- [ ] **사람이 확인해야 할 체크포인트**: Claude가 "N편 모두 완료"라고 요약 보고해도, 실제로 `assets/flow/<key>/` 폴더별 파일 개수와 `qa_gate` 점수를 편마다 직접 한 번씩 훑어봅니다 — 묶어서 처리할수록 중간에 조용히 빠진 편을 놓치기 쉽습니다.
 
 ## 마지막 체크리스트
 

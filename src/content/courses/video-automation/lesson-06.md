@@ -96,15 +96,18 @@ python3 scripts/drain_uploads.py
 
 Aside 의 Studio 탭이 움직이며 제목·설명·태그·재생목록·공개까지 눌러 줍니다. 끝날 때까지 창을 켜둡니다. 유튜브는 **채널당 하루 업로드 한도**(대략 20~25건)가 있어, 걸리면 드레이너가 그 채널을 건너뛰고 남은 줄을 큐에 두니 다음 날 다시 실행합니다. 업로드된 ID 는 편 JSON(`data/longform/rainbow.json`)의 `yt`, `hook_short.yt` 에 기록됩니다.
 
-## 이 강에서 스킬 쓰기
+## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
 
 이 단계는 clay-episode 스킬의 "썸네일·조립·검사"와 "올리기" 절에 해당합니다. 조립·검사를 먼저 시키고 사람이 시트를 확인한 뒤에, 업로드는 별도 프롬프트로 따로 시킵니다.
 
-순서:
+### 프롬프트 6-1 · 썸네일·조립·검사
 
-1. 어디서: 키트 폴더에서 Claude Code 를 엽니다.
-2. 6-1을 붙여 넣어 썸네일·조립·검사까지 시키고, Claude 가 알려준 시트 경로의 이미지를 직접 엽니다.
-3. 시트가 문제없으면 6-2를 붙여 넣어 큐에 넣고 업로드까지 시킵니다.
+**① 준비 (사람이 먼저)**
+- [ ] 어디서: 키트 폴더에서 Claude Code 를 엽니다
+- [ ] 5강에서 `assets/flow/rainbow/` 에 컷 11개, `thumb/` 에 a·b·c 3장이 모두 있어야 합니다
+- [ ] 조립에 5~10분이 걸리니 그동안 다른 일을 하려면 미리 계획해 둡니다
+
+**② 스킬 (붙여 넣기)**
 
 <div class="prompt-box not-prose" data-prompt="6-1" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -115,6 +118,20 @@ clay-episode 스킬을 읽고, 편 키 rainbow 의 썸네일을 만들고 롱폼
 </div>
 </div>
 
+**③ 결과 확인**
+- [ ] 썸네일 3장 모두 "PASS", `qa_gate` 점수가 8.0 이상인지 스크립트 출력을 직접 봅니다
+- [ ] Claude 가 알려준 시트 경로(`scratch/flow_tools/rainbow_sheet.jpg`)의 이미지를 직접 엽니다
+- [ ] **사람이 확인해야 할 체크포인트**: 시트의 4가지 체크포인트(가짜 글자·어두운 장면·카드 가림·인물 일관성)는 스킬이 대신 판단하지 않게 하고, 반드시 사람이 이미지를 직접 봅니다.
+
+### 프롬프트 6-2 · 업로드
+
+**① 준비 (사람이 먼저)**
+- [ ] 6-1 의 시트를 직접 눈으로 확인해 문제가 없어야 합니다
+- [ ] Aside 앱의 Studio 탭이 로그인돼 있는지 확인합니다
+- [ ] 업로드는 공개로 가는 되돌리기 어려운 단계이므로, 제목·설명 방향을 미리 생각해 둡니다
+
+**② 스킬 (붙여 넣기)**
+
 <div class="prompt-box not-prose" data-prompt="6-2" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
@@ -124,7 +141,10 @@ clay-episode 스킬을 읽고, 편 키 rainbow 를 업로드해줘. prep_more.py
 </div>
 </div>
 
-**사람이 확인해야 할 체크포인트**: 시트의 4가지 체크포인트(가짜 글자·어두운 장면·카드 가림·인물 일관성)는 스킬이 대신 판단하지 않게 하고, 반드시 사람이 이미지를 직접 봅니다. 업로드는 공개 상태로 가는 되돌리기 어려운 단계이니, 큐에 넣기 전에 제목·설명이 맞는지 `yt_meta.json` 을 눈으로 확인합니다.
+**③ 결과 확인**
+- [ ] `yt_meta.json` 의 제목·설명·태그를 눈으로 확인합니다(큐에 넣기 전)
+- [ ] `drain_uploads` 가 끝난 뒤 편 JSON(`data/longform/rainbow.json`)에 유튜브 영상 ID 가 기록됐는지 확인합니다
+- [ ] **사람이 확인해야 할 체크포인트**: 업로드는 공개 상태로 가는 되돌리기 어려운 단계이니, 큐에 넣기 전에 제목·설명이 맞는지 `yt_meta.json` 을 눈으로 확인합니다.
 
 ## 오늘의 체크리스트
 

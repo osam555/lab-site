@@ -51,26 +51,7 @@ python3 scripts/new_episode.py volcano --word "화산"
 { "line": 7, "title": "마그마", "subtitle": "땅속 녹은 돌이에요" }
 ```
 
-## 따라하기 2: 대본·컷 계획을 Claude 에게 시키기
-
-전체를 손으로 쓰기보다, 소재를 주고 Claude Code 가 구조에 맞춰 초안을 뽑게 한 뒤 사실만 검토하는 게 빠릅니다.
-
-순서:
-
-1. 어디서: 키트 폴더에서 Claude Code 를 엽니다. `new_episode.py` 로 뼈대를 미리 만들어둡니다.
-2. 7-1을 붙여 넣어 대본을 채우고, 원리 설명이 사실과 맞는지 내가 직접 읽습니다.
-3. 대본이 확정되면 7-2를 붙여 넣어 컷 계획을 씁니다.
-
-<div class="prompt-box not-prose" data-prompt="7-1" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-clay-episode 스킬을 읽고, data/longform/volcano.json 의 script_v2 를 채워줘. 주제는 "화산은 왜 터질까", 키워드는 마그마·분화구·용암·화산재 네 개. 대본은 훅→반응→전환→핵심→키워드 4개→반전→복습→콜백 순서(23~28줄)로 쓰고, 화자 태그 [[child]]/[[adult]]/[[friend]] 를 붙여줘. script_v2.cards 에 키워드 4개의 카드도 같이 채워줘. 단정적인 의학·안전 약속 문구는 넣지 마. 다 쓰면 대본 전체를 보여주고 멈춰 — 사실 관계(화산 폭발 원리)는 내가 직접 검토한 뒤 컷 계획은 따로 시킬게.
-
-</div>
-</div>
-
-## 따라하기 3: 컷 계획 — PLANS 블록
+## 따라하기 2: 컷 계획 — PLANS 블록
 
 `scripts/top10_plan.py` 를 열어 `def build` 바로 위에 `PLANS['volcano'] = dict(new={...}, map={...}, thumb=TH(...))` 블록을 추가합니다. `PLANS['rainbow']`(4강에서 쓴 예시 블록)를 복사해서 고치는 게 가장 빠릅니다.
 
@@ -108,9 +89,39 @@ map={**dict.fromkeys(range(1,3), 'Nvo_ask'), **dict.fromkeys(range(5,7), 'Nvo_ma
 
 한자 어원 편을 만들 때만 `kit.config.json` 의 `topic.kind` 를 `"hanja"` 로 바꿉니다. 카드는 `["漢字", "훈음"]` 형태, 대본 4번 자리에 「글자 풀이 — …라고 풀어요」 1~2줄이 들어가고, 썸네일 `panel` 은 `['漢字', '한글음', 'right']` 가 됩니다. `examples/sample_episode.json` 이 그 예시이고, 나머지 절차는 지금까지와 같습니다.
 
-## 이 강에서 스킬 쓰기
+## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
 
-이 단계는 clay-episode 스킬의 "대본 쓰기"와 "컷 계획 쓰기" 절을 내 주제에 그대로 적용하는 것입니다. 4강에서는 이미 쓰인 예시 계획을 검사만 했지만, 이번에는 계획 자체를 만듭니다.
+이 단계는 clay-episode 스킬의 "대본 쓰기"와 "컷 계획 쓰기" 절을 내 주제에 그대로 적용하는 것입니다. 전체를 손으로 쓰기보다, 소재를 주고 Claude Code 가 구조에 맞춰 초안을 뽑게 한 뒤 사실만 검토하는 게 빠릅니다. 4강에서는 이미 쓰인 예시 계획을 검사만 했지만, 이번에는 대본과 계획 자체를 만듭니다.
+
+### 프롬프트 7-1 · 대본 채우기
+
+**① 준비 (사람이 먼저)**
+- [ ] 어디서: 키트 폴더에서 Claude Code 를 엽니다
+- [ ] `new_episode.py` 로 뼈대를 미리 만들어둡니다(따라하기 1)
+- [ ] 주제·키워드를 미리 정해 둡니다(예: 화산 / 마그마·분화구·용암·화산재)
+
+**② 스킬 (붙여 넣기)**
+
+<div class="prompt-box not-prose" data-prompt="7-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, data/longform/volcano.json 의 script_v2 를 채워줘. 주제는 "화산은 왜 터질까", 키워드는 마그마·분화구·용암·화산재 네 개. 대본은 훅→반응→전환→핵심→키워드 4개→반전→복습→콜백 순서(23~28줄)로 쓰고, 화자 태그 [[child]]/[[adult]]/[[friend]] 를 붙여줘. script_v2.cards 에 키워드 4개의 카드도 같이 채워줘. 단정적인 의학·안전 약속 문구는 넣지 마. 다 쓰면 대본 전체를 보여주고 멈춰 — 사실 관계(화산 폭발 원리)는 내가 직접 검토한 뒤 컷 계획은 따로 시킬게.
+
+</div>
+</div>
+
+**③ 결과 확인**
+- [ ] 대본이 훅→반응→전환→핵심→키워드 4개→반전→복습→콜백 8단계 구조를 따르는지
+- [ ] **사람이 확인해야 할 체크포인트**: 원리 설명(예: 화산 폭발 원리)이 사실과 맞는지 내가 직접 읽고 검토합니다 — 컷 계획은 대본이 확정된 뒤 7-2 로 따로 시킵니다.
+
+### 프롬프트 7-2 · 컷 계획(PLANS 블록) 쓰기
+
+**① 준비 (사람이 먼저)**
+- [ ] 7-1 의 대본이 확정돼 있어야 합니다(사실 검토 완료)
+- [ ] 어디서: 키트 폴더에서 Claude Code 를 엽니다
+
+**② 스킬 (붙여 넣기)**
 
 <div class="prompt-box not-prose" data-prompt="7-2" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -121,7 +132,9 @@ clay-episode 스킬을 읽고, 편 키 volcano 의 컷 계획(PLANS 블록)을 s
 </div>
 </div>
 
-**사람이 확인해야 할 체크포인트**: PLANS 블록의 `new` 딕셔너리에 사람 묘사가 `{C2}` 같은 상수가 아니라 직접 텍스트("a boy", "a girl")로 새어 들어가지 않았는지 코드를 눈으로 한 번 읽습니다 — `cutplan_check` 가 대부분 잡아내지만 애매한 표현은 통과할 수 있습니다.
+**③ 결과 확인**
+- [ ] `cutplan_check` 가 실제로 "10.0점 통과"를 출력했는지 화면을 직접 봅니다
+- [ ] **사람이 확인해야 할 체크포인트**: PLANS 블록의 `new` 딕셔너리에 사람 묘사가 `{C2}` 같은 상수가 아니라 직접 텍스트("a boy", "a girl")로 새어 들어가지 않았는지 코드를 눈으로 한 번 읽습니다 — `cutplan_check` 가 대부분 잡아내지만 애매한 표현은 통과할 수 있습니다.
 
 ## 오늘의 체크리스트
 

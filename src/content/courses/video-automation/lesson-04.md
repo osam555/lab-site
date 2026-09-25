@@ -94,15 +94,18 @@ python3 scripts/cutplan_check.py rainbow
 
 ✗ 표시가 나오면 그 항목을 고치고 `top10_plan.py`→`cutplan_check.py` 를 다시 돌립니다. **여기서 걸리는 걸 그대로 Flow 에 보내면 크레딧만 날립니다** — 컷 하나가 10크레딧입니다.
 
-## 이 강에서 스킬 쓰기
+## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
 
 이 단계는 clay-episode 스킬의 "첫 편 30분 따라 하기"와 "대본 쓰기·컷 계획 쓰기" 절에 해당합니다. 예시 편은 컷 계획이 이미 있으니, 여기서는 검사 통과까지만 스킬에게 맡깁니다.
 
-순서:
+### 프롬프트 4-1 · 대본→더빙→컷 계획 검사 통과
 
-1. 어디서: 키트 폴더(`clay-episode-kit`)에서 Claude Code 를 엽니다.
-2. 아래 프롬프트를 붙여 넣고 엔터.
-3. Claude 가 네 스크립트를 순서대로 돌리고 점수를 보고하면, 화면에 실제로 "10.0점 통과"가 찍혔는지 직접 확인합니다.
+**① 준비 (사람이 먼저)**
+- [ ] 어디서: 키트 폴더(`clay-episode-kit`)에서 Claude Code 를 엽니다
+- [ ] `.env.local` 에 Typecast 키가 있고 `ESBUILD` 환경변수가 살아 있어야 합니다(2강)
+- [ ] `data/longform/rainbow.json` 이 만들어져 있어야 합니다(따라하기 1)
+
+**② 스킬 (붙여 넣기)**
 
 <div class="prompt-box not-prose" data-prompt="4-1" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -113,7 +116,10 @@ clay-episode 스킬을 읽고, 편 키 rainbow 의 컷 계획 검사만 통과�
 </div>
 </div>
 
-**사람이 확인해야 할 체크포인트**: `bake_lines` 마지막 줄의 문장 수가 대본 줄 수(24)와 정확히 같은지, `cutplan_check` 가 실제로 "10.0점 통과"를 출력했는지 화면을 직접 봅니다 — 스킬의 보고만 믿지 않습니다.
+**③ 결과 확인**
+- [ ] Claude 가 네 스크립트를 순서대로 돌리고 점수·문장 수를 보고했는지
+- [ ] `bake_lines` 마지막 줄의 문장 수가 대본 줄 수(24)와 정확히 같은지 화면에서 직접 봅니다
+- [ ] **사람이 확인해야 할 체크포인트**: `cutplan_check` 가 실제로 "10.0점 통과"를 출력했는지 화면을 직접 봅니다 — 스킬의 보고만 믿지 않습니다.
 
 ## 오늘의 체크리스트
 

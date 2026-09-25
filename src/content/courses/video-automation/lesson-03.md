@@ -89,47 +89,61 @@ python3 scripts/new_project.py --defaults
 
 기본값 `"generic"` 그대로 둡니다. 한자 어원 편을 만들 때만 `"hanja"` 로 바꿉니다(7강 마지막 절).
 
-## 이 강에서 스킬 쓰기
+## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
 
-캐릭터 문구는 영어로 직접 쓰기 까다로우니 스킬에게 초안을 시킵니다. clay-episode 스킬의 "내 프로젝트 만들기" 절에 있는 "꼭 손볼 다섯 칸" 안내를 그대로 따르는 단계입니다.
+이 절은 clay-episode 스킬의 "내 프로젝트 만들기" 절에 있는 "꼭 손볼 다섯 칸" 안내를 그대로 따릅니다. `channels`·`storage` 같은 계정 연결 칸을 먼저 채우고, 그다음 캐릭터 문구를 다듬습니다.
 
-순서:
-
-1. 어디서: 내 프로젝트 폴더(kit.config.json 이 있는 곳)에서 Claude Code 를 엽니다.
-2. 아래 프롬프트를 붙여 넣고 엔터.
-3. Claude 가 characters 세 칸을 고친 내용을 보여주면, 옷 색·머리 모양이 인물마다 겹치지 않는지 직접 읽습니다.
-
-<div class="prompt-box not-prose" data-prompt="3-1" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-clay-episode 스킬을 읽고, kit.config.json 의 characters(등장인물 생김새) 칸을 내 채널용으로 바꿔줘. 아이는 노란 우비를 입은 단발머리 여자아이, 엄마는 하늘색 앞치마, 친구는 초록 모자 쓴 남자아이로 하고, 옷 색·머리·피부색이 서로 안 겹치게 영어 한 줄씩으로 써줘. 키(C2·MP·F2)는 그대로 두고 값만 바꿔줘. 다 바꾸면 세 줄을 표로 보여줘 — 여기까지만 하고 멈춰, 다음 칸(brand·channels)은 내가 직접 확인한 뒤 시킬게.
-
-</div>
-</div>
-
-**사람이 확인해야 할 체크포인트**: 캐릭터 세 명(또는 그 이상)의 옷 색·머리 모양이 서로 겹치지 않는지 문장을 직접 읽고 확인합니다 — 겹치면 5강에서 인물이 서로 섞여 나옵니다.
-
-## 계정 연결·설정을 Claude 에게 맡기기
+### 프롬프트 3-1 · 계정 연결·설정을 Claude 에게 맡기기
 
 `channels`(탭 id·채널 ID)·`storage`(R2 버킷·공개 주소)는 손으로 옮겨 적다 틀리기 쉽습니다. Aside 와 wrangler 에 로그인만 돼 있으면 Claude 가 읽어서 채웁니다.
 
-순서:
+**① 준비 (사람이 먼저)**
+- [ ] 어디서: 키트 폴더에서 Claude Code 를 엽니다
+- [ ] Aside 앱에 Flow·Studio 탭이 로그인된 채 열려 있어야 합니다(2강)
+- [ ] R2 버킷 이름, 만들고 싶은 채널 이름을 미리 정해 둡니다(아래 프롬프트의 `<버킷 이름>`·`<내 채널 이름>` 자리)
+- [ ] `npx wrangler login` 이 끝나 있어야 합니다(2강)
 
-1. 어디서: 키트 폴더에서 Claude Code 를 엽니다. Aside 앱에 Flow·Studio 탭이 로그인된 채 열려 있어야 합니다.
-2. 아래 프롬프트에서 `<버킷 이름>`·`<내 채널 이름>` 두 곳을 내 것으로 바꿔 붙여 넣습니다.
-3. Claude 가 보여 주는 설정 요약 표에서 채널 ID(UC…)가 내 채널이 맞는지 확인합니다.
+**② 스킬 (붙여 넣기)**
 
-<div class="prompt-box not-prose" data-prompt="3-2" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+아래 프롬프트에서 `<버킷 이름>`·`<내 채널 이름>` 두 곳을 내 것으로 바꿔 붙여 넣습니다.
+
+<div class="prompt-box not-prose" data-prompt="3-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode 스킬을 읽고 kit.config.json 을 채워줘. (1) aside repl 로 지금 열린 탭 목록을 읽어서 flow.google.com 탭 id 를 FLOW_TAB 환경변수로 영구 저장(Windows setx, mac ~/.zshrc)하고, studio.youtube.com 탭 id 를 channels.main.studio_tab_hint 에, 그 탭 주소에 있는 UC 로 시작하는 채널 ID 를 channels.main.channel_id 에 적어. (2) npx wrangler 가 로그인돼 있는지 확인하고(안 돼 있으면 로그인 명령을 알려 주고 기다려), wrangler r2 bucket create <버킷 이름> 으로 버킷을 만들고 wrangler r2 bucket dev-url enable <버킷 이름> 으로 공개 주소를 켠 다음 storage 칸에 r2_bucket·r2_prefix(episodes)·media_base_url(공개주소/episodes)을 채워. (3) 없는 칸은 python scripts/new_project.py --defaults 로 만들고 brand.name 은 "<내 채널 이름>" 으로 해. (4) 끝나면 kit.config.json 을 표로 요약하되 탭 id 와 키 값은 가려서 보여줘. characters 칸은 건드리지 마 — 그건 3-1 로 내가 따로 시킬게.
+clay-episode 스킬을 읽고 kit.config.json 을 채워줘. (1) aside repl 로 지금 열린 탭 목록을 읽어서 flow.google.com 탭 id 를 FLOW_TAB 환경변수로 영구 저장(Windows setx, mac ~/.zshrc)하고, studio.youtube.com 탭 id 를 channels.main.studio_tab_hint 에, 그 탭 주소에 있는 UC 로 시작하는 채널 ID 를 channels.main.channel_id 에 적어. (2) npx wrangler 가 로그인돼 있는지 확인하고(안 돼 있으면 로그인 명령을 알려 주고 기다려), wrangler r2 bucket create <버킷 이름> 으로 버킷을 만들고 wrangler r2 bucket dev-url enable <버킷 이름> 으로 공개 주소를 켠 다음 storage 칸에 r2_bucket·r2_prefix(episodes)·media_base_url(공개주소/episodes)을 채워. (3) 없는 칸은 python scripts/new_project.py --defaults 로 만들고 brand.name 은 "<내 채널 이름>" 으로 해. (4) 끝나면 kit.config.json 을 표로 요약하되 탭 id 와 키 값은 가려서 보여줘. characters 칸은 건드리지 마 — 그건 3-2 로 내가 따로 시킬게.
 
 </div>
 </div>
 
-**사람이 확인해야 할 체크포인트**: 요약 표의 `channel_id` 가 내 채널의 UC… 와 같은지(YouTube Studio → 설정 → 채널 → 고급 설정), `media_base_url` 이 `https://pub-….r2.dev/episodes` 꼴인지 봅니다. `dev-url enable` 이 거부되면 2강 따라하기 4의 4번을 대시보드에서 손으로 합니다.
+**③ 결과 확인**
+- [ ] 요약 표의 `channel_id` 가 내 채널의 UC… 와 같은지(YouTube Studio → 설정 → 채널 → 고급 설정)
+- [ ] `media_base_url` 이 `https://pub-….r2.dev/episodes` 꼴인지 — `dev-url enable` 이 거부되면 2강 따라하기 4의 4번을 대시보드에서 손으로 합니다
+- [ ] **사람이 확인해야 할 체크포인트**: 위 두 값을 직접 눈으로 대조합니다.
+
+### 프롬프트 3-2 · 캐릭터 생김새 채우기
+
+캐릭터 문구는 영어로 직접 쓰기 까다로우니 스킬에게 초안을 시킵니다.
+
+**① 준비 (사람이 먼저)**
+- [ ] 어디서: 내 프로젝트 폴더(kit.config.json 이 있는 곳)에서 Claude Code 를 엽니다
+- [ ] 3-1 이 끝나 있어야 합니다(channels·storage 칸)
+- [ ] 아이·엄마·친구의 옷 색·특징을 미리 한두 마디로 정해 둡니다
+
+**② 스킬 (붙여 넣기)**
+
+<div class="prompt-box not-prose" data-prompt="3-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, kit.config.json 의 characters(등장인물 생김새) 칸을 내 채널용으로 바꿔줘. 아이는 노란 우비를 입은 단발머리 여자아이, 엄마는 하늘색 앞치마, 친구는 초록 모자 쓴 남자아이로 하고, 옷 색·머리·피부색이 서로 안 겹치게 영어 한 줄씩으로 써줘. 키(C2·MP·F2)는 그대로 두고 값만 바꿔줘. 다 바꾸면 세 줄을 표로 보여줘 — 여기까지만 하고 멈춰, 다음 칸은 내가 직접 확인한 뒤 시킬게.
+
+</div>
+</div>
+
+**③ 결과 확인**
+- [ ] Claude 가 characters 세 칸을 고친 내용을 표로 보여줬는지
+- [ ] **사람이 확인해야 할 체크포인트**: 캐릭터 세 명(또는 그 이상)의 옷 색·머리 모양이 서로 겹치지 않는지 문장을 직접 읽고 확인합니다 — 겹치면 5강에서 인물이 서로 섞여 나옵니다.
 
 ## 오늘의 체크리스트
 

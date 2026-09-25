@@ -91,15 +91,19 @@ ffmpeg -i in.mp4 -vf "crop=iw*0.68:ih*0.68:(iw-iw*0.68)/2:ih-ih*0.68,scale=1280:
 ```
 :::
 
-## 이 강에서 스킬 쓰기
+## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
 
 이 단계는 clay-episode 스킬의 "Flow 생성"과 "받기·정리" 절에 해당합니다. 제출→대기→다운로드·정리→(필요하면) 재제출 순서로, 아래 세 프롬프트를 하나씩 붙여 넣습니다.
 
-순서:
+### 프롬프트 5-1 · Flow 에 제출
 
-1. 어디서: 키트 폴더에서 Claude Code 를 엽니다. Aside 창도 미리 띄워둡니다.
-2. 5-1을 붙여 넣고, Claude 가 프로젝트 URL 을 보고하면 멈춥니다. Aside 창에서 타일이 다 찰 때까지(3~5분) 기다립니다.
-3. 5-2를 붙여 넣어 받기·정리를 시키고, 개수를 직접 폴더에서 셉니다. 빠진 컷이 있으면 5-3을 붙여 넣습니다.
+**① 준비 (사람이 먼저)**
+- [ ] 어디서: 키트 폴더에서 Claude Code 를 엽니다. Aside 창도 미리 띄워둡니다
+- [ ] Aside 앱이 켜져 있고 Flow 탭이 로그인돼 있는지 확인합니다
+- [ ] `FLOW_TAB` 환경변수가 살아 있어야 합니다(Aside 를 다시 켰다면 2강 따라하기 2의 명령으로 탭 id 를 다시 읽습니다)
+- [ ] 4강의 컷 계획 검사("10.0점 통과")가 끝나 있어야 합니다
+
+**② 스킬 (붙여 넣기)**
 
 <div class="prompt-box not-prose" data-prompt="5-1" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -110,6 +114,18 @@ clay-episode 스킬을 읽고, 편 키 rainbow 의 영상 컷 11개와 썸네일
 </div>
 </div>
 
+**③ 결과 확인**
+- [ ] Claude 가 두 프로젝트 URL 을 스크립트 출력 그대로 보여줬는지
+- [ ] Aside 창에서 타일이 다 찰 때까지(3~5분) 기다립니다
+
+### 프롬프트 5-2 · 받기·정리
+
+**① 준비 (사람이 먼저)**
+- [ ] 5-1 제출이 끝나고 Aside 창의 타일이 다 찼어야 합니다(3~5분 대기)
+- [ ] `scratch/flow_tools/flow_projects.txt` 에 rainbow·rainbow_thumbs 줄이 있는지 확인합니다
+
+**② 스킬 (붙여 넣기)**
+
 <div class="prompt-box not-prose" data-prompt="5-2" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
@@ -118,6 +134,19 @@ clay-episode 스킬을 읽고, 편 키 rainbow 의 두 Flow 프로젝트(영상�
 
 </div>
 </div>
+
+**③ 결과 확인**
+- [ ] 정리된 파일 개수가 실제로 11개(+ 썸네일 3장)인지, `assets/flow/rainbow/` 폴더를 직접 열어 개수를 셉니다
+- [ ] 빠진 컷이 있으면 어떤 컷 키인지 표를 확인하고, 있으면 5-3 으로 넘어갑니다
+- [ ] **사람이 확인해야 할 체크포인트**: Claude가 "빠진 컷 없음"이라 보고해도 폴더를 직접 열어 개수를 셉니다.
+
+### 프롬프트 5-3 · 빠진 컷 재제출
+
+**① 준비 (사람이 먼저)**
+- [ ] 5-2 의 결과 표에서 빠진 컷 키를 확인해 둡니다(없으면 이 프롬프트는 건너뜁니다)
+- [ ] Aside 창의 Flow 탭이 여전히 열려 있어야 합니다
+
+**② 스킬 (붙여 넣기)**
 
 <div class="prompt-box not-prose" data-prompt="5-3" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -128,7 +157,9 @@ clay-episode 스킬을 읽고, 편 키 rainbow 에서 방금 빠졌다고 보고
 </div>
 </div>
 
-**사람이 확인해야 할 체크포인트**: 정리된 파일 개수가 실제로 11개(+ 썸네일 3장)인지, Claude가 "빠진 컷 없음"이라 보고해도 `assets/flow/rainbow/` 폴더를 직접 열어 개수를 셉니다.
+**③ 결과 확인**
+- [ ] 재제출한 컷 키 목록이 5-2 의 빠진 목록과 정확히 일치하는지
+- [ ] 3~5분 뒤 5-2 프롬프트를 다시 실행해 최종 개수를 확인합니다
 
 ## 오늘의 체크리스트
 
