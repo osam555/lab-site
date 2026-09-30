@@ -4,11 +4,12 @@ type TocPrompt = {
   id: string;
   seq: number;
   body: string;
-  level: "beginner" | "intermediate" | "advanced";
+  level: "required" | "beginner" | "intermediate" | "advanced";
   levelLabel: string;
 };
 
 const LEVEL_DOTS: Record<TocPrompt["level"], string> = {
+  required: "⭐",
   beginner: "🟢",
   intermediate: "🟡",
   advanced: "🔴",
