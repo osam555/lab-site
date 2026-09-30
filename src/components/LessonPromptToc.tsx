@@ -45,7 +45,7 @@ export function LessonPromptToc({
           const preview = p.body
             .replace(/\*\*/g, "")
             .replace(/\n/g, " ")
-            .slice(0, 50)
+            .slice(0, 150)
             .trim();
           return (
             <li key={p.id} className="prompt-toc-item">
@@ -58,7 +58,7 @@ export function LessonPromptToc({
                 <span className={`prompt-toc-level prompt-level-${p.level}`}>
                   {LEVEL_DOTS[p.level]} {p.levelLabel}
                 </span>
-                <span className="prompt-toc-preview">{preview}{p.body.length > 50 ? "…" : ""}</span>
+                <span className="prompt-toc-preview">{preview}{p.body.length > 150 ? "…" : ""}</span>
               </Link>
             </li>
           );
