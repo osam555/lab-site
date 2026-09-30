@@ -52,12 +52,13 @@ part: "1부 · 준비"
 
 비서가 백그라운드에서 알아서 기록을 남겨줄 것입니다.
 
-## 4. Vercel(버셀) 가입하고 배포 준비하기
+## 4. GitHub(깃허브) 가입 및 Vercel(버셀) 연결하기
 
-내 컴퓨터에만 있는 홈페이지를 전 세계 누구나 볼 수 있는 **진짜 인터넷 주소**로 만들어줄 차례입니다. 무료 서버를 제공하는 Vercel을 사용합니다.
+내 컴퓨터에만 있는 홈페이지를 전 세계 누구나 볼 수 있는 **진짜 인터넷 주소**로 만들어줄 차례입니다. 이를 위해 전 세계 개발자들의 필수품인 GitHub에 가입하고 무료 서버인 Vercel을 연결합니다.
 
-1. [vercel.com](https://vercel.com)에 접속해 **Sign Up**을 누르고 가입합니다.
-2. 가입 후 아래 프롬프트를 비서에게 전달하세요.
+1. **GitHub 가입:** [github.com](https://github.com)에 접속해 가입(Sign up)합니다. (❗**중요**: 앞서 Claude에 가입했던 **동일한 Gmail 계정**으로 가입해야 관리가 편합니다.)
+2. **Vercel 가입:** [vercel.com](https://vercel.com)에 접속해 **Sign Up**을 누르고, **'Continue with GitHub'** 버튼을 클릭해 방금 만든 깃허브 계정으로 연동 가입합니다.
+3. 가입을 마쳤다면 아래 프롬프트를 비서에게 전달하세요.
 
 <div class="prompt-box not-prose" data-prompt="0-3" data-level="required">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 0-3</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
