@@ -65,8 +65,8 @@ SNS: (인스타그램, 카카오채널 등)
 
 **프롬프트 예시:**
 
-<div class="prompt-box not-prose" data-prompt="4-1" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 index.html을 만들어줘. [가게이름] 홈페이지야. 한 페이지에 위에서 아래로:
@@ -124,8 +124,8 @@ SNS/링크: (GitHub, Behance, LinkedIn 등)
 
 **프롬프트 예시:**
 
-<div class="prompt-box not-prose" data-prompt="4-2" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="4-2" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 index.html을 만들어줘. [이름]의 포트폴리오 홈페이지야.
@@ -184,8 +184,8 @@ index.html을 만들어줘. [이름]의 포트폴리오 홈페이지야.
 
 **프롬프트 예시:**
 
-<div class="prompt-box not-prose" data-prompt="4-3" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="4-3" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-3</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 index.html을 만들어줘. [회사이름] 홈페이지야.
@@ -230,8 +230,8 @@ RSVP 연락처:
 
 **프롬프트 예시:**
 
-<div class="prompt-box not-prose" data-prompt="4-4" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-4</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="4-4" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-4</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 index.html을 만들어줘. [행사이름] 초대 페이지야.
@@ -271,8 +271,8 @@ index.html을 만들어줘. [행사이름] 초대 페이지야.
 
 **프롬프트 예시:**
 
-<div class="prompt-box not-prose" data-prompt="4-5" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-5</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="4-5" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-5</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 index.html을 만들어줘. "[사이트이름]" 블로그형 홈페이지야.
@@ -316,8 +316,8 @@ Claude Code는 대화가 끝나면 잊습니다. 그래서 프로젝트 폴더�
 
 앱 대화창에:
 
-<div class="prompt-box not-prose" data-prompt="4-7" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="4-7" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-7</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 CLAUDE.md 파일을 만들어줘. 내용은:

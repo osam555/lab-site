@@ -55,8 +55,8 @@ git branch -M main
 git push -u origin main
 ```
 
-<div class="prompt-box not-prose" data-prompt="8-1" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="8-1" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 `git remote add origin ...`은 내 폴더와 GitHub 창고를 처음 연결하는 명령입니다. 한 번만 합니다.

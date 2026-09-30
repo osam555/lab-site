@@ -9,11 +9,12 @@ export type CoursePrompt = {
   lessonTitle: string;
   lessonSlug: string;
   body: string;
-  level: "beginner" | "intermediate" | "advanced";
+  level: "required" | "beginner" | "intermediate" | "advanced";
   levelLabel: string;
 };
 
 const LEVEL_MAP: Record<string, { level: CoursePrompt["level"]; label: string }> = {
+  required: { level: "required", label: "필수" },
   beginner: { level: "beginner", label: "초급" },
   intermediate: { level: "intermediate", label: "중급" },
   advanced: { level: "advanced", label: "고급" },

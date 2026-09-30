@@ -1,61 +1,49 @@
 ---
 number: 3
 title: 앱 시작과 첫 대화
-subtitle: 폴더를 연결하고, Claude에게 처음으로 말을 겁니다
-goal: my-site 프로젝트 폴더를 만들고 Claude Code 앱에 연결해 첫 대화를 나눕니다. 앱 화면 구성을 익힙니다.
-minutes: 30
+subtitle: 홈페이지를 담을 빈 방을 만들고, AI에게 처음 말을 겁니다
+goal: my-site 프로젝트 폴더를 만들고 Claude Code 앱에 연결해 첫 대화를 나눕니다.
+minutes: 15
 part: 1부 · 준비
 ---
 
-## 앱 화면 구성
+## 1. 홈페이지 '빈 방' 만들기
 
-앱을 처음 열면 크게 세 영역으로 나뉩니다.
-
-```
-┌─────────────┬─────────────────────┬──────────────────┐
-│  파일 트리   │   대화창 (Claude)    │  미리보기 패널    │
-│  (왼쪽)     │   (가운데)           │  (오른쪽)        │
-│             │                     │                  │
-│ my-site/    │  > 여기에 요청 입력  │  홈페이지 화면   │
-│  index.html │                     │  실시간 표시     │
-│  style.css  │                     │                  │
-└─────────────┴─────────────────────┴──────────────────┘
-```
-
-- **파일 트리**: Claude Code가 만든 파일이 여기 나타납니다
-- **대화창**: 한국어로 원하는 것을 말하는 곳
-- **미리보기**: 홈페이지가 어떻게 보이는지 실시간으로 확인
-
-## 따라하기 1: 프로젝트 폴더 만들기
-
-바탕화면에 홈페이지 폴더를 만듭니다. **마우스만 씁니다.**
+바탕화면에 내 홈페이지의 모든 파일이 들어갈 빈 폴더(방)를 하나 만들겠습니다.
 
 ::: windows
-바탕화면 빈 곳에서 **마우스 오른쪽 클릭** → **새로 만들기** → **폴더** → 이름: `my-site` → Enter
+**윈도우(Windows) 컴퓨터라면:**
+1. 바탕화면 빈 곳에서 **마우스 오른쪽 클릭**
+2. **새로 만들기** → **폴더**
+3. 이름은 꼭 영어로 `my-site` 라고 적고 엔터!
 :::
 
 ::: mac
-바탕화면 빈 곳에서 **마우스 오른쪽 클릭** → **새 폴더** → 이름: `my-site` → Enter
+**맥(Mac) 컴퓨터라면:**
+1. 바탕화면 빈 곳에서 **마우스 오른쪽 클릭**
+2. **새 폴더**
+3. 이름은 꼭 영어로 `my-site` 라고 적고 엔터!
 :::
 
-폴더 이름은 **영어 소문자와 하이픈(-)** 만 쓰세요. 한글이나 띄어쓰기가 있으면 나중에 문제가 생길 수 있습니다.
+> 💡 **주의하세요!**
+> 폴더 이름에 한글이나 띄어쓰기를 넣으면 나중에 인터넷에 올릴 때 에러가 날 수 있습니다. 반드시 영어 소문자와 빼기 기호(-)만 써주세요!
 
-## 따라하기 2: 앱에 폴더 연결하기
+## 2. 인공지능 비서를 '빈 방'에 초대하기
 
-1. Claude Code 앱 실행
-2. **"Open Folder"** 버튼 클릭 (또는 메뉴 → File → Open Folder)
-3. 방금 만든 바탕화면의 `my-site` 폴더 선택 → **열기**
+방금 만든 빈 방(my-site 폴더)을 인공지능 비서에게 보여줄 차례입니다.
 
-왼쪽 파일 트리가 비어 있는 게 정상입니다. 아직 파일이 없으니까요.
+1. 방금 설치한 **Claude Code** 앱을 실행하세요.
+2. 마우스를 써서 바탕화면에 만든 `my-site` 폴더를 꾹 누른 채로 **앱 화면 한가운데로 드래그**해서 놓으세요.
+   *(또는 화면에 있는 `Open Folder` 버튼을 눌러서 폴더를 선택해도 됩니다)*
 
-> 폴더를 앱 창으로 **드래그 앤 드롭**해도 됩니다.
+이렇게 하면 앱 화면 왼쪽에 `my-site`라는 글자가 나타납니다. 빈 방이라 아직 파일은 아무것도 없는 게 정상이에요!
 
-## 따라하기 3: 첫 대화
+## 3. 첫인사 나누기
 
-가운데 대화창에 입력하고 Enter (또는 전송 버튼):
+자, 이제 비서와 카카오톡 하듯 대화를 나눠볼까요? 앱 화면 가운데 입력창에 아래처럼 치고 엔터를 누르세요.
 
-<div class="prompt-box not-prose" data-prompt="3-1" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="3-1" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 안녕! 이 폴더에 뭐가 있어?
@@ -63,42 +51,31 @@ part: 1부 · 준비
 </div>
 </div>
 
-"비어 있다"고 답하면 성공입니다. 이제 앞으로의 작업 방식을 알려줍니다:
+인공지능 비서가 "비어 있다"고 대답할 거예요. 정상입니다! 이제 우리가 코딩 초보라는 걸 확실히 알려줍시다.
 
 <div class="prompt-box not-prose" data-prompt="3-2" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-나는 코딩을 전혀 모르는 사람이야. 앞으로 한국어로, 짧게, 전문 용어는 풀어서 설명해줘. 파일을 만들거나 고치기 전에 뭘 할 건지 먼저 알려줘.
+나는 코딩을 전혀 모르는 완전 초보야. 앞으로 한국어로, 아주 쉽고 간단하게 설명해줘. 어려운 말은 쓰지 마!
 
 </div>
 </div>
 
-Claude가 "알겠습니다"라고 답하면 준비 끝입니다.
+Claude가 "알겠습니다"라고 대답하면 모든 준비가 끝났습니다!
 
-## 앱 사용 기본 규칙
+## 앱 사용 꿀팁 3가지
 
-**승인 창이 뜨면**: Claude Code가 파일을 만들거나 바꾸기 전에 "이렇게 할게요, 괜찮아요?"라고 묻습니다. 내용을 훑어보고 **Yes** 또는 **허용**을 누르면 실행됩니다.
-
-**결과 확인**: 오른쪽 미리보기 패널에 바로 나타납니다. 미리보기가 없으면 파일 트리에서 `index.html`을 클릭하면 볼 수 있습니다.
-
-**되돌리기**: 잘못됐다 싶으면 대화창에 "방금 한 거 되돌려줘"라고 말하면 됩니다.
-
-<div class="not-prose my-6">
-  <div class="tip-box">
-    <div class="font-bold text-accent text-sm mb-1">💡 초보자 추천 프롬프트</div>
-    <div class="text-sm text-text-muted">
-      "나는 코딩을 처음 하는 초보자야. 앞으로 쉬운 한국어로 설명해주고 명령어 실행 전에 꼭 물어봐줘!" 라고 말해두면 AI가 친절하게 단계를 나누어 도와줍니다.
-    </div>
-  </div>
-</div>
+1. **"이렇게 할까요?" (승인 창)**: 비서가 파일을 만들거나 고치기 전에 항상 영어로 "내가 이렇게 해도 될까?" 하고 물어봅니다. 당황하지 말고 파란색 **Yes(허용)** 버튼을 누르시면 됩니다.
+2. **바로바로 확인하기**: 비서가 파일을 고치면, 화면 오른쪽(미리보기 패널)에 내 홈페이지 모습이 실시간으로 나타납니다.
+3. **"방금 한 거 취소!"**: 맘에 안 들게 고쳤나요? 그냥 대화창에 "방금 한 거 되돌려줘"라고 말하면 원래대로 싹 돌려줍니다. 마법 같죠?
 
 ## 오늘의 체크리스트
 
-- [ ] 바탕화면에 `my-site` 폴더가 있다
-- [ ] 앱에 폴더가 연결됐다 (파일 트리에 `my-site`가 보인다)
-- [ ] 첫 대화를 나눴다
+- [ ] 바탕화면에 `my-site` 폴더를 만들었다.
+- [ ] 앱에 폴더를 마우스로 끌어다 놓았다.
+- [ ] 인공지능 비서에게 코딩 초보라고 선언했다!
 
 ## 다음 강의
 
-준비 끝. 4강에서 종이에 그린 설계도를 Claude Code에게 주고 첫 홈페이지 파일을 만듭니다. 오늘 안에 미리보기에서 내 홈페이지를 보게 됩니다.
+길었던 준비가 끝났습니다. 4강에서는 인공지능 비서에게 "내 홈페이지 뼈대 좀 만들어줘!"라고 명령해서, 드디어 눈앞에 내 홈페이지가 나타나는 기적을 맛보게 됩니다!

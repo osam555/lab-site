@@ -10,7 +10,7 @@ type Prompt = {
   lessonTitle: string;
   lessonSlug: string;
   body: string;
-  level: "beginner" | "intermediate" | "advanced";
+  level: "required" | "beginner" | "intermediate" | "advanced";
   levelLabel: string;
 };
 
@@ -22,6 +22,7 @@ type LessonGroup = {
 };
 
 const LEVEL_STYLES = {
+  required: { emoji: "⭐", bg: "bg-blue-500/10 text-blue-600", darkBg: "dark:text-blue-400" },
   beginner: { emoji: "🟢", bg: "bg-green-500/10 text-green-600", darkBg: "dark:text-green-400" },
   intermediate: { emoji: "🟡", bg: "bg-yellow-500/10 text-yellow-600", darkBg: "dark:text-yellow-400" },
   advanced: { emoji: "🔴", bg: "bg-red-500/10 text-red-600", darkBg: "dark:text-red-400" },
@@ -39,7 +40,7 @@ function CopyBtn({ text }: { text: string }) {
           setTimeout(() => setOk(false), 1500);
         } catch { /* */ }
       }}
-      className={`shrink-0 rounded-md px-2.5 py-1 text-xs font-bold transition ${
+      className={`shrink-0 rounded-md px-2.5 py-1 text-sm font-bold transition ${
         ok ? "bg-accent text-white" : "bg-accent-soft text-accent hover:opacity-80"
       }`}
     >
@@ -57,7 +58,7 @@ export function CoursePromptList({
   groups: LessonGroup[];
   highlights?: readonly string[];
 }) {
-  const [filter, setFilter] = useState<"all" | "beginner" | "intermediate" | "advanced">("all");
+  const [filter, setFilter] = useState<"all" | "required" | "beginner" | "intermediate" | "advanced">("all");
   const [search, setSearch] = useState("");
   const [open, setOpen] = useState<Set<number>>(new Set());
 
@@ -89,6 +90,7 @@ export function CoursePromptList({
   const allPrompts = groups.flatMap((g) => g.prompts);
   const counts = {
     all: allPrompts.length,
+    required: allPrompts.filter((p) => p.level === "required").length,
     beginner: allPrompts.filter((p) => p.level === "beginner").length,
     intermediate: allPrompts.filter((p) => p.level === "intermediate").length,
     advanced: allPrompts.filter((p) => p.level === "advanced").length,
@@ -107,7 +109,7 @@ export function CoursePromptList({
       {/* Key highlights */}
       {highlights && highlights.length > 0 && (
         <div className="mb-6 rounded-xl border border-line bg-card p-4">
-          <div className="text-xs font-bold uppercase tracking-wide text-accent mb-2">이 강좌에서 배우는 것</div>
+          <div className="text-sm font-bold uppercase tracking-wide text-accent mb-2">이 강좌에서 배우는 것</div>
           <ul className="grid gap-1.5 text-sm sm:grid-cols-2">
             {highlights.map((h) => (
               <li key={h} className="flex items-start gap-2">
@@ -125,6 +127,7 @@ export function CoursePromptList({
           {(
             [
               ["all", `전체 ${counts.all}`],
+              ["required", `⭐ 필수 ${counts.required}`],
               ["beginner", `🟢 초급 ${counts.beginner}`],
               ["intermediate", `🟡 중급 ${counts.intermediate}`],
               ["advanced", `🔴 고급 ${counts.advanced}`],
@@ -134,7 +137,7 @@ export function CoursePromptList({
               key={key}
               type="button"
               onClick={() => setFilter(key)}
-              className={`rounded-full border px-3 py-1 text-xs transition ${
+              className={`rounded-full border px-3 py-1 text-sm transition ${
                 filter === key
                   ? "border-accent bg-accent-soft font-bold text-accent"
                   : "border-line text-muted hover:border-accent"
@@ -151,17 +154,17 @@ export function CoursePromptList({
             placeholder="검색…"
             className="w-full rounded-lg border border-line bg-card px-3 py-1.5 text-sm outline-none focus:border-accent sm:w-48"
           />
-          <button type="button" onClick={expandAll} className="text-xs text-muted hover:text-accent whitespace-nowrap">
+          <button type="button" onClick={expandAll} className="text-sm text-muted hover:text-accent whitespace-nowrap">
             모두 펼치기
           </button>
-          <button type="button" onClick={collapseAll} className="text-xs text-muted hover:text-accent whitespace-nowrap">
+          <button type="button" onClick={collapseAll} className="text-sm text-muted hover:text-accent whitespace-nowrap">
             접기
           </button>
         </div>
       </div>
 
       {/* Result count */}
-      <div className="mb-3 text-xs text-muted">
+      <div className="mb-3 text-sm text-muted">
         {totalCount}개 프롬프트 표시 중
       </div>
 
@@ -174,6 +177,7 @@ export function CoursePromptList({
         {filtered.map((g) => {
           const isOpen = open.has(g.lessonNumber);
           const levelCounts = {
+            required: g.prompts.filter((p) => p.level === "required").length,
             beginner: g.prompts.filter((p) => p.level === "beginner").length,
             intermediate: g.prompts.filter((p) => p.level === "intermediate").length,
             advanced: g.prompts.filter((p) => p.level === "advanced").length,
@@ -188,15 +192,18 @@ export function CoursePromptList({
                 className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition hover:bg-accent-soft/30"
               >
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <span className="font-mono text-xs font-bold text-accent shrink-0">
+                  <span className="font-mono text-sm font-bold text-accent shrink-0">
                     {String(g.lessonNumber).padStart(2, "0")}강
                   </span>
                   <span className="font-bold truncate">{g.title}</span>
-                  <span className="text-xs text-muted shrink-0">
+                  <span className="text-sm text-muted shrink-0">
                     {g.prompts.length}개
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5 shrink-0">
+                  {levelCounts.required > 0 && (
+                    <span className="text-[10px] font-bold text-blue-600">⭐{levelCounts.required}</span>
+                  )}
                   {levelCounts.beginner > 0 && (
                     <span className="text-[10px] font-bold text-green-600">🟢{levelCounts.beginner}</span>
                   )}
@@ -229,7 +236,7 @@ export function CoursePromptList({
                           <div className="flex items-center gap-2">
                             <Link
                               href={`/lectures/${courseSlug}/${g.slug}#prompt-${p.id}`}
-                              className="font-mono text-xs font-bold text-accent hover:underline"
+                              className="font-mono text-sm font-bold text-accent hover:underline"
                             >
                               <span className="inline-flex items-center justify-center rounded bg-accent text-white text-[10px] font-black px-1.5 py-0.5 mr-1.5">#{p.seq}</span>
                               프롬프트 {p.id}
@@ -242,7 +249,7 @@ export function CoursePromptList({
                           </div>
                           <CopyBtn text={p.body} />
                         </div>
-                        <pre className="whitespace-pre-wrap rounded-lg bg-background border border-line/50 px-3 py-2.5 font-sans text-[13px] leading-relaxed text-foreground/90">
+                        <pre className="whitespace-pre-wrap rounded-lg bg-background border border-line/50 px-3 py-2.5 font-sans text-base leading-relaxed text-foreground/90">
                           {p.body}
                         </pre>
                       </div>

@@ -65,8 +65,8 @@ part: 3부 · 공개
 > [!TIP]
 > DNS 설정 화면은 업체마다 다릅니다. 헷갈리면 **그 화면을 캡처해서** Claude Code에 붙여넣으세요.
 
-<div class="prompt-box not-prose" data-prompt="9-1" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="9-1" data-level="required">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-1</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 Vercel이 이 두 줄을 넣으라는데 [캡처] 이 화면에서 어디에 뭘 넣어야 해?
