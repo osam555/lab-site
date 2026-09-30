@@ -34,12 +34,13 @@ part: "1부 · 준비"
 
 비서가 "이렇게 만들까요?"라고 물어보면 **Yes(허용)**를 누르세요. 오른쪽 미리보기 화면에 글씨가 나타났다면 성공입니다!
 
-## 3. Git(깃) 설치하고 작업 내역 저장하기
+## 3. 작업 내역 저장하기, Git(깃)
 
 작업을 인터넷에 올리려면, 내 폴더를 사진 찍듯 기록해 주는 **Git(깃)**이 필요합니다.
 
-1. **Windows 사용자:** [git-scm.com](https://git-scm.com)에서 다운로드 받아 무조건 'Next'만 눌러 설치합니다. (Mac 사용자는 이미 설치되어 있으니 건너뛰세요!)
-2. 설치가 끝났다면 비서에게 다음 명령을 내리세요.
+1. **설치 확인:** 이미 내 컴퓨터에 Git이나 GitHub Desktop이 깔려 있다면 설치는 **생략(건너뛰기)** 하세요!
+2. **Windows 사용자:** 없는 경우에만 [git-scm.com](https://git-scm.com)에서 다운로드 받아 무조건 'Next'만 눌러 설치합니다. (Mac 사용자는 이미 설치되어 있으니 건너뛰세요!)
+3. 준비가 끝났다면 비서에게 다음 명령을 내리세요.
 
 <div class="prompt-box not-prose" data-prompt="0-2" data-level="required">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 0-2</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
