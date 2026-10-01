@@ -3,6 +3,7 @@
    No external dependencies or network calls. */
 (() => {
   'use strict';
+  if (window.__kvcf_hero_cleanup) window.__kvcf_hero_cleanup();
   const hero = document.querySelector('.nh-hero');
   const canvas = document.getElementById('nh-pointer-field');
   const anchor = document.getElementById('nh-particle-globe');
@@ -634,10 +635,19 @@
   button.addEventListener('click',()=>{paused=!paused;sync();});
   reduced.addEventListener('change',()=>{paused=reduced.matches;if(paused){engagement=0;active=false;sphereTilt=-.2;}sync();render();});
   document.addEventListener('visibilitychange',sync);
-  new IntersectionObserver(e=>{visible=e[0].isIntersecting;if(visible)measure();sync();},{threshold:.01}).observe(interaction);
-  new ResizeObserver(measure).observe(hero);
-  new ResizeObserver(measure).observe(anchor);
+  const io = new IntersectionObserver(e=>{visible=e[0].isIntersecting;if(visible)measure();sync();},{threshold:.01});
+  io.observe(interaction);
+  const ro1 = new ResizeObserver(measure);
+  ro1.observe(hero);
+  const ro2 = new ResizeObserver(measure);
+  ro2.observe(anchor);
   if(document.fonts)document.fonts.ready.then(measure);
   if(scene)scene.subscribe(measure);
   measure();sync();
+  window.__kvcf_hero_cleanup = () => {
+    cancelAnimationFrame(raf);
+    io.disconnect();
+    ro1.disconnect();
+    ro2.disconnect();
+  };
 })();
