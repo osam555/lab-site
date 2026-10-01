@@ -37,7 +37,7 @@ export function KvcfGlobe() {
       </button>
 
       <Script 
-        src="/js/hero-motion.js" 
+        src="/js/hero-motion.js?v=2" 
         strategy="lazyOnload" 
       />
     </div>
