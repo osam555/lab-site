@@ -62,7 +62,7 @@ export default function Home() {
                 <br />
                 <span className="hero-text-gradient">내 홈페이지</span>와{" "}
                 <span className="inline-block whitespace-nowrap">
-                  <span className="hero-text-gradient">내 서비스</span>를 만듭니다.
+                  <span className="hero-text-gradient">내 앱</span>을 만듭니다.
                 </span>
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
