@@ -31,11 +31,11 @@ export function InteractiveGlobe() {
         theta: 0.25,
         dark: 1,
         diffuse: 1.2,
-        mapSamples: 16000,
-        mapBrightness: 6,
-        baseColor: [0.12, 0.28, 0.18], // dark emerald matching theme
-        markerColor: [0.37, 0.85, 0.55], // accent green
-        glowColor: [0.18, 0.55, 0.32],
+        mapSamples: 25000,
+        mapBrightness: 8,
+        baseColor: [0.85, 0.85, 0.9], // silver/white landmass dots
+        markerColor: [1, 1, 1], // white markers
+        glowColor: [0.1, 0.15, 0.25], // faint blue/gray glow
         scale: 1,
         markers: [
           { location: [37.5665, 126.9780], size: 0.08 }, // Seoul
@@ -53,7 +53,7 @@ export function InteractiveGlobe() {
           { from: [37.7749, -122.4194], to: [40.7128, -74.0060] }, // SF -> NY
           { from: [51.5074, -0.1278], to: [1.3521, 103.8198] }, // London -> Singapore
         ],
-        arcColor: [0.37, 0.85, 0.55],
+        arcColor: [1, 1, 1],
         arcWidth: 0.7,
         arcHeight: 0.22,
       });

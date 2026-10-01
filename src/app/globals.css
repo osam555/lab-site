@@ -521,6 +521,14 @@ html[data-os="mac"] [data-os-block="windows"] {
 /* ── Hero Premium Styles ── */
 .hero-section {
   position: relative;
+  background-color: #0B1121;
+  color: #ecebe6;
+  --foreground: #ecebe6;
+  --muted: #a09c92;
+  --line: rgba(255, 255, 255, 0.1);
+  --card: rgba(255, 255, 255, 0.05);
+  --accent: #5fc98b;
+  --accent-soft: rgba(95, 201, 139, 0.15);
   border-bottom: 1px solid var(--line);
 }
 
