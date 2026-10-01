@@ -176,7 +176,7 @@
   }
   function ink(alpha,dark='255,255,255',light=null){
     if(!light)light=[mix(67,87,scatter),mix(114,135,scatter),mix(183,207,scatter)].map(Math.round).join(',');
-    const isLight=document.documentElement.getAttribute("data-theme")==="light"; if(isLight) return `rgba(${light},${alpha})`; return `rgba(${dark},${alpha})`;
+    return `rgba(${dark},${alpha})`;
     const edge=sceneState.heroBottom;
     if(edge>=H+16)return `rgba(${dark},${alpha})`;
     if(edge<=-16)return `rgba(${light},${alpha})`;
