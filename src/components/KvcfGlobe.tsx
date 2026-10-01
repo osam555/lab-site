@@ -20,11 +20,11 @@ export function KvcfGlobe() {
 
       <canvas
         id="nh-pointer-field"
-        className="pointer-events-none absolute inset-[-10%] z-10 w-[120%] h-[120%]"
+        className="pointer-events-none absolute inset-0 z-10 w-full h-full"
       />
       <canvas
         id="nh-hero-atmosphere"
-        className="pointer-events-none absolute inset-[-10%] z-0 w-[120%] h-[120%]"
+        className="pointer-events-none absolute inset-0 z-0 w-full h-full"
       />
       
       <div 
