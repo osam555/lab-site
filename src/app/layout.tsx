@@ -19,12 +19,29 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vibecoding20.vercel.app"),
   title: {
     default: "바이브코딩 스쿨 · 대충영어",
     template: "%s · 바이브코딩 스쿨 대충영어",
   },
   description:
     "코딩을 몰라도 Claude Code와 함께 홈페이지와 서비스를 만드는 무료 강의.",
+  openGraph: {
+    title: "바이브코딩 스쿨 · 대충영어",
+    description: "코딩을 몰라도 Claude Code와 함께 홈페이지와 서비스를 만드는 무료 강의.",
+    url: "https://vibecoding20.vercel.app",
+    siteName: "바이브코딩 스쿨 · 대충영어",
+    images: [
+      {
+        url: "/hero-globe.jpg",
+        width: 1200,
+        height: 630,
+        alt: "바이브코딩 스쿨",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -44,7 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <header className="sticky top-0 z-20 border-b border-line bg-background/85 backdrop-blur">
-          <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 h-14">
+          <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 md:px-8 lg:px-12 h-14">
             <div className="flex items-center gap-3">
               <Link href="/" className="flex items-center gap-2.5 font-black tracking-tight hover:opacity-90 transition-opacity">
                 <div className="flex flex-shrink-0 items-center justify-center h-6 w-6 rounded-lg bg-gradient-to-br from-[#4ade80] to-accent text-white shadow-md shadow-accent/20 ring-1 ring-accent/30" aria-hidden>
@@ -76,7 +93,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </header>
         <main className="flex-1">{children}</main>
         <footer className="border-t border-line">
-          <div className="mx-auto max-w-5xl px-4 py-8 text-sm text-muted">
+          <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-12 py-8 text-sm text-muted">
             <p>© {new Date().getFullYear()} 바이브코딩 스쿨 · <a href="https://brain-hz.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accent underline font-medium">대충영어 (brain-hz.com)</a>. 모든 강의는 무료로 공개됩니다.</p>
           </div>
         </footer>
