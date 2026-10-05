@@ -1,7 +1,7 @@
 ---
 title: 바이브 코딩 준비물 체크리스트
 summary: 시작 전에 갖출 계정 4개, 설치할 것, 폴더, 클로드에게 시키는 습관.
-order: 8
+order: 10
 updated: '2026-10-06'
 sources:
   - https://code.claude.com/docs/en/desktop
@@ -17,6 +17,7 @@ sources:
 - [ ] **GitHub** 계정 + 이메일 인증 + 2단계 인증 ([깃허브 기초](/basics/github-basics))
 - [ ] **Vercel** 계정 (GitHub로 가입 권장) ([버셀 기초](/basics/vercel-basics))
 - [ ] (선택) **도메인 구입처** 계정 ([도메인 기초](/basics/domain-basics))
+- [ ] (선택) 블로그·유튜브·SNS 계정 — 자동화는 내 계정 책임이에요 ([Aside로 SNS 자동화](/basics/aside-sns-overview))
 
 ## 설치
 
@@ -42,7 +43,7 @@ sources:
 
 ## 다음 순서
 
-[깃 기초](/basics/git-basics) → [깃허브 기초](/basics/github-basics) → [버셀 기초](/basics/vercel-basics) → [깃-버셀 연동과 배포](/basics/git-vercel-deploy) → 실습은 [홈페이지 만들기](/lectures/homepage).
+[깃 기초](/basics/git-basics) → [깃허브 기초](/basics/github-basics) → [버셀 기초](/basics/vercel-basics) → [깃-버셀 연동과 배포](/basics/git-vercel-deploy) → [클로드 활용법](/basics/claude-uses) → [Aside로 SNS 자동화](/basics/aside-sns-overview). 실습은 [홈페이지 만들기](/lectures/homepage).
 
 ---
 
