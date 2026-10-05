@@ -26,13 +26,15 @@ part: 5부 · 영상 자동화
 
 **사전 준비**: Node.js 22+, ffmpeg, Chrome (headless)
 
+**Code 탭에서 시키기**: 영상 파일을 모아 둘 프로젝트 폴더를 선택하고 아래처럼 말합니다. 설치 명령(npx·npm)을 실행해도 되는지 **권한 요청**이 뜨면 무엇을 설치하는지 읽고 수락하세요. 끝나면 입력창에 `/hyperframes`를 쳤을 때 명령이 보이는지 확인합니다.
+
 ```
 HyperFrames 스킬을 설치해줘.
 npx 또는 npm으로 HyperFrames를 설치하고
 /hyperframes 명령을 Claude Code에서 쓸 수 있게 해줘.
 ```
 
-Claude Code가 설치를 완료하면 터미널에서 `/hyperframes`가 활성화됩니다.
+Claude Code가 설치를 완료하면 입력창에서 `/hyperframes`를 쓸 수 있습니다. (터미널에서 `claude`를 실행해도 같은 명령이 활성화됩니다.)
 
 > [!NOTE]
 > Claude Code 앱에서 슬래시(/) 명령으로 `/hyperframes`를 입력하면 HeyGen HyperFrames 스킬이 실행됩니다. 앱 버전에 따라 설치 방법이 다를 수 있으니 공식 문서를 확인하세요.
@@ -154,6 +156,8 @@ Claude Code가 HTML/CSS/JS 씬 파일을 작성하고, Playwright가 캡처하�
 
 ### 설치
 
+**Code 탭에서 시키기**: 프로젝트 폴더를 선택한 뒤 아래처럼 말합니다. 설치·서버 실행 명령에 대한 **권한 요청**이 뜨면 읽고 수락하세요.
+
 ```
 Remotion 프로젝트를 현재 폴더 안에 video-remotion/ 디렉토리로 만들어줘.
 npx create-video@latest ./video-remotion
@@ -166,7 +170,16 @@ TypeScript + npm 조합으로.
 cd video-remotion && npm run dev 으로 Remotion Studio를 열어줘.
 ```
 
-브라우저에서 `http://localhost:3000` → Remotion Studio가 열립니다.
+브라우저에서 `http://localhost:3000` → Remotion Studio가 열립니다. (Code 탭 오른쪽 Aside 브라우저에서 열어도 됩니다.)
+
+#### 터미널로도 할 수 있어요
+
+위 말을 직접 입력하는 대신, 터미널에서 같은 명령을 실행해도 됩니다.
+
+```bash
+npx create-video@latest ./video-remotion
+cd video-remotion && npm run dev
+```
 
 ---
 
@@ -213,6 +226,10 @@ nextEvent: "12월 창립기념 20% 할인"
 
 </div>
 </div>
+
+Code 탭에서는 "MonthlyReport를 visitorCount 1247로 렌더해서 out/report-dec.mp4로 저장해줘"라고 시키면 됩니다. 권한 요청에 렌더 명령이 뜨면 읽고 수락하세요.
+
+#### 터미널로도 할 수 있어요
 
 렌더 명령:
 

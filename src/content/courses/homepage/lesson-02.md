@@ -2,7 +2,7 @@
 number: 2
 title: 준비물 설치하기
 subtitle: 인공지능 비서 앱 설치하기, 클릭 몇 번이면 끝!
-goal: 홈페이지를 대신 만들어줄 Claude Code 앱을 설치하고 로그인합니다.
+goal: 홈페이지를 대신 만들어줄 Claude 데스크탑 앱을 설치하고 로그인한 뒤 Code 탭을 엽니다.
 minutes: 10
 part: 1부 · 준비
 ---
@@ -11,16 +11,16 @@ part: 1부 · 준비
 
 홈페이지를 만들기 위해 딱 2개의 프로그램만 설치하면 됩니다.
 
-1. **Claude Code 앱**: 나 대신 코딩을 해줄 똑똑한 인공지능 비서입니다.
+1. **Claude 데스크탑 앱**: 안의 **Code 탭**이 나 대신 코딩을 해줄 똑똑한 인공지능 비서입니다.
 2. **Git (깃)**: 나중에 내 홈페이지를 인터넷에 올릴 때 필요한 도우미입니다. (지금은 뭔지 몰라도 괜찮습니다!)
 
 ---
 
-## 1. 인공지능 비서 (Claude Code) 설치하기
+## 1. 인공지능 비서 (Claude 데스크탑 앱) 설치하기
 
 이 비서 프로그램은 일반 컴퓨터 프로그램 설치하듯 쉽게 설치할 수 있습니다.
 
-1. [claude.ai](https://claude.ai) 에 접속해서 **다운로드(Download)** 버튼을 누릅니다.
+1. [claude.ai/download](https://claude.ai/download) 에 접속해서 **다운로드(Download)** 버튼을 누릅니다.
 2. 내 컴퓨터(Windows 또는 Mac)에 맞는 파일이 자동으로 받아집니다.
 
 ::: windows
@@ -33,7 +33,7 @@ part: 1부 · 준비
 ::: mac
 **맥(Mac) 컴퓨터라면:**
 1. 다운로드 받은 `.dmg` 파일을 더블클릭합니다.
-2. `Claude Code` 아이콘을 옆에 있는 **Applications(응용 프로그램)** 폴더로 드래그해서 넣으세요.
+2. `Claude` 아이콘을 옆에 있는 **Applications(응용 프로그램)** 폴더로 드래그해서 넣으세요.
 3. 응용 프로그램에서 실행합니다. ("인터넷에서 다운로드한 앱입니다" 경고가 뜨면 **열기**를 누르세요.)
 :::
 
@@ -44,6 +44,10 @@ part: 1부 · 준비
 1. **"Claude 계정으로 로그인"** 버튼을 클릭하세요.
 2. 인터넷 창이 열리면 로그인하고 **"허용"**을 클릭합니다.
 3. 다시 앱 화면으로 돌아오면 로그인 성공입니다!
+
+### Code 탭 열기
+
+앱 위쪽(또는 옆)에 **Chat**, **Cowork**, **Code** 탭이 보입니다. 이 강좌에서는 **Code** 탭을 쓰니, 한 번 눌러 열어 보세요. 폴더를 고르는 곳과 입력창이 나오면 성공입니다. (폴더 연결은 3강에서 합니다.) 화면 이름이 조금 달라도 비슷한 이름을 찾으면 됩니다.
 
 <div class="prompt-box not-prose" data-prompt="2-1" data-level="required">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -81,9 +85,19 @@ part: 1부 · 준비
   </div>
 </div>
 
+### 터미널로도 할 수 있어요
+
+앱 대신 터미널에서 같은 Claude Code를 쓰고 싶다면 CLI로 설치할 수도 있습니다. (이 강좌는 앱 기준으로 진행하니, 처음이라면 건너뛰어도 됩니다.)
+
+```bash
+npm install -g @anthropic-ai/claude-code
+claude
+```
+
 ## 오늘의 체크리스트
 
-- [ ] Claude Code 앱을 설치하고 로그인했다.
+- [ ] Claude 데스크탑 앱을 설치하고 로그인했다.
+- [ ] 앱 위쪽의 Code 탭을 열어 봤다.
 - [ ] Git 프로그램도 설치했다.
 
 ## 다음 강의

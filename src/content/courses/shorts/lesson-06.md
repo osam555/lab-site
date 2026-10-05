@@ -57,7 +57,13 @@ scripts/dub-typecast.py를 만들어줘.
 </div>
 </div>
 
-실행:
+실행은 클로드 데스크탑 Code 탭에서 이렇게 시키세요.
+
+> scripts/dub-typecast.py를 실행해서 더빙을 만들어줘. 끝나면 실패한 컷 번호가 있는지 알려줘.
+
+권한 요청에 뜬 명령을 읽고 수락하면 클로드가 돌리고 결과를 알려줍니다. (`python3`이 없다는 에러 같은 것도 클로드에게 그대로 맡기면 됩니다.)
+
+### 터미널로도 할 수 있어요
 
 ```bash
 python3 scripts/dub-typecast.py

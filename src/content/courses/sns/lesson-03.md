@@ -101,6 +101,14 @@ variants.json 전체를 VOICE.md 기준으로 검사해서 걸리는 문장을 �
 
 지시해서 고칩니다. "3번, 5번 고쳐줘."
 
+Code 탭에서는 이렇게 시키세요.
+
+> 바뀐 파일을 "camping-chair: 채널별 변환"라는 메시지로 커밋해줘.
+
+권한 요청에 뜬 명령(`git add`, `git commit`)을 읽고 수락합니다.
+
+### 터미널로도 할 수 있어요
+
 ```bash
 git add .
 git commit -m "camping-chair: 채널별 변환"

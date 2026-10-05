@@ -73,13 +73,13 @@ CTA 버튼 바로 위에 "✓ 3일 무료 체험 · 언제든 해지 · 카드 �
 
 ## Git 세이브 + GitHub 연결
 
-```bash
-git init
-git add .
-git commit -m "랜딩페이지 완성"
-```
+Code 탭 대화창에 이렇게 시키세요:
 
-GitHub 연결:
+> 🗣️ "이 폴더를 Git으로 관리하기 시작하고, 지금 상태를 '랜딩페이지 완성'이라는 메시지로 세이브해줘."
+
+명령을 실행해도 되는지 권한 요청이 뜨면 내용을 읽고 수락하세요.
+
+GitHub 연결도 말로 시킵니다:
 
 <div class="prompt-box not-prose" data-prompt="8-5" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -89,6 +89,18 @@ GitHub에 my-landing 저장소를 만들고 push하는 명령을 알려줘.
 
 </div>
 </div>
+
+GitHub에서 `my-landing` 저장소를 만들고, 그 저장소 주소를 알려주면서 "여기에 연결해서 push해줘"라고 하면 클로드가 명령을 실행합니다. 권한 요청은 읽고 수락하세요.
+
+### 터미널로도 할 수 있어요
+
+터미널(또는 앱 터미널 탭)에서 직접 입력해도 같은 결과입니다:
+
+```bash
+git init
+git add .
+git commit -m "랜딩페이지 완성"
+```
 
 ```bash
 git remote add origin https://github.com/[내아이디]/my-landing.git

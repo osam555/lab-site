@@ -71,6 +71,14 @@ scripts/fb-post.py를 만들어줘.
 </div>
 </div>
 
+실행도 클로드 데스크탑 Code 탭에서 이렇게 시키세요.
+
+> scripts/fb-post.py를 --draft 옵션으로 실행해서 비공개로 먼저 올려줘. 결과 URL을 알려줘.
+
+권한 요청의 명령에 `--draft`가 들어 있는지 읽고 수락합니다. 비공개 결과를 확인한 뒤에만 "이제 --draft 없이 실제로 발행해줘"라고 시키세요.
+
+#### 터미널로도 할 수 있어요
+
 ```bash
 python3 scripts/fb-post.py --draft     # 비공개로 먼저 확인
 python3 scripts/fb-post.py              # 실제 발행
@@ -155,6 +163,14 @@ scripts/threads-post.py를 만들어줘.
 
 </div>
 </div>
+
+Code 탭에서는 이렇게 시키세요.
+
+> scripts/threads-post.py를 --draft 옵션으로 실행해서 컨테이너만 만들어줘. 확인하기 전에는 발행하지 마.
+
+확인 후에 "이제 실제로 발행해줘"라고 하면 됩니다. 권한 요청의 명령을 매번 읽고 수락하세요.
+
+### 터미널로도 할 수 있어요
 
 ```bash
 python3 scripts/threads-post.py --draft   # 컨테이너만 생성

@@ -24,13 +24,23 @@ part: 2부 · 기획과 프롬프트
 
 ## 따라하기 1: 프로젝트 생성
 
-3강에서 만든 `my-first-app`은 연습용이었습니다. 진짜 프로젝트를 새로 만듭니다. 터미널에서 (프로젝트 폴더 **바깥**에서):
+3강에서 만든 `my-first-app`은 연습용이었습니다. 진짜 프로젝트를 새로 만듭니다. 컴퓨터에 `my-service`라는 새 폴더를 만들고(연습 폴더 **바깥**에), Code 탭에서 그 폴더를 선택한 뒤 이렇게 시키세요.
+
+> "이 폴더에 Next.js 프로젝트를 만들어줘. 이름은 my-service, TypeScript·Tailwind·App Router 기본 설정으로. 다 만들면 개발 서버를 켜고 주소를 알려줘."
+
+Claude가 `create-next-app` 같은 명령을 실행하겠다고 물어보면 **무슨 명령인지 읽고** 수락합니다. 설치 질문이 나오면 기본값으로 진행해 달라고 하세요. TypeScript, Tailwind, App Router가 기본 선택되는데 모두 AI가 잘 다루는 것들입니다. 개발 서버가 켜지면 `http://localhost:3000`을 알려줍니다. 브라우저에서 열면 Next.js 기본 화면이 보입니다. **이게 내 서비스의 시작 화면입니다.**
+
+> `localhost`는 "내 컴퓨터"라는 뜻입니다. 지금은 나만 볼 수 있습니다.
+
+### 터미널로도 할 수 있어요
+
+터미널에서 (프로젝트 폴더 **바깥**에서):
 
 ```bash
 npx create-next-app@latest my-service
 ```
 
-질문이 몇 개 나옵니다. 전부 **Enter(기본값)** 로 넘기세요. TypeScript, Tailwind, App Router가 기본 선택되는데 모두 AI가 잘 다루는 것들입니다.
+질문이 몇 개 나옵니다. 전부 **Enter(기본값)** 로 넘기세요.
 
 ```bash
 cd my-service
@@ -38,13 +48,11 @@ code .
 npm run dev
 ```
 
-터미널에 `http://localhost:3000`이 나옵니다. 브라우저에서 열면 Next.js 기본 화면이 보입니다. **이게 내 서비스의 시작 화면입니다.**
-
-> `localhost`는 "내 컴퓨터"라는 뜻입니다. 지금은 나만 볼 수 있습니다.
+터미널에 `http://localhost:3000`이 나옵니다. 브라우저에서 열면 Next.js 기본 화면이 보입니다.
 
 ## 따라하기 2: 첫 화면 바꾸기
 
-`PLAN.md`와 `PROMPT_TEMPLATE.md`를 이 폴더로 옮기세요. 그리고 AI 도구를 켜고:
+`PLAN.md`와 `PROMPT_TEMPLATE.md`를 이 폴더로 옮기세요. 그리고 Code 탭에서 `my-service` 폴더가 선택된 상태로:
 
 <div class="prompt-box not-prose" data-prompt="8-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -57,7 +65,11 @@ npm run dev
 
 브라우저가 자동으로 새로고침되며 바뀐 화면이 보입니다. 이 즉시 반영을 **핫 리로드**라고 합니다.
 
-마음에 들면 커밋:
+마음에 들면 커밋을 시킵니다.
+
+> "지금까지 바뀐 내용으로 커밋해줘. 메시지는 '첫 화면: 서비스 이름과 설명'."
+
+### 터미널로도 할 수 있어요
 
 ```bash
 git add .
@@ -66,7 +78,7 @@ git commit -m "첫 화면: 서비스 이름과 설명"
 
 ## 따라하기 3: GitHub에 올리기
 
-5강에서 한 것과 같습니다. GitHub에 `my-service` 저장소를 만들고 push하세요. 명령을 잊었으면 AI에게 "이 프로젝트를 GitHub 새 저장소에 올리는 명령어"를 물어보세요.
+5강에서 한 것과 같습니다. GitHub에 `my-service` 저장소를 만들고 push하세요. Code 탭에 저장소 주소를 알려주며 "이 프로젝트를 이 GitHub 저장소에 올려줘"라고 시키세요. (터미널이면 AI에게 "이 프로젝트를 GitHub 새 저장소에 올리는 명령어"를 물어보세요.)
 
 ## 따라하기 4: Vercel 배포
 
@@ -76,17 +88,17 @@ git commit -m "첫 화면: 서비스 이름과 설명"
 
 **이 주소를 폰으로 열어보세요.** 여러분이 만든 화면이 인터넷 어디서든 보입니다.
 
-이제부터 `git push`만 하면 Vercel이 자동으로 새 버전을 올립니다. 배포를 따로 신경 쓸 일이 없습니다.
+이제부터 GitHub에 올리기(`git push`)만 하면 Vercel이 자동으로 새 버전을 올립니다. 배포를 따로 신경 쓸 일이 없습니다.
 
 ## 따라하기 5: 7강의 요청문 보내기
 
-7강에서 써둔 핵심 기능 1번 요청문을 이제 AI에게 보내세요. 결과를 브라우저에서 확인하고, 되면 커밋 + push. 안 되면 되돌리고(`git checkout .`) 요청을 더 구체적으로 고쳐서 다시.
+7강에서 써둔 핵심 기능 1번 요청문을 이제 Code 탭에 보내세요. 결과를 브라우저에서 확인하고, 되면 커밋 + push. 안 되면 "마지막 커밋 상태로 되돌려줘"라고 시키고(터미널이면 `git checkout .`) 요청을 더 구체적으로 고쳐서 다시.
 
 오늘 여기까지 안 돼도 괜찮습니다. 배포까지 된 것만으로 오늘은 성공입니다.
 
 ## 오늘의 체크리스트
 
-- [ ] `npm run dev`로 localhost:3000이 열린다
+- [ ] 개발 서버가 켜져 localhost:3000이 열린다 (`npm run dev`)
 - [ ] 첫 화면이 내 서비스 이름으로 바뀌었다
 - [ ] `.vercel.app` 주소가 있고 폰에서 열린다
 - [ ] 주소를 1강 노트의 "내 서비스 한 줄" 옆에 적었다

@@ -45,7 +45,7 @@ part: 1부 · 준비
 
 ## 준비물 체크
 
-- [ ] Claude Code가 설치되어 있고 `claude`로 실행된다 (없다면 [홈페이지 만들기 3강](/lectures/homepage/lesson-03)부터)
+- [ ] 클로드 데스크탑 앱의 Code 탭에서 폴더를 열 수 있다 (터미널에서 `claude`로 실행해도 됩니다. 아직 준비 전이라면 [홈페이지 만들기 3강](/lectures/homepage/lesson-03)부터)
 - [ ] Google 계정 + Gemini Pro 구독 (Google Flow 크레딧용). 없으면 무료 크레딧 범위에서 연습
 - [ ] ElevenLabs 계정 (무료로 시작)
 - [ ] 유튜브 채널 (없으면 8강에서 만듭니다)

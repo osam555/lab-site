@@ -41,6 +41,12 @@ scripts/assemble.py를 만들어줘. 1단계만:
 </div>
 </div>
 
+Code 탭에서는 이렇게 시키세요.
+
+> scripts/assemble.py를 실행해서 body.mp4를 만들고, 길이를 알려줘.
+
+권한 요청의 명령을 읽고 수락합니다. 터미널로도 할 수 있어요.
+
 ```bash
 python3 scripts/assemble.py
 ```
@@ -135,6 +141,12 @@ assemble.py를 `python3 scripts/assemble.py --all`로 1~4단계를 순서대로 
 
 </div>
 </div>
+
+Code 탭에서는 이렇게 시키세요.
+
+> 바뀐 파일을 "pyramid: 합성 스크립트 완성, 첫 영상"이라는 메시지로 커밋해줘.
+
+터미널로도 할 수 있어요.
 
 ```bash
 git add .

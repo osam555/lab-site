@@ -9,6 +9,14 @@ part: 1부 · 준비
 
 ## 1. 프로젝트 폴더
 
+### 클로드 데스크탑 Code 탭에서 이렇게 시키세요
+
+1. 바탕화면에 `sns-factory`라는 빈 폴더를 만듭니다. (Finder/탐색기에서 새 폴더, 또는 Code 탭에서 "바탕화면에 sns-factory 폴더 만들어줘"라고 시켜도 됩니다.)
+2. 클로드 데스크탑 앱의 **Code** 탭에서 **폴더 선택**으로 그 폴더를 엽니다.
+3. 아래 프롬프트를 입력창에 붙여넣습니다. 클로드가 만들 파일을 보여주는 권한 요청(diff)이 뜨면 읽고 수락하세요.
+
+### 터미널로도 할 수 있어요
+
 ```bash
 cd ~/Desktop
 mkdir sns-factory
@@ -20,7 +28,9 @@ code .
 `~`가 안 되면 `cd $HOME\Desktop`.
 :::
 
-`claude` 실행 후:
+터미널에서는 이 폴더에서 `claude`를 실행한 뒤 아래 프롬프트를 붙여넣으면 됩니다.
+
+프롬프트:
 
 <div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -122,6 +132,14 @@ CLAUDE.md를 만들어줘:
 </div>
 
 ## 6. 커밋
+
+Code 탭에서는 이렇게 시키세요.
+
+> 바뀐 파일을 "SNS 파이프라인 시작"라는 메시지로 커밋해줘.
+
+권한 요청에 뜬 명령(`git add`, `git commit`)을 읽고 수락합니다.
+
+### 터미널로도 할 수 있어요
 
 ```bash
 git init

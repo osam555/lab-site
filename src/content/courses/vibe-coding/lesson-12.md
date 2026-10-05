@@ -80,7 +80,13 @@ NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGc...
 ```
 
-`.env.local`은 Next.js가 기본으로 Git에서 제외합니다(`.gitignore`). 확인:
+`.env.local`은 Next.js가 기본으로 Git에서 제외합니다(`.gitignore`). Code 탭에서 확인합니다.
+
+> "git이 .env.local을 추적하지 않는지 확인해줘. 파일 내용은 출력하지 마."
+
+추적하지 않는다고 답하면 정상입니다.
+
+### 터미널로도 할 수 있어요
 
 ```bash
 git status
@@ -126,7 +132,7 @@ git status
 
 - [ ] localStorage 저장이 동작한다
 - [ ] Supabase에 테이블이 있고 `.env.local`에 키가 있다
-- [ ] `git status`에 `.env.local`이 안 보인다
+- [ ] `.env.local`이 Git에 추적되지 않는다 (터미널이면 `git status`에 안 보인다)
 - [ ] 저장 → Table Editor에 행이 생기는 걸 확인했다
 - [ ] Vercel에 환경변수를 넣고 폰에서도 데이터가 보인다
 

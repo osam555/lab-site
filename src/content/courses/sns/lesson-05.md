@@ -101,6 +101,14 @@ https://blog.naver.com/…?utm_source=threads&utm_medium=social&utm_campaign=cam
 | 인스타 예약 거부 | 비즈니스 계정·페이스북 연결 확인. 캡션에 URL 있으면 제거 |
 | 채널 토큰 만료 | 스케줄러 화면에서 채널 재연결 (주기적으로 생깁니다) |
 
+Code 탭에서는 이렇게 시키세요.
+
+> 바뀐 파일을 "camping-chair: 예약 등록"라는 메시지로 커밋해줘.
+
+권한 요청에 뜬 명령(`git add`, `git commit`)을 읽고 수락합니다.
+
+### 터미널로도 할 수 있어요
+
 ```bash
 git add .
 git commit -m "camping-chair: 예약 등록"

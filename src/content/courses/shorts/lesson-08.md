@@ -137,7 +137,13 @@ scripts/upload.py를 만들어줘.
 </div>
 </div>
 
-필요한 파이썬 라이브러리를 설치하고 실행합니다:
+필요한 파이썬 라이브러리 설치와 실행도 Code 탭에서 이렇게 시키세요.
+
+> 필요한 파이썬 라이브러리를 설치하고 scripts/upload.py를 실행해줘.
+
+설치·실행 명령이 권한 요청으로 뜨면 읽고 수락합니다.
+
+### 터미널로도 할 수 있어요
 
 ```bash
 pip install google-api-python-client google-auth-oauthlib google-auth-httplib2

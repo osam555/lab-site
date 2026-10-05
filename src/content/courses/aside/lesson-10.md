@@ -44,6 +44,16 @@ Blog 주소: [내 블로그 주소]
 </div>
 </div>
 
+Code 탭에서는 위처럼 "테스트 글 올려줘"라고만 하면 됩니다. 스크립트 실행 권한 요청이 뜨면 명령을 읽고 수락하세요.
+
+#### 터미널로도 할 수 있어요
+
+스크립트가 만들어진 뒤에는 터미널에서 직접 실행할 수도 있습니다.
+
+```bash
+node post-tistory.js "제목" content.md "태그1,태그2"
+```
+
 ### 방법 2 — Computer Use (API 없을 때)
 
 1. Aside 브라우저: `https://[내블로그].tistory.com/manage/post` → 로그인

@@ -13,7 +13,7 @@ part: "1부 · 준비"
 실습을 시작하기 전에 아래 4가지만 미리 준비해 주세요. (자세한 설치 방법은 2강에서 설명합니다)
 
 1. **폴더 준비:** 바탕화면에 `my-site`라는 빈 폴더를 만듭니다. (반드시 영어 소문자와 하이픈만 사용!)
-2. **비서 준비 (Claude Code):** Claude Code 앱을 설치하고 실행한 뒤, `my-site` 폴더를 마우스로 끌어다 놓아 연결해 둡니다.
+2. **비서 준비 (클로드 데스크탑 앱의 Code 탭):** Claude 데스크탑 앱을 설치하고 로그인한 뒤, 위쪽의 **Code** 탭을 눌러 `my-site` 폴더를 선택해 연결해 둡니다. (폴더를 마우스로 끌어다 놓아도 됩니다.)
 3. **기록 도구 준비 (Git):** Windows 사용자는 [git-scm.com](https://git-scm.com)에서 다운로드해 'Next'만 눌러 설치해 둡니다. (Mac은 기본 설치되어 있으니 건너뜁니다.)
 4. **배포 계정 준비:** [github.com](https://github.com)에 가입한 뒤(Claude와 동일한 Gmail 권장), [vercel.com](https://vercel.com)에 접속해 'Continue with GitHub'으로 연동 가입해 둡니다.
 
@@ -34,7 +34,7 @@ part: "1부 · 준비"
 </div>
 </div>
 
-비서가 "이렇게 만들까요?"라고 물어보면 **Yes(허용)**를 누르세요. 오른쪽 미리보기 화면에 글씨가 나타났다면 1단계 성공입니다!
+비서가 "이렇게 만들까요?"라고 **권한을 물어봅니다.** 어떤 파일이 어떻게 바뀌는지 비교 화면(diff)을 한 번 읽어보고 **수락(Yes)**을 누르세요. 오른쪽 미리보기 화면에 글씨가 나타났다면 1단계 성공입니다!
 
 ## 2. 작업 내역 저장하기 (Git)
 
@@ -45,12 +45,22 @@ part: "1부 · 준비"
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 0-2</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-터미널에서 이 폴더를 Git으로 초기화하고(git init), 지금까지 만든 index.html 파일을 첫 번째 커밋으로 저장해 줘. 커밋 메시지는 '첫 홈페이지 생성'으로 해 줘.
+이 폴더를 Git으로 초기화하고(git init), 지금까지 만든 index.html 파일을 첫 번째 커밋으로 저장해 줘. 커밋 메시지는 '첫 홈페이지 생성'으로 해 줘.
 
 </div>
 </div>
 
-비서가 백그라운드에서 알아서 기록을 남겨줍니다.
+비서가 명령을 실행해도 되는지 물어보면, 어떤 명령인지 읽어보고 수락하세요. 그러면 알아서 기록을 남겨줍니다.
+
+### 터미널로도 할 수 있어요
+
+터미널이 익숙하다면 `my-site` 폴더에서 직접 입력해도 같은 결과입니다.
+
+```bash
+git init
+git add .
+git commit -m "첫 홈페이지 생성"
+```
 
 ## 3. 인터넷에 배포하기 (Vercel)
 
@@ -66,7 +76,7 @@ Vercel(버셀)을 통해 배포하려고 해. 먼저 Vercel CLI를 설치하고 
 </div>
 </div>
 
-로그인이 무사히 끝났다면, 드디어 인터넷에 배포하는 마지막 명령을 내립니다!
+로그인이 무사히 끝났다면, 드디어 인터넷에 배포하는 마지막 명령을 내립니다! 이번에도 권한 요청이 뜨면 명령을 읽어보고 수락하세요.
 <div class="prompt-box not-prose" data-prompt="0-4" data-level="required">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 0-4</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
@@ -75,6 +85,16 @@ Vercel(버셀)을 통해 배포하려고 해. 먼저 Vercel CLI를 설치하고 
 
 </div>
 </div>
+
+### 터미널로도 할 수 있어요
+
+2·3단계도 터미널에서 직접 할 수 있습니다. `my-site` 폴더에서:
+
+```bash
+npm install -g vercel
+vercel login
+vercel --prod
+```
 
 🎉 **축하합니다!** 비서가 알려준 **Production URL(예: my-site-xxx.vercel.app)**을 클릭하면 스마트폰으로도 볼 수 있는 진짜 내 홈페이지가 열립니다! 
 

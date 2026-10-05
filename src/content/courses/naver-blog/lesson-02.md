@@ -9,18 +9,13 @@ part: 1부 · 준비
 
 ## 1. 프로젝트 폴더
 
-```bash
-cd ~/Desktop
-mkdir naver-blog-factory
-cd naver-blog-factory
-code .
-```
+### 클로드 데스크탑 Code 탭에서 시키기
 
-::: windows
-`~`가 안 되면 `cd $HOME\Desktop`.
-:::
-
-`claude` 실행 후:
+1. 바탕화면에 `naver-blog-factory` 빈 폴더를 하나 만듭니다 (탐색기·Finder에서 새 폴더).
+2. Claude 데스크탑 앱의 **Code** 탭을 열고, 입력창 근처에서 **프로젝트 폴더로 그 폴더를 선택**합니다.
+3. 아래 프롬프트를 붙여 넣고 Enter.
+4. 파일을 만들겠다는 **권한 요청**이 뜨면 어느 파일인지 읽고 수락합니다. 이번에는 폴더와 빈 파일만 만들어요.
+5. 왼쪽 파일 목록(또는 결과 화면)에서 폴더 구조가 만들어졌는지 확인합니다.
 
 <div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -39,6 +34,21 @@ code .
 </div>
 
 1강의 `blog-plan.md`를 옮겨 넣으세요.
+
+### 터미널로도 할 수 있어요
+
+터미널이 익숙하다면 폴더를 직접 만들고 같은 Claude Code를 `claude`로 실행해서 위 프롬프트를 붙여 넣어도 됩니다.
+
+```bash
+cd ~/Desktop
+mkdir naver-blog-factory
+cd naver-blog-factory
+code .
+```
+
+::: windows
+`~`가 안 되면 `cd $HOME\Desktop`.
+:::
 
 ## 2. VOICE.md — 내 문체
 
@@ -133,6 +143,19 @@ searchad.naver.com → 로그인 → **도구 → 키워드 도구**. 검색창�
 datalab.naver.com(데이터랩)도 열어두세요. 키워드의 계절성을 볼 때 씁니다.
 
 ## 6. 첫 커밋
+
+**Code 탭에서**: 이렇게 시키세요. 권한 요청에서 `git init`, `git commit` 명령이 맞는지 읽고 수락합니다.
+
+<div class="prompt-box not-prose" data-prompt="2-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+이 폴더를 Git 저장소로 만들고(git init), 지금 있는 파일을 전부 담아서 "네이버 블로그 파이프라인 시작"이라는 메시지로 커밋해줘. 끝나면 커밋 기록을 한 줄로 보여줘.
+
+</div>
+</div>
+
+#### 터미널로도 할 수 있어요
 
 ```bash
 git init

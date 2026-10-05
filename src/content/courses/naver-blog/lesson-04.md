@@ -113,6 +113,19 @@ draft.md를 final.md로 복사하고 meta.json의 status를 "written"으로.
 </div>
 </div>
 
+**Code 탭에서**: "커밋해줘"라고 시키고, 권한 요청에서 `git commit`이 맞는지 읽고 수락합니다.
+
+<div class="prompt-box not-prose" data-prompt="4-7" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-7</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+지금까지 바뀐 파일을 전부 담아서 "camping-chair: 원고 완성"라는 메시지로 커밋해줘. 끝나면 커밋 기록을 한 줄로 보여줘.
+
+</div>
+</div>
+
+#### 터미널로도 할 수 있어요
+
 ```bash
 git add .
 git commit -m "camping-chair: 원고 완성"

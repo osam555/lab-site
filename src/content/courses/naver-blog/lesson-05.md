@@ -111,6 +111,19 @@ final.md를 editor.md로 변환해줘. 규칙:
 
 이 `editor.md`가 6강에서 브라우저 자동화의 입력이 됩니다.
 
+**Code 탭에서**: "커밋해줘"라고 시키고, 권한 요청에서 `git commit`이 맞는지 읽고 수락합니다.
+
+<div class="prompt-box not-prose" data-prompt="5-8" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-8</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+지금까지 바뀐 파일을 전부 담아서 "camping-chair: 이미지·제목·태그·에디터 원고"라는 메시지로 커밋해줘. 끝나면 커밋 기록을 한 줄로 보여줘.
+
+</div>
+</div>
+
+#### 터미널로도 할 수 있어요
+
 ```bash
 git add .
 git commit -m "camping-chair: 이미지·제목·태그·에디터 원고"

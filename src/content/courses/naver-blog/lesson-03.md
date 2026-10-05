@@ -78,6 +78,19 @@ keywords/의 CSV를 전부 읽고 분석해줘.
 
 30개를 훑으며: 카테고리가 3개 이상이면 줄입니다. "캠핑 장비 / 캠핑장 / 캠핑 요리"는 한 블로그에 괜찮지만, 거기에 "주식"이 섞이면 안 됩니다. 1강의 경계입니다.
 
+**Code 탭에서**: "커밋해줘"라고 시키고, 권한 요청에서 `git commit`이 맞는지 읽고 수락합니다.
+
+<div class="prompt-box not-prose" data-prompt="3-9" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-9</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+지금까지 바뀐 파일을 전부 담아서 "키워드 30개, 1월 캘린더"라는 메시지로 커밋해줘. 끝나면 커밋 기록을 한 줄로 보여줘.
+
+</div>
+</div>
+
+#### 터미널로도 할 수 있어요
+
 ```bash
 git add .
 git commit -m "키워드 30개, 1월 캘린더"

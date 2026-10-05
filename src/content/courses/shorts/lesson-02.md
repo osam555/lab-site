@@ -11,6 +11,18 @@ part: 1부 · 준비
 
 ffmpeg는 영상·음성을 자르고 붙이고 자막을 입히는 무료 도구입니다. 7강 합성의 주인공이고, 6강에서 음성 길이를 재는 데도 씁니다. Claude Code가 명령을 대신 쓰지만 프로그램은 설치되어 있어야 합니다.
 
+### 클로드 데스크탑 Code 탭에서 이렇게 시키세요
+
+1. 클로드 데스크탑 앱에서 **Code** 탭을 열고 작업 폴더를 고릅니다. (아직 폴더가 없으면 아래 3번에서 만든 `shorts-factory`를 고르거나, 우선 바탕화면 아무 폴더나 괜찮아요.)
+2. 입력창에 이렇게 씁니다.
+
+> ffmpeg가 설치되어 있는지 확인하고, 없으면 설치해줘. 내 컴퓨터는 [맥 / 윈도우]야. 끝나면 버전을 확인해줘.
+
+3. 클로드가 "이 명령을 실행해도 될까요?" 하고 **권한 요청**을 띄웁니다. 어떤 명령인지(`brew install ffmpeg` 또는 `winget install ffmpeg`) 읽고 **수락**하세요.
+4. 마지막에 `ffmpeg -version`의 결과가 여러 줄 나오면 성공입니다. 에러가 나면 화면 그대로 클로드에게 "이 에러 고쳐줘"라고 말하세요.
+
+### 터미널로도 할 수 있어요
+
 ::: windows
 PowerShell(VS Code 터미널)에서:
 
@@ -51,6 +63,14 @@ ffmpeg -version
 
 ## 3. 프로젝트 폴더
 
+### 클로드 데스크탑 Code 탭에서 이렇게 시키세요
+
+1. 바탕화면에 `shorts-factory`라는 빈 폴더를 만듭니다. (Finder/탐색기에서 새 폴더, 또는 Code 탭에서 "바탕화면에 shorts-factory 폴더 만들어줘"라고 시켜도 됩니다.)
+2. Code 탭에서 **폴더 선택**으로 그 `shorts-factory` 폴더를 엽니다.
+3. 폴더 구조는 Claude Code에게 만들게 합니다. 아래 프롬프트를 입력창에 붙여넣고, 뜨는 권한 요청(파일 만들기 diff)을 읽고 수락하세요.
+
+### 터미널로도 할 수 있어요
+
 ```bash
 cd ~/Desktop
 mkdir shorts-factory
@@ -62,7 +82,9 @@ code .
 `~`가 안 되면 `cd $HOME\Desktop`.
 :::
 
-폴더 구조는 Claude Code에게 만들게 합니다. `claude` 실행 후:
+터미널에서는 이 폴더에서 `claude`를 실행한 뒤 아래 프롬프트를 붙여넣으면 됩니다.
+
+프롬프트:
 
 <div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -128,6 +150,14 @@ CLAUDE.md를 만들어줘:
 만들어진 파일을 **직접 읽어보세요.** 특히 "허락을 받는다" 두 줄은 크레딧과 돈을 지키는 규칙입니다.
 
 ## 6. 첫 커밋
+
+### 클로드 데스크탑 Code 탭에서 이렇게 시키세요
+
+> 이 폴더를 git 저장소로 만들고, 지금까지 만든 파일을 "쇼츠 파이프라인 프로젝트 시작"이라는 메시지로 커밋해줘. .env가 커밋 목록에 없는지도 확인해서 알려줘.
+
+권한 요청이 뜨면 명령(`git init`, `git add`, `git commit`)을 읽고 수락합니다. 클로드가 알려주는 목록에 `.env`가 **없으면** 정상입니다.
+
+### 터미널로도 할 수 있어요
 
 ```bash
 git init

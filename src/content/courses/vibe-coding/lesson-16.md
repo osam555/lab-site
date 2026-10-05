@@ -13,11 +13,17 @@ part: 4부 · 세상에 내놓기
 
 ## 1. 환경변수 정리
 
-`.env.local`에 있는 값이 전부 Vercel에도 있는지 확인합니다.
+`.env.local`에 있는 값이 전부 Vercel에도 있는지 확인합니다. Code 탭에 이렇게 시키세요.
+
+> ".env.local에 있는 변수 이름만 목록으로 알려줘. 값은 절대 출력하지 마."
+
+### 터미널로도 할 수 있어요
 
 ```bash
 cat .env.local
 ```
+
+(화면에 비밀 값이 그대로 나오니 다른 사람이 보는 화면에서는 하지 마세요.)
 
 Vercel → Settings → Environment Variables와 하나씩 대조. 빠진 게 있으면 추가 → Redeploy.
 
@@ -25,7 +31,11 @@ Vercel → Settings → Environment Variables와 하나씩 대조. 빠진 게 �
 
 ## 2. 빌드 통과 확인
 
-Vercel은 배포 전에 `npm run build`를 실행합니다. 로컬에서 미리 돌려보세요.
+Vercel은 배포 전에 `npm run build`를 실행합니다. Code 탭에서 미리 돌려보세요.
+
+> "빌드(npm run build)를 실행하고 통과하는지 알려줘."
+
+### 터미널로도 할 수 있어요
 
 ```bash
 npm run build
@@ -46,13 +56,21 @@ npm run build
 
 Vercel은 `main` 외의 브랜치를 push하면 **별도 주소로 미리보기**를 만들어줍니다. 큰 변경을 할 때 진짜 주소를 안 건드리고 확인할 수 있습니다.
 
+Code 탭에 이렇게 시킵니다.
+
+> "design-update라는 새 브랜치를 만들어서 작업해줘. 작업이 끝나면 커밋하고 그 브랜치를 GitHub에 올려줘."
+
+확인 후 마음에 들면 GitHub에서 Pull Request → Merge하면 `main`에 반영됩니다. 5강에서 미뤄둔 "브랜치"가 이겁니다. `git push`는 무엇을 어디로 올리는지 **읽고** 수락하세요.
+
+### 터미널로도 할 수 있어요
+
 ```bash
 git checkout -b design-update    # 새 브랜치
 # ... 작업, 커밋 ...
 git push -u origin design-update # 미리보기 주소 생성
 ```
 
-확인 후 마음에 들면 GitHub에서 Pull Request → Merge하면 `main`에 반영됩니다. 5강에서 미뤄둔 "브랜치"가 이겁니다. AI에게 "브랜치 만들고 push하는 법"을 물어보면 됩니다.
+AI에게 "브랜치 만들고 push하는 법"을 물어봐도 됩니다.
 
 ## 4. 도메인 연결하기 (선택)
 
@@ -95,7 +113,7 @@ DNS 설정이 헷갈리면 화면을 캡처해서 AI에게 "Vercel이 이 값을
 
 ## 오늘의 체크리스트
 
-- [ ] `npm run build`가 로컬에서 통과한다
+- [ ] 빌드(`npm run build`)가 로컬에서 통과한다
 - [ ] Vercel 환경변수가 `.env.local`과 일치한다
 - [ ] 브랜치 push로 미리보기 주소를 만들어봤다
 - [ ] 공개 전 체크리스트 6개를 전부 통과했다

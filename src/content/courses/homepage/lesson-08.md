@@ -7,27 +7,9 @@ minutes: 45
 part: 3부 · 공개
 ---
 
-## 이번 강에서만 터미널을 씁니다
+## 이번 강에서는 GitHub에 파일을 올립니다
 
-GitHub에 파일을 올리는 작업은 터미널 명령이 필요합니다. 딱 이 강에서만 씁니다. 명령은 네 줄이 전부입니다.
-
-**터미널 여는 법**
-
-::: windows
-시작 메뉴에서 **"PowerShell"** 을 검색해 실행합니다.
-:::
-
-::: mac
-`Cmd + Space` → **"터미널"** 검색해 실행합니다.
-:::
-
-터미널이 열리면 `my-site` 폴더로 이동합니다:
-
-```bash
-cd ~/Desktop/my-site
-```
-
-`Desktop/my-site`가 아닌 다른 곳에 폴더를 만들었다면 그 경로를 씁니다.
+GitHub에 파일을 올리는 일은 원래 명령어(git)로 합니다. 걱정 마세요. **Code 탭에서 클로드에게 말로 시키면** 클로드가 명령을 대신 실행하고, 여러분은 권한 요청을 읽고 수락만 하면 됩니다. 터미널을 직접 열고 싶은 분을 위한 방법은 아래 **'터미널로도 할 수 있어요'** 에 그대로 남겨 두었습니다.
 
 ---
 
@@ -43,17 +25,15 @@ cd ~/Desktop/my-site
 1. github.com 가입 (무료)
 2. 오른쪽 위 `+` → **New repository**
 3. Repository name: `my-site` / **Public** / 나머지는 건드리지 않고 **Create repository**
-4. 화면에 명령어 여러 줄이 뜹니다. **"…or push an existing repository from the command line"** 아래 세 줄이 필요합니다. 아직 닫지 마세요.
+4. 화면에 명령어 여러 줄이 뜹니다. **"…or push an existing repository from the command line"** 아래 세 줄이 있는데, 그 안의 **저장소 주소**(`https://github.com/내아이디/my-site.git`)를 복사해 둡니다. 아직 창을 닫지 마세요.
 
 ## 2. 내 컴퓨터와 GitHub 연결
 
-앞서 연 터미널에서 GitHub 화면의 세 줄을 순서대로 붙여넣습니다. 이런 모양입니다:
+Code 탭 대화창에 복사한 주소를 넣어 시키세요:
 
-```bash
-git remote add origin https://github.com/내아이디/my-site.git
-git branch -M main
-git push -u origin main
-```
+> 🗣️ "이 폴더를 GitHub 저장소 [복사한 주소]에 연결하고, main 브랜치로 처음 올려줘(push). 한 번만 하는 설정이야."
+
+클로드가 명령을 실행하기 전에 권한을 물어봅니다. 어떤 명령인지 읽고 수락하세요. (내부적으로는 아래 세 가지 일을 합니다.)
 
 <div class="prompt-box not-prose" data-prompt="8-1" data-level="required">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-required">⭐ 필수</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -76,6 +56,34 @@ git push -u origin main
 
 성공하면 GitHub 페이지를 새로고침하세요. 내 파일들이 보입니다.
 
+### 터미널로도 할 수 있어요
+
+터미널을 직접 쓰고 싶다면 이렇게 합니다.
+
+**터미널 여는 법**
+
+::: windows
+시작 메뉴에서 **"PowerShell"** 을 검색해 실행합니다.
+:::
+
+::: mac
+`Cmd + Space` → **"터미널"** 검색해 실행합니다.
+:::
+
+터미널이 열리면 `my-site` 폴더로 이동합니다:
+
+```bash
+cd ~/Desktop/my-site
+```
+
+`Desktop/my-site`가 아닌 다른 곳에 폴더를 만들었다면 그 경로를 씁니다. 그다음 GitHub 화면의 세 줄을 순서대로 붙여넣습니다. 이런 모양입니다:
+
+```bash
+git remote add origin https://github.com/내아이디/my-site.git
+git branch -M main
+git push -u origin main
+```
+
 ## 3. Vercel 연결 (웹 대시보드)
 
 터미널 없이 클릭만으로 배포합니다.
@@ -93,19 +101,21 @@ git push -u origin main
 
 이제부터 수정할 때는:
 
-1. 앱 대화창에서 Claude Code에게 고쳐달라고 함
+1. Code 탭 대화창에서 Claude Code에게 고쳐달라고 함
 2. 미리보기에서 확인
-3. 앱 터미널 탭에서 커밋 + push
+3. 대화창에서 "지금까지 바뀐 거 커밋하고 push해줘"라고 시키고, 권한 요청을 읽고 수락
+
+push하면 Vercel이 자동으로 알아채고 1분 안에 새 버전을 올립니다.
+
+### 터미널로도 할 수 있어요
+
+앱 터미널 탭에서 직접 입력해도 됩니다:
 
 ```bash
 git add .
 git commit -m "영업시간 수정"
 git push
 ```
-
-push하면 Vercel이 자동으로 알아채고 1분 안에 새 버전을 올립니다.
-
-세 줄이 귀찮으면 Claude Code에게 "지금까지 바뀐 거 커밋하고 push해줘"라고 하면 됩니다.
 
 지금 바로 한 번 해보세요. 하단 문구를 하나 바꾸고 → 커밋 → push → 1분 뒤 폰에서 새로고침.
 
@@ -125,7 +135,7 @@ PC의 폰 모드와 진짜 폰은 다릅니다. 폰에서 직접:
   <div class="tip-box">
     <div class="font-bold text-accent text-sm mb-1">💡 초보자 배포 팁</div>
     <div class="text-sm text-text-muted">
-      GitHub 업로드가 낯설더라도 딱한 번만 연결해두면, 이후로는 터미널에서 <code class="text-accent">git push</code> 한 줄만 치거나 AI에게 <i>"배포해줘"</i>라고 말하면 몇 초 만에 홈페이지가 실시간 업데이트됩니다!
+      GitHub 업로드가 낯설더라도 딱한 번만 연결해두면, 이후로는 AI에게 <i>"배포해줘"</i>라고 말하거나 터미널에서 <code class="text-accent">git push</code> 한 줄만 치면 몇 초 만에 홈페이지가 실시간 업데이트됩니다!
     </div>
   </div>
 </div>

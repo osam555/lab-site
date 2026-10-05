@@ -1,32 +1,50 @@
 ---
 number: 2
 title: 설치와 준비물 정리
-subtitle: Claude Code 설치부터 유형별 준비 파일까지 한 번에
-goal: Claude Code를 설치하고, 내 랜딩페이지 유형에 맞는 준비물과 메모를 정리합니다.
+subtitle: 클로드 데스크탑 앱 설치부터 유형별 준비 파일까지 한 번에
+goal: 클로드 데스크탑 앱(Code 탭)을 설치하고, 내 랜딩페이지 유형에 맞는 준비물과 메모를 정리합니다.
 minutes: 30
 part: 1부 · 구조와 준비
 ---
 
-## Claude Code 설치 (5분)
+## Claude 데스크탑 앱 설치 (5분)
 
 이미 설치한 사람은 건너뛰세요.
 
-### Windows
+1. [claude.ai/download](https://claude.ai/download)에서 내 컴퓨터(Windows 또는 macOS)에 맞는 데스크탑 앱을 다운로드해 설치합니다. 설치 화면에서는 기본값대로 **다음**만 누르면 됩니다.
+2. 앱을 열고 **Claude 계정으로 로그인**합니다.
+3. 앱 위쪽(또는 옆)의 **Chat · Cowork · Code** 탭 중 **Code** 탭을 누릅니다.
+
+## 프로젝트 폴더 만들고 연결하기
+
+1. 바탕화면에 `my-landing` 폴더를 만듭니다.
+2. Code 탭의 폴더 선택 버튼(**Open Folder**)을 눌러 이 폴더를 고릅니다. 클로드는 이 폴더 안에서만 일합니다.
+3. 입력창에 "안녕! 이 폴더에 뭐가 있어?"라고 보내 보세요. 권한 요청이 뜨면 내용을 읽고 수락하면 됩니다. 폴더가 비어 있다고 답하면 연결 성공입니다.
+
+### 터미널로도 할 수 있어요
+
+앞 단계의 Node.js 설치와 터미널 확인, 그리고 터미널에서 쓰는 CLI 방식입니다.
+
+#### Windows
 
 1. [nodejs.org](https://nodejs.org) → LTS 버전 다운로드 → 설치
 2. 시작 메뉴 → "PowerShell" 검색 → 열기
 3. `node -v` 입력 → 버전 숫자가 나오면 성공
 4. Claude Code 데스크탑 앱: [claude.ai/download](https://claude.ai/download)에서 다운로드 → 설치
 
-### macOS
+#### macOS
 
 1. [nodejs.org](https://nodejs.org) → LTS 버전 다운로드 → 설치
 2. 터미널(Spotlight → "터미널") → `node -v` → 버전 확인
 3. Claude Code 데스크탑 앱: [claude.ai/download](https://claude.ai/download)에서 다운로드 → 설치
 
-## 프로젝트 폴더 만들기
+터미널에서 Claude Code를 쓰려면(CLI), 프로젝트 폴더 안에서 `claude`를 실행합니다:
 
-바탕화면에 `my-landing` 폴더를 만들고, Claude Code 앱에서 **Open Folder** → 이 폴더를 선택합니다.
+```bash
+npm install -g @anthropic-ai/claude-code
+cd ~/Desktop/my-landing
+claude
+```
 
 ## 유형별 준비물 정리
 
@@ -160,8 +178,8 @@ CTA: (상담 신청, 포트폴리오 다운로드 등)
 
 ## 오늘의 체크리스트
 
-- [ ] Claude Code 앱이 설치되어 있다
-- [ ] `my-landing` 폴더가 앱에 연결되어 있다
+- [ ] Claude 데스크탑 앱이 설치되어 있고 Code 탭을 열 수 있다
+- [ ] `my-landing` 폴더가 Code 탭에 연결되어 있다
 - [ ] 내 유형의 준비물과 메모를 정리했다
 - [ ] 이미지를 `images/` 폴더에 넣었다
 

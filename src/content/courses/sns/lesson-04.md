@@ -67,6 +67,14 @@ scripts/render-cards.py를 만들어줘.
 </div>
 </div>
 
+실행은 클로드 데스크탑 Code 탭에서 이렇게 시키세요.
+
+> scripts/render-cards.py를 posts/2025-01-camping-chair에 대해 실행해서 카드를 만들어줘. 만들어진 파일 목록도 알려줘.
+
+권한 요청에 뜬 명령을 읽고 수락합니다. 에러가 나면 그대로 "이거 고쳐서 다시 해줘"라고 맡기면 됩니다. 아래 Windows/Mac 안내는 그런 에러가 났을 때 참고하세요.
+
+### 터미널로도 할 수 있어요
+
 ```bash
 python3 scripts/render-cards.py posts/2025-01-camping-chair
 ```
@@ -104,6 +112,14 @@ quote.html에 `{{bg_image}}` 옵션을 추가해줘. 있으면 사진을 어둡�
 </div>
 
 `variants.json`의 채널 항목에 `bg_image: "../sources/img/01.jpg"`를 넣으면 됩니다. 인스타는 사진 배경, 링크드인은 단색 — 이런 채널별 기본값도 channels.json에 넣을 수 있습니다.
+
+Code 탭에서는 이렇게 시키세요.
+
+> 바뀐 파일을 "카드 템플릿과 렌더 스크립트"라는 메시지로 커밋해줘.
+
+권한 요청에 뜬 명령(`git add`, `git commit`)을 읽고 수락합니다.
+
+### 터미널로도 할 수 있어요
 
 ```bash
 git add .
