@@ -3,7 +3,7 @@ import Link from "next/link";
 import { loadDoc } from "@/lib/content";
 import { Markdown } from "@/components/Markdown";
 
-type Basics = { title: string; summary: string; updated: string };
+type Basics = { title: string; summary: string; updated: string; order?: number };
 
 export const metadata: Metadata = {
   title: "클로드 사용법 기초",

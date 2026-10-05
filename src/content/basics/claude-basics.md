@@ -1,7 +1,7 @@
 ---
 title: 클로드 사용법 기초
 summary: 클로드가 뭔지, 챗·아티팩트·코드를 어떻게 쓰는지, 막혔을 때 어디부터 보는지. 이 강좌를 시작하기 전에 읽는 한 페이지.
-updated: 2026-10-06
+updated: '2026-10-06'
 sources:
   - https://support.claude.com/en/articles/8114494-how-can-i-access-claude
   - https://support.claude.com/en/articles/8241126-uploading-files-to-claude
