@@ -160,6 +160,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="basics" className="border-t border-line bg-card">
+        <div className="mx-auto max-w-5xl px-4 py-12">
+          <Link href="/basics" className="group block rounded-xl border border-line bg-background p-6 transition hover:border-accent hover:shadow-sm">
+            <div className="text-[11px] font-bold uppercase tracking-wide text-accent">Basics</div>
+            <h2 className="mt-1 text-xl font-black group-hover:text-accent">클로드 사용법 기초</h2>
+            <p className="mt-2 leading-relaxed text-muted">
+              클로드가 뭔지, 챗·아티팩트·코드를 어떻게 쓰는지, 자주 막히는 것까지. 강좌 시작 전에 읽는 한 페이지.
+            </p>
+            <span className="mt-3 inline-block text-sm font-bold text-accent">읽어보기 →</span>
+          </Link>
+        </div>
+      </section>
+
       <section id="courses" className="mx-auto max-w-5xl px-4 py-16">
         <h2 className="text-2xl font-black tracking-tight sm:text-3xl">바이브 코딩 강좌</h2>
         <p className="mt-2 text-muted">처음이라면 홈페이지 만들기부터.</p>
