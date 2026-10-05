@@ -25,6 +25,8 @@ sources:
 - [ ] **깃(Git)** — 설치 방법과 확인은 클로드에게 "내 컴퓨터에 깃이 있는지 확인하고 없으면 설치 방법을 알려줘"라고 시켜요.
 - [ ] **Node.js** — 웹사이트를 만들 때 필요해요. 마찬가지로 클로드에게 확인을 시켜요.
 - [ ] 코드 편집기는 없어도 시작할 수 있어요.
+- [ ] (선택) 파일 정리 같은 사무 작업은 **Cowork** — 유료 요금제 안내가 있어요. ([Cowork 사용법](/basics/cowork-basics))
+- [ ] (선택) 영상 자동화 강좌를 하려면 Code 탭에서 시켜요. ([영상 자동화를 코드 탭에서](/basics/video-automation-in-code))
 
 ## 폴더
 
@@ -43,7 +45,7 @@ sources:
 
 ## 다음 순서
 
-[깃 기초](/basics/git-basics) → [깃허브 기초](/basics/github-basics) → [버셀 기초](/basics/vercel-basics) → [깃-버셀 연동과 배포](/basics/git-vercel-deploy) → [클로드 활용법](/basics/claude-uses) → [Aside로 SNS 자동화](/basics/aside-sns-overview). 실습은 [홈페이지 만들기](/lectures/homepage).
+[깃 기초](/basics/git-basics) → [깃허브 기초](/basics/github-basics) → [버셀 기초](/basics/vercel-basics) → [깃-버셀 연동과 배포](/basics/git-vercel-deploy) → [클로드 활용법](/basics/claude-uses) → [Aside로 SNS 자동화](/basics/aside-sns-overview) → [Cowork 사용법](/basics/cowork-basics) → [영상 자동화를 코드 탭에서](/basics/video-automation-in-code). 실습은 [홈페이지 만들기](/lectures/homepage).
 
 ---
 
