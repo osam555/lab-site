@@ -11,7 +11,53 @@ part: 2부 · 첫 편 만들기
 
 내 주제로 바로 시작하면 대본 문제와 도구 사용법 문제가 뒤섞여 헷갈립니다. 키트에 완성된 대본 「무지개는 왜 생길까」(`examples/generic_episode.json`, 24줄, 키워드 카드 4장, 컷 계획까지 이미 들어 있음)가 있습니다. 이걸 그대로 한 편 뽑아보면 도구 사용법만 익힐 수 있습니다.
 
-## 따라하기 1: 편 만들기
+## Code 탭에서 이렇게 시키세요
+
+> **기본 방법: 클로드 데스크탑 앱의 Code 탭.** 키트 폴더(`clay-episode-kit`)를 프로젝트 폴더로 열고, 아래 프롬프트를 붙여 넣어 클로드에게 시킵니다. 클로드가 명령을 실행하거나 파일을 바꾸려고 **권한을 물으면, 무엇을 하려는지 읽고** 허용합니다(모르겠으면 "이게 뭐 하는 거야?"라고 되물어 보세요). 끝나면 '③ 결과 확인'을 눈으로 확인합니다. 명령어를 직접 치는 방법은 맨 아래 **'터미널로도 할 수 있어요'** 에 접어 두었습니다.
+
+이 단계는 clay-episode 스킬의 "첫 편 30분 따라 하기"와 "대본 쓰기·컷 계획 쓰기" 절에 해당합니다. 예시 편은 컷 계획이 이미 있으니, 여기서는 검사 통과까지만 스킬에게 맡깁니다.
+
+### 프롬프트 4-1 · 대본→더빙→컷 계획 검사 통과
+
+**① 준비 (사람이 먼저)**
+- [ ] 어디서: 키트 폴더(`clay-episode-kit`)에서 데스크탑 앱 Code 탭을 열고 이 폴더를 프로젝트 폴더로 고릅니다
+- [ ] `.env.local` 에 Typecast 키가 있고 `ESBUILD` 환경변수가 살아 있어야 합니다(2강)
+- [ ] `data/longform/rainbow.json` 이 만들어져 있어야 합니다(따라하기 1)
+
+**② 스킬 (붙여 넣기)**
+
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, 편 키 rainbow 의 컷 계획 검사만 통과시켜줘. prepare_lines→bake_lines→top10_plan→cutplan_check 스크립트를 순서대로 돌리고, ✗ 표시가 나오면 스킬 안의 검사 항목 표를 보고 원인을 고쳐서 다시 돌려. 값을 지어내지 말고 스크립트가 실제로 출력한 점수와 문장 수만 보고 판단해. cutplan_check 가 "10.0점 통과"를 출력하면 거기서 멈추고 결과를 보여줘 — 다음 단계(Flow 생성)는 내가 확인한 뒤 시킬게.
+
+</div>
+</div>
+
+**③ 결과 확인**
+- [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
+- [ ] Claude 가 네 스크립트를 순서대로 돌리고 점수·문장 수를 보고했는지
+- [ ] `bake_lines` 마지막 줄의 문장 수가 대본 줄 수(24)와 정확히 같은지 화면에서 직접 봅니다
+- [ ] **사람이 확인해야 할 체크포인트**: `cutplan_check` 가 실제로 "10.0점 통과"를 출력했는지 화면을 직접 봅니다 — 스킬의 보고만 믿지 않습니다.
+
+## 검사가 보는 것
+
+| 검사 항목 | 통과 조건 |
+|---|---|
+| 줄 배정 | 대본 1~24 모든 줄이 어떤 컷에든 배정돼 있다 |
+| 캐릭터 상수 | 사람이 나오는 컷은 `{C2}` `{MP}` 등 kit.config.json 의 상수로만 묘사한다 |
+| 금지어 | 어두운 낱말(dark, night, scary…), 사물 위 글자·로고 지시가 없다 |
+| 썸네일 헤드라인 | 두 줄 합쳐 14자 이하, 둘째 줄(빨간 박스) 폰트 120px 이상 |
+
+✗ 표시가 나오면 그 항목을 고치고 `top10_plan.py`→`cutplan_check.py` 를 다시 돌립니다. **여기서 걸리는 걸 그대로 Flow 에 보내면 크레딧만 날립니다** — 컷 하나가 10크레딧입니다.
+
+## 터미널로도 할 수 있어요
+
+위 프롬프트가 하는 일을 직접 명령으로 치고 싶을 때 보세요. 운영체제 탭(Windows·macOS)에 맞는 명령을 씁니다.
+
+<details>
+<summary><strong>따라하기 1: 편 만들기</strong></summary>
 
 ::: windows
 ```powershell
@@ -27,7 +73,10 @@ cp examples/generic_episode.json data/longform/rainbow.json
 
 편 하나의 영문 이름을 **키(key)** 라 부릅니다(여기선 `rainbow`). 파일·폴더 이름에 그대로 쓰이므로 소문자·밑줄만 씁니다.
 
-## 따라하기 2: 작업 파일 뽑기 + 더빙
+</details>
+
+<details>
+<summary><strong>따라하기 2: 작업 파일 뽑기 + 더빙</strong></summary>
 
 시작 전 확인: 키트 폴더 안이고, `.env.local` 에 Typecast 키가 있고, `ESBUILD` 환경변수가 살아 있어야 합니다(2강에서 영구 저장했다면 새 터미널에서도 됩니다). 더빙은 Typecast 사용량(이 편은 24문장)을 씁니다.
 
@@ -63,7 +112,10 @@ mv scratch/flow_rainbow/n*.wav scratch/flow_rainbow/_old_wav/
 ```
 :::
 
-## 따라하기 3: 컷 계획 → 검사
+</details>
+
+<details>
+<summary><strong>따라하기 3: 컷 계획 → 검사</strong></summary>
 
 예시 편의 컷 계획은 `scripts/top10_plan.py` 안에 `PLANS['rainbow']` 로 이미 들어 있습니다. 생성하고 검사만 합니다.
 
@@ -83,43 +135,7 @@ python3 scripts/cutplan_check.py rainbow
 
 `top10_plan.py` 가 `data/longform/prompts/rainbow.json` 에 컷별 영문 프롬프트를 만듭니다. `cutplan_check.py` 가 그걸 채점합니다 — **"10.0점 통과"** 가 나와야 다음 단계(5강, Flow 생성)로 갑니다.
 
-## 검사가 보는 것
-
-| 검사 항목 | 통과 조건 |
-|---|---|
-| 줄 배정 | 대본 1~24 모든 줄이 어떤 컷에든 배정돼 있다 |
-| 캐릭터 상수 | 사람이 나오는 컷은 `{C2}` `{MP}` 등 kit.config.json 의 상수로만 묘사한다 |
-| 금지어 | 어두운 낱말(dark, night, scary…), 사물 위 글자·로고 지시가 없다 |
-| 썸네일 헤드라인 | 두 줄 합쳐 14자 이하, 둘째 줄(빨간 박스) 폰트 120px 이상 |
-
-✗ 표시가 나오면 그 항목을 고치고 `top10_plan.py`→`cutplan_check.py` 를 다시 돌립니다. **여기서 걸리는 걸 그대로 Flow 에 보내면 크레딧만 날립니다** — 컷 하나가 10크레딧입니다.
-
-## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
-
-이 단계는 clay-episode 스킬의 "첫 편 30분 따라 하기"와 "대본 쓰기·컷 계획 쓰기" 절에 해당합니다. 예시 편은 컷 계획이 이미 있으니, 여기서는 검사 통과까지만 스킬에게 맡깁니다.
-
-### 프롬프트 4-1 · 대본→더빙→컷 계획 검사 통과
-
-**① 준비 (사람이 먼저)**
-- [ ] 어디서: 키트 폴더(`clay-episode-kit`)에서 Claude Code 를 엽니다
-- [ ] `.env.local` 에 Typecast 키가 있고 `ESBUILD` 환경변수가 살아 있어야 합니다(2강)
-- [ ] `data/longform/rainbow.json` 이 만들어져 있어야 합니다(따라하기 1)
-
-**② 스킬 (붙여 넣기)**
-
-<div class="prompt-box not-prose" data-prompt="4-1" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-clay-episode 스킬을 읽고, 편 키 rainbow 의 컷 계획 검사만 통과시켜줘. prepare_lines→bake_lines→top10_plan→cutplan_check 스크립트를 순서대로 돌리고, ✗ 표시가 나오면 스킬 안의 검사 항목 표를 보고 원인을 고쳐서 다시 돌려. 값을 지어내지 말고 스크립트가 실제로 출력한 점수와 문장 수만 보고 판단해. cutplan_check 가 "10.0점 통과"를 출력하면 거기서 멈추고 결과를 보여줘 — 다음 단계(Flow 생성)는 내가 확인한 뒤 시킬게.
-
-</div>
-</div>
-
-**③ 결과 확인**
-- [ ] Claude 가 네 스크립트를 순서대로 돌리고 점수·문장 수를 보고했는지
-- [ ] `bake_lines` 마지막 줄의 문장 수가 대본 줄 수(24)와 정확히 같은지 화면에서 직접 봅니다
-- [ ] **사람이 확인해야 할 체크포인트**: `cutplan_check` 가 실제로 "10.0점 통과"를 출력했는지 화면을 직접 봅니다 — 스킬의 보고만 믿지 않습니다.
+</details>
 
 ## 오늘의 체크리스트
 

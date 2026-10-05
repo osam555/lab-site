@@ -41,42 +41,6 @@ part: 1부 · 준비
 | Cloudflare R2 | 완성 영상 임시 저장소 |
 | Google Drive 앱 (선택) | 만든 클립 재사용 라이브러리 백업 |
 
-## 따라하기 1: Python·Node·ffmpeg
-
-::: windows
-PowerShell(관리자 아님):
-
-```powershell
-winget install Python.Python.3.12
-winget install OpenJS.NodeJS.LTS
-winget install ffmpeg
-```
-
-설치 중 Python 설치 화면이 뜨면 **"Add python.exe to PATH"를 꼭 체크**합니다. 설치 후 터미널을 닫았다 다시 열고 확인:
-
-```powershell
-python --version
-node -v
-ffmpeg -version
-```
-:::
-
-::: mac
-Homebrew가 있으면:
-
-```bash
-brew install python node ffmpeg
-```
-
-확인:
-
-```bash
-python3 --version
-node -v
-ffmpeg -version
-```
-:::
-
 ## 따라하기 2: Aside 설치와 로그인
 
 Aside 는 "Claude 가 대신 클릭해 주는 브라우저"입니다. 이 과정에서는 Google Flow 와 YouTube Studio 를 이 브라우저 안에서 자동 조작합니다.
@@ -194,7 +158,132 @@ export DRIVE_LIB=~/Library/CloudStorage/GoogleDrive-내계정/My\ Drive/clay-lib
 
 당장 안 써도 됩니다. 필요할 때(8강) 설정해도 늦지 않습니다.
 
-## 따라하기 6: 키트 클론과 설치
+## Code 탭에서 이렇게 시키세요
+
+> **기본 방법: 클로드 데스크탑 앱의 Code 탭.** 키트 폴더(`clay-episode-kit`)를 프로젝트 폴더로 열고, 아래 프롬프트를 붙여 넣어 클로드에게 시킵니다. 클로드가 명령을 실행하거나 파일을 바꾸려고 **권한을 물으면, 무엇을 하려는지 읽고** 허용합니다(모르겠으면 "이게 뭐 하는 거야?"라고 되물어 보세요). 끝나면 '③ 결과 확인'을 눈으로 확인합니다. 명령어를 직접 치는 방법은 맨 아래 **'터미널로도 할 수 있어요'** 에 접어 두었습니다.
+
+키트의 Claude Code 스킬 파일은 `skills/clay-episode/SKILL.md` 입니다. 내 프로젝트에서 `/clay-episode` 로 부르려면 한 번 복사해둡니다. 이 복사도 클로드에게 시킬 수 있습니다.
+
+**이렇게 시키세요** (키트 폴더를 프로젝트 폴더로 연 뒤)
+
+> skills/clay-episode/SKILL.md 를 .claude/skills/clay-episode/SKILL.md 로 복사해줘. 폴더가 없으면 만들어줘.
+
+<details>
+<summary><strong>터미널로도 할 수 있어요 — 스킬 파일 복사</strong></summary>
+
+::: windows
+```powershell
+mkdir .claude\skills\clay-episode -Force
+copy skills\clay-episode\SKILL.md .claude\skills\clay-episode\SKILL.md
+```
+:::
+
+::: mac
+```bash
+mkdir -p .claude/skills/clay-episode
+cp skills/clay-episode/SKILL.md .claude/skills/clay-episode/SKILL.md
+```
+:::
+
+</details>
+
+아래 따라하기 1·6(도구 설치, 키트 클론, ESBUILD, .env.local)은 클로드가 대신 할 수 있습니다. 사람이 직접 해야 하는 건 **Aside 앱 설치·로그인, Typecast 키 복사, Cloudflare 가입** 뿐입니다.
+
+### 프롬프트 2-1 · 설치를 Claude 에게 통째로 맡기기 (선택)
+
+**① 준비 (사람이 먼저)**
+- [ ] Cloudflare 가입: https://dash.cloudflare.com/sign-up (무료) → 터미널에서 `npx wrangler login` (브라우저가 열리면 Allow)
+- [ ] Aside 설치: https://aside.com/download → 앱에서 계정 생성·로그인 → 터미널 `aside login` → Aside 안에서 `https://flow.google.com` 과 `https://studio.youtube.com` 로그인
+- [ ] Typecast 가입: https://typecast.ai (유료 플랜) → 프로필 → API 메뉴 → API 키를 복사해 손에 들고 있기 (대화창에는 아직 붙여넣지 않기)
+- [ ] Google Flow: **Google AI Pro 이상 구독**된 Google 계정 준비
+- [ ] 어디서: 아무 폴더에서 데스크탑 앱 Code 탭을 열고 이 폴더를 프로젝트 폴더로 고릅니다(키트를 아직 안 받았어도 됩니다)
+
+**② 스킬 (붙여 넣기)**
+
+<div class="prompt-box not-prose" data-prompt="2-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+https://github.com/osam555/clay-episode-kit 을 클론하고 그 폴더로 들어가서 설치를 끝내줘. 순서: (1) python 3.12 이상, node 20 이상, ffmpeg 가 없으면 이 컴퓨터의 패키지 관리자(Windows 는 winget, mac 은 brew)로 설치하고 버전을 보여줘. (2) pip install -r requirements.txt, npm install, npx playwright install chromium 을 실행해. (3) ESBUILD 환경변수를 이 운영체제에 맞는 esbuild 실행파일 경로로 영구 저장(Windows 는 setx, mac 은 ~/.zshrc)하고 지금 터미널에도 적용해. (4) 다 되면 내가 Typecast API 키를 줄 테니, 그 키는 .env.local 파일에 TYPECAST_API_KEY=… 한 줄로만 저장하고 화면·로그·git 에 절대 남기지 마. 지금은 설치까지만 하고 키를 물어본 뒤 멈춰.
+
+</div>
+</div>
+
+Claude 가 설치를 마치고 Typecast 키를 물으면, **그때 키를 붙여 넣습니다**(파일에만 저장됩니다).
+
+**③ 결과 확인**
+- [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
+- [ ] `python --version` 등 확인 명령 결과가 실제로 출력됐는지 직접 봅니다
+- [ ] **사람이 확인해야 할 체크포인트**: 키를 붙여 넣은 뒤 Claude 의 답변에 키 값이 그대로 보이지 않는지, `.env.local` 이 키트 폴더 안에 생겼는지 직접 확인합니다.
+
+### 프롬프트 2-2 · 설치 점검
+
+**① 준비 (사람이 먼저)**
+- [ ] 데스크탑 앱 Code 탭에서 키트 폴더(`clay-episode-kit`)를 프로젝트 폴더로 고릅니다
+- [ ] 2-1(또는 이 강의 따라하기 1·6)이 끝나 있어야 합니다
+- [ ] 스킬 파일 복사(위 프롬프트)가 끝나 있어야 합니다
+
+**② 스킬 (붙여 넣기)**
+
+<div class="prompt-box not-prose" data-prompt="2-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, 그 안의 "0. 설치" 표에 있는 준비물이 내 컴퓨터에 다 있는지 점검해줘. 확인할 것: (1) python 버전 3.12 이상, (2) node 버전 20 이상, (3) ffmpeg 실행 가능, (4) 프로젝트 폴더에 .env.local 파일이 있고 그 안에 TYPECAST_API_KEY 줄이 있는지, (5) FLOW_TAB 환경변수가 설정됐는지, (6) wrangler 가 로그인돼 있는지. 결과는 항목마다 「있음/없음 + 없으면 어떻게 설치하는지 한 줄」 표로만 보여줘. API 키나 탭 id 같은 값은 절대 화면에 출력하지 마.
+
+</div>
+</div>
+
+**③ 결과 확인**
+- [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
+- [ ] 여섯 항목이 「있음/없음」 표로 나왔는지, 「없음」이 있으면 이 강의 해당 따라하기로 돌아가 설치
+- [ ] **사람이 확인해야 할 체크포인트**: `.env.local` 의 API 키 값은 Claude가 화면에 출력하지 않았는지, 터미널 히스토리에도 안 남았는지 직접 확인합니다.
+
+## 터미널로도 할 수 있어요
+
+위 프롬프트가 하는 일을 직접 명령으로 치고 싶을 때 보세요. 운영체제 탭(Windows·macOS)에 맞는 명령을 씁니다.
+
+<details>
+<summary><strong>따라하기 1: Python·Node·ffmpeg</strong></summary>
+
+::: windows
+PowerShell(관리자 아님):
+
+```powershell
+winget install Python.Python.3.12
+winget install OpenJS.NodeJS.LTS
+winget install ffmpeg
+```
+
+설치 중 Python 설치 화면이 뜨면 **"Add python.exe to PATH"를 꼭 체크**합니다. 설치 후 터미널을 닫았다 다시 열고 확인:
+
+```powershell
+python --version
+node -v
+ffmpeg -version
+```
+:::
+
+::: mac
+Homebrew가 있으면:
+
+```bash
+brew install python node ffmpeg
+```
+
+확인:
+
+```bash
+python3 --version
+node -v
+ffmpeg -version
+```
+:::
+
+</details>
+
+<details>
+<summary><strong>따라하기 6: 키트 클론과 설치</strong></summary>
 
 ::: windows
 ```powershell
@@ -244,73 +333,7 @@ echo "TYPECAST_API_KEY=여기에_키" > .env.local
 
 `.env.local` 은 키트 폴더 바로 안에 생깁니다. 절대 GitHub 에 올리지 않습니다(`.gitignore` 에 이미 들어 있습니다). **이 키트 폴더(`clay-episode-kit`)가 곧 여러분의 프로젝트 폴더**입니다 — 앞으로 모든 명령은 이 폴더 안에서 칩니다.
 
-## 스킬로 하기 — 준비 → 프롬프트 → 결과 확인
-
-키트의 Claude Code 스킬 파일은 `skills/clay-episode/SKILL.md` 입니다. 내 프로젝트에서 `/clay-episode` 로 부르려면 한 번 복사해둡니다.
-
-::: windows
-```powershell
-mkdir .claude\skills\clay-episode -Force
-copy skills\clay-episode\SKILL.md .claude\skills\clay-episode\SKILL.md
-```
-:::
-
-::: mac
-```bash
-mkdir -p .claude/skills/clay-episode
-cp skills/clay-episode/SKILL.md .claude/skills/clay-episode/SKILL.md
-```
-:::
-
-위 따라하기 1·6(도구 설치, 키트 클론, ESBUILD, .env.local)은 Claude Code 가 대신 할 수 있습니다. 사람이 직접 해야 하는 건 **Aside 앱 설치·로그인, Typecast 키 복사, Cloudflare 가입** 뿐입니다.
-
-### 프롬프트 2-1 · 설치를 Claude 에게 통째로 맡기기 (선택)
-
-**① 준비 (사람이 먼저)**
-- [ ] Cloudflare 가입: https://dash.cloudflare.com/sign-up (무료) → 터미널에서 `npx wrangler login` (브라우저가 열리면 Allow)
-- [ ] Aside 설치: https://aside.com/download → 앱에서 계정 생성·로그인 → 터미널 `aside login` → Aside 안에서 `https://flow.google.com` 과 `https://studio.youtube.com` 로그인
-- [ ] Typecast 가입: https://typecast.ai (유료 플랜) → 프로필 → API 메뉴 → API 키를 복사해 손에 들고 있기 (대화창에는 아직 붙여넣지 않기)
-- [ ] Google Flow: **Google AI Pro 이상 구독**된 Google 계정 준비
-- [ ] 어디서: 아무 폴더에서 Claude Code 를 엽니다(키트를 아직 안 받았어도 됩니다)
-
-**② 스킬 (붙여 넣기)**
-
-<div class="prompt-box not-prose" data-prompt="2-1" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-https://github.com/osam555/clay-episode-kit 을 클론하고 그 폴더로 들어가서 설치를 끝내줘. 순서: (1) python 3.12 이상, node 20 이상, ffmpeg 가 없으면 이 컴퓨터의 패키지 관리자(Windows 는 winget, mac 은 brew)로 설치하고 버전을 보여줘. (2) pip install -r requirements.txt, npm install, npx playwright install chromium 을 실행해. (3) ESBUILD 환경변수를 이 운영체제에 맞는 esbuild 실행파일 경로로 영구 저장(Windows 는 setx, mac 은 ~/.zshrc)하고 지금 터미널에도 적용해. (4) 다 되면 내가 Typecast API 키를 줄 테니, 그 키는 .env.local 파일에 TYPECAST_API_KEY=… 한 줄로만 저장하고 화면·로그·git 에 절대 남기지 마. 지금은 설치까지만 하고 키를 물어본 뒤 멈춰.
-
-</div>
-</div>
-
-Claude 가 설치를 마치고 Typecast 키를 물으면, **그때 키를 붙여 넣습니다**(파일에만 저장됩니다).
-
-**③ 결과 확인**
-- [ ] `python --version` 등 확인 명령 결과가 실제로 출력됐는지 직접 봅니다
-- [ ] **사람이 확인해야 할 체크포인트**: 키를 붙여 넣은 뒤 Claude 의 답변에 키 값이 그대로 보이지 않는지, `.env.local` 이 키트 폴더 안에 생겼는지 직접 확인합니다.
-
-### 프롬프트 2-2 · 설치 점검
-
-**① 준비 (사람이 먼저)**
-- [ ] 터미널에서 키트 폴더(`clay-episode-kit`)로 이동한 뒤 `claude` 를 쳐서 Claude Code 를 엽니다(데스크탑 앱이면 이 폴더를 열면 됩니다)
-- [ ] 2-1(또는 이 강의 따라하기 1·6)이 끝나 있어야 합니다
-- [ ] 스킬 파일 복사(위 명령)가 끝나 있어야 합니다
-
-**② 스킬 (붙여 넣기)**
-
-<div class="prompt-box not-prose" data-prompt="2-2" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-clay-episode 스킬을 읽고, 그 안의 "0. 설치" 표에 있는 준비물이 내 컴퓨터에 다 있는지 점검해줘. 확인할 것: (1) python 버전 3.12 이상, (2) node 버전 20 이상, (3) ffmpeg 실행 가능, (4) 프로젝트 폴더에 .env.local 파일이 있고 그 안에 TYPECAST_API_KEY 줄이 있는지, (5) FLOW_TAB 환경변수가 설정됐는지, (6) wrangler 가 로그인돼 있는지. 결과는 항목마다 「있음/없음 + 없으면 어떻게 설치하는지 한 줄」 표로만 보여줘. API 키나 탭 id 같은 값은 절대 화면에 출력하지 마.
-
-</div>
-</div>
-
-**③ 결과 확인**
-- [ ] 여섯 항목이 「있음/없음」 표로 나왔는지, 「없음」이 있으면 이 강의 해당 따라하기로 돌아가 설치
-- [ ] **사람이 확인해야 할 체크포인트**: `.env.local` 의 API 키 값은 Claude가 화면에 출력하지 않았는지, 터미널 히스토리에도 안 남았는지 직접 확인합니다.
+</details>
 
 ## 오늘의 체크리스트
 
