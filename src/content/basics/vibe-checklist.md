@@ -47,6 +47,8 @@ sources:
 
 [깃 기초](/basics/git-basics) → [깃허브 기초](/basics/github-basics) → [버셀 기초](/basics/vercel-basics) → [깃-버셀 연동과 배포](/basics/git-vercel-deploy) → [클로드 활용법](/basics/claude-uses) → [Aside로 SNS 자동화](/basics/aside-sns-overview) → [Cowork 사용법](/basics/cowork-basics) → [영상 자동화를 코드 탭에서](/basics/video-automation-in-code). 실습은 [홈페이지 만들기](/lectures/homepage).
 
+입문 지식 모음: [용어 사전](/basics/vibe-glossary) · [첫 프로젝트 고르기](/basics/vibe-first-project) · [프롬프트 패턴](/basics/vibe-prompt-patterns) · [자주 하는 실수](/basics/vibe-common-mistakes) · [안전·비용·계정](/basics/vibe-safety-money) · [막혔을 때 순서](/basics/vibe-troubleshooting-flow) · [학습 순서](/basics/vibe-learning-path)
+
 ---
 
 <small>출처(확인일 2026-10-06): [Claude 데스크탑 문서](https://code.claude.com/docs/en/desktop) · [GitHub 계정](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) · [Vercel 계정](https://vercel.com/docs/accounts/create-an-account).</small>
