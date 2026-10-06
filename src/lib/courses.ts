@@ -334,6 +334,34 @@ export const COURSES: Course[] = [
       "error-debugging",
     ],
   },
+  {
+    slug: "antigravity",
+    title: "앤티그래비티로 만들기",
+    tagline: "구글 앤티그래비티로 한 페이지 홈페이지를 만들고 확인하고 저장하기",
+    description:
+      "구글의 에이전트형 개발 도구 앤티그래비티(Google Antigravity) 2.0을 설치하고, 프로젝트를 만들어 에이전트에게 홈페이지를 시킵니다. 계획 읽기, 산출물과 브라우저로 결과 확인, 깃 저장, 클로드 데스크탑과 나눠 쓰는 기준까지 8강으로 배웁니다. 공식 문서에서 확인한 내용만 담았어요.",
+    level: "완전 초보",
+    audience: "클로드 데스크탑에 이어 두 번째 도구로 앤티그래비티를 써 보고 싶은 사람",
+    outcome: "앤티그래비티로 만든 한 페이지 소개 사이트 1개 + 깃 커밋 + 도구 선택 기준",
+    parts: ["1부 · 알아보기", "2부 · 만들기", "3부 · 올리고 쓰기"],
+    badge: "Windows · macOS",
+    highlights: [
+      "앤티그래비티 2.0·CLI·IDE의 차이와 클로드 데스크탑 비교",
+      "설치 요구사항과 로그인 조건(계정·나이·지역)",
+      "프로젝트 만들기, 로컬/워크트리, 계획/빠른 모드",
+      "홈페이지 과정 4강 예시를 앤티그래비티로 똑같이",
+      "구현 계획 댓글·워크스루·브라우저 확인(/browser)",
+      "VCS 패널로 커밋·푸시, 버셀은 기초지식 연결",
+      "권한 프리셋을 안전하게, 클로드와 나눠 쓰는 기준",
+    ],
+    relatedSkills: [
+      "desktop-app-vs-cli",
+      "permissions-and-safety",
+      "prompt-writing",
+      "git-workflow",
+      "error-debugging",
+    ],
+  },
 ];
 
 export function getCourse(slug: string) {
