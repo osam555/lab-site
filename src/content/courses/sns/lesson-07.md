@@ -9,6 +9,8 @@ part: 3부 · 자동화와 운영
 
 ## 스킬로 저장
 
+> **용어 한 줄**: *스킬*은 `.claude/skills/` 폴더에 저장되는 "작업 순서 문서 한 장"이고, *⏸*는 "여기서는 멈추고 사람 확인을 기다려라"는 표시입니다.
+
 <div class="prompt-box not-prose" data-prompt="7-1" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
@@ -54,6 +56,11 @@ part: 3부 · 자동화와 운영
 
 체크포인트 세 곳: **후크 선택, 카드 검수, 예약 승인.** 이 셋이 "내 계정에 내 이름으로 올라가는 것"을 지킵니다.
 
+::: practice
+- [ ] `.claude/skills/` 아래 스킬 파일을 직접 열어 4단계와 ⏸ 3곳(후크 선택·카드 검수·예약 승인)을 확인했다
+- [ ] "즉시 발행 금지, 답글·팔로우 자동화 금지" 규칙 줄이 있는 것을 눈으로 확인했다
+:::
+
 ## 두 번째 배포
 
 새 대화에서:
@@ -68,6 +75,12 @@ sources/winter-camping-tips.md 배포해줘.
 </div>
 
 후크 고르고, 카드 보고, 표 확인하고 "예약해". **15분**입니다.
+
+::: practice
+- [ ] 새 대화에서 "배포해줘" 한 줄로 두 번째 원본을 시작해 ⏸마다 멈추는 것을 확인했다
+- [ ] 후크를 내가 고르고, 카드를 눈으로 보고, 표를 읽은 뒤에 "예약해"를 입력했다
+- [ ] 스케줄러 캘린더에 두 번째 원본의 예약이 보인다
+:::
 
 ## 주간 루틴
 

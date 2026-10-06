@@ -141,9 +141,11 @@ Claude가 DNS 관리 화면에서 직접 필드를 찾아 입력하고 저장합
     └─► Aside Browser Computer Use로 Claude에게 위임
 ```
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
+::: practice
 - [ ] Chrome Extension을 설치했다
 - [ ] Extension 사이드 패널에서 화면을 공유해 질문해봤다
 - [ ] Aside 브라우저에서 실제 웹사이트를 열어봤다
 - [ ] 복잡한 설정 1가지를 두 도구 중 하나로 해결했다
+:::

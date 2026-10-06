@@ -32,7 +32,31 @@ part: 2부 · 유형별 실전
   <p>강좌 및 부트캠프 모집 랜딩페이지 완성본을 <a href="/examples/landing-course.html" target="_blank" class="font-bold text-accent underline">강좌 모집 랜딩페이지 라이브 데모 ↗</a>에서 새 탭으로 직접 체험해보세요.</p>
 </div>
 
-## 사례 A: 온라인 강좌
+## 사례는 쉬운 것부터 (난이도 표시)
+
+아래 사례는 **쉬운 순서**로 놓았습니다. 각 제목 옆의 난이도(★ 쉬움 / ★★ 보통 / ★★★ 어려움)와 예상 시간을 보고 **맨 위 1개부터** 해 보세요. 프롬프트가 길면 **1~3번 항목만 먼저** 보내 결과를 확인하고, 나머지를 이어서 보내면 훨씬 안전합니다. (전체 사례의 난이도 순서는 1강 표에 있습니다.)
+
+## 사례 1: 오프라인 워크숍  (★★ 보통 · 약 30분)
+
+<div class="prompt-box not-prose" data-prompt="4-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. "토요 가죽공예 원데이클래스" 모집 페이지.
+1. 히어로: "나만의 가죽 지갑, 토요일 하루면 완성", images/workshop.jpg 배경, "참가 신청" 버튼
+2. 클래스 정보 카드: 일시 "매주 토요일 14:00~17:00" / 장소 "성수동 소소공방" / 정원 "6명" / 준비물 "없음 (전부 제공)"
+3. 만드는 과정: 사진 4장 가로 나열 (가죽 고르기 → 재단 → 바느질 → 완성)
+4. 포함 사항: 체크리스트 (✓ 재료비 포함 ✓ 도구 대여 ✓ 완성품 당일 수령 ✓ 음료 제공)
+5. 참가자 후기 + 완성작 사진 갤러리
+6. 가격: ₩55,000 / 2인 ₩99,000 (커플·친구 할인)
+7. FAQ: 주차, 환불, 난이도, 소요시간
+8. "참가 신청" 버튼 + 장소 약도
+따뜻한 크래프트 느낌. 베이지 배경.
+
+</div>
+</div>
+
+## 사례 2: 온라인 강좌  (★★★ 어려움 · 약 45분)
 
 <div class="prompt-box not-prose" data-prompt="4-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -53,27 +77,7 @@ index.html을 만들어줘. "바이브코딩 홈페이지 만들기" 수강생 �
 </div>
 </div>
 
-## 사례 B: 오프라인 워크숍
-
-<div class="prompt-box not-prose" data-prompt="4-2" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-index.html을 만들어줘. "토요 가죽공예 원데이클래스" 모집 페이지.
-1. 히어로: "나만의 가죽 지갑, 토요일 하루면 완성", images/workshop.jpg 배경, "참가 신청" 버튼
-2. 클래스 정보 카드: 일시 "매주 토요일 14:00~17:00" / 장소 "성수동 소소공방" / 정원 "6명" / 준비물 "없음 (전부 제공)"
-3. 만드는 과정: 사진 4장 가로 나열 (가죽 고르기 → 재단 → 바느질 → 완성)
-4. 포함 사항: 체크리스트 (✓ 재료비 포함 ✓ 도구 대여 ✓ 완성품 당일 수령 ✓ 음료 제공)
-5. 참가자 후기 + 완성작 사진 갤러리
-6. 가격: ₩55,000 / 2인 ₩99,000 (커플·친구 할인)
-7. FAQ: 주차, 환불, 난이도, 소요시간
-8. "참가 신청" 버튼 + 장소 약도
-따뜻한 크래프트 느낌. 베이지 배경.
-
-</div>
-</div>
-
-## 사례 C: 부트캠프
+## 사례 3: 부트캠프  (★★★ 어려움 · 약 45분)
 
 <div class="prompt-box not-prose" data-prompt="4-3" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -94,12 +98,15 @@ index.html을 만들어줘. "AI 자동화 부트캠프 3기" 모집 페이지.
 </div>
 </div>
 
-## 교육 랜딩페이지 체크리스트
+## 실습 체크: 강좌 모집 페이지
 
+::: practice
 - [ ] **대상이 명확한가**: "이런 분께 추천"이 구체적인가
 - [ ] **결과가 보이는가**: 수강 후 뭘 할 수 있는지
 - [ ] **신뢰가 있는가**: 강사 경력, 수강생 후기, 수료생 수
 - [ ] **긴급성이 있는가**: 마감일, 선착순, 얼리버드 기한
+- [ ] 미리보기에서 위에서 아래로 스크롤하며 히어로·커리큘럼·가격·마지막 버튼이 모두 보이는 것을 눈으로 확인했다
+:::
 
 ## 다음 강의
 

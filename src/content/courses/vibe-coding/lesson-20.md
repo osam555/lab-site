@@ -26,7 +26,7 @@ part: 4부 · 세상에 내놓기
 ## PWA에 필요한 것 세 가지
 
 1. **manifest** — 앱 이름, 아이콘, 색, 시작 주소를 적은 파일
-2. **서비스 워커** — 오프라인에서 최소한의 화면을 보여주는 코드
+2. **서비스 워커** — 오프라인에서 최소한의 화면을 보여주는 코드 (선택. 아래 "더 해보기"에서 다룹니다)
 3. **HTTPS** — Vercel이 이미 해줬습니다
 
 ## 따라하기 1: 아이콘 만들기
@@ -37,10 +37,12 @@ part: 4부 · 세상에 내놓기
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 20-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-"public/icon.svg를 만들어줘. 512×512, 배경은 #2f8f5b 둥근 사각형, 가운데 흰색 굵은 글자 '냉'. 그리고 이걸 512와 192 크기 PNG로 변환하는 방법을 알려줘."
+"public/icon.svg를 만들어줘. 512×512, 배경은 #2f8f5b 둥근 사각형, 가운데 흰색 굵은 글자 '냉'. 그리고 이걸 512와 192 크기 PNG(public/icon-512.png, public/icon-192.png)로 직접 변환해서 저장해줘. 설치가 필요하면 먼저 알려줘."
 
 </div>
 </div>
+
+**확인:** VS Code 탐색기 `public/` 폴더에 `icon.svg`, `icon-192.png`, `icon-512.png`가 보이고, PNG를 눌러 열면 초록 배경에 글자가 보입니다.
 
 ## 따라하기 2: PWA 설정
 
@@ -48,14 +50,12 @@ part: 4부 · 세상에 내놓기
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 20-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-"이 Next.js 앱을 PWA로 만들어줘.
-- src/app/manifest.ts로 manifest를 만들어줘. 이름은 '[서비스 이름]', 짧은 이름 '[4글자]', 테마색 #2f8f5b, 배경 #fbfaf7, display는 standalone, 아이콘은 public/icon-192.png와 icon-512.png
-- 오프라인에서 '인터넷 연결을 확인하세요' 화면이 보이도록 최소한의 서비스 워커
-- iOS 홈 화면 추가에 필요한 meta 태그도 layout.tsx에 추가
-완료 후 폰에서 설치하는 방법을 Android와 iOS 각각 알려줘."
+"이 Next.js 앱을 PWA로 만들어줘. src/app/manifest.ts로 manifest를 만들어줘. 이름은 '[서비스 이름]', 짧은 이름 '[4글자]', 테마색 #2f8f5b, 배경 #fbfaf7, display는 standalone, 아이콘은 public/icon-192.png와 icon-512.png. iOS 홈 화면 추가에 필요한 meta 태그도 layout.tsx에 추가해줘. 다른 파일은 건드리지 마. 완료 후 폰에서 설치하는 방법을 Android와 iOS 각각 알려줘."
 
 </div>
 </div>
+
+**확인:** 개발 서버에서 주소 끝에 `/manifest.webmanifest`를 붙여 열면 이름·색·아이콘이 적힌 글자 묶음(JSON)이 보입니다.
 
 ## 따라하기 3: 폰에 설치
 
@@ -65,6 +65,12 @@ push → 배포 → 폰 브라우저에서 열기:
 - **iOS (Safari)**: 공유 버튼 → "홈 화면에 추가"
 
 홈 화면의 아이콘을 눌러보세요. 주소창 없이 전체 화면으로 열립니다. **여러분이 만든 앱입니다.**
+
+::: practice
+- [ ] 폰 홈 화면에 내 앱 아이콘(초록 배경 + 글자)이 보인다
+- [ ] 아이콘을 눌렀더니 주소창 없이 전체 화면으로 열린다
+- [ ] 앱 이름이 아이콘 밑에 내가 정한 이름으로 표시된다
+:::
 
 ## 마무리: 20일을 돌아보기
 
@@ -99,9 +105,30 @@ push → 배포 → 폰 브라우저에서 열기:
 
 ## 마지막 체크리스트
 
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
 - [ ] 폰 홈 화면에 내 앱 아이콘이 있다
-- [ ] 아이콘을 누르면 전체 화면으로 열린다
-- [ ] 1강의 한 줄과 지금의 서비스를 비교해봤다
+- [ ] 아이콘을 누르면 전체 화면으로 열리고, 로그인·저장·추천이 평소처럼 동작한다
+- [ ] 1강의 한 줄과 지금의 서비스를 나란히 놓고 비교해 한 문단 적었다
 - [ ] 다음 프로젝트 한 줄을 적었다
+:::
+
+## 더 해보기(선택)
+
+### 오프라인 화면 만들기 (서비스 워커)
+
+<div class="prompt-box not-prose" data-prompt="20-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 20-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"오프라인일 때 '인터넷 연결을 확인하세요' 화면이 보이도록 최소한의 서비스 워커를 추가해줘. 기존 파일 동작은 바꾸지 마. 오프라인을 테스트하는 방법도 알려줘."
+
+</div>
+</div>
+
+**확인:** 브라우저 개발자 도구(F12) → Network 탭에서 **Offline**을 켜고 새로고침하면 안내 화면이 보입니다.
+
+## 마무리
 
 20일 동안 수고하셨습니다. 이제 여러분은 아이디어를 직접 검증할 수 있는 사람입니다.

@@ -302,6 +302,38 @@ export const COURSES: Course[] = [
       "error-debugging",
     ],
   },
+  {
+    slug: "personal-wiki",
+    title: "개인 위키 만들기와 활용",
+    tagline: "흩어진 메모를 AI가 읽는 내 지식 창고로, 일정·업무·챗봇까지",
+    description:
+      "폴더와 마크다운 파일만으로 나만의 지식 베이스를 만들고 클로드 데스크탑 Code 탭으로 가꿉니다. 원본과 정리본 나누기, 규칙 파일, 페이지 규칙, 점검(lint), 깃 백업까지 구축하고, 일정·업무·할 일 관리와 관제탑 대시보드, 챗봇 지식 팩으로 꺼내 쓰는 법까지 12강으로 배웁니다.",
+    level: "완전 초보",
+    audience: "메모·강의 노트·고객 문의가 흩어져 있어 AI와 함께 쓸 지식 창고가 필요한 사람",
+    outcome: "규칙·점검·백업이 갖춰진 개인 위키 1개 + 일정·업무·할 일 관제탑 + 챗봇 지식 팩",
+    parts: ["1부 · 필요성", "2부 · 구축", "3부 · 활용"],
+    badge: "Windows · macOS",
+    highlights: [
+      "검색 대신 쌓기 — 흩어진 자료를 한곳에",
+      "raw·wiki·index 3칸 구조와 CLAUDE.md 규칙 파일",
+      "원본을 정제해 위키 페이지로 만들기 (출처 표시)",
+      "frontmatter·위키링크·절대 날짜 페이지 규칙",
+      "lint로 깨진 링크·오래된 페이지 점검",
+      "깃 커밋으로 백업하고 되돌리기",
+      "위키를 근거로 질문하고 출처 있는 답 받기",
+      "일정·업무·할 일·결재함 관리와 관제탑 대시보드",
+      "챗봇 지식 팩과 정정표로 틀린 답 고치기",
+      "블로그·홈페이지·영상의 원고 창고로 활용",
+    ],
+    relatedSkills: [
+      "rules-file-deep-dive",
+      "plan-mode-and-context",
+      "prompt-writing",
+      "git-workflow",
+      "permissions-and-safety",
+      "error-debugging",
+    ],
+  },
 ];
 
 export function getCourse(slug: string) {

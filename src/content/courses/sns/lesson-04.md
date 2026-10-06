@@ -9,6 +9,8 @@ part: 2부 · 파이프라인 만들기
 
 ## 이미지는 디자인이 아니라 템플릿입니다
 
+> **용어 한 줄**: *HTML 템플릿*은 글자 자리만 비워둔 웹 페이지 한 장입니다. `{{hook}}` 같은 *자리표시자*에 글을 끼워 넣고, *Playwright*(자동 브라우저)가 그 화면을 사진으로 찍어 이미지 파일로 만듭니다.
+
 매번 디자인 도구를 여는 대신, **HTML 한 장을 스크린샷**으로 찍어 이미지를 만듭니다. HTML은 Claude Code가 가장 잘 다루고, 데이터만 바꿔 넣으면 100장도 같은 품질로 나옵니다.
 
 만들 카드는 세 종류입니다.
@@ -38,7 +40,16 @@ templates/brand.json을 만들어줘: 배경색, 글자색, 강조색 각 1개(�
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-templates/quote.html을 만들어줘. brand.json 값을 쓰고, `{{hook}}`, `{{handle}}` 자리표시자. 1080×1080 기준으로 디자인하되 CSS로 1080×1350(4:5)과 1920×1080(16:9)도 같은 템플릿에서 클래스만 바꿔 대응되게. 글자는 길이에 따라 자동으로 줄어들게(최대 3줄). 여백 넉넉히, 강조색은 한 곳에만.
+templates/quote.html을 만들어줘. brand.json 값을 쓰고, `{{hook}}`, `{{handle}}` 자리표시자. 1080×1080 기준. 여백 넉넉히, 강조색은 한 곳에만.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="4-2b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+quote.html을 같은 템플릿에서 클래스만 바꿔 1080×1350(4:5)과 1920×1080(16:9)에도 대응되게 해줘. 후크 글자는 길이에 따라 자동으로 줄어들게 (최대 3줄).
 
 </div>
 </div>
@@ -51,6 +62,11 @@ templates/carousel.html도 만들어줘. 표지(제목) + 포인트 슬라이드
 
 </div>
 </div>
+
+::: practice
+- [ ] `templates/quote.html`을 브라우저에 끌어 놓아(또는 열어) 카드 모양이 보이는 것을 확인했다
+- [ ] `brand.json`의 색·핸들이 내 것으로 바뀌어 있다
+:::
 
 ## 따라하기 3: 렌더링 스크립트
 
@@ -87,6 +103,12 @@ Playwright 브라우저가 없다는 에러가 나면 `python -m playwright inst
 같은 에러면 `python3 -m playwright install chromium`. 렌더 결과 글자가 흐리면 "deviceScaleFactor 2로 찍고 원래 크기로 줄여줘".
 :::
 
+::: practice
+- [ ] `cards/` 폴더에 채널별 png가 생긴 것을 열어 확인했다
+- [ ] 글자가 네모(□)로 깨지지 않고 한글이 제대로 보인다
+- [ ] 후크 글자가 3줄 안에 다 보인다
+:::
+
 ## 따라하기 4: 검수 ⏸
 
 `cards/`를 열어 봅니다. 확인할 것:
@@ -98,7 +120,7 @@ Playwright 브라우저가 없다는 에러가 나면 `python -m playwright inst
 
 수정은 템플릿에서. "quote.html의 후크 글자를 8% 키우고 아래 여백을 늘려줘" → 다시 렌더.
 
-## 사진을 쓰고 싶다면
+## 더 해보기(선택): 사진을 배경으로
 
 원본에 사진이 있으면 카드 배경으로:
 
@@ -125,6 +147,12 @@ Code 탭에서는 이렇게 시키세요.
 git add .
 git commit -m "카드 템플릿과 렌더 스크립트"
 ```
+
+::: practice
+- [ ] 템플릿을 한 번 이상 고쳐서 다시 렌더링하고, 전후 이미지를 나란히 봤다
+- [ ] 카드 4:5 버전에서 위아래 여백이 어색하지 않은지 확인했다
+- [ ] "카드 템플릿과 렌더 스크립트" 커밋을 했다
+:::
 
 ## 오늘의 체크리스트
 

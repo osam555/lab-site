@@ -46,19 +46,22 @@ part: 2부 · 만들기
 
 결정을 파일로 남깁니다. 이 파일이 있으면 앞으로 어떤 화면을 추가해도 같은 규칙이 적용됩니다.
 
-<div class="prompt-box not-prose" data-prompt="6-2" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-DESIGN.md 파일을 만들어줘:
-- 바탕색 [#…], 글자색 [#…], 보조 글자색(연하게) [#…], 강조색 [#…]
-- 강조색은 버튼·링크·활성 상태에만. 그라데이션 금지
-- 글꼴: [Pretendard], 굵기 400/700만. 크기는 14/16/20/32px 네 단계만
-- 여백은 8, 16, 24, 32, 48, 64px만 사용. 섹션 사이는 64px
-- 이모지를 아이콘 대신 쓰지 않는다
-- 가운데 정렬은 첫 화면에만
+DESIGN.md 파일을 만들어줘. 바탕색 [#…], 글자색 [#…], 강조색 [#…]. 강조색은 버튼·링크에만 쓰고 그라데이션은 쓰지 않는다.
 
-그리고 CLAUDE.md에 "화면을 만들거나 고칠 때 DESIGN.md를 따른다"를 추가해줘.
+</div>
+</div>
+
+미리보기에서 파일이 생겼는지 확인하세요. 이어서 글꼴과 간격 규칙을 **덧붙입니다.**
+
+<div class="prompt-box not-prose" data-prompt="6-2b" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2b</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+DESIGN.md에 규칙을 추가해줘. 글꼴은 [Pretendard], 굵기는 400과 700만. 여백은 8, 16, 24, 32, 48, 64px만 쓰고 섹션 사이는 64px. 그리고 CLAUDE.md에 "화면을 만들거나 고칠 때 DESIGN.md를 따른다"를 추가해줘.
 
 </div>
 </div>
@@ -117,13 +120,15 @@ git add .
 git commit -m "디자인 규칙 적용, 폰 화면 정리"
 ```
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
+::: practice
 - [ ] DESIGN.md에 색 3개, 글꼴 1개, 간격 규칙이 있다
 - [ ] 홈페이지 전체가 그 규칙을 따른다
 - [ ] 폰 크기에서 가로 스크롤이 없고 버튼이 누르기 쉽다
 - [ ] 파비콘과 탭 제목이 있다
 - [ ] 커밋했다
+:::
 
 ## 다음 강의
 

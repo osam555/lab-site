@@ -2,7 +2,7 @@
 number: 16
 title: 배포
 subtitle: 세상에 공개하기
-goal: 배포 환경을 점검하고, 내 도메인을 연결하고, 공개 전 체크리스트를 통과시킵니다.
+goal: 배포 환경을 점검하고 공개 전 체크리스트를 통과시킵니다. (도메인 연결은 선택)
 minutes: 40
 part: 4부 · 세상에 내놓기
 ---
@@ -25,7 +25,7 @@ cat .env.local
 
 (화면에 비밀 값이 그대로 나오니 다른 사람이 보는 화면에서는 하지 마세요.)
 
-Vercel → Settings → Environment Variables와 하나씩 대조. 빠진 게 있으면 추가 → Redeploy.
+Vercel → Settings → Environment Variables와 하나씩 대조. 빠진 게 있으면 추가 → Redeploy(같은 코드로 다시 배포).
 
 **흔한 실수**: 로컬에서만 되고 배포에서 안 되는 문제의 90%가 여기입니다. 15강의 형식으로 "로컬은 되는데 배포만 안 됨"이라고 하면 AI도 바로 환경변수를 의심합니다.
 
@@ -52,7 +52,46 @@ npm run build
 </div>
 </div>
 
-## 3. 미리보기 배포 활용하기
+## 3. 공개 전 체크리스트
+
+친구에게 링크를 보내기 전에 **배포 주소를 폰으로 열어** 직접 확인합니다.
+
+::: practice
+- [ ] 폰에서 열어서 모든 화면을 한 번씩 눌러봤다
+- [ ] 로그인 → 저장 → 로그아웃 → 다른 계정 로그인 흐름이 된다
+- [ ] 빈 상태(메뉴 0개)일 때 화면이 이상하지 않다
+- [ ] 브라우저 탭 제목과 아이콘이 "Create Next App"이 아니다
+- [ ] 콘솔(F12)에 빨간 에러가 없다
+- [ ] 개인정보를 받는다면 간단한 안내 문구가 있다
+:::
+
+탭 제목/아이콘(파비콘, 탭에 뜨는 작은 그림)은 AI에게:
+
+<div class="prompt-box not-prose" data-prompt="16-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"브라우저 탭 제목을 '[서비스 이름]'으로, 설명(description)을 PLAN.md의 한 줄 설명으로, 파비콘은 초록 원 하나로 간단히 만들어줘. layout.tsx의 metadata(탭 제목·설명 같은 페이지 정보)를 수정."
+
+</div>
+</div>
+
+## 오늘의 체크리스트
+
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
+- [ ] 빌드(`npm run build`)가 통과했다는 문구를 화면에서 확인했다
+- [ ] Vercel 환경변수 이름이 `.env.local`과 일치한다
+- [ ] 공개 전 체크리스트 6개를 전부 통과했다
+- [ ] (선택) 미리보기 주소를 만들었거나 내 도메인을 연결했다
+:::
+
+## 더 해보기(선택)
+
+본 과정에 꼭 필요하지 않은 심화입니다. 시간이 남거나 더 궁금할 때 해보세요.
+
+### 3. 미리보기 배포 활용하기
 
 Vercel은 `main` 외의 브랜치를 push하면 **별도 주소로 미리보기**를 만들어줍니다. 큰 변경을 할 때 진짜 주소를 안 건드리고 확인할 수 있습니다.
 
@@ -62,7 +101,7 @@ Code 탭에 이렇게 시킵니다.
 
 확인 후 마음에 들면 GitHub에서 Pull Request → Merge하면 `main`에 반영됩니다. 5강에서 미뤄둔 "브랜치"가 이겁니다. `git push`는 무엇을 어디로 올리는지 **읽고** 수락하세요.
 
-### 터미널로도 할 수 있어요
+#### 터미널로도 할 수 있어요
 
 ```bash
 git checkout -b design-update    # 새 브랜치
@@ -72,7 +111,7 @@ git push -u origin design-update # 미리보기 주소 생성
 
 AI에게 "브랜치 만들고 push하는 법"을 물어봐도 됩니다.
 
-## 4. 도메인 연결하기 (선택)
+### 4. 도메인 연결하기 (선택)
 
 `xxx.vercel.app`도 충분하지만, 내 도메인이 있으면 훨씬 진짜 같습니다.
 
@@ -85,39 +124,10 @@ DNS 설정이 헷갈리면 화면을 캡처해서 AI에게 "Vercel이 이 값을
 
 도메인을 연결하면 Supabase Authentication → URL Configuration에도 새 주소를 추가해야 로그인 링크가 돌아옵니다.
 
-## 5. 공개 전 체크리스트
-
-친구에게 링크를 보내기 전에:
-
-- [ ] 폰에서 열어서 모든 화면을 한 번씩 눌러봤다
-- [ ] 로그인 → 저장 → 로그아웃 → 다른 계정 로그인 흐름이 된다
-- [ ] 빈 상태(메뉴 0개)일 때 화면이 이상하지 않다
-- [ ] 브라우저 탭 제목과 아이콘이 "Create Next App"이 아니다
-- [ ] 콘솔에 빨간 에러가 없다
-- [ ] 개인정보를 받는다면 간단한 안내 문구가 있다
-
-탭 제목/아이콘은 AI에게:
-
-<div class="prompt-box not-prose" data-prompt="16-2" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 16-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-"브라우저 탭 제목을 '[서비스 이름]'으로, 설명(description)을 PLAN.md의 한 줄 설명으로, 파비콘은 초록 원 하나로 간단히 만들어줘. layout.tsx의 metadata를 수정."
-
-</div>
-</div>
-
-## 6. 무슨 일이 생기는지 보이게
+### 6. 무슨 일이 생기는지 보이게
 
 배포 후 사용자가 겪는 에러를 보려면 Vercel → Logs를 켜두면 됩니다. 사용자 수를 보고 싶으면 Vercel Analytics(무료 플랜 포함)를 켜세요. AI에게 "Vercel Analytics 추가해줘"면 끝입니다.
 
-## 오늘의 체크리스트
-
-- [ ] 빌드(`npm run build`)가 로컬에서 통과한다
-- [ ] Vercel 환경변수가 `.env.local`과 일치한다
-- [ ] 브랜치 push로 미리보기 주소를 만들어봤다
-- [ ] 공개 전 체크리스트 6개를 전부 통과했다
-- [ ] (선택) 내 도메인이 연결됐다
 
 ## 다음 강의
 

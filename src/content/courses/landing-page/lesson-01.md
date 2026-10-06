@@ -36,16 +36,50 @@ part: 1부 · 구조와 준비
 | 6 | **FAQ** | 망설이는 이유를 미리 해소 |
 | 7 | **마지막 CTA** | 같은 버튼 한 번 더 |
 
-## 이 과정에서 만드는 사례
+## 이 과정에서 만드는 사례 — 쉬운 것부터
 
-| 강 | 유형 | 예시 |
-|---|---|---|
-| 3강 | 제품·서비스 출시 | SaaS 도구, 핸드메이드 제품, 구독 서비스 |
-| 4강 | 강좌·워크숍 모집 | 온라인 강의, 부트캠프, 클래스 |
-| 5강 | 앱 다운로드·사전예약 | 모바일 앱, 얼리버드, 크라우드펀딩 |
-| 6강 | 이벤트·프로모션 | 세미나, 할인 행사, 뉴스레터 구독 |
-| 7강 | 포트폴리오·개인 브랜딩 | 프리랜서, 컨설턴트, 작가 |
-| 8강 | CTA 최적화와 배포 | 전환율 개선, 도메인 연결, 분석 |
+사례는 5개 유형(3~7강)에 모두 **16개**입니다. 어려운 순서가 아니라 **쉬운 순서**로 정리했습니다. 처음엔 **맨 위 1개**만 하세요.
+
+> **난이도 기준**: 섹션 수(5개 이하면 쉬움), 이미지가 몇 장 필요한지, 입력 폼·카운트다운 같은 동작이 있는지, 외부 서비스 연동이 있는지, 프롬프트 길이. 이 기준으로 ★ 쉬움 / ★★ 보통 / ★★★ 어려움을 매겼습니다.
+
+| 순서 | 난이도 | 예상 시간 | 사례 | 어디서 |
+|---|---|---|---|---|
+| **먼저** | ★ 쉬움 | 15분 | **뉴스레터 구독** (섹션 3~5개, 이미지 없음) | 6강 사례 1 |
+| 2 | ★ 쉬움 | 20분 | 작가·크리에이터 (사진 중심) | 7강 사례 1 |
+| 3 | ★★ 보통 | 25분 | 컨설턴트·코치 | 7강 사례 2 |
+| 4 | ★★ 보통 | 25분 | 구독 서비스 | 3강 사례 1 |
+| 5 | ★★ 보통 | 30분 | 크라우드펀딩 소개 | 5강 사례 1 |
+| 6 | ★★ 보통 | 30분 | 핸드메이드·실물 제품 | 3강 사례 2 |
+| 7 | ★★ 보통 | 30분 | 사전예약·얼리버드 (진행 바·이메일 칸) | 5강 사례 2 |
+| 8 | ★★ 보통 | 30분 | 오프라인 이벤트 (신청 폼) | 6강 사례 2 |
+| 9 | ★★ 보통 | 30분 | 오프라인 워크숍 | 4강 사례 1 |
+| 10 | ★★★ 어려움 | 40분 | 기간 한정 프로모션 (JS 카운트다운) | 6강 사례 3 |
+| 11 | ★★★ 어려움 | 40분 | 모바일 앱 다운로드 (폰 목업) | 5강 사례 3 |
+| 12 | ★★★ 어려움 | 40분 | 온라인 세미나·웨비나 (폼·롤링 애니메이션) | 6강 사례 4 |
+| 13 | ★★★ 어려움 | 40분 | 프리랜서 디자이너 | 7강 사례 3 |
+| 14 | ★★★ 어려움 | 45분 | SaaS 도구 (9섹션·아코디언) | 3강 사례 3 |
+| 15 | ★★★ 어려움 | 45분 | 온라인 강좌 (9섹션) | 4강 사례 2 |
+| 16 | ★★★ 어려움 | 45분 | 부트캠프 (영상 임베드) | 4강 사례 3 |
+
+강 안에서의 사례 순서도 모두 이 난이도 순으로 놓았습니다. 8강은 만든 페이지를 다듬고 배포하는 마무리입니다.
+
+## 먼저 이것부터 — 뉴스레터 구독 페이지 (★ 쉬움 · 약 15분)
+
+2강 설치 전이라도 **개념만 확인**하고 싶다면 이 한 페이지만 먼저 보세요. (실제로 만드는 것은 2강에서 폴더를 연결한 뒤 6강 사례 1과 같습니다.) 섹션 **3개**, 이미지 **없음**, 외부 서비스 **없음**입니다.
+
+<div class="prompt-box not-prose" data-prompt="1-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. 뉴스레터 구독 랜딩페이지야. 섹션은 3개:
+1. 맨 위: 제목 "[뉴스레터 이름]", 한 줄 소개 "[한 줄 소개]", 이메일 입력 칸과 "무료 구독" 버튼
+2. 가운데: 이 뉴스레터를 읽는 이유 3가지 (예시로 채워줘)
+3. 맨 아래: 같은 이메일 입력 칸과 "[구독 버튼 문구]" 버튼. 폰에서도 보기 좋게.
+
+</div>
+</div>
+
+미리보기에서 이메일 칸과 버튼이 두 번 보이면 성공입니다. (칸에 쓴 이메일은 아직 저장되지 않습니다. 실제 수집은 서비스 연동이 필요해 뒤로 미뤘습니다.)
 
 ## 실제 예시 보기
 
@@ -55,10 +89,27 @@ part: 1부 · 구조와 준비
   <div class="sample-preview-card">
     <div class="sample-info">
       <div class="sample-title">
+        <span>📬</span>
+        <span>뉴스레터 구독</span>
+      </div>
+      <div class="sample-desc">★ 쉬움 · 미니멀, 이메일 입력 중심, 최근 발행 목록</div>
+    </div>
+    <a href="/examples/landing-newsletter.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
+      <span>보기</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </a>
+  </div>
+  <div class="sample-preview-card">
+    <div class="sample-info">
+      <div class="sample-title">
         <span>🚀</span>
         <span>SaaS 제품 출시</span>
       </div>
-      <div class="sample-desc">다크 모드, 가격표 3단, 후기, FAQ</div>
+      <div class="sample-desc">★★★ 어려움 · 다크 모드, 가격표 3단, 후기, FAQ</div>
     </div>
     <a href="/examples/landing-saas.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
       <span>보기</span>
@@ -76,27 +127,9 @@ part: 1부 · 구조와 준비
         <span>📚</span>
         <span>강좌 수강생 모집</span>
       </div>
-      <div class="sample-desc">커리큘럼 타임라인, 얼리버드 가격, 수강 대상</div>
+      <div class="sample-desc">★★★ 어려움 · 커리큘럼 타임라인, 얼리버드 가격, 수강 대상</div>
     </div>
     <a href="/examples/landing-course.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
-      <span>보기</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-      </svg>
-    </a>
-  </div>
-
-  <div class="sample-preview-card">
-    <div class="sample-info">
-      <div class="sample-title">
-        <span>📬</span>
-        <span>뉴스레터 구독</span>
-      </div>
-      <div class="sample-desc">미니멀, 이메일 입력 중심, 최근 발행 목록</div>
-    </div>
-    <a href="/examples/landing-newsletter.html" target="_blank" rel="noopener noreferrer" class="sample-preview-btn">
       <span>보기</span>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -116,12 +149,14 @@ part: 1부 · 구조와 준비
 </div>
 </div>
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
+::: practice
 - [ ] 랜딩페이지와 홈페이지의 차이를 안다
 - [ ] 전환율이 무엇인지 안다
 - [ ] 7가지 블록 순서를 안다
 - [ ] 어떤 유형의 랜딩페이지를 만들지 정했다
+:::
 
 ## 다음 강의
 

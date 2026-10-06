@@ -34,13 +34,13 @@ part: 3부 · 만들기
 </div>
 </div>
 
-확인: 재료 추가 → 새로고침 → 남아 있음 → 커밋.
+**확인:** 재료 추가 → 새로고침 → 남아 있음 → 커밋.
 
-TODO.md의 "새로고침해도 남기" 조각이 끝났습니다.
+TODO.md의 "새로고침해도 남기" 조각이 끝났습니다. (개발자 도구 `F12` → Application → Local Storage에서 `ingredients` 항목을 눈으로 볼 수도 있습니다.)
 
 ## 데이터베이스 고르기: Supabase
 
-입문자에게 추천하는 조합은 **Supabase**입니다.
+입문자에게 추천하는 조합은 **Supabase**(데이터베이스를 웹 화면에서 관리해주는 서비스)입니다.
 
 - PostgreSQL이라는 검증된 데이터베이스를 웹 화면에서 관리
 - 테이블을 엑셀처럼 화면에서 만들고 볼 수 있음
@@ -71,6 +71,12 @@ TODO.md의 "새로고침해도 남기" 조각이 끝났습니다.
 </div>
 </div>
 
+::: practice
+- [ ] localStorage 저장: 재료 추가 후 새로고침해도 목록이 남아 있다
+- [ ] Supabase **Table Editor**에서 `saved_menus` 테이블과 4개 컬럼이 눈에 보인다
+- [ ] Settings → API에서 Project URL과 anon public 키를 복사해 메모해 뒀다
+:::
+
 ## 환경변수: 키는 코드에 적지 않습니다
 
 복사한 URL과 키는 코드에 직접 적으면 GitHub에 올라가서 누구나 볼 수 있습니다. 프로젝트 루트에 `.env.local` 파일을 만들어 넣습니다.
@@ -96,26 +102,65 @@ git status
 
 ## 따라하기 3: 연결하고 저장하기
 
-이제 AI에게 시킵니다. 라이브러리 설치가 필요하니 허락을 포함해서:
+이제 AI에게 시킵니다. 라이브러리(남이 만든 코드 묶음) 설치가 필요하니 허락을 포함해서, **3단계로** 나눠 보냅니다.
+
+**단계 1: 연결 파일 만들기**
 
 <div class="prompt-box not-prose" data-prompt="12-3" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-"Supabase를 연결하려고 해. @supabase/supabase-js 설치를 허락할게.
-1. src/lib/supabase.ts에 클라이언트를 만들어줘. URL과 키는 .env.local의 NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY를 써.
-2. 메뉴 카드의 '저장' 버튼을 누르면 saved_menus 테이블에 name과 ingredients를 insert 해줘.
-3. /menus 화면을 만들어서 saved_menus를 최신순으로 목록으로 보여줘.
-각 단계 후 Supabase Table Editor에서 확인하는 방법을 알려줘."
+"Supabase를 연결하려고 해. @supabase/supabase-js 설치를 허락할게. src/lib/supabase.ts에 클라이언트를 만들어줘. URL과 키는 .env.local의 NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY를 써. 다른 파일은 건드리지 마."
 
 </div>
 </div>
 
-확인: 저장 클릭 → Supabase Table Editor에 행이 생김 → `/menus`에서 보임 → **폰에서 배포 주소로 열어도** 보임.
+**확인:** VS Code에 `src/lib/supabase.ts`가 생겼고, 파일 안에 키 값이 직접 적혀 있지 **않고** `process.env`로 읽는 줄이 보입니다.
+
+**단계 2: 저장 버튼**
+
+<div class="prompt-box not-prose" data-prompt="12-3a" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-3a</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"메뉴 카드의 '저장' 버튼을 누르면 saved_menus 테이블에 name과 ingredients를 insert(새 행 추가) 해줘. 성공하면 '저장했어요'를 보여줘. 확인하는 방법도 알려줘."
+
+</div>
+</div>
+
+**확인:** 저장을 누르고 Supabase **Table Editor**를 새로고침하면 방금 저장한 행이 생깁니다.
+
+**단계 3: 목록 화면**
+
+<div class="prompt-box not-prose" data-prompt="12-3b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-3b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"/menus 화면을 만들어서 saved_menus를 최신순으로 목록으로 보여줘. 다른 파일은 건드리지 마."
+
+</div>
+</div>
+
+**확인:** 주소창에 `/menus`를 붙이면 저장한 메뉴가 최신순으로 보입니다.
 
 폰에서 보이려면 Vercel에도 환경변수를 넣어야 합니다: Vercel 프로젝트 → Settings → Environment Variables에 같은 두 값 추가 → Redeploy. (16강에서 정리하지만 오늘 해두면 좋습니다.)
 
-## CRUD 나머지 채우기
+## 오늘의 체크리스트
+
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
+- [ ] `.env.local`이 Git에 추적되지 않는다 (Code 탭에 확인을 시켰거나, 터미널이면 `git status`에 안 보인다)
+- [ ] 저장 클릭 → Table Editor에 새 행이 생기는 것을 눈으로 확인했다
+- [ ] `/menus`에 저장한 메뉴가 보인다
+- [ ] Vercel에 환경변수를 넣고 Redeploy(같은 코드로 다시 배포)한 뒤, **폰에서 배포 주소로 열어도** 같은 메뉴가 보인다
+:::
+
+## 더 해보기(선택)
+
+본 과정에 꼭 필요하지 않은 심화입니다. 시간이 남거나 더 궁금할 때 해보세요.
+
+### CRUD 나머지 채우기
 
 읽기(R)와 만들기(C)가 됐으니, 지우기(D)와 고치기(U)는 조각 하나씩:
 
@@ -128,13 +173,6 @@ git status
 </div>
 </div>
 
-## 오늘의 체크리스트
-
-- [ ] localStorage 저장이 동작한다
-- [ ] Supabase에 테이블이 있고 `.env.local`에 키가 있다
-- [ ] `.env.local`이 Git에 추적되지 않는다 (터미널이면 `git status`에 안 보인다)
-- [ ] 저장 → Table Editor에 행이 생기는 걸 확인했다
-- [ ] Vercel에 환경변수를 넣고 폰에서도 데이터가 보인다
 
 ## 다음 강의
 

@@ -9,6 +9,10 @@ part: 3부 · 자동화와 운영
 
 ## 스케줄러를 쓰지 않는 이유
 
+> **이 강은 선택 과정입니다.** 7강까지의 스케줄러 방식으로 이미 충분하다면 건너뛰어도 됩니다. 설정이 길고(Meta 앱, 토큰) 어렵게 느껴지면 Threads 한 채널만 해보세요. 모든 발행은 **`--draft`로 먼저 확인한 뒤, 사람이 최종 발행**합니다.
+
+> **용어 한 줄**: *Graph API*는 페이스북의 공식 창구, *Page Access Token*은 "이 페이지에 글을 써도 된다"는 열쇠(비밀번호 같은 것, `.env`에만 보관), *앱 리뷰*는 Meta가 앱 권한을 심사하는 절차입니다.
+
 5강까지는 스케줄러 하나에 모든 채널을 연결했습니다. 그런데 두 가지 경우에는 직접 API를 쓰는 게 낫습니다.
 
 1. **스케줄러 비용을 줄이고 싶을 때** — Facebook 페이지와 Threads는 공식 API가 무료입니다
@@ -61,12 +65,20 @@ FB_PAGE_ACCESS_TOKEN=장기토큰
 <div class="prompt-box-body">
 
 scripts/fb-post.py를 만들어줘.
-- .env에서 FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN 읽기
+- .env에서 FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN 읽기 (값은 출력하지 마)
 - variants.json의 facebook 항목에서 텍스트, 링크(UTM 포함) 가져오기
 - Graph API의 `/{page-id}/feed` 엔드포인트로 POST
-- 이미지가 있으면 `/{page-id}/photos`로 먼저 업로드 후 게시
 - 성공하면 게시물 ID와 URL 출력, 실패하면 에러 메시지
-- `--draft` 옵션: published=false로 비공개 게시 (검수용)
+- `--draft` 옵션: published=false로 비공개 게시 (검수용). 옵션 없이는 실행하기 전에 "정말 발행할까요?"를 물어봐
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="8-2b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-2b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+fb-post.py에 이미지 지원을 추가해줘. cards/에 이미지가 있으면 `/{page-id}/photos`로 먼저 업로드한 뒤 게시해. `--draft`에서도 같게 동작해야 해.
 
 </div>
 </div>
@@ -84,7 +96,13 @@ python3 scripts/fb-post.py --draft     # 비공개로 먼저 확인
 python3 scripts/fb-post.py              # 실제 발행
 ```
 
-#### 따라하기 3: 예약 발행
+::: practice
+- [ ] `--draft`로 실행한 결과 URL을 열었고, 페이지 관리자 화면에서 **비공개(초안) 글**로 보이는 것을 확인했다
+- [ ] 글 내용·링크·이미지가 맞는 것을 눈으로 확인한 **뒤에** 사람이 최종 발행을 지시했다
+- [ ] 발행된 글을 페이지에서 직접 열어봤다
+:::
+
+#### 더 해보기(선택): 예약 발행
 
 Graph API는 예약 발행도 지원합니다:
 
@@ -97,7 +115,7 @@ fb-post.py에 `--schedule "2025-02-01 09:00"` 옵션을 추가해줘. scheduled_
 </div>
 </div>
 
-### 개인 프로필 — Aside 브라우저 방식
+### 더 해보기(선택): 개인 프로필 — Aside 브라우저 방식
 
 개인 프로필(예: "오승종")은 Graph API로 자동 포스팅이 **제한**됩니다. `publish_to_groups`, `user_posts` 등의 권한은 앱 리뷰(Meta 심사)를 통과해야 하고, 개인 계정용 발행 API는 사실상 닫혀 있습니다.
 
@@ -152,14 +170,22 @@ THREADS_ACCESS_TOKEN=장기토큰
 <div class="prompt-box-body">
 
 scripts/threads-post.py를 만들어줘.
-- .env에서 THREADS_USER_ID, THREADS_ACCESS_TOKEN 읽기
+- .env에서 THREADS_USER_ID, THREADS_ACCESS_TOKEN 읽기 (값은 출력하지 마)
 - variants.json의 threads 항목에서 텍스트, 링크 가져오기
 - Threads API 2단계 발행:
   1. `POST /{user-id}/threads` → media container ID 생성 (media_type=TEXT, text=내용, link_attachment=URL)
   2. `POST /{user-id}/threads_publish` → container ID로 실제 발행
-- 이미지 포함 시 media_type=IMAGE, image_url 사용
 - 성공하면 스레드 ID와 URL 출력
 - `--draft` 옵션: 1단계(컨테이너 생성)만 하고 발행은 안 함 (확인용)
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="8-6b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-6b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+threads-post.py에 이미지 지원을 추가해줘. 이미지가 있으면 media_type=IMAGE, image_url을 사용해줘. `--draft`도 같게 동작해야 해.
 
 </div>
 </div>
@@ -176,6 +202,12 @@ Code 탭에서는 이렇게 시키세요.
 python3 scripts/threads-post.py --draft   # 컨테이너만 생성
 python3 scripts/threads-post.py            # 실제 발행
 ```
+
+::: practice
+- [ ] `--draft`로 컨테이너만 만들었고, 아직 발행되지 않은 것을 확인했다
+- [ ] 내 Threads 프로필에 글이 **올라가지 않은** 상태를 앱에서 눈으로 봤다
+- [ ] 사람이 최종 확인한 뒤에만 실제 발행했고, 올라간 글을 앱에서 열어봤다
+:::
 
 ### Threads API 제약 사항
 
@@ -236,7 +268,7 @@ fb-post.py와 threads-post.py에 토큰 만료일 체크를 넣어줘. 7일 이�
 
 ## 오늘의 체크리스트
 
-- [ ] Meta for Developers에 앱을 만들고 Page Access Token을 발급했다
+- [ ] (선택 과정) Meta for Developers에 앱을 만들고 Page Access Token을 발급했다
 - [ ] `fb-post.py --draft`로 비공개 게시 후 확인, 발행까지 성공했다
 - [ ] Threads API 토큰을 발급하고 `threads-post.py`로 텍스트+링크 발행에 성공했다
 - [ ] channels.json에 facebook-page, threads 채널이 추가됐다

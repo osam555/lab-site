@@ -3,10 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { COURSES, getCourse } from "@/lib/courses";
-import { getAllLessons, lessonHref } from "@/lib/lessons";
+import { getAllLessons, getCourseSummary, lessonHref } from "@/lib/lessons";
 import { loadCollection, type Skill } from "@/lib/content";
 import { getCoursePrompts, groupByLesson } from "@/lib/course-prompts";
 import { LessonCard } from "@/components/LessonCard";
+import { Markdown } from "@/components/Markdown";
 import { CoursePromptList } from "@/components/CoursePromptList";
 
 type Params = { course: string };
@@ -106,6 +107,7 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
     .map((slug) => allSkills.find((s) => s.slug === slug))
     .filter(Boolean) as (typeof allSkills)[number][];
 
+  const summary = getCourseSummary(course);
   const courseSampleData = COURSE_SAMPLES[course];
 
   return (
@@ -211,6 +213,13 @@ export default async function CoursePage({ params }: { params: Promise<Params> }
       )}
 
       {/* Highlights — now integrated into prompt list below */}
+
+      {summary && (
+        <section id="summary" className="mt-12 scroll-mt-20 rounded-2xl border border-line bg-card p-6 sm:p-8 shadow-xs">
+          <h2 className="mb-4 text-xl font-black tracking-tight sm:text-2xl">과정 요약</h2>
+          <Markdown>{summary.content}</Markdown>
+        </section>
+      )}
 
       {/* Lesson list by part */}
       <div className="mt-12 space-y-12">

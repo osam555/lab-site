@@ -14,6 +14,8 @@ npm run build    # 배포 전 확인
 
 - `src/lib/courses.ts` — 과정 목록 (slug, 제목, 부 구성)
 - `src/content/courses/<과정>/lesson-NN.md` — 강의 본문 (frontmatter: number, title, subtitle, goal, minutes, part)
+  - 본문에서 `::: practice` … `:::` 블록(안에 `- [ ]` 체크리스트)을 쓰면 '🧪 실습' 카드로 렌더링됩니다
+  - 과정 폴더의 `summary.md`(frontmatter: title, updated)가 있으면 과정 페이지 강의 목록 위에 '과정 요약'으로 표시됩니다 (강의 목록에서는 제외)
   - 본문에서 `::: windows` … `:::` / `::: mac` … `:::` 블록을 쓰면 강의 상단에 Windows/macOS 전환 버튼이 생깁니다
 - `src/content/{skills,tips,ideas}/*.md`, `src/content/{prompts,repos}.ts` — 부가 섹션
 - `src/lib/lessons.ts` — 마크다운 로더

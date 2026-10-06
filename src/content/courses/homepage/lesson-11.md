@@ -7,35 +7,59 @@ minutes: 45
 part: 3부 · 공개
 ---
 
-## 문의 폼: 서버 없이
+## 문의 받기 ① 링크 버튼 — 가장 쉬운 방법 (★ 쉬움 · 약 10분)
 
-"이름, 연락처, 내용"을 받아 내 이메일로 보내주는 폼. 원래는 서버가 필요하지만, **폼 전송 서비스**를 쓰면 HTML만으로 됩니다. Formspree, Web3Forms, Getform 같은 서비스가 있고 소량은 무료입니다.
+방문자가 문의할 수 있는 가장 쉬운 길은 **이미 쓰고 있는 채널로 가는 버튼**입니다. 서버도, 계정 연동도 필요 없습니다.
+
+- **카카오톡 채널** 링크: 가게라면 폼보다 응답률이 높습니다
+- **전화 걸기** 버튼: 5강에서 만든 `tel:` 링크 그대로
+- **네이버 예약 / 캐치테이블** 링크: 예약이 핵심이라면 이것이 정답입니다
+
+<div class="prompt-box not-prose" data-prompt="11-0" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-0</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+contact.html에 "카카오톡으로 문의하기" 버튼을 크게 넣어줘. 누르면 [채널 링크]가 새 탭으로 열리게. 그 아래에 전화 걸기 버튼도.
+
+</div>
+</div>
+
+::: practice
+- [ ] 문의 페이지에 카카오톡(또는 전화) 버튼이 크게 보인다
+- [ ] 버튼을 눌렀을 때 카카오톡 채널(또는 전화 앱)이 실제로 열린다
+:::
+
+## 문의 받기 ② 문의 폼: 서버 없이 (★★★ 어려움 · 약 30분 · 선택)
+
+"이름, 연락처, 내용"을 받아 내 이메일로 보내주는 폼. 외부 서비스 가입이 필요해 어렵습니다. 링크 버튼으로 충분하다면 **건너뛰어도 됩니다.** 원래는 서버가 필요하지만, **폼 전송 서비스**를 쓰면 HTML만으로 됩니다. Formspree, Web3Forms, Getform 같은 서비스가 있고 소량은 무료입니다.
 
 1. 서비스 가입 → 새 폼 만들기 → **폼 주소**(endpoint) 또는 **키**를 복사
-2. Claude Code에게:
+2. Claude Code에게 **먼저 간단하게**:
 
 <div class="prompt-box not-prose" data-prompt="11-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-contact.html에 문의 폼을 넣어줘.
-- 항목: 이름, 연락처(전화 또는 이메일), 문의 내용, [희망 날짜]
-- 전송은 [서비스 이름] 사용, 주소는 [복사한 endpoint]
-- 보내면 "접수됐습니다. 하루 안에 연락드릴게요" 표시
-- 필수 항목이 비면 빨간 안내
-- DESIGN.md 규칙대로 스타일
+contact.html에 문의 폼을 넣어줘. 항목은 이름, 연락처, 문의 내용 세 개. 전송은 [서비스 이름]을 쓰고 주소는 [복사한 endpoint]. DESIGN.md 규칙대로 스타일.
 
 </div>
 </div>
 
 3. 커밋 → push → 실제 도메인에서 **직접 테스트 전송** → 내 이메일에 도착하는지 확인
+4. 잘 되면 이어서 다듬기:
+
+<div class="prompt-box not-prose" data-prompt="11-1b" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1b</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+폼을 보내면 "접수됐습니다. 하루 안에 연락드릴게요"가 보이게 하고, 필수 항목이 비어 있으면 빨간 안내를 보여줘.
+
+</div>
+</div>
 
 스팸이 걱정되면 "폼에 [서비스]의 스팸 방지(honeypot 또는 captcha)를 켜줘".
 
-### 폼 대신 이런 것도
-- **카카오톡 채널** 링크: 가게라면 폼보다 응답률이 높습니다. "문의 페이지에 카카오톡 채널 버튼 추가해줘: [채널 링크]"
-- **네이버 예약 / 캐치테이블** 링크: 예약이 핵심이면 예약 서비스 링크가 정답입니다
-- **구글 폼**: 설문·신청서 형태라면 구글 폼을 만들어 링크나 삽입
+- **구글 폼**: 설문·신청서 형태라면 구글 폼을 만들어 링크나 삽입 (폼 전송 서비스보다 쉬움)
 
 ## 혼자서 관리하는 루틴
 
@@ -89,11 +113,13 @@ contact.html에 문의 폼을 넣어줘.
 - **로그인·예약·데이터가 필요해졌다면**: 이 사이트의 **웹 서비스 만들기 20강**으로. 여러분은 이미 1~5강 내용을 알고 있으니 6강 기획부터 시작해도 됩니다.
 - **막힐 때**: 짧은 팁, 프롬프트 모음, 바이브 스킬 메뉴가 있습니다.
 
-## 마지막 체크리스트
+## 마지막 실습 체크
 
-- [ ] 문의 폼으로 보낸 테스트 메시지가 내 이메일에 도착했다
+::: practice
+- [ ] 문의 페이지의 버튼(또는 폼)이 실제 주소에서 동작하는 것을 눈으로 확인했다 (폼이면 테스트 메시지가 내 이메일에 도착)
 - [ ] 수정 루틴 5단계를 혼자 한 번 돌려봤다
 - [ ] 이전 배포로 되돌리는 방법을 알고 있다
 - [ ] 다음에 만들 홈페이지 하나를 정했다
+:::
 
 수고하셨습니다. 이제 여러분은 홈페이지를 **직접 만들고 고칠 수 있는 사람**입니다.

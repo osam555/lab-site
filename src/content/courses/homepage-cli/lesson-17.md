@@ -219,11 +219,13 @@ Supabase에서 reservations 테이블에 RLS를 설정해줘.
 
 ---
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
+::: practice
 - [ ] Supabase 프로젝트가 Seoul 리전으로 생성됐다
 - [ ] reservations 테이블이 있고 Studio에서 데이터가 보인다
 - [ ] 카카오 로그인이 홈페이지에서 동작한다
 - [ ] 예약 폼 제출 → Supabase에 저장 → Studio에서 확인된다
 - [ ] (선택) 새 예약 이메일 알림이 온다
 - [ ] (선택) Supabase MCP를 Claude Code에 연결했다
+:::

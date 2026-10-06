@@ -40,17 +40,28 @@ TYPECAST_ACTOR_ID=여기에
 
 ### 2. Typecast 더빙 스크립트
 
+6-1은 "만들어서 한 번 돌려보기", 6-1b는 "편하게 다듬기"입니다. 먼저 6-1만 하고 실행해 mp3가 나오는지 확인한 뒤 6-1b로 넘어가세요. (폴링: 완료됐는지 일정 간격으로 계속 물어보는 방식.)
+
 <div class="prompt-box not-prose" data-prompt="6-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 scripts/dub-typecast.py를 만들어줘.
 - script.json을 읽어 각 컷의 ko 텍스트를 Typecast API로 음성 변환
-- 출력: voice/cut-NN.mp3
+- 출력: voice/cut-01.mp3, cut-02.mp3 …
 - API 토큰·Actor ID는 .env의 TYPECAST_API_TOKEN, TYPECAST_ACTOR_ID에서
-- 진행 전 총 글자 수와 예상 크레딧 소모를 출력하고 y 확인 후 실행
-- 이미 있는 mp3는 건너뛰기, --only 5,12 옵션으로 특정 컷만 재생성
-- Typecast API는 비동기이므로 작업 ID를 받아 3초마다 완료 여부를 폴링
+- 시작 전에 총 글자 수와 예상 크레딧 소모를 출력하고, y를 입력해야만 실행
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="6-1b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/dub-typecast.py에 기능을 추가해줘.
+- 이미 있는 mp3는 건너뛰기, `--only 5,12` 옵션으로 특정 컷만 재생성
+- Typecast API는 작업이 끝날 때까지 시간이 걸리므로, 작업 ID를 받아 3초마다 완료 여부를 확인(폴링)
 - 각 파일 생성 후 ffprobe로 길이를 재서 voice/durations.json에 기록
 - 실패한 컷 번호를 모아 마지막에 출력
 
@@ -77,48 +88,11 @@ python3 scripts/dub-typecast.py
 macOS에는 python3이 기본으로 있습니다. `ModuleNotFoundError`가 나면 Claude가 알려주는 `pip3 install ...`을 실행하세요.
 :::
 
----
-
-## ElevenLabs 설정 (대안)
-
-한국어 품질이 Typecast보다 낮지만, 영어 혼용이나 특별한 감정 표현이 필요할 때 사용합니다.
-
-`.env`에 추가:
-
-```
-ELEVENLABS_API_KEY=여기에
-ELEVENLABS_VOICE_ID=여기에
-```
-
-<div class="prompt-box not-prose" data-prompt="6-2" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-scripts/dub-elevenlabs.py를 만들어줘.
-- script.json의 ko 텍스트를 ElevenLabs API로 변환
-- 모델: eleven_multilingual_v2 (한국어 품질 최적)
-- 나머지 옵션은 dub-typecast.py와 동일하게
-
-</div>
-</div>
-
-한국어 품질이 어색하면 `voice_settings`의 `stability`를 0.7 이상으로 올려보세요.
-
----
-
-## 두 서비스를 컷별로 다르게 쓰기
-
-<div class="prompt-box not-prose" data-prompt="6-3" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-script.json의 각 컷에 "tts" 필드를 추가해줘. 값: "typecast" 또는 "elevenlabs".
-dub.py를 만들어서 컷마다 지정된 서비스를 자동으로 골라 실행해줘.
-
-</div>
-</div>
-
-예: 일반 나레이션은 Typecast, 숫자 강조 컷은 ElevenLabs.
+::: practice
+- [ ] `voice/cut-01.mp3`를 직접 재생해 목소리와 한국어 발음이 들을 만한지 확인했다
+- [ ] 실행 전에 "총 글자 수·예상 크레딧"이 화면에 나왔고, 내가 y를 입력해서 시작했다
+- [ ] `voice/` 폴더에 mp3가 컷 수만큼 있다 (개수를 셌다)
+:::
 
 ---
 
@@ -173,6 +147,12 @@ voice/durations.json을 표로 보여주고, 4.0초를 넘거나 3.0초에 못 �
 
 ---
 
+::: practice
+- [ ] `voice/durations.json`을 열었거나 표로 받아, 3.0초 미만·4.2초 초과 컷 번호를 적었다
+- [ ] 긴 컷 하나는 대본을 줄여, 짧은 컷 하나는 무음 패딩으로 고쳤다
+- [ ] 고친 컷만 다시 들어 길이가 바뀐 것을 확인했다
+:::
+
 ## 이어 듣기 확인
 
 <div class="prompt-box not-prose" data-prompt="6-7" data-level="beginner">
@@ -199,9 +179,58 @@ voice/의 mp3를 번호순으로 이어 붙여 voice/preview.mp3를 만들어줘
 
 ---
 
+---
+
+::: practice
+- [ ] `voice/preview.mp3`를 눈 감고 끝까지 들었다
+- [ ] 발음이 어색한 단어를 하나 이상 찾아 한글로 풀어 쓰고 그 컷만 다시 더빙했다
+- [ ] 전체 길이가 60~100초 안인지 확인했다
+:::
+
+## 더 해보기(선택): ElevenLabs로 더빙하기
+
+한국어 품질이 Typecast보다 낮지만, 영어 혼용이나 특별한 감정 표현이 필요할 때 사용합니다.
+
+`.env`에 추가:
+
+```
+ELEVENLABS_API_KEY=여기에
+ELEVENLABS_VOICE_ID=여기에
+```
+
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+scripts/dub-elevenlabs.py를 만들어줘.
+- script.json의 ko 텍스트를 ElevenLabs API로 변환
+- 모델: eleven_multilingual_v2 (한국어 품질 최적)
+- 나머지 옵션은 dub-typecast.py와 동일하게
+
+</div>
+</div>
+
+한국어 품질이 어색하면 `voice_settings`의 `stability`를 0.7 이상으로 올려보세요.
+
+---
+
+### 두 서비스를 컷별로 다르게 쓰기
+
+<div class="prompt-box not-prose" data-prompt="6-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+script.json의 각 컷에 "tts" 필드를 추가해줘. 값: "typecast" 또는 "elevenlabs".
+dub.py를 만들어서 컷마다 지정된 서비스를 자동으로 골라 실행해줘.
+
+</div>
+</div>
+
+예: 일반 나레이션은 Typecast, 숫자 강조 컷은 ElevenLabs.
+
 ## 오늘의 체크리스트
 
-- [ ] Typecast 또는 ElevenLabs 중 하나를 선택하고 .env를 설정했다
+- [ ] Typecast(기본) 또는 ElevenLabs 중 하나를 선택하고 .env를 설정했다
 - [ ] `voice/cut-01.mp3` ~ `cut-NN.mp3`가 생성됐다
 - [ ] durations.json에서 모든 컷이 3.0~4.2초 안에 있다
 - [ ] preview.mp3를 끝까지 듣고 발음 문제를 수정했다

@@ -7,6 +7,8 @@ minutes: 40
 part: 2부 · 파이프라인 만들기
 ---
 
+> **용어 풀이** 썸네일 = 글 목록에 보이는 대표 이미지, 태그 = 글 주제를 알리는 꼬리표, EXIF = 사진 파일에 숨어 있는 촬영 정보(위치 등)입니다.
+
 ## 사진이 글의 절반입니다
 
 네이버 블로그에서 사진 없는 글은 끝까지 안 읽힙니다. 그리고 **직접 찍은 사진**은 "경험"의 증거입니다. 순서는: 내 사진 → 없으면 제품 공식 이미지(출처 표기) → 무료 사진. 생성 이미지는 제품·장소 글에는 쓰지 않습니다 (실물과 다르면 신뢰를 잃습니다).
@@ -43,22 +45,7 @@ images/01~07에 대해 final.md 문맥에 맞는 사진 설명을 한 문장씩 
 </div>
 </div>
 
-## 따라하기 2: 썸네일 카드
-
-목록에서 눈에 띄는 대표 이미지. 사진 위에 제목을 얹은 카드를 **HTML 템플릿 → 이미지**로 자동 생성합니다.
-
-<div class="prompt-box not-prose" data-prompt="5-3" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-templates/thumb.html을 만들어줘: 1000×1000, 배경은 images/01.jpg를 어둡게 깔고, 가운데에 제목(2줄, 흰색 볼드 64px, 검은 외곽선), 아래 작게 블로그 이름. 글꼴은 Pretendard. 그리고 scripts/thumb.py로 meta.json의 제목을 넣어 렌더링해서 images/00-thumb.jpg로 저장하게. 렌더링은 Playwright 스크린샷으로.
-
-</div>
-</div>
-
-한 번 만들면 모든 글에 같은 스타일이 붙어 블로그가 정돈되어 보입니다.
-
-## 따라하기 3: 제목 3안
+## 따라하기 2: 제목 3안
 
 네이버 제목 규칙은 단순합니다. **키워드가 앞에, 30자 안에, 궁금증 하나.**
 
@@ -78,7 +65,7 @@ meta.json의 title_candidates에 저장.
 
 고르고: "2번으로 확정, meta.json title에 넣어줘."
 
-## 따라하기 4: 태그와 요약
+## 따라하기 3: 태그와 요약
 
 <div class="prompt-box not-prose" data-prompt="5-5" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -91,7 +78,7 @@ meta.json의 title_candidates에 저장.
 
 태그는 10개면 충분합니다. 30개씩 넣는 건 옛날 방식이고 도움이 안 됩니다.
 
-## 따라하기 5: 에디터용 원고 만들기
+## 따라하기 4: 에디터용 원고 만들기
 
 스마트에디터는 마크다운을 모릅니다. `final.md`를 에디터 구조로 바꿉니다.
 
@@ -129,9 +116,34 @@ git add .
 git commit -m "camping-chair: 이미지·제목·태그·에디터 원고"
 ```
 
+::: practice
+**실습 미션 — 사진 정리하고 제목·태그 확정하기**
+
+- [ ] `images/` 폴더에 01.jpg~07.jpg가 **순서대로 보이고**, 파일 크기가 300KB 이하인 것을 확인했다
+- [ ] 사진 설명 문장이 `meta.json`의 images 배열에 들어갔다
+- [ ] 제목 3안 중 하나를 골랐고, **제목 앞 10자 안에 키워드가 있다**
+- [ ] 태그 10개가 `meta.json`에 있고 띄어쓰기 없이 적혔다
+- [ ] `editor.md`를 열어 `{{image: …}}` 표시가 사진 위치마다 들어간 것을 확인했다
+:::
+
+## 더 해보기(선택): 썸네일 카드 자동 생성
+
+목록에서 눈에 띄는 대표 이미지. 사진 위에 제목을 얹은 카드를 **HTML 템플릿 → 이미지**로 자동 생성합니다.
+
+<div class="prompt-box not-prose" data-prompt="5-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+templates/thumb.html을 만들어줘: 1000×1000, 배경은 images/01.jpg를 어둡게 깔고, 가운데에 제목(2줄, 흰색 볼드 64px, 검은 외곽선), 아래 작게 블로그 이름. 글꼴은 Pretendard. 그리고 scripts/thumb.py로 meta.json의 제목을 넣어 렌더링해서 images/00-thumb.jpg로 저장하게. 렌더링은 Playwright 스크린샷으로.
+
+</div>
+</div>
+
+한 번 만들면 모든 글에 같은 스타일이 붙어 블로그가 정돈되어 보입니다. (건너뛰어도 됩니다. 그러면 6강에서 대표 이미지는 `images/01.jpg`로 대신 지정하세요.)
+
 ## 오늘의 체크리스트
 
-- [ ] images/에 01~07 (줄인 것)과 00-thumb.jpg가 있다
+- [ ] images/에 01~07 (줄인 것)이 있다 ((선택) 00-thumb.jpg)
 - [ ] meta.json에 title, tags(10), summary, images(설명 포함)가 있다
 - [ ] 제목 앞 10자 안에 키워드가 있다
 - [ ] editor.md가 있다

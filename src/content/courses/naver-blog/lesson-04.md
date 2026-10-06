@@ -16,6 +16,8 @@ AI가 못하는 것: **"제가 작년 겨울에 써봤더니"**.
 
 ## 따라하기 1: 리서치
 
+> **용어 풀이** 리서치 = 글에 쓸 정보를 모으는 일, 출처 = 그 정보를 찾은 웹페이지 주소(URL), 검색 의도 = 그 말을 검색한 사람이 진짜 알고 싶은 것입니다.
+
 캘린더의 첫 글로 시작합니다. 예: `posts/2025-01-camping-chair/` (키워드: 캠핑의자 추천, 의도: 정보).
 
 <div class="prompt-box not-prose" data-prompt="4-1" data-level="advanced">
@@ -37,6 +39,19 @@ research.md로 저장. 출처 없는 숫자는 쓰지 마.
 **빈틈 2개**가 내 글이 상위 글과 달라지는 지점입니다.
 
 ## 따라하기 2: 아웃라인 → 초안
+
+초안은 두 번에 나눠 만듭니다. **1단계 — 아웃라인만** 보고 방향을 정합니다.
+
+<div class="prompt-box not-prose" data-prompt="4-2a" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2a</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+research.md와 VOICE.md를 바탕으로 draft.md의 아웃라인만 써줘. 소제목 4~6개, 각 소제목 아래 한 줄 요약, `[내 경험: …]` 자리 2곳과 `[사진: …]` 자리 위치만 표시해줘. 본문은 아직 쓰지 마.
+
+</div>
+</div>
+
+**결과 확인**: 소제목 순서가 독자의 궁금증 순서와 맞는지 읽어 보고, 바꿀 곳은 "3번을 맨 앞으로"처럼 말합니다. 괜찮으면 **2단계 — 아래 프롬프트로 본문까지** 씁니다.
 
 <div class="prompt-box not-prose" data-prompt="4-2" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -130,6 +145,16 @@ draft.md를 final.md로 복사하고 meta.json의 status를 "written"으로.
 git add .
 git commit -m "camping-chair: 원고 완성"
 ```
+
+::: practice
+**실습 미션 — 내 경험 단락 쓰고 출처 3개 확인하기**
+
+- [ ] `research.md`를 열어 사실마다 **출처 URL이 붙어 있는지** 눈으로 확인했다
+- [ ] `draft.md`의 `[내 경험: …]` 자리 2곳 이상을 **내가 직접 타이핑**했다 (날짜·장소·숫자·실패·해결 중 3가지 이상 포함)
+- [ ] AI 티 검사 표(4-5)에서 문제 문장을 확인하고, 번호를 지정해 고쳤다
+- [ ] 출처 URL 3개 이상을 **직접 열어** 가격·무게 같은 숫자가 맞는지 확인했다
+- [ ] `final.md`가 있고 `meta.json`의 status가 "written"으로 바뀐 것을 열어서 확인했다
+:::
 
 ## 오늘의 체크리스트
 

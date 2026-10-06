@@ -13,7 +13,9 @@ part: 2부 · 첫 편 만들기
 
 이 단계는 clay-episode 스킬의 "썸네일·조립·검사"와 "올리기" 절에 해당합니다. 조립·검사를 먼저 시키고 사람이 시트를 확인한 뒤에, 업로드는 별도 프롬프트로 따로 시킵니다.
 
-### 프롬프트 6-1 · 썸네일·조립·검사
+이 강은 **6-1 썸네일·조립**(기다림 큰 단계) → **6-2 검사·시트 확인**(사람의 눈) → **6-3 업로드** 세 단계로 나눕니다. 용어: **조립**은 컷+목소리+자막+카드를 한 편의 영상 파일로 합치는 일(ffmpeg 가 합니다), **QA 게이트**는 완성 영상을 자동 채점하는 검사입니다.
+
+### 프롬프트 6-1 · 썸네일·조립
 
 **① 준비 (사람이 먼저)**
 - [ ] 어디서: 키트 폴더에서 데스크탑 앱 Code 탭을 열고 이 폴더를 프로젝트 폴더로 고릅니다
@@ -26,28 +28,50 @@ part: 2부 · 첫 편 만들기
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode 스킬을 읽고, 편 키 rainbow 의 썸네일을 만들고 롱폼·쇼츠를 조립하고 자동 검사를 돌려줘. make_thumb→flow_assemble --deploy→flow_assemble --short→qa_gate post→sheet 순서로 실행하고, qa_gate 점수와 sheet.py 가 만든 시트 파일 경로를 스크립트 출력 그대로 알려줘. 점수를 지어내지 마. 8.0 미만이면 스킬 안의 문제 해결 표를 보고 원인을 짐작해서 알려주되, 재생성은 하지 말고 내가 확인한 뒤에 시킬게. 여기까지만 하고 멈춰 — 업로드는 내가 시트를 눈으로 확인한 다음 따로 요청할게.
+clay-episode 스킬을 읽고, 편 키 rainbow 의 썸네일을 만들고 롱폼·쇼츠를 조립해줘. make_thumb → flow_assemble --deploy → flow_assemble --short 순서로 실행하고, 각 스크립트가 출력한 결과(썸네일 PASS 여부, 만들어진 파일 경로)를 그대로 알려줘. 값을 지어내지 마. 여기까지만 하고 멈춰 — 자동 검사와 시트 확인은 6-2 로 따로 시킬게.
 
 </div>
 </div>
 
 **③ 결과 확인**
 - [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
-- [ ] 썸네일 3장 모두 "PASS", `qa_gate` 점수가 8.0 이상인지 스크립트 출력을 직접 봅니다
-- [ ] Claude 가 알려준 시트 경로(`scratch/flow_tools/rainbow_sheet.jpg`)의 이미지를 직접 엽니다
-- [ ] **사람이 확인해야 할 체크포인트**: 시트의 4가지 체크포인트(가짜 글자·어두운 장면·카드 가림·인물 일관성)는 스킬이 대신 판단하지 않게 하고, 반드시 사람이 이미지를 직접 봅니다.
+- [ ] 썸네일 3장 모두 "썸네일 검사 PASS" 가 출력됐는지 직접 봅니다
+- [ ] `remotion/out/rainbow_deploy.mp4`(롱폼)와 `scratch/flow_rainbow/rainbow_short.mp4`(쇼츠)가 생겼는지 폴더에서 확인합니다
 
-### 프롬프트 6-2 · 업로드
+### 프롬프트 6-2 · 자동 검사·시트
 
 **① 준비 (사람이 먼저)**
-- [ ] 6-1 의 시트를 직접 눈으로 확인해 문제가 없어야 합니다
-- [ ] Aside 앱의 Studio 탭이 로그인돼 있는지 확인합니다
-- [ ] 업로드는 공개로 가는 되돌리기 어려운 단계이므로, 제목·설명 방향을 미리 생각해 둡니다
+- [ ] 6-1 의 롱폼·쇼츠 파일이 있어야 합니다
 
 **② 스킬 (붙여 넣기)**
 
 <div class="prompt-box not-prose" data-prompt="6-2" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, 편 키 rainbow 에 qa_gate post 를 돌리고 sheet.py 로 시트를 만들어줘. qa_gate 점수와 시트 파일 경로를 스크립트 출력 그대로 알려줘. 점수를 지어내지 마. 8.0 미만이면 스킬 안의 문제 해결 표를 보고 원인을 짐작해서 알려주되, 재생성은 하지 말고 내가 확인한 뒤에 시킬게. 여기까지만 하고 멈춰 — 업로드는 내가 시트를 눈으로 확인한 다음 따로 요청할게.
+
+</div>
+</div>
+
+**③ 결과 확인**
+- [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
+- [ ] `qa_gate` 점수가 8.0 이상인지 스크립트 출력을 직접 봅니다
+- [ ] Claude 가 알려준 시트 경로(`scratch/flow_tools/rainbow_sheet.jpg`)의 이미지를 직접 엽니다
+- [ ] **사람이 확인해야 할 체크포인트**: 시트의 4가지 체크포인트(가짜 글자·어두운 장면·카드 가림·인물 일관성)는 스킬이 대신 판단하지 않게 하고, 반드시 사람이 이미지를 직접 봅니다.
+
+### 프롬프트 6-3 · 업로드 (사람이 최종 확인 후)
+
+**① 준비 (사람이 먼저)**
+- [ ] 6-2 의 시트를 직접 눈으로 확인해 문제가 없어야 합니다
+- [ ] Aside 앱의 Studio 탭이 로그인돼 있는지 확인합니다
+- [ ] 업로드는 공개로 가는 되돌리기 어려운 단계이므로, 제목·설명 방향을 미리 생각해 둡니다
+- [ ] R2(2강 따라하기 4)가 준비돼 있어야 합니다
+
+**② 스킬 (붙여 넣기)**
+
+<div class="prompt-box not-prose" data-prompt="6-3" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 clay-episode 스킬을 읽고, 편 키 rainbow 를 업로드해줘. prep_more.py 를 돌려 R2 업로드와 yt_meta.json(제목·설명·태그)을 만들고, 그 내용을 표로 보여줘. 그다음 큐 파일(scratch/flow_tools/aside_queue.txt)에 "rainbow long main"과 "rainbow short main" 두 줄을 추가하고 drain_uploads.py 를 돌려줘. 업로드는 공개로 가는 되돌리기 어려운 단계이니, yt_meta.json 내용을 보여준 다음 실제로 큐에 넣기 전에 한 번 멈춰서 내 확인을 기다려줘.
@@ -159,6 +183,14 @@ python3 scripts/drain_uploads.py
 Aside 의 Studio 탭이 움직이며 제목·설명·태그·재생목록·공개까지 눌러 줍니다. 끝날 때까지 창을 켜둡니다. 유튜브는 **채널당 하루 업로드 한도**(대략 20~25건)가 있어, 걸리면 드레이너가 그 채널을 건너뛰고 남은 줄을 큐에 두니 다음 날 다시 실행합니다. 업로드된 ID 는 편 JSON(`data/longform/rainbow.json`)의 `yt`, `hook_short.yt` 에 기록됩니다.
 
 </details>
+
+::: practice
+- [ ] 썸네일 3장(`assets/longform/rainbow/thumb/final-a/b/c.png`)을 직접 열어 헤드라인 글자가 잘 읽히는지 본다
+- [ ] `rainbow_deploy.mp4` 를 처음부터 끝까지 재생하며 목소리·자막·카드가 맞게 나오는지 본다
+- [ ] 시트(`rainbow_sheet.jpg`) 한 장을 열어 **4가지 체크포인트**를 하나씩 소리 내어 확인한다
+- [ ] `yt_meta.json` 제목·설명을 읽고 고칠 곳이 없는지 확인한 뒤에만 큐에 넣는다(업로드 최종 확인은 항상 사람)
+- [ ] 업로드 후 YouTube Studio 콘텐츠 목록에서 롱폼·쇼츠 두 개가 보이는지 확인한다
+:::
 
 ## 오늘의 체크리스트
 

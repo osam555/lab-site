@@ -13,6 +13,8 @@ part: 4부 · 블로그 자동화
 
 ### 방법 1 — Tistory API (권장)
 
+> **용어 풀이** API = 프로그램끼리 주고받는 창구, Client ID·Secret = 그 창구를 쓰는 내 신분증 같은 값입니다. **Secret은 채팅·캡처·공개 저장소에 노출하지 말고** 프로젝트의 `.env` 같은 비밀 파일에 둡니다.
+
 1. [tistory.com/guide/api](https://tistory.com/guide/api) → 앱 등록 → Client ID·Secret 발급
 2. Claude Code에게:
 
@@ -76,6 +78,23 @@ Computer Use로 티스토리 글쓰기 화면에서 초안을 입력해줘.
 글 하나를 모든 채널에 배포합니다.
 
 ### 파이프라인 파일 만들기
+
+한 번에 8단계를 만들면 어디서 틀렸는지 찾기 어렵습니다. **1단계 — 블로그 쪽(1~4단계)만 먼저** 만들어 실행해 보세요.
+
+<div class="prompt-box not-prose" data-prompt="10-4a" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-4a</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+deploy-content.md를 만들어줘. 아래 1~4단계만 먼저 적어줘. 각 단계 끝에 "내가 확인할 것"을 한 줄씩 붙여줘.
+1. blog-drafts/[파일명].md 읽기
+2. 각 채널용 텍스트 변환 (sns-rules.md 참고)
+3. 인스타용 이미지 카드 생성
+4. 네이버 블로그 에디터 자동 입력 (임시저장)
+
+</div>
+</div>
+
+1~4단계가 의도대로 되는 것을 확인했다면, **2단계 — 아래 프롬프트로 나머지(5~8단계)를 이어 붙여 완성**합니다.
 
 <div class="prompt-box not-prose" data-prompt="10-4" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -142,6 +161,18 @@ deploy-content.md 루틴을 실행해줘. 배포할 파일: blog-drafts/2024-12-
 목요일, 토요일:
   └─  5분: X·스레드 예약된 것 확인, 필요 시 수정
 ```
+
+---
+
+::: practice
+**실습 미션 — 티스토리 테스트 글(비공개) + 1~4단계 파이프라인**
+
+- [ ] 티스토리(또는 사용 중인 블로그)에 **비공개** 테스트 글 1개를 올렸고, 블로그 관리 화면에서 글이 보이는지 확인했다
+- [ ] Secret·키 값이 채팅이나 코드 파일에 노출되지 않았다
+- [ ] `deploy-content.md` 1~4단계를 만들고 실행해, 결과(이미지 카드·임시저장 글)를 **눈으로 확인**했다
+- [ ] 저품질 방지 표의 5가지 규칙 중 지금 내가 어기고 있는 것이 없는지 점검했다
+- [ ] (선택) 5~8단계(티스토리·SNS 예약)까지 이어 붙여 한 번 실행했다 — 예약 확정 전에 내가 확인했다
+:::
 
 ---
 

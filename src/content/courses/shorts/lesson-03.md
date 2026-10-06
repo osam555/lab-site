@@ -11,7 +11,7 @@ part: 2부 · 파이프라인 만들기
 
 클립은 다시 만들면 크레딧이 나가고, 더빙은 다시 하면 글자 수가 나갑니다. **대본만 공짜로 무한히 고칠 수 있습니다.** 그래서 이 단계에서 시간을 씁니다. 대본이 확정되기 전에는 다음 단계로 가지 않습니다.
 
-## 1단계 프롬프트: 레퍼런스 분석 + 대본 추출
+## 1단계 프롬프트: 레퍼런스 분석
 
 1강에서 적은 레퍼런스 URL과 주제를 넣습니다. 첫 영상 폴더를 만들고 시작하세요.
 
@@ -37,16 +37,27 @@ Claude Code에 (`[대괄호]`는 내 것으로):
 
 [레퍼런스 유튜브 URL: https://youtube.com/...]
 
-위 건축 쇼츠 유튜브 채널의 영상 스타일과 구성을 분석해줘. 훅(첫 3초)을 어떻게 잡는지, 컷 전환 리듬, 나레이션 톤(존댓말/반말, 속도), 마무리 방식.
+위 건축 쇼츠 유튜브 채널의 영상 스타일과 구성을 분석해줘. 훅(첫 3초)을 어떻게 잡는지, 컷 전환 리듬, 나레이션 톤(존댓말/반말, 속도), 마무리 방식. 파일은 만들지 말고 화면에 정리만 해줘.
 
-분석을 바탕으로 아래 조건에 맞는 9:16 쇼츠 대본과 Google Flow용 프롬프트를 작성해줘.
+</div>
+</div>
+
+**확인**: 훅·리듬·톤·마무리 네 가지가 각각 한두 줄로 나왔나요? 내 느낌과 다르면 "톤은 더 짧은 반말로 봐줘"처럼 한 번 고쳐 달라고 하세요. 맞다고 느껴지면 2단계로.
+
+## 2단계 프롬프트: 대본 뽑기
+
+<div class="prompt-box not-prose" data-prompt="3-1b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+위 분석을 바탕으로 아래 조건의 9:16 쇼츠 대본과 Google Flow용 프롬프트를 작성해줘.
 
 1. 주제: [피라미드 왕의 방이 무너지지 않는 비밀]
 2. 구성: 4초 단위 조각 컷 총 20~25개 (약 80~100초)
 3. 추출 항목:
    - 컷별 대본 (한국어, 4초 분량에 딱 맞는 호흡 — 12~18자, 한 문장)
    - Google Flow 입력용 영문 비주얼 프롬프트 (건축 내부 구조, 도면, 하중 흐름 중심 표현)
-4. 더빙: ElevenLabs API 연동용으로 컷 번호 · 대본 · 예상 길이(초)를 구조화
+4. 더빙: 컷 번호 · 대본 · 예상 길이(초)를 구조화
 
 결과는 projects/2025-01-pyramid/script.json으로 저장. 형식:
 `{ "title", "topic", "reference", "style_notes", "cuts": [ { "no", "ko", "prompt_en", "sec": 4 } ] }`
@@ -54,6 +65,9 @@ Claude Code에 (`[대괄호]`는 내 것으로):
 
 </div>
 </div>
+
+**확인**: `projects/2025-01-pyramid/` 안에 `script.json`과 `script.md`가 생겼는지 폴더에서 열어 보세요. `script.md`를 열었을 때 컷이 번호순으로 보이면 성공입니다.
+
 
 <div class="prompt-box not-prose" data-prompt="3-2" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -65,6 +79,8 @@ Claude Code가 유튜브 페이지를 직접 못 읽는 환경이면, 레퍼런�
 </div>
 
 ## 결과 읽는 법
+
+> **용어 한 줄**: *훅*은 영상 맨 앞 3초의 "어? 뭐지?" 장치, *JSON*은 컷 번호·대사 같은 정보를 정해진 칸에 담은 텍스트 파일 형식입니다. 사람이 읽기 어려우면 `script.md`를 보세요.
 
 `script.md`를 열어 **소리 내어 읽으세요.** 초시계를 켜고. 컷당 4초를 넘기면 대본이 깁니다. 확인할 것:
 
@@ -107,6 +123,13 @@ Claude Code가 유튜브 페이지를 직접 못 읽는 환경이면, 레퍼런�
 </div>
 </div>
 
+::: practice
+- [ ] `script.md`를 열어 컷이 20~25개, 번호순으로 있는 것을 눈으로 확인했다
+- [ ] 초시계를 켜고 대본을 소리 내어 읽어 총 시간을 쟀다 (80~100초)
+- [ ] 20자를 넘는 컷을 하나 찾아 3-3 프롬프트로 나눴고, 다시 열어 반영된 것을 확인했다
+- [ ] 숫자·연도·이름 3개를 직접 검색해서 맞는지 확인했다
+:::
+
 ## 대본 확정 규칙
 
 세 가지가 되면 확정입니다.
@@ -143,6 +166,12 @@ git commit -m "pyramid: 대본 확정 (22컷, 92초)"
 ```
 
 이 파일 하나로 4강(프롬프트), 5강(클립), 6강(더빙), 7강(합성)이 전부 돌아갑니다.
+
+::: practice
+- [ ] `script.json`을 열어 `cuts` 목록 개수가 20~25인지 세어봤다
+- [ ] 훅(1~2컷)을 가족이나 친구에게 읽어주고 "그래서?" 반응이 나오는지 봤다
+- [ ] "대본 확정" 커밋 메시지가 `git log`(또는 클로드의 보고)에 보인다
+:::
 
 ## 오늘의 체크리스트
 

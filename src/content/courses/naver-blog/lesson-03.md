@@ -29,6 +29,19 @@ CSV를 미리보기로 열면 깨져 보일 수 있지만 상관없습니다. "~
 
 ## 따라하기 2: 분석
 
+분석 요청이 5가지라 한 번에 시키면 결과 확인이 어렵습니다. **1단계 — 걸러내기만 먼저** 하고 개수를 확인합니다.
+
+<div class="prompt-box not-prose" data-prompt="3-1a" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1a</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+keywords/의 CSV를 전부 읽고, 월간 검색수(PC+모바일) 300 이상이고 경쟁 정도가 '낮음' 또는 '중간'인 키워드만 남겨줘. 남은 개수와 검색수 상위 10개를 표로 보여줘. 분석은 아직 하지 마.
+
+</div>
+</div>
+
+**결과 확인**: 남은 개수가 너무 적으면(10개 미만) 씨앗 단어를 바꿔 CSV를 더 받습니다. 충분하면 **2단계 — 아래 프롬프트로 의도 분류·점수까지** 진행합니다.
+
 <div class="prompt-box not-prose" data-prompt="3-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
@@ -95,6 +108,16 @@ keywords/의 CSV를 전부 읽고 분석해줘.
 git add .
 git commit -m "키워드 30개, 1월 캘린더"
 ```
+
+::: practice
+**실습 미션 — 키워드 분석표 보고 30개 직접 고르기**
+
+- [ ] 씨앗 단어로 CSV를 받아 `keywords/` 폴더에 넣었다 (파일 목록에 보인다)
+- [ ] 1단계 결과(남은 개수·상위 10개)를 확인했다
+- [ ] `keywords/analysis.md`의 표를 열어 읽고, **경험으로 쓸 수 있는 30개를 내가 직접 골랐다**
+- [ ] `keywords/calendar-*.md` 캘린더가 월·수·금 기준으로 채워진 것을 확인했다
+- [ ] `posts/` 안에 글별 폴더와 `meta.json`(status: planned)이 생긴 것을 확인했다
+:::
 
 ## 오늘의 체크리스트
 

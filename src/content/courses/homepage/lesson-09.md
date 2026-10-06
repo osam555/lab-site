@@ -74,39 +74,41 @@ Vercel이 이 두 줄을 넣으라는데 [캡처] 이 화면에서 어디에 뭘
 </div>
 </div>
 
-## 주소를 깔끔하게
+## 검색과 공유를 위한 준비 (★★ 보통 · 약 10분)
 
-지금 메뉴 페이지 주소는 `mycafe.kr/menu.html`입니다. `.html`을 떼려면 Vercel에 설정 파일 하나면 됩니다.
+먼저 **첫 화면(index) 하나만** 해 보세요. 검색 결과에 나오는 파란 제목과 회색 설명입니다.
 
-<div class="prompt-box not-prose" data-prompt="9-2" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="9-3" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-3</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-vercel.json 파일을 만들어서 `.html` 없이 접속되게 해줘 (cleanUrls). 그리고 모든 html 파일의 내부 링크에서도 `.html`을 빼줘. www로 들어와도 www 없는 주소로 가게 해줘.
+index.html의 `<title>`과 meta description을 넣어줘. 제목은 "[가게 이름] | [동네] [업종]", 설명은 "[한 줄 소개 + 위치]" (80자 내외).
 
 </div>
 </div>
 
-커밋 → push → `mycafe.kr/menu`로 열리는지 확인.
+잘 됐으면 같은 방식으로 menu·location·contact 페이지도 하나씩 요청합니다. 한 번에 네 페이지를 시켜도 되지만, 처음엔 하나씩이 안전합니다.
 
-## 검색과 공유를 위한 준비
+## 더 해보기 (선택 · ★★★ 어려움)
 
-### 페이지마다 제목과 설명
+아래 세 가지는 **하지 않아도 홈페이지는 정상 동작**합니다. 도메인과 검색 등록(10강)을 마친 뒤에 돌아와 해도 됩니다.
 
-검색 결과에 나오는 파란 제목과 회색 설명입니다.
+### ① 카톡·인스타 공유 미리보기 (★★★ · 약 15분)
 
-<div class="prompt-box not-prose" data-prompt="9-3" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+링크를 보내면 뜨는 사진과 제목입니다. **Open Graph**라고 합니다.
+
+<div class="prompt-box not-prose" data-prompt="9-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-모든 페이지의 `<title>`과 meta description을 넣어줘.
-- index: "[가게 이름] | [동네] [업종]" / "[한 줄 소개 + 위치 + 특징]" (설명은 80자 내외)
-- menu: "메뉴 | [가게 이름]" / "[대표 메뉴 나열]"
-- location: "오시는 길 | [가게 이름]" / "[주소, 영업시간, 주차]"
-- contact: "문의 | [가게 이름]" / "[전화, 인스타]"
+모든 페이지에 Open Graph 태그를 넣어줘. og:image는 images/og.jpg(1200×630, hero 사진으로 만들어줘), og:url은 https://[내 도메인]/각페이지.
 
 </div>
 </div>
+
+### ② sitemap.xml과 robots.txt (★★★ · 약 10분)
+
+10강에서 검색 등록할 때 쓰입니다. 10강에서 다시 안내하니 지금 건너뛰어도 됩니다.
 
 <div class="prompt-box not-prose" data-prompt="9-4" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -117,20 +119,20 @@ sitemap.xml 과 robots.txt도 만들어줘. 페이지 4개, 도메인은 https:/
 </div>
 </div>
 
-커밋 → push.
+### ③ 주소 깔끔하게: `.html` 떼기 (★★★ · 약 10분)
 
-### 카톡·인스타에 공유했을 때 미리보기
+지금 메뉴 페이지 주소는 `mycafe.kr/menu.html`입니다. `.html`을 떼려면 Vercel에 설정 파일 하나면 됩니다. 한 번 틀리면 링크가 깨질 수 있으니 커밋한 뒤에 시도하세요.
 
-링크를 보내면 뜨는 사진과 제목입니다. **Open Graph**라고 합니다.
-
-<div class="prompt-box not-prose" data-prompt="9-5" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="9-2" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 9-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-모든 페이지에 Open Graph 태그를 넣어줘. og:title은 각 페이지 제목, og:description은 설명, og:image는 images/og.jpg (1200×630으로 hero 사진에서 만들어줘), og:url은 https://[내 도메인]/각페이지.
+vercel.json 파일을 만들어서 `.html` 없이 접속되게 해줘 (cleanUrls). 그리고 모든 html 파일의 내부 링크에서도 `.html`을 빼줘.
 
 </div>
 </div>
+
+커밋 → push → `mycafe.kr/menu`로 열리는지 확인.
 
 ## 확인하기
 
@@ -144,13 +146,15 @@ git commit -m "도메인 연결, 검색·공유 정보 추가"
 git push
 ```
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
+::: practice
 - [ ] 도메인을 구매했다 (가비아 또는 다른 곳)
 - [ ] 내 도메인으로 홈페이지가 열리고 자물쇠가 있다
-- [ ] `/menu`처럼 `.html` 없이 열린다
-- [ ] 카톡으로 보냈을 때 사진과 제목이 뜬다
-- [ ] sitemap.xml 과 robots.txt 가 도메인에서 열린다
+- [ ] (선택) `/menu`처럼 `.html` 없이 열린다
+- [ ] 브라우저 탭 제목에 내가 정한 제목이 보인다
+- [ ] (선택) 카톡으로 보냈을 때 사진과 제목이 뜬다
+:::
 
 ## 다음 강의
 

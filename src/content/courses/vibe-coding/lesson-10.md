@@ -49,12 +49,25 @@ part: 2부 · 기획과 프롬프트
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-"PLAN.md의 핵심 기능 3개를 각각 '한 번의 대화로 완성되고 브라우저에서 확인 가능한' 작은 조각으로 쪼개줘. 각 조각은 한 줄로, 확인 방법을 괄호 안에 적어줘. 화면 먼저, 가짜 데이터로 동작시킨 뒤, 진짜 데이터로 바꾸는 순서로. 결과를 TODO.md로 저장해줘."
+"PLAN.md의 핵심 기능 3개를 각각 '한 번의 대화로 완성되고 브라우저에서 확인 가능한' 작은 조각으로 쪼개줘. 각 조각은 한 줄로, 확인 방법을 괄호 안에 적어줘. 화면 먼저, 가짜 데이터로 동작시킨 뒤, 진짜 데이터로 바꾸는 순서로. 아직 파일로 저장하지 말고 대화에 보여줘."
 
 </div>
 </div>
 
-나온 목록을 읽고 순서를 조정하세요. 기준은 **"이게 되면 다음에 뭐가 보고 싶지?"** 입니다.
+**확인:** 조각이 한 줄씩, 괄호 안에 확인 방법이 있는지 보세요. 한 줄이 너무 크면 "이 조각을 둘로 쪼개줘"라고 하세요.
+
+나온 목록을 읽고 순서를 조정하세요. 기준은 **"이게 되면 다음에 뭐가 보고 싶지?"** 입니다. 마음에 들면 저장합니다.
+
+<div class="prompt-box not-prose" data-prompt="10-1a" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 10-1a</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"좋아. 이 목록을 TODO.md로 저장해줘. 각 조각 앞에 체크박스(- [ ])를 붙여줘."
+
+</div>
+</div>
+
+**확인:** VS Code에서 `TODO.md`를 열면 체크박스 목록이 보입니다.
 
 ## 남은 10일의 지도
 
@@ -90,10 +103,14 @@ TODO.md의 조각들을 11~20강에 배치해봅니다. 대략 이렇습니다.
 
 ## 오늘의 체크리스트
 
-- [ ] TODO.md에 조각이 10개 이상 있다
-- [ ] 각 조각에 확인 방법이 적혀 있다
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
+- [ ] VS Code에서 `TODO.md`를 열면 체크박스 조각이 10개 이상 보인다
+- [ ] 각 조각에 확인 방법이 괄호로 적혀 있다
 - [ ] 첫 3개 조각은 "화면만, 가짜 데이터"다
 - [ ] 커밋했다
+:::
 
 ## 다음 강의
 

@@ -55,13 +55,29 @@ sources/camping-chair.md로 posts/2025-01-camping-chair/를 만들고 source.md�
 
 source.md를 channels.json의 모든 채널로 변환해서 variants.json으로 만들어줘.
 - 채널마다 `hook_candidates` 3개 (첫 줄 후보), `body`, `cta`, `hashtags`, `link`(UTM 포함), `image_ratio`
-- X와 스레드는 연속 글(series)로도 1안: 3~5개로 나눈 배열
 - VOICE.md의 제거 목록 표현은 쓰지 마
 - 채널별로 같은 문장을 그대로 복사하지 마. 채널의 독자에 맞게 다시 써
 - 사람이 읽기 좋게 variants.md도 만들어줘
 
 </div>
 </div>
+
+**확인**: `variants.md`를 열어 채널마다 후크 후보 3개가 있는지 보세요. 먼저 여기까지 확인하고 아래 3-3b로 넘어갑니다.
+
+<div class="prompt-box not-prose" data-prompt="3-3b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 3-3b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+variants.json에 X와 스레드용 연속 글(series) 안도 추가해줘. 3~5개로 나눈 배열이고, 1번이 전체 요약이야. variants.md도 갱신해줘.
+
+</div>
+</div>
+
+::: practice
+- [ ] `variants.md`를 열어 채널마다 후크 후보 3개가 있는 것을 확인했다
+- [ ] 채널 두 개의 본문을 나란히 읽어 같은 문장이 복붙되지 않았는지 눈으로 비교했다
+- [ ] 링크에 `utm_source=` 가 붙어 있는지 하나 찾아봤다
+:::
 
 ## 채널별로 달라야 하는 것
 
@@ -113,6 +129,12 @@ Code 탭에서는 이렇게 시키세요.
 git add .
 git commit -m "camping-chair: 채널별 변환"
 ```
+
+::: practice
+- [ ] 내가 직접 채널마다 후크 1개를 골랐고, `variants.json`의 hook에 반영된 것을 열어 확인했다
+- [ ] 문체 검사 표에서 걸린 문장 하나를 "고쳐줘"로 수정하고 다시 열어 확인했다
+- [ ] `camping-chair: 채널별 변환` 커밋을 했다
+:::
 
 ## 오늘의 체크리스트
 

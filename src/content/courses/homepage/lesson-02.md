@@ -94,11 +94,13 @@ npm install -g @anthropic-ai/claude-code
 claude
 ```
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
+::: practice
 - [ ] Claude 데스크탑 앱을 설치하고 로그인했다.
 - [ ] 앱 위쪽의 Code 탭을 열어 봤다.
 - [ ] Git 프로그램도 설치했다.
+:::
 
 ## 다음 강의
 

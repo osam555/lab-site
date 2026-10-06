@@ -36,7 +36,7 @@ part: 1부 · 준비
 
 ### 터미널로도 할 수 있어요
 
-같은 Claude Code를 터미널에서 쓰는 방법(CLI)입니다. 터미널은 글자로 명령을 내리는 창이고, 명령을 붙여넣고 Enter만 기억하면 됩니다.
+같은 Claude Code를 터미널에서 쓰는 방법(CLI, 글자로 명령하는 방식)입니다. 터미널은 글자로 명령을 내리는 창이고, 명령을 붙여넣고 Enter만 기억하면 됩니다.
 
 - **macOS**: `Cmd + Space` → "터미널" 검색 → Enter
 - **Windows**: 시작 메뉴 → "PowerShell" 검색 → Enter
@@ -62,7 +62,7 @@ VS Code는 **결과를 눈으로 확인하는 곳**입니다. 일을 시키는 �
 
 ## 3. Node.js 설치
 
-nodejs.org 에서 **LTS** 버전을 받아 설치합니다. 끝나면 Code 탭에서 확인합니다.
+nodejs.org 에서 **LTS**(장기 지원, 가장 안정적인 버전) 버전을 받아 설치합니다. 끝나면 Code 탭에서 확인합니다.
 
 > "Node.js가 설치돼 있는지 확인하고 버전을 알려줘."
 
@@ -156,9 +156,14 @@ VS Code가 이 폴더를 열면서 실행됩니다.
 
 ## 오늘의 체크리스트
 
-- [ ] Code 탭에서 Node.js와 Git 버전을 확인했다 (터미널이면 `node -v`, `git -v`)
-- [ ] Code 탭에 로그인했고 `my-first-app` 폴더가 선택돼 있다 (터미널이면 `claude --version`)
-- [ ] `my-first-app` 폴더가 VS Code에 열려 있다
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
+- [ ] Code 탭에 말을 걸었더니 `my-first-app` 폴더 이름이 답에 보인다 (터미널이면 `claude --version`)
+- [ ] Node.js 버전(`v22.x.x` 같은 숫자)이 화면에 나왔다 (터미널이면 `node -v`)
+- [ ] Git 버전(`git version 2.x`)이 화면에 나왔다 (터미널이면 `git -v`)
+- [ ] VS Code 왼쪽 탐색기 맨 위에 `my-first-app` 폴더 이름이 보인다
+:::
 
 ## 다음 강의
 

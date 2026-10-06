@@ -13,44 +13,11 @@ part: 2부 · 유형별 실전
 - 기간 한정 할인·프로모션을 알릴 때
 - 뉴스레터·이메일 구독자를 모을 때
 
-## 사례 A: 온라인 세미나·웨비나
+## 사례는 쉬운 것부터 (난이도 표시)
 
-<div class="prompt-box not-prose" data-prompt="6-1" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
+아래 사례는 **쉬운 순서**로 놓았습니다. 각 제목 옆의 난이도(★ 쉬움 / ★★ 보통 / ★★★ 어려움)와 예상 시간을 보고 **맨 위 1개부터** 해 보세요. 프롬프트가 길면 **1~3번 항목만 먼저** 보내 결과를 확인하고, 나머지를 이어서 보내면 훨씬 안전합니다. (전체 사례의 난이도 순서는 1강 표에 있습니다.)
 
-index.html을 만들어줘. "AI 시대의 마케팅 전략" 무료 웨비나 신청 페이지.
-1. 히어로: "AI가 바꾸는 마케팅, 1시간이면 따라잡습니다" + "무료 참가 신청" 버튼, 아래에 "12월 15일 (금) 오후 8시 · Zoom · 무료"
-2. 발표 내용: 번호 + 주제 3개 (1.AI 도구 현황 / 2.실전 자동화 사례 / 3.바로 쓸 수 있는 프롬프트 10개)
-3. 연사 소개: 사진 + 이름 + 현직 + 경력 2줄
-4. 참가 혜택: 체크리스트 (✓ 프롬프트 모음 PDF ✓ 녹화본 제공 ✓ Q&A 시간)
-5. 신청 폼: 이름 + 이메일 + 직무 입력 → "무료 참가 신청" 버튼
-6. "이미 342명이 신청했습니다" + 최근 신청자 3명 닉네임 롤링 (CSS 애니메이션)
-7. FAQ: 녹화본, 취소, Zoom 링크 발송 시점
-깔끔한 비즈니스 스타일. 네이비 + 흰색.
-
-</div>
-</div>
-
-## 사례 B: 기간 한정 프로모션
-
-<div class="prompt-box not-prose" data-prompt="6-2" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-index.html을 만들어줘. "연말 감사 세일" 쇼핑몰 프로모션 랜딩페이지.
-1. 히어로: 큰 배경에 "올해의 마지막 할인, 최대 70% OFF", 카운트다운 타이머 (JavaScript로 D-day까지), "세일 상품 보기" 버튼 (빨간색)
-2. 카테고리별 할인: 카드 4개 (의류 50% / 가방 40% / 신발 30% / 악세서리 70%). 각각 대표 이미지 + "쇼핑하기" 버튼
-3. 타임 딜: "오늘만 이 가격" 카드 2개. 원래 가격 취소선 + 할인 가격 + 남은 수량
-4. 무료배송 배너: "5만원 이상 무료배송 + 사은품"
-5. 고객 후기: 별점 + 구매 상품 + 한 줄 후기 3개
-6. 마지막 CTA: "마감까지 남은 시간" + 카운트다운 반복 + "지금 쇼핑하기" 버튼
-축제 느낌. 빨간색·금색 포인트. 긴급한 느낌.
-
-</div>
-</div>
-
-## 사례 C: 뉴스레터 구독
+## 사례 1: 뉴스레터 구독  (★ 쉬움 · 약 15분)
 
 <div class="not-prose my-4">
   <div class="tip-box">
@@ -80,7 +47,7 @@ index.html을 만들어줘. "주간 AI 트렌드" 뉴스레터 구독 랜딩페�
 </div>
 </div>
 
-## 사례 D: 오프라인 이벤트
+## 사례 2: 오프라인 이벤트  (★★ 보통 · 약 30분)
 
 <div class="prompt-box not-prose" data-prompt="6-4" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-4</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -98,12 +65,52 @@ index.html을 만들어줘. "성수동 플리마켓" 참가 신청 페이지.
 </div>
 </div>
 
-## 이벤트·프로모션 핵심 체크
+## 사례 3: 기간 한정 프로모션  (★★★ 어려움 · 약 40분)
 
+<div class="prompt-box not-prose" data-prompt="6-2" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. "연말 감사 세일" 쇼핑몰 프로모션 랜딩페이지.
+1. 히어로: 큰 배경에 "올해의 마지막 할인, 최대 70% OFF", 카운트다운 타이머 (JavaScript로 D-day까지), "세일 상품 보기" 버튼 (빨간색)
+2. 카테고리별 할인: 카드 4개 (의류 50% / 가방 40% / 신발 30% / 악세서리 70%). 각각 대표 이미지 + "쇼핑하기" 버튼
+3. 타임 딜: "오늘만 이 가격" 카드 2개. 원래 가격 취소선 + 할인 가격 + 남은 수량
+4. 무료배송 배너: "5만원 이상 무료배송 + 사은품"
+5. 고객 후기: 별점 + 구매 상품 + 한 줄 후기 3개
+6. 마지막 CTA: "마감까지 남은 시간" + 카운트다운 반복 + "지금 쇼핑하기" 버튼
+축제 느낌. 빨간색·금색 포인트. 긴급한 느낌.
+
+</div>
+</div>
+
+## 사례 4: 온라인 세미나·웨비나  (★★★ 어려움 · 약 40분)
+
+<div class="prompt-box not-prose" data-prompt="6-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html을 만들어줘. "AI 시대의 마케팅 전략" 무료 웨비나 신청 페이지.
+1. 히어로: "AI가 바꾸는 마케팅, 1시간이면 따라잡습니다" + "무료 참가 신청" 버튼, 아래에 "12월 15일 (금) 오후 8시 · Zoom · 무료"
+2. 발표 내용: 번호 + 주제 3개 (1.AI 도구 현황 / 2.실전 자동화 사례 / 3.바로 쓸 수 있는 프롬프트 10개)
+3. 연사 소개: 사진 + 이름 + 현직 + 경력 2줄
+4. 참가 혜택: 체크리스트 (✓ 프롬프트 모음 PDF ✓ 녹화본 제공 ✓ Q&A 시간)
+5. 신청 폼: 이름 + 이메일 + 직무 입력 → "무료 참가 신청" 버튼
+6. "이미 342명이 신청했습니다" + 최근 신청자 3명 닉네임 롤링 (CSS 애니메이션)
+7. FAQ: 녹화본, 취소, Zoom 링크 발송 시점
+깔끔한 비즈니스 스타일. 네이비 + 흰색.
+
+</div>
+</div>
+
+## 실습 체크: 이벤트·프로모션
+
+::: practice
 - [ ] **긴급성**: 카운트다운, 마감일, "선착순 N명"
 - [ ] **혜택이 명확**: 할인율, 사은품, 무료 콘텐츠
 - [ ] **폼이 짧다**: 이름·이메일만. 많으면 이탈
 - [ ] **사회적 증거**: "342명 신청", "2,400명 구독 중"
+- [ ] 카운트다운이 있다면 숫자가 실제로 줄어드는 것을 눈으로 확인했다
+:::
 
 <div class="not-prose my-6">
   <div class="help-box">

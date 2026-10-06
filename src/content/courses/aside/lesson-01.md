@@ -18,6 +18,8 @@ Claude Code 데스크탑 앱 오른쪽 패널에는 두 가지 모드가 있습�
 
 Aside 브라우저를 열면 Claude가 지금 보이는 화면을 인식하고, 직접 조작까지 할 수 있습니다.
 
+> **용어 풀이** 프롬프트 = Claude에게 보내는 지시문입니다. 아래 상자의 📋 버튼으로 복사해 대화창에 붙여넣고 Enter를 누르면 됩니다. `[대괄호]` 부분은 내 상황에 맞게 바꿔 넣습니다.
+
 ---
 
 ## 여는 방법
@@ -39,6 +41,8 @@ Aside 브라우저에 복잡한 페이지를 열고, 대화창에서 질문합�
 ```
 [Aside 브라우저]: https://vercel.com/dashboard
 ```
+
+> 처음이라 Vercel 계정이 없다면 아래 주소 대신 `naver.com` 같은 아무 사이트를 열고, 프롬프트의 "Vercel 대시보드"를 그 사이트 이름으로 바꿔 같은 방식으로 연습하세요.
 
 <div class="prompt-box not-prose" data-prompt="1-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 1-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -94,6 +98,18 @@ Claude가 현재 Aside 화면을 보고 정확한 위치를 안내합니다.
 > 로그인이 필요한 서비스(Vercel, 네이버, 구글 등)는 **사람이 먼저 로그인**합니다.
 > Aside 브라우저에서 직접 아이디/비밀번호를 입력해 로그인한 뒤, Claude에게 이후 작업을 맡기세요.
 > Claude에게 로그인 정보를 절대 알려주지 마세요.
+
+---
+
+::: practice
+**실습 미션 — 네이버를 열고 Claude에게 화면 물어보기**
+
+- [ ] 오른쪽 패널에서 Browser 탭을 열었다 (주소창이 보인다)
+- [ ] 주소창에 `naver.com`을 입력했고, 네이버 첫 화면이 패널에 나타났다
+- [ ] 대화창에 "지금 Aside에 보이는 화면의 큰 메뉴 3개를 알려줘"라고 물었다
+- [ ] Claude가 말한 메뉴 3개가 실제 화면에 있는지 **눈으로 비교**했다
+- [ ] 로그인이 필요한 사이트는 내가 직접 로그인했고, 비밀번호를 대화창에 쓰지 않았다
+:::
 
 ---
 

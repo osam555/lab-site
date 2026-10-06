@@ -17,12 +17,14 @@ part: 2부 · 첫 편 만들기
 
 이 단계는 clay-episode 스킬의 "첫 편 30분 따라 하기"와 "대본 쓰기·컷 계획 쓰기" 절에 해당합니다. 예시 편은 컷 계획이 이미 있으니, 여기서는 검사 통과까지만 스킬에게 맡깁니다.
 
-### 프롬프트 4-1 · 대본→더빙→컷 계획 검사 통과
+이 강은 두 단계로 나눕니다. **4-1 더빙**(소리 만들기)을 끝내고 확인한 다음, **4-2 컷 계획 검사**로 넘어갑니다. 용어: **컷 계획**은 "대본 줄마다 어떤 6초 장면을 보여줄지" 적은 설계도, **Typecast** 더빙은 대본을 문장별 목소리 파일(wav)로 굽는 일입니다.
+
+### 프롬프트 4-1 · 대본→더빙
 
 **① 준비 (사람이 먼저)**
 - [ ] 어디서: 키트 폴더(`clay-episode-kit`)에서 데스크탑 앱 Code 탭을 열고 이 폴더를 프로젝트 폴더로 고릅니다
 - [ ] `.env.local` 에 Typecast 키가 있고 `ESBUILD` 환경변수가 살아 있어야 합니다(2강)
-- [ ] `data/longform/rainbow.json` 이 만들어져 있어야 합니다(따라하기 1)
+- [ ] 예시 편 파일 `data/longform/rainbow.json` 이 만들어져 있어야 합니다(따라하기 1 — 클로드에게 "examples/generic_episode.json 을 data/longform/rainbow.json 으로 복사해줘"라고 시켜도 됩니다)
 
 **② 스킬 (붙여 넣기)**
 
@@ -30,15 +32,34 @@ part: 2부 · 첫 편 만들기
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode 스킬을 읽고, 편 키 rainbow 의 컷 계획 검사만 통과시켜줘. prepare_lines→bake_lines→top10_plan→cutplan_check 스크립트를 순서대로 돌리고, ✗ 표시가 나오면 스킬 안의 검사 항목 표를 보고 원인을 고쳐서 다시 돌려. 값을 지어내지 말고 스크립트가 실제로 출력한 점수와 문장 수만 보고 판단해. cutplan_check 가 "10.0점 통과"를 출력하면 거기서 멈추고 결과를 보여줘 — 다음 단계(Flow 생성)는 내가 확인한 뒤 시킬게.
+clay-episode 스킬을 읽고, 편 키 rainbow 의 prepare_lines 와 bake_lines 스크립트만 순서대로 돌려줘. 값을 지어내지 말고 스크립트가 실제로 출력한 문장 수만 보고해. bake_lines 마지막 줄의 "rainbow: N문장" 을 그대로 보여주고 멈춰 — 컷 계획 검사는 내가 확인한 뒤 4-2 로 따로 시킬게.
 
 </div>
 </div>
 
 **③ 결과 확인**
 - [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
-- [ ] Claude 가 네 스크립트를 순서대로 돌리고 점수·문장 수를 보고했는지
 - [ ] `bake_lines` 마지막 줄의 문장 수가 대본 줄 수(24)와 정확히 같은지 화면에서 직접 봅니다
+- [ ] `scratch/flow_rainbow/` 폴더에 `n01.wav` … 파일이 생겼는지 직접 열어 봅니다(더블클릭하면 목소리가 들립니다)
+
+### 프롬프트 4-2 · 컷 계획 검사 통과
+
+**① 준비 (사람이 먼저)**
+- [ ] 4-1 이 끝나 "rainbow: 24문장" 을 확인했어야 합니다
+
+**② 스킬 (붙여 넣기)**
+
+<div class="prompt-box not-prose" data-prompt="4-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, 편 키 rainbow 의 컷 계획 검사만 통과시켜줘. top10_plan 과 cutplan_check 스크립트를 순서대로 돌리고, ✗ 표시가 나오면 스킬 안의 검사 항목 표를 보고 원인을 고쳐서 다시 돌려. 값을 지어내지 말고 스크립트가 실제로 출력한 점수만 보고 판단해. cutplan_check 가 "10.0점 통과"를 출력하면 거기서 멈추고 결과를 보여줘 — 다음 단계(Flow 생성)는 내가 확인한 뒤 시킬게.
+
+</div>
+</div>
+
+**③ 결과 확인**
+- [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
 - [ ] **사람이 확인해야 할 체크포인트**: `cutplan_check` 가 실제로 "10.0점 통과"를 출력했는지 화면을 직접 봅니다 — 스킬의 보고만 믿지 않습니다.
 
 ## 검사가 보는 것
@@ -137,11 +158,18 @@ python3 scripts/cutplan_check.py rainbow
 
 </details>
 
+::: practice
+- [ ] `scratch/flow_rainbow/` 폴더를 열어 `n01.wav` 를 재생해 보고, **한국어 목소리로 대본 첫 줄이 읽히는지** 귀로 확인한다
+- [ ] 화면에 "rainbow: 24문장" 이 찍힌 것을 직접 본다
+- [ ] `data/longform/prompts/rainbow.json` 이 생겼고, 열면 컷별 영어 프롬프트가 보인다(모르는 단어는 클로드에게 물어도 좋다)
+- [ ] 일부러 `{C2}` 가 들어간 줄 하나를 `a boy` 로 바꿔 `cutplan_check` 를 돌려 ✗ 가 뜨는 걸 보고, 다시 원래대로 되돌려 "10.0점 통과"를 되찾는다 (검사가 실제로 잡아 주는 걸 눈으로 확인하는 연습, 선택)
+:::
+
 ## 오늘의 체크리스트
 
 - [ ] `data/longform/rainbow.json` 이 생겼다
 - [ ] `bake_lines` 마지막 줄이 "rainbow: 24문장"
-- [ ] `cutplan_check` 가 "10.0점 통과"를 출력했다
+- [ ] `cutplan_check` 가 "10.0점 통과"를 출력했다(프롬프트 4-2)
 - [ ] 검사 항목 네 가지(줄 배정·캐릭터 상수·금지어·헤드라인 길이)를 설명할 수 있다
 
 ## 다음 강의

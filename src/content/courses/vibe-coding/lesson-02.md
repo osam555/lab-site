@@ -60,8 +60,8 @@ AI에게 "여기 데이터 저장되게 해줘"라고 하면 AI는 되묻습니�
 
 AI에게 이렇게 물어보세요.
 
-<div class="prompt-box not-prose" data-prompt="2-1" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="2-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
 "API와 데이터베이스의 차이를 카페 사장님에게 설명하듯 알려줘. 각각 한 문단씩."
@@ -71,11 +71,18 @@ AI에게 이렇게 물어보세요.
 
 돌아온 설명을 읽고, **내 말로 다시 한 문장씩** 노트에 적어보세요. 내 말로 못 적으면 아직 모르는 것입니다. 20개 전부 할 필요는 없고, 오늘은 5개만 하세요.
 
+**확인:** AI의 답이 두 문단으로 돌아왔고, 읽고 나서 "API는 ○○, 데이터베이스는 ○○"처럼 내 말 한 줄씩이 노트에 적혀 있으면 성공입니다.
+
 ## 오늘의 체크리스트
 
-- [ ] 식당 비유로 프론트엔드 / 백엔드 / DB / API를 설명할 수 있다
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
+- [ ] 식당 비유 표를 보지 않고 프론트엔드 / 백엔드 / DB / API를 한 줄씩 말했다
+- [ ] AI에게 2-1 질문을 보내 두 문단짜리 답을 받았고, 내 말로 다시 적은 노트가 있다
 - [ ] 용어 5개를 내 말로 적어봤다
-- [ ] 1강에서 적은 "내 서비스 한 줄"에 화면(프론트)과 저장(DB)이 각각 어떤 게 필요할지 한 줄씩 상상해봤다
+- [ ] 1강 "내 서비스 한 줄"에 필요한 화면(프론트)과 저장(DB)을 각각 한 줄씩 적었다
+:::
 
 ## 다음 강의
 

@@ -29,24 +29,33 @@ my-site/
 
 주소는 `mycafe.kr/menu.html` 처럼 됩니다. (9강에서 `.html`을 뗍니다.)
 
-## 따라하기 1: 나누기
+## 따라하기 1: 두 페이지로 먼저 (★★ 보통 · 약 15분)
+
+한 번에 네 페이지를 만들면 어디가 틀렸는지 찾기 어렵습니다. **소개(index)와 메뉴(menu) 두 페이지만** 먼저 나눠 보세요.
+
+<div class="prompt-box not-prose" data-prompt="7-1a" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1a</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+index.html에서 메뉴 목록을 떼어서 menu.html을 만들어줘. 상단에 "소개 / 메뉴" 링크를 두 페이지에 똑같이 넣고, style.css는 같이 쓰게 해줘.
+
+</div>
+</div>
+
+새로고침 → 상단 "소개 / 메뉴"를 눌러 두 페이지가 오가는지 확인합니다.
+
+## 따라하기 1-2: 네 페이지로 (★★★ 어려움 · 약 20분 · 선택)
+
+두 페이지가 잘 되면 나머지 두 장을 추가합니다. 페이지가 많을수록 상단 메뉴와 링크 관리가 어려워지니, 꼭 필요한 만큼만 나누세요.
 
 <div class="prompt-box not-prose" data-prompt="7-1" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-index.html을 네 페이지로 나눠줘.
-- index.html: 상단 메뉴 + 첫 화면 + 대표 메뉴 3개(전체 메뉴 보기 링크) + 하단
-- menu.html: 상단 메뉴 + 전체 메뉴 목록 + 하단. 메뉴는 [커피 / 디저트 / 브런치] 세 묶음으로
-- location.html: 상단 메뉴 + 지도 + 주소 + 영업시간 + 주차 안내 + 하단
-- contact.html: 상단 메뉴 + "문의" 제목 + 전화·인스타 링크 + 하단 (폼은 다음에)
-상단 메뉴의 링크는 각 페이지로. 현재 페이지 메뉴는 강조색으로 표시.
-style.css는 전부 공유.
+location.html(오시는 길: 지도·주소·영업시간·주차)과 contact.html(문의: 전화·인스타 링크)을 추가해줘. 모든 페이지의 상단 메뉴는 같게, 현재 페이지 메뉴는 강조색으로, style.css는 공유.
 
 </div>
 </div>
-
-새로고침 → 상단 메뉴를 눌러 네 페이지가 오가는지 확인.
 
 ## 공통 부분 문제
 
@@ -119,12 +128,14 @@ git add .
 git commit -m "네 페이지로 분리, 메뉴 페이지 정리"
 ```
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
-- [ ] 네 개의 html 파일이 있고 서로 오갈 수 있다
-- [ ] 상단 메뉴와 하단이 모든 페이지에서 같다
+::: practice
+- [ ] html 파일이 2개 이상(index, menu…)이고 상단 메뉴로 서로 오갈 수 있다
+- [ ] 상단 메뉴가 모든 페이지에서 같은 위치·같은 모양으로 보인다
 - [ ] 메뉴 페이지에 실제 메뉴가 전부 들어 있다
 - [ ] 커밋했다
+:::
 
 ## 다음 강의
 

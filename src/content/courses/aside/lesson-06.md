@@ -19,6 +19,8 @@ part: 2부 · SEO 자동화
 
 ## 1. 현재 점수 측정 — Aside로 자동화
 
+> **용어 풀이** PageSpeed Insights = 구글이 무료로 내 사이트의 속도를 점수(0~100)로 매겨 주는 사이트, WebP = 같은 화질에서 용량이 작은 이미지 형식입니다. 예시의 `mycafe.kr`은 내 주소로 바꾸세요.
+
 <div class="prompt-box not-prose" data-prompt="6-1" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
@@ -31,7 +33,7 @@ Computer Use로 mycafe.kr 을 PageSpeed Insights에서 분석해줘.
 </div>
 </div>
 
-결과를 보고 Claude Code에게:
+결과를 보고 Claude Code에게 시킵니다. **점수가 이미 기준 이내인 항목은 건너뛰고, 한 번에 하나씩 고친 뒤 다시 측정**해 점수가 어떻게 바뀌는지 눈으로 확인하세요. (아래 6-2처럼 항목이 여러 개인 프롬프트는 1번만 먼저 시키고, 확인 후 2·3번을 이어도 됩니다.)
 
 **LCP > 2.5초 (이미지 느림)**
 
@@ -120,18 +122,6 @@ Brave Search MCP로 "[동네] [업종]" 네이버 검색에서 상위 노출된 
 </div>
 </div>
 
-### 네이버 블로그 바이럴 활용
-
-<div class="prompt-box not-prose" data-prompt="6-8" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-Brave Search MCP로 "[가게 이름]"을 네이버에서 검색했을 때 나오는 블로그 포스팅을 찾아줘.
-있으면 요약, 없으면 어떤 키워드로 블로그 포스팅을 만들면 좋을지 제안해줘.
-
-</div>
-</div>
-
 ---
 
 ## 4. 사이트 오류 자동 점검
@@ -163,7 +153,33 @@ Playwright MCP로 mycafe.kr의 모든 페이지를 열어서:
 
 ---
 
-## 5. 검색 성과 주간 리포트
+::: practice
+**실습 미션 — 점수 측정 → 하나 고치기 → 다시 측정**
+
+- [ ] PageSpeed Insights에서 내 사이트 **모바일 점수와 LCP·CLS 값을 메모**했다
+- [ ] 개선 항목 중 하나(예: hero 이미지 WebP 변환)만 Claude Code로 적용했다
+- [ ] 배포 후 다시 측정해서 **전·후 점수를 나란히 비교**했다
+- [ ] images 폴더에서 1MB 이상 파일이 없는지 파일 크기를 눈으로 확인했다
+- [ ] (선택) Playwright MCP 점검 결과 표에서 404 링크·깨진 이미지 개수를 확인했다
+:::
+
+---
+
+## 더 해보기(선택) — 네이버 블로그 바이럴 활용
+
+<div class="prompt-box not-prose" data-prompt="6-8" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 6-8</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Brave Search MCP로 "[가게 이름]"을 네이버에서 검색했을 때 나오는 블로그 포스팅을 찾아줘.
+있으면 요약, 없으면 어떤 키워드로 블로그 포스팅을 만들면 좋을지 제안해줘.
+
+</div>
+</div>
+
+---
+
+## 더 해보기(선택) — 검색 성과 주간 리포트
 
 매주 월요일:
 

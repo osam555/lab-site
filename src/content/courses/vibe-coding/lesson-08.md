@@ -17,7 +17,7 @@ part: 2부 · 기획과 프롬프트
 
 ## 도구 선택: Next.js + Vercel
 
-- **Next.js**: 화면(프론트)과 서버(백엔드)를 한 프로젝트에서 만들 수 있는 프레임워크. AI가 가장 잘 아는 도구 중 하나라 결과 품질이 좋습니다.
+- **Next.js**: (프레임워크 = 미리 갖춰진 뼈대) 화면(프론트)과 서버(백엔드)를 한 프로젝트에서 만들 수 있는 프레임워크. AI가 가장 잘 아는 도구 중 하나라 결과 품질이 좋습니다.
 - **Vercel**: Next.js를 만든 회사의 배포 서비스. GitHub에 push하면 자동으로 인터넷에 올라갑니다. 개인 프로젝트는 무료.
 
 다른 선택지도 있지만, 입문자에겐 "AI가 제일 잘 아는 조합"이 가장 안전합니다.
@@ -28,7 +28,7 @@ part: 2부 · 기획과 프롬프트
 
 > "이 폴더에 Next.js 프로젝트를 만들어줘. 이름은 my-service, TypeScript·Tailwind·App Router 기본 설정으로. 다 만들면 개발 서버를 켜고 주소를 알려줘."
 
-Claude가 `create-next-app` 같은 명령을 실행하겠다고 물어보면 **무슨 명령인지 읽고** 수락합니다. 설치 질문이 나오면 기본값으로 진행해 달라고 하세요. TypeScript, Tailwind, App Router가 기본 선택되는데 모두 AI가 잘 다루는 것들입니다. 개발 서버가 켜지면 `http://localhost:3000`을 알려줍니다. 브라우저에서 열면 Next.js 기본 화면이 보입니다. **이게 내 서비스의 시작 화면입니다.**
+Claude가 `create-next-app` 같은 명령을 실행하겠다고 물어보면 **무슨 명령인지 읽고** 수락합니다. 설치 질문이 나오면 기본값으로 진행해 달라고 하세요. TypeScript, Tailwind, App Router가 기본 선택되는데 모두 AI가 잘 다루는 것들입니다. (TypeScript는 실수를 미리 잡아주는 JavaScript, Tailwind는 클래스 이름으로 스타일을 지정하는 도구, App Router는 폴더가 곧 주소가 되는 Next.js 구조입니다.) 개발 서버가 켜지면 `http://localhost:3000`을 알려줍니다. 브라우저에서 열면 Next.js 기본 화면이 보입니다. **이게 내 서비스의 시작 화면입니다.**
 
 > `localhost`는 "내 컴퓨터"라는 뜻입니다. 지금은 나만 볼 수 있습니다.
 
@@ -54,16 +54,35 @@ npm run dev
 
 `PLAN.md`와 `PROMPT_TEMPLATE.md`를 이 폴더로 옮기세요. 그리고 Code 탭에서 `my-service` 폴더가 선택된 상태로:
 
-<div class="prompt-box not-prose" data-prompt="8-1" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="8-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-"PLAN.md를 읽어줘. 그리고 src/app/page.tsx의 기본 내용을 전부 지우고, 서비스 이름과 한 줄 설명만 가운데에 크게 보여주는 화면으로 바꿔줘. 다른 파일은 건드리지 마."
+"PLAN.md를 읽고, 서비스 이름과 한 줄 설명을 알려줘. 아직 파일은 고치지 마."
+
+</div>
+</div>
+
+**확인:** Claude가 말한 이름과 설명이 내 기획과 맞는지 읽어보세요. 틀리면 "서비스 이름은 ○○로 해줘"라고 알려주세요.
+
+<div class="prompt-box not-prose" data-prompt="8-1a" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 8-1a</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"src/app/page.tsx의 기본 내용을 전부 지우고, 방금 알려준 서비스 이름과 한 줄 설명만 가운데에 크게 보여주는 화면으로 바꿔줘. 다른 파일은 건드리지 마."
 
 </div>
 </div>
 
 브라우저가 자동으로 새로고침되며 바뀐 화면이 보입니다. 이 즉시 반영을 **핫 리로드**라고 합니다.
+
+**확인:** 비교 화면을 읽고 수락하면 브라우저(localhost:3000)가 저절로 바뀌어 내 서비스 이름이 보입니다.
+
+::: practice
+- [ ] 브라우저 `localhost:3000`에 Next.js 기본 화면이 아니라 내 서비스 이름이 보인다
+- [ ] 한 줄 설명도 함께 보인다
+- [ ] `PLAN.md`와 `PROMPT_TEMPLATE.md`가 `my-service` 폴더 안에 있다
+:::
 
 마음에 들면 커밋을 시킵니다.
 
@@ -98,10 +117,15 @@ git commit -m "첫 화면: 서비스 이름과 설명"
 
 ## 오늘의 체크리스트
 
-- [ ] 개발 서버가 켜져 localhost:3000이 열린다 (`npm run dev`)
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
+- [ ] 개발 서버가 켜져 localhost:3000이 열린다
 - [ ] 첫 화면이 내 서비스 이름으로 바뀌었다
-- [ ] `.vercel.app` 주소가 있고 폰에서 열린다
+- [ ] GitHub 저장소 페이지에 `my-service` 파일들이 보인다
+- [ ] `.vercel.app` 주소를 폰 브라우저로 열었더니 같은 화면이 보인다
 - [ ] 주소를 1강 노트의 "내 서비스 한 줄" 옆에 적었다
+:::
 
 ## 다음 강의
 

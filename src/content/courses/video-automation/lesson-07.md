@@ -36,7 +36,9 @@ clay-episode 스킬을 읽고, data/longform/volcano.json 의 script_v2 를 채�
 - [ ] 대본이 훅→반응→전환→핵심→키워드 4개→반전→복습→콜백 8단계 구조를 따르는지
 - [ ] **사람이 확인해야 할 체크포인트**: 원리 설명(예: 화산 폭발 원리)이 사실과 맞는지 내가 직접 읽고 검토합니다 — 컷 계획은 대본이 확정된 뒤 7-2 로 따로 시킵니다.
 
-### 프롬프트 7-2 · 컷 계획(PLANS 블록) 쓰기
+### 프롬프트 7-2 · 컷 계획(PLANS 블록) 쓰기 — 컷과 줄 배정
+
+용어: **PLANS 블록**은 `scripts/top10_plan.py` 안에 적는 "이 편의 컷 설계도"입니다. 이 단계에서는 컷 10~12개와 대본 줄 배정(`new`·`map`)만 먼저 쓰고, 썸네일(`thumb`)은 7-3 에서 따로 합니다.
 
 **① 준비 (사람이 먼저)**
 - [ ] 7-1 의 대본이 확정돼 있어야 합니다(사실 검토 완료)
@@ -48,7 +50,29 @@ clay-episode 스킬을 읽고, data/longform/volcano.json 의 script_v2 를 채�
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-clay-episode 스킬을 읽고, 편 키 volcano 의 컷 계획(PLANS 블록)을 scripts/top10_plan.py 에 추가해줘. 기존 PLANS['rainbow'] 를 참고 패턴으로 쓰되 volcano 대본에 맞게 컷 10~12개를 새로 짜고, 사람이 나오는 컷은 반드시 {C2}/{MP}/{F2} 같은 kit.config.json 의 캐릭터 상수로만 묘사해(직접 "a boy" 식으로 쓰지 마). 다 쓴 다음 top10_plan.py→cutplan_check.py 를 돌려서 10.0점 나올 때까지 반복해줘. 점수를 지어내지 말고 스크립트 출력 그대로 알려줘. "10.0점 통과"가 나오면 멈춰 — 다음 단계(Flow 제출)는 내가 시킬게.
+clay-episode 스킬을 읽고, 편 키 volcano 의 컷 계획을 scripts/top10_plan.py 에 PLANS['volcano'] 로 추가해줘. 이번에는 new(컷 10~12개)와 map(대본 줄 전부에 컷 키 배정)만 쓰고, thumb 은 임시로 PLANS['rainbow'] 것을 복사만 해 둬. 기존 PLANS['rainbow'] 를 참고 패턴으로 쓰되, 사람이 나오는 컷은 반드시 {C2}/{MP}/{F2} 같은 kit.config.json 의 캐릭터 상수로만 묘사해(직접 "a boy" 식으로 쓰지 마). 다 쓰면 컷 키와 담당 줄 번호를 표로 보여주고 멈춰 — 썸네일과 검사는 7-3 으로 따로 시킬게.
+
+</div>
+</div>
+
+**③ 결과 확인**
+- [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
+- [ ] 표에서 대본 1~마지막 줄이 빠짐없이 어떤 컷에든 배정돼 있는지 눈으로 훑습니다
+- [ ] **사람이 확인해야 할 체크포인트**: PLANS 블록의 `new` 딕셔너리에 사람 묘사가 `{C2}` 같은 상수가 아니라 직접 텍스트("a boy", "a girl")로 새어 들어가지 않았는지 코드를 눈으로 한 번 읽습니다.
+
+### 프롬프트 7-3 · 썸네일 쓰고 검사 통과
+
+**① 준비 (사람이 먼저)**
+- [ ] 7-2 가 끝나 컷 표를 확인했어야 합니다
+- [ ] 썸네일 헤드라인 두 줄(합쳐 14자 이하)을 미리 생각해 둡니다. 예: 「화산은」/「왜 터져?」
+
+**② 스킬 (붙여 넣기)**
+
+<div class="prompt-box not-prose" data-prompt="7-3" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+clay-episode 스킬을 읽고, PLANS['volcano'] 의 thumb=TH(...) 를 volcano 에 맞게 고쳐줘. a 는 헤드라인 두 줄(합쳐 14자 이하, 둘째 줄 폰트 120px 이상), b 는 어른이 문서를 든 모습과 키워드 패널, c 는 얼굴 클로즈업과 단색 배경으로. 다 쓴 다음 top10_plan.py → cutplan_check.py 를 돌려서 10.0점 나올 때까지 반복해줘. 점수를 지어내지 말고 스크립트 출력 그대로 알려줘. "10.0점 통과"가 나오면 멈춰 — 다음 단계(Flow 제출)는 내가 시킬게.
 
 </div>
 </div>
@@ -56,7 +80,7 @@ clay-episode 스킬을 읽고, 편 키 volcano 의 컷 계획(PLANS 블록)을 s
 **③ 결과 확인**
 - [ ] 클로드가 권한을 물으면 어떤 명령·파일인지 읽고 허용했는지(모르는 것은 허용 전에 물어봅니다)
 - [ ] `cutplan_check` 가 실제로 "10.0점 통과"를 출력했는지 화면을 직접 봅니다
-- [ ] **사람이 확인해야 할 체크포인트**: PLANS 블록의 `new` 딕셔너리에 사람 묘사가 `{C2}` 같은 상수가 아니라 직접 텍스트("a boy", "a girl")로 새어 들어가지 않았는지 코드를 눈으로 한 번 읽습니다 — `cutplan_check` 가 대부분 잡아내지만 애매한 표현은 통과할 수 있습니다.
+- [ ] 헤드라인 두 줄이 합쳐 14자 이하인지 내가 직접 글자 수를 셉니다
 
 ## 대본 구조 — 23~28줄, 2분~2분 30초
 
@@ -88,7 +112,7 @@ clay-episode 스킬을 읽고, 편 키 volcano 의 컷 계획(PLANS 블록)을 s
 
 ## 컷 계획 — PLANS 블록
 
-(이 블록은 프롬프트 7-2 로 클로드가 씁니다. 아래는 클로드가 무엇을 어떻게 쓰는지, 내가 결과에서 무엇을 확인할지 알려 주는 설명입니다.)
+(이 블록은 프롬프트 7-2·7-3 으로 클로드가 씁니다. 아래는 클로드가 무엇을 어떻게 쓰는지, 내가 결과에서 무엇을 확인할지 알려 주는 설명입니다.)
 
 `scripts/top10_plan.py` 를 열어 `def build` 바로 위에 `PLANS['volcano'] = dict(new={...}, map={...}, thumb=TH(...))` 블록을 추가합니다. `PLANS['rainbow']`(4강에서 쓴 예시 블록)를 복사해서 고치는 게 가장 빠릅니다.
 
@@ -122,7 +146,7 @@ map={**dict.fromkeys(range(1,3), 'Nvo_ask'), **dict.fromkeys(range(5,7), 'Nvo_ma
 
 값들은 **상수만 조합**하고 `{C2}` 같은 상수를 직접 새로운 인물 묘사로 바꾸지 않습니다.
 
-## 한자 편은 옵션
+## 한자 편은 옵션 (더 해보기 · 선택)
 
 한자 어원 편을 만들 때만 `kit.config.json` 의 `topic.kind` 를 `"hanja"` 로 바꿉니다. 카드는 `["漢字", "훈음"]` 형태, 대본 4번 자리에 「글자 풀이 — …라고 풀어요」 1~2줄이 들어가고, 썸네일 `panel` 은 `['漢字', '한글음', 'right']` 가 됩니다. `examples/sample_episode.json` 이 그 예시이고, 나머지 절차는 지금까지와 같습니다.
 
@@ -148,6 +172,14 @@ python3 scripts/new_episode.py volcano --word "화산"
 `data/longform/volcano.json` 이 생깁니다. `--word` 는 이 편의 주제어입니다. 이제 `script_v2.lines` 를 채웁니다.
 
 </details>
+
+::: practice
+- [ ] `data/longform/volcano.json` 을 열어 대본을 **소리 내어 처음부터 끝까지 읽어 본다** — 7초 안에 읽히지 않는 줄, 어려운 낱말이 풀리지 않은 줄에 표시한다
+- [ ] 대본의 사실(화산 폭발 원리)을 믿을 만한 자료(백과사전·교과서)와 하나 이상 직접 대조한다
+- [ ] `PLANS['volcano']` 의 컷 키와 담당 줄 표에서 줄이 빠지지 않았는지 확인한다
+- [ ] 썸네일 헤드라인 글자 수를 세어 14자 이하임을 확인한다
+- [ ] `cutplan_check` 의 "10.0점 통과" 화면을 직접 본다 — 통과 전에는 Flow 로 보내지 않는다(컷 하나 10크레딧)
+:::
 
 ## 오늘의 체크리스트
 

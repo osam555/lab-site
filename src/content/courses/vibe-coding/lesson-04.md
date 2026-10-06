@@ -86,29 +86,6 @@ Code 탭은 파일을 고치거나 명령을 실행하기 전에 **무엇을 할
 
 Yes를 누르기 전에 읽는 것, 이상하면 3번을 고르고 "그 파일 말고 이 파일만"이라고 말하는 것은 같습니다.
 
-## 설정은 말로 바꿉니다
-
-VS Code 글자 크기, 자동 저장, 탭 크기 같은 설정은 사실 `settings.json`이라는 파일입니다. 메뉴를 뒤질 필요 없이 Claude Code에게 말하면 됩니다.
-
-<div class="prompt-box not-prose" data-prompt="4-1" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-"VS Code 설정에서 글자 크기를 15로, 저장할 때 자동 정렬되게, 탭은 2칸으로 바꿔줘. settings.json을 직접 수정해줘."
-
-</div>
-</div>
-
-Claude Code 자신의 설정도 마찬가지입니다. "Claude Code 응답을 항상 한국어로 하게 설정해줘"라고 하면 됩니다. (터미널에서는 `/config`로 메뉴를 열어도 됩니다.)
-
-## 있으면 좋은 것
-
-- **VS Code용 Claude Code 확장**: 확장 탭에서 "Claude Code"를 설치하면 VS Code 사이드 패널에서 같은 대화를 할 수 있고, 변경 내용이 에디터 안에서 diff로 보입니다. 취향껏.
-- **Prettier 확장**: 저장할 때 코드를 자동 정렬. Claude가 만든 코드와 여러분이 손댄 코드의 모양이 통일됩니다.
-- **Error Lens 확장**: 에러를 해당 줄 옆에 바로 표시. 15강 디버깅 때 큰 도움이 됩니다.
-
-세 개 다 Code 탭에서 "위 확장을 설치해줘"라고 시키면 됩니다. 실행할 명령을 보여주면 읽고 수락하세요. (터미널이면 "설치하는 명령어 알려줘"라고 해서 한 번에 붙여넣을 수도 있습니다.)
-
 ## 따라하기: 파일 하나 만들고 고쳐보기
 
 1. Code 탭에서 `my-first-app` 폴더가 선택돼 있는지 확인합니다.
@@ -120,6 +97,13 @@ Claude Code 자신의 설정도 마찬가지입니다. "Claude Code 응답을 �
 7. **새 대화**를 시작합니다. (터미널이면 `/clear`)
 
 이 **요청 → 승인 창 읽기 → 파일 확인 → 브라우저 확인 → 새 대화** 순환이 앞으로 20일 동안 반복할 기본 동작입니다.
+
+::: practice
+- [ ] VS Code 탐색기에 `index.html`이 생겼다
+- [ ] 브라우저에서 파일을 열었더니 "안녕하세요"가 화면 가운데에 크게 보인다
+- [ ] 두 번째 요청 후 글자색이 초록색으로 바뀐 것을 브라우저를 새로고침해 눈으로 확인했다
+- [ ] 비교 화면에서 빨간 줄(-)과 초록 줄(+)이 어디인지 손가락으로 짚을 수 있다
+:::
 
 ## 계획 모드 맛보기
 
@@ -142,11 +126,43 @@ Claude Code 자신의 설정도 마찬가지입니다. "Claude Code 응답을 �
 
 ## 오늘의 체크리스트
 
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
 - [ ] Code 탭에서 프로젝트 폴더를 골라 시작할 수 있다 (터미널이면 `claude`)
-- [ ] 조작 7개 중 5개를 안 보고 쓸 수 있다
-- [ ] 승인 창의 빨간 줄 / 초록 줄을 읽고 수락/거절을 골라봤다
-- [ ] `@파일`로 지목해서 고치는 순환을 한 번 돌아봤다
-- [ ] 계획 모드로 한 번 물어봤다
+- [ ] 조작 7개 표를 보고 5개를 말할 수 있다
+- [ ] 승인 창을 읽고 수락 한 번, 거절 한 번을 눌러봤다
+- [ ] `@파일`로 지목해서 고치는 순환을 한 번 돌았다
+- [ ] 계획 모드로 질문했고, 파일이 바뀌지 않은 것을 확인한 뒤 원래 모드로 돌아왔다
+:::
+
+## 더 해보기(선택)
+
+본 과정에 꼭 필요하지 않은 심화입니다. 시간이 남거나 더 궁금할 때 해보세요.
+
+### 설정은 말로 바꿉니다
+
+VS Code 글자 크기, 자동 저장, 탭 크기 같은 설정은 사실 `settings.json`이라는 파일입니다. 메뉴를 뒤질 필요 없이 Claude Code에게 말하면 됩니다.
+
+<div class="prompt-box not-prose" data-prompt="4-1" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 4-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"VS Code 설정에서 글자 크기를 15로, 저장할 때 자동 정렬되게, 탭은 2칸으로 바꿔줘. settings.json을 직접 수정해줘."
+
+</div>
+</div>
+
+Claude Code 자신의 설정도 마찬가지입니다. "Claude Code 응답을 항상 한국어로 하게 설정해줘"라고 하면 됩니다. (터미널에서는 `/config`로 메뉴를 열어도 됩니다.)
+
+### 있으면 좋은 것
+
+- **VS Code용 Claude Code 확장**: 확장 탭에서 "Claude Code"를 설치하면 VS Code 사이드 패널에서 같은 대화를 할 수 있고, 변경 내용이 에디터 안에서 diff로 보입니다. 취향껏.
+- **Prettier 확장**: 저장할 때 코드를 자동 정렬. Claude가 만든 코드와 여러분이 손댄 코드의 모양이 통일됩니다.
+- **Error Lens 확장**: 에러를 해당 줄 옆에 바로 표시. 15강 디버깅 때 큰 도움이 됩니다.
+
+세 개 다 Code 탭에서 "위 확장을 설치해줘"라고 시키면 됩니다. 실행할 명령을 보여주면 읽고 수락하세요. (터미널이면 "설치하는 명령어 알려줘"라고 해서 한 번에 붙여넣을 수도 있습니다.)
+
 
 ## 다음 강의
 

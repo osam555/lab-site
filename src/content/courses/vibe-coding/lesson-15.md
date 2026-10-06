@@ -52,7 +52,7 @@ TypeError: Cannot read properties of undefined (reading 'map')
 [최근 변경] 14강에서 user_id 필터를 추가한 뒤부터
 ```
 
-`[최근 변경]`이 특히 강력합니다. "뭘 바꾼 뒤부터 안 되나"는 원인의 80%를 좁혀줍니다. Code 탭에 "최근 커밋 5개를 보여줘"라고 하면 기억이 납니다. (터미널이면 `git log --oneline -5`)
+(재현 = 같은 문제를 다시 일으켜 보는 방법을 적는 칸입니다.) `[최근 변경]`이 특히 강력합니다. "뭘 바꾼 뒤부터 안 되나"는 원인의 80%를 좁혀줍니다. Code 탭에 "최근 커밋 5개를 보여줘"라고 하면 기억이 납니다. (터미널이면 `git log --oneline -5`)
 
 ## 에러 없이 이상할 때
 
@@ -82,7 +82,26 @@ AI가 "세 곳을 고쳤다"고 하면 어느 게 해결했는지 모릅니다. 
 ### 3. 되돌리기는 실패가 아니다
 "마지막 커밋 상태로 되돌려줘"(`git checkout .`)는 여러분의 가장 강력한 디버깅 도구입니다. 30분 헤맬 바엔 되돌리고 요청을 더 작게.
 
-## 따라하기: 버그 사냥
+## 따라하기 1: 일부러 에러 내보기 (연습)
+
+진짜 버그를 만나기 전에, 에러를 **일부러 한 번** 내봅니다. 에러 화면이 낯설지 않게 되고, 되돌리기 연습도 됩니다. 먼저 지금 상태를 커밋해 두세요.
+
+<div class="prompt-box not-prose" data-prompt="15-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 15-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"연습용이야. src/app/page.tsx 맨 위쪽에 존재하지 않는 변수 이름을 하나 쓰는 줄을 넣어서 일부러 에러가 나게 해줘. 다른 파일은 건드리지 마."
+
+</div>
+</div>
+
+::: practice
+- [ ] 브라우저에 에러 화면(또는 빨간 안내 창)이 떴다
+- [ ] F12 → Console 탭(또는 에러 창)에서 빨간 글씨 한 줄을 찾았고, 거기서 **무슨 일 / 어디서**를 뽑아 적었다
+- [ ] Code 탭에 "마지막 커밋 상태로 되돌려줘"라고 했더니 화면이 정상으로 돌아왔다
+:::
+
+## 따라하기 2: 버그 사냥
 
 지금까지 "일단 넘어간" 것들을 적어봅니다. 예:
 
@@ -95,10 +114,14 @@ AI가 "세 곳을 고쳤다"고 하면 어느 게 해결했는지 모릅니다. 
 
 ## 오늘의 체크리스트
 
-- [ ] 브라우저 콘솔과 개발 서버 로그(터미널 로그)를 볼 수 있다
-- [ ] 에러에서 무슨 일 / 어디서 / 언제를 뽑을 수 있다
-- [ ] 버그 보고 형식을 `BUG_TEMPLATE.md`로 저장했다
-- [ ] 버그 3개를 잡고 각각 커밋했다
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
+- [ ] 브라우저 콘솔과 개발 서버 로그(터미널 로그)를 직접 열어봤다
+- [ ] 에러 메시지에서 무슨 일 / 어디서 / 언제를 뽑아 노트에 적었다
+- [ ] 버그 보고 형식을 `BUG_TEMPLATE.md`로 저장했고 VS Code에서 보인다
+- [ ] 버그 3개를 잡았고, 각각 고친 뒤 화면에서 증상이 사라진 것을 눈으로 확인한 뒤 커밋했다
+:::
 
 ## 다음 강의
 

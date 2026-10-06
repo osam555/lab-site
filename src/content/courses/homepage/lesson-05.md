@@ -37,7 +37,7 @@ images 폴더의 사진들을 가로 최대 1600px, 용량 300KB 이하로 줄�
 
 도구 설치 허락을 물어보면 Yes. 끝나면 파일 크기가 확 줄어 있습니다.
 
-## 사진 넣기
+## 사진 넣기 (★ 쉬움 · 약 10분)
 
 <div class="prompt-box not-prose" data-prompt="5-2" data-level="beginner">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -59,7 +59,9 @@ images 폴더의 사진들을 가로 최대 1600px, 용량 300KB 이하로 줄�
 </div>
 </div>
 
-## 지도 넣기
+## 지도 넣기 (★★ 보통 · 약 15분 · 선택)
+
+> 지도가 어렵게 느껴지면 **주소 글자만 두고 건너뛰어도** 됩니다. 나중에 다시 와서 해도 홈페이지는 완성됩니다.
 
 지도는 직접 그리지 않고 **지도 서비스의 삽입 코드**를 가져옵니다. 한국 가게라면 네이버 지도 또는 카카오맵을 씁니다.
 
@@ -87,7 +89,7 @@ images 폴더의 사진들을 가로 최대 1600px, 용량 300KB 이하로 줄�
 
 > 두 서비스 모두 `<iframe>` 코드를 복사해 붙여넣는 방식이 같습니다. 네이버 지도는 네이버 앱과 연동, 카카오맵은 카카오내비·카카오맵 앱과 연동됩니다.
 
-## 글 다듬기
+## 글 다듬기 (★ 쉬움 · 약 10분)
 
 홈페이지에서 가장 많이 읽히는 건 **첫 화면 한 줄**과 **메뉴/서비스 설명**입니다. 직접 써도 좋고 Claude Code에게 초안을 받아도 됩니다.
 
@@ -113,7 +115,7 @@ images 폴더의 사진들을 가로 최대 1600px, 용량 300KB 이하로 줄�
 
 메뉴 설명도 마찬가지입니다. "각 메뉴에 한 줄 설명을 추가해줘. [메뉴1은 …, 메뉴2는 …]".
 
-## 링크 살리기
+## 링크 살리기 (★ 쉬움 · 약 5분)
 
 전화번호와 인스타그램을 **누르면 동작하게** 만듭니다.
 
@@ -137,13 +139,15 @@ git commit -m "사진, 지도, 소개 글 추가"
 
 앞으로 **뭔가 하나 잘 되면 바로 커밋**. 이게 리듬입니다.
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
+::: practice
 - [ ] `images` 폴더에 사진이 있고 용량이 줄어 있다
 - [ ] 첫 화면과 메뉴에 진짜 사진이 보인다
 - [ ] 지도가 보이고 실제 위치가 맞다
 - [ ] 첫 화면 한 줄과 메뉴 설명이 채워져 있다
 - [ ] 커밋했다
+:::
 
 ## 다음 강의
 

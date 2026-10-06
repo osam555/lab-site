@@ -22,6 +22,10 @@ part: 5부 · 영상 자동화
 
 ## HyperFrames
 
+> **용어 풀이** 렌더링 = 코드로 쓴 장면을 영상 파일로 뽑아내는 일, MP4 = 가장 흔한 영상 파일 형식, ffmpeg = 영상을 이어 붙이고 변환하는 무료 도구, 9:16 = 스마트폰 세로 화면 비율입니다.
+>
+> **처음이라면 HyperFrames 한 가지만 끝까지** 해 보세요. Remotion·합치기는 뒤쪽 "더 해보기(선택)"에 있습니다.
+
 ### 설치
 
 **사전 준비**: Node.js 22+, ffmpeg, Chrome (headless)
@@ -42,6 +46,19 @@ Claude Code가 설치를 완료하면 입력창에서 `/hyperframes`를 쓸 수 
 ---
 
 ### 기본 사용법 — 타이틀 카드 만들기
+
+먼저 **가장 단순한 영상**으로 도구가 동작하는지 확인합니다.
+
+<div class="prompt-box not-prose" data-prompt="14-0" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-0</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+/hyperframes 가장 단순한 영상을 만들어줘. 검은 배경에 흰 글씨 "안녕하세요"가 페이드인, 길이 3초, 16:9, 출력은 videos/hello.mp4
+
+</div>
+</div>
+
+**결과 확인**: `videos/hello.mp4`를 더블클릭해 재생했을 때 글씨가 서서히 나타나면 성공입니다. 이제 아래처럼 색·로고·애니메이션을 하나씩 더하면 됩니다 (처음부터 다 넣으면 어디서 틀렸는지 찾기 어렵습니다).
 
 <div class="prompt-box not-prose" data-prompt="14-1" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -113,7 +130,7 @@ Claude Code가 HTML/CSS/JS 씬 파일을 작성하고, Playwright가 캡처하�
 
 ---
 
-### 반복 렌더 — 주간 일정 영상
+### 더 해보기(선택) — 반복 렌더: 주간 일정 영상
 
 데이터만 바꿔서 매주 새 영상을 만듭니다.
 
@@ -152,7 +169,20 @@ Claude Code가 HTML/CSS/JS 씬 파일을 작성하고, Playwright가 캡처하�
 
 ---
 
-## Remotion
+::: practice
+**실습 미션 — HyperFrames로 영상 파일 만들고 재생하기**
+
+- [ ] 프로젝트 폴더를 선택하고 설치를 시킨 뒤, 입력창에 `/hyperframes`가 **보이는지** 확인했다
+- [ ] `videos/hello.mp4`(3초 "안녕하세요")를 만들어 **직접 재생**했다
+- [ ] 타이틀 카드(14-1)에서 내 가게·채널 이름으로 문구를 바꿨고, 재생해서 글씨와 색을 확인했다
+- [ ] 9:16 세로 영상이 휴대폰 화면 비율로 보이는지 확인했다
+- [ ] (선택) Remotion Studio를 `localhost` 주소로 열어 화면을 봤다
+:::
+
+---
+
+## 더 해보기(선택) — Remotion (데이터로 반복 렌더)
+
 
 ### 설치
 
@@ -275,7 +305,7 @@ video-remotion을 렌더해서 out/report-dec.mp4를 만들고,
 
 ---
 
-## HyperFrames vs Remotion 선택 기준
+## 더 해보기(선택) — HyperFrames vs Remotion 선택 기준
 
 ```
 빠르게 짧은 모션그래픽이 필요할 때
@@ -292,7 +322,7 @@ video-remotion을 렌더해서 out/report-dec.mp4를 만들고,
 
 ---
 
-## 완성 파이프라인
+## 더 해보기(선택) — 완성 파이프라인
 
 <div class="prompt-box not-prose" data-prompt="14-11" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 14-11</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -313,7 +343,7 @@ video-remotion을 렌더해서 out/report-dec.mp4를 만들고,
 
 - [ ] HyperFrames를 설치하고 /hyperframes 명령을 실행했다
 - [ ] 타이틀 카드 영상(MP4)이 출력됐다
-- [ ] Remotion Studio가 localhost에서 열렸다
-- [ ] Claude Code로 React 컴포넌트를 자동 작성했다
-- [ ] props를 바꿔서 새 영상이 렌더됐다
+- [ ] (선택) Remotion Studio가 localhost에서 열렸다
+- [ ] (선택) Claude Code로 React 컴포넌트를 자동 작성했다
+- [ ] (선택) props를 바꿔서 새 영상이 렌더됐다
 - [ ] (선택) HyperFrames + Remotion + ffmpeg 통합 파이프라인을 실행했다

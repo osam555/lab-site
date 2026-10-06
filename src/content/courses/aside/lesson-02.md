@@ -58,7 +58,29 @@ Claude가 Computer Use를 시작하면 Aside 브라우저에서 마우스 커서
 
 ---
 
+## 먼저 쉬운 연습 — 로그인 없이 검색 한 번
+
+로그인이 필요 없는 일부터 시켜 봅니다. Claude가 마우스를 움직이는 것을 눈으로 보는 게 목표입니다.
+
+1. Aside 브라우저에서 `https://www.naver.com` 접속
+2. 대화창에 아래 프롬프트 입력
+
+<div class="prompt-box not-prose" data-prompt="2-0" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 2-0</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Aside 브라우저에서 직접 조작해줘. 네이버 검색창에 "오늘 날씨"를 입력하고 검색해줘. 검색 결과 맨 위에 보이는 기온을 알려줘.
+
+</div>
+</div>
+
+**결과 확인**: 패널에서 검색창에 글자가 입력되고 결과 화면으로 바뀌는 것이 보이는지, Claude가 알려준 기온이 화면의 숫자와 같은지 확인합니다.
+
+---
+
 ## 실전 예시 1 — Vercel Analytics 켜기
+
+> Vercel 계정이 없다면 이 예시는 건너뛰고 위의 쉬운 연습으로 충분합니다. 설정을 바꾸는 작업은 **켜기·저장 같은 마지막 클릭 전에 사람이 화면을 확인**하는 습관을 들이세요.
 
 1. Aside 브라우저에서 `https://vercel.com/dashboard` 접속
 2. Vercel 계정으로 로그인 (직접)
@@ -82,7 +104,34 @@ Claude가:
 
 ---
 
-## 실전 예시 2 — DNS 레코드 자동 추가
+## Computer Use가 막히는 경우
+
+일부 사이트는 자동화를 감지해 차단합니다.
+
+| 증상 | 대응 |
+|---|---|
+| 캡챠(CAPTCHA) 등장 | 사람이 직접 캡챠 통과 후 Claude에게 다시 맡기기 |
+| 버튼을 못 찾음 | 화면 스크롤 후 재시도 요청 |
+| 로그인 세션 만료 | 사람이 다시 로그인 |
+| 전체 차단 | 1강 방식으로 전환 (화면 보며 안내받기) |
+
+---
+
+::: practice
+**실습 미션 — Claude가 클릭하는 것을 눈으로 확인하기**
+
+- [ ] "Aside 브라우저에서 직접 조작해줘"로 시작하는 프롬프트를 보냈다
+- [ ] 패널에서 마우스 커서가 움직이고 검색창에 글자가 입력되는 것을 **직접 봤다**
+- [ ] Claude가 알려준 결과(기온 등)가 화면에 보이는 숫자와 같은지 확인했다
+- [ ] 중간에 멈추게 하고 싶을 때 "잠깐 멈춰"라고 말하면 멈추는 것을 확인했다
+- [ ] (선택) Vercel 같은 설정 화면에서 1가지를 켜 봤고, 마지막 클릭 전에 내가 화면을 확인했다
+:::
+
+---
+
+## 더 해보기(선택) — DNS 레코드 자동 추가
+
+> **용어 풀이** DNS = 도메인(mycafe.kr 같은 이름)을 실제 서버 주소와 이어 주는 주소록, 레코드 = 그 주소록의 한 줄입니다. 값을 잘못 저장하면 사이트가 안 열릴 수 있으니 **저장 버튼은 입력 내용을 확인한 뒤 사람이** 누르세요. `mycafe.kr`은 예시이니 내 도메인으로 바꿉니다.
 
 가비아나 Namecheap에서 DNS를 설정해야 할 때.
 
@@ -103,7 +152,9 @@ Computer Use로 지금 Aside 브라우저의 DNS 관리 화면에서 아래 두 
 
 ---
 
-## 실전 예시 3 — 구글 서치 콘솔 sitemap 제출
+## 더 해보기(선택) — 구글 서치 콘솔 sitemap 제출
+
+> **용어 풀이** sitemap = 내 사이트의 페이지 목록 파일입니다. 구글에 제출하면 페이지를 찾아가기 쉬워집니다.
 
 1. Aside 브라우저에서 `https://search.google.com/search-console` 접속·로그인
 2. 대화창에:
@@ -117,19 +168,6 @@ Computer Use로 구글 서치 콘솔에서 내 사이트(mycafe.kr)에 sitemap.x
 
 </div>
 </div>
-
----
-
-## Computer Use가 막히는 경우
-
-일부 사이트는 자동화를 감지해 차단합니다.
-
-| 증상 | 대응 |
-|---|---|
-| 캡챠(CAPTCHA) 등장 | 사람이 직접 캡챠 통과 후 Claude에게 다시 맡기기 |
-| 버튼을 못 찾음 | 화면 스크롤 후 재시도 요청 |
-| 로그인 세션 만료 | 사람이 다시 로그인 |
-| 전체 차단 | 1강 방식으로 전환 (화면 보며 안내받기) |
 
 ---
 

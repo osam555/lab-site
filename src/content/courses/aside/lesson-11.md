@@ -23,6 +23,8 @@ part: 5부 · 영상 자동화
 
 ## 1. 유튜브 SEO 키워드 조사
 
+> **용어 풀이** SEO = 검색에서 잘 찾히게 다듬는 일, 태그 = 영상 주제를 알리는 꼬리표, 챕터 = 영상 구간별 제목(타임스탬프), 쇼츠 = 60초 이내 세로 영상입니다. 영상 파일이 아직 없으면 1~3번(글·썸네일 준비)까지만 해도 좋은 연습입니다.
+
 업로드 전에 제목에 쓸 키워드를 찾습니다.
 
 <div class="prompt-box not-prose" data-prompt="11-1" data-level="advanced">
@@ -48,6 +50,19 @@ Brave Search MCP로 "[영상 주제]" 유튜브 검색에서 상위 노출된 �
 ---
 
 ## 2. 제목·설명·태그 자동 작성
+
+메타데이터는 한 번에 다 시키면 길어서 확인하기 어렵습니다. **1단계 — 제목 3안만 먼저** 받아 고릅니다.
+
+<div class="prompt-box not-prose" data-prompt="11-2a" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-2a</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+영상 주제는 "[주제]"야. 제목 3가지 후보를 50자 이내로, 클릭하고 싶어지게 써줘. 각 제목이 왜 좋은지 한 줄씩 붙여줘.
+
+</div>
+</div>
+
+제목을 하나 고르고, **2단계 — 설명·태그까지 아래 프롬프트로 완성**합니다 (선택한 제목을 프롬프트의 "영상 주제" 근처에 적어 주세요).
 
 <div class="prompt-box not-prose" data-prompt="11-3" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -92,6 +107,9 @@ Brave Search MCP로 "[영상 주제]" 유튜브 검색에서 상위 노출된 �
 
 ## 4. YouTube Studio — Computer Use로 업로드
 
+> [!IMPORTANT]
+> **연습할 때는 공개 범위를 "비공개"로 업로드**하세요. 업로드가 끝나면 YouTube Studio 화면에서 제목·설명·썸네일을 눈으로 확인하고, **공개·예약 확정은 사람이** 합니다. 프롬프트가 길면 "파일 업로드와 제목 입력까지만 하고 멈춰서 화면을 보여줘"로 나눠 시켜도 됩니다.
+
 1. Aside 브라우저: `https://studio.youtube.com`
 2. 구글 계정 로그인 (직접)
 3. 대화창:
@@ -116,7 +134,37 @@ Computer Use로 YouTube Studio에서 새 동영상을 업로드해줘.
 
 ---
 
-## 5. 자막 자동 생성
+## 주간 유튜브 루틴 (업로드 기준)
+
+```
+업로드 전날:
+  ├─  5분: MCP로 키워드 조사
+  ├─  5분: 제목·설명·태그 생성
+  ├─  5분: 썸네일 2가지 생성
+  └─ 10분: YouTube Studio 업로드 + 예약 (Computer Use)
+
+업로드 후 2일:
+  └─  5분: 댓글 답글 초안 생성 → 검토 후 게시
+
+매주 월요일:
+  └─ 10분: 분석 리포트 → 다음 주 주제 결정
+```
+
+---
+
+::: practice
+**실습 미션 — 제목 3안·썸네일 만들고 비공개로 올려 보기**
+
+- [ ] 프롬프트 11-1로 상위 영상 제목 10개와 패턴을 받았다
+- [ ] 제목 3안 중 하나를 골랐고, 설명·태그를 받았다 (설명 첫 2줄에 핵심 키워드가 있는지 확인)
+- [ ] 썸네일 2가지가 만들어졌고, **파일을 열어 글씨가 크게 읽히는지** 확인했다
+- [ ] (영상 파일이 있다면) YouTube Studio에 **비공개**로 업로드해 제목·설명·썸네일이 화면에 맞게 들어간 것을 확인했다
+- [ ] 공개·예약 확정은 내 손으로 눌렀다
+:::
+
+---
+
+## 더 해보기(선택) — 자막 만들기·고치기
 
 유튜브 자동 자막을 개선합니다.
 
@@ -147,7 +195,7 @@ MCP 웹검색으로 무료 자막 생성 서비스를 찾아줘.
 
 ---
 
-## 6. 채널 운영 관리 — Computer Use로 자동화
+## 더 해보기(선택) — 채널 운영 관리 (댓글·분석)
 
 ### 댓글 관리
 
@@ -191,24 +239,6 @@ Computer Use로 [영상 URL] YouTube Studio에서:
 
 </div>
 </div>
-
----
-
-## 주간 유튜브 루틴 (업로드 기준)
-
-```
-업로드 전날:
-  ├─  5분: MCP로 키워드 조사
-  ├─  5분: 제목·설명·태그 생성
-  ├─  5분: 썸네일 2가지 생성
-  └─ 10분: YouTube Studio 업로드 + 예약 (Computer Use)
-
-업로드 후 2일:
-  └─  5분: 댓글 답글 초안 생성 → 검토 후 게시
-
-매주 월요일:
-  └─ 10분: 분석 리포트 → 다음 주 주제 결정
-```
 
 ---
 

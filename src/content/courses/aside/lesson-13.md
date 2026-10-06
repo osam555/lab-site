@@ -48,6 +48,23 @@ description: 원본 콘텐츠를 5개 채널 형식으로 변환하고 예약 �
 
 ---
 
+## 먼저 아주 작은 스킬 하나
+
+긴 스킬을 만들기 전에, 한 줄짜리 스킬로 "만들기 → 호출 → 결과 확인" 흐름을 익힙니다.
+
+<div class="prompt-box not-prose" data-prompt="13-0" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-0</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+내 프로젝트 루트에 .agents/skills/hello/SKILL.md 파일을 만들어줘. name은 "인사", description은 "인사 스킬을 써줘라고 하면 오늘 날짜와 한 줄 인사를 출력한다"로 하고, 본문에는 "오늘 날짜(YYYY-MM-DD)와 응원 한 줄을 출력한다"라고만 적어줘.
+
+</div>
+</div>
+
+만들어진 뒤 "인사 스킬을 써줘"라고 말해 보세요. **결과 확인**: 파일 목록에 `hello/SKILL.md`가 보이고, 호출했을 때 오늘 날짜와 응원 한 줄이 나오면 성공입니다.
+
+---
+
 ## 스킬 1 — SNS 배포
 
 <div class="prompt-box not-prose" data-prompt="13-1" data-level="advanced">
@@ -106,6 +123,17 @@ Aside 브라우저로 카카오 비즈니스에 접속해서
 각 채널 처리 결과를 표로 정리해서 보고한다.
 ```
 
+스킬 안에 "예약 확정 전에 멈추고 화면을 보여준다"는 규칙을 한 줄 넣어, **최종 확인은 사람이** 하게 합니다.
+
+<div class="prompt-box not-prose" data-prompt="13-1a" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-1a</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+sns-deploy SKILL.md의 3단계(인스타 예약)와 4단계(카카오채널 예약) 끝에 "예약 확정 버튼을 누르기 전에 멈추고 화면을 보여준다. 사용자가 확인하면 그때 누른다"를 추가해줘.
+
+</div>
+</div>
+
 ### 스킬 호출 방법
 
 ```
@@ -117,7 +145,50 @@ SNS 배포 스킬을 써줘.
 
 ---
 
-## 스킬 2 — 유튜브 업로드
+## 스킬 관리 팁
+
+### 스킬 업데이트
+
+성과 데이터가 쌓이면 규칙을 업데이트합니다.
+
+<div class="prompt-box not-prose" data-prompt="13-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+sns-deploy SKILL.md를 업데이트해줘.
+분석 결과 인스타는 오후 7시, 카카오는 오전 10시가 반응이 좋았어.
+예약 기본 시간을 그렇게 바꿔줘.
+
+</div>
+</div>
+
+### 스킬 목록 확인
+
+<div class="prompt-box not-prose" data-prompt="13-6" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+.agents/skills 폴더의 스킬 목록을 보여줘.
+각 스킬의 이름과 설명을 표로 정리해줘.
+
+</div>
+</div>
+
+---
+
+::: practice
+**실습 미션 — 작은 스킬 → SNS 배포 스킬 한 번 호출**
+
+- [ ] `hello/SKILL.md`를 만들었고, "인사 스킬을 써줘"로 호출해 날짜와 응원 문구가 나오는 것을 확인했다
+- [ ] `.agents/skills/sns-deploy/SKILL.md`가 파일 목록에 **보인다**
+- [ ] SKILL.md를 열어 `name`·`description`과 실행 단계 5개를 눈으로 읽었다
+- [ ] "SNS 배포 스킬을 써줘"로 호출해 채널별 글이 나오는 것을 확인했다
+- [ ] 예약 확정 전에 멈추고 화면을 보여주는 규칙(13-1a)이 들어갔다
+:::
+
+---
+
+## 더 해보기(선택) — 스킬 2: 유튜브 업로드
 
 <div class="prompt-box not-prose" data-prompt="13-2" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-2</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -183,7 +254,7 @@ Aside 브라우저로 YouTube Studio에 접속해서:
 
 ---
 
-## 스킬 3 — 블로그 포스팅
+## 더 해보기(선택) — 스킬 3: 블로그 포스팅
 
 <div class="prompt-box not-prose" data-prompt="13-3" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-3</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -241,7 +312,7 @@ Playwright MCP 또는 Aside Browser Computer Use로
 
 ---
 
-## 스킬 4 — 전체 콘텐츠 배포 (마스터 스킬)
+## 더 해보기(선택) — 스킬 4: 전체 콘텐츠 배포 (마스터 스킬)
 
 세 스킬을 하나로 묶는 마스터 스킬입니다.
 
@@ -287,41 +358,10 @@ description: 원본 하나로 블로그·SNS·유튜브를 한 번에 배포합�
 
 ---
 
-## 스킬 관리 팁
-
-### 스킬 업데이트
-
-성과 데이터가 쌓이면 규칙을 업데이트합니다.
-
-<div class="prompt-box not-prose" data-prompt="13-5" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-sns-deploy SKILL.md를 업데이트해줘.
-분석 결과 인스타는 오후 7시, 카카오는 오전 10시가 반응이 좋았어.
-예약 기본 시간을 그렇게 바꿔줘.
-
-</div>
-</div>
-
-### 스킬 목록 확인
-
-<div class="prompt-box not-prose" data-prompt="13-6" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 13-6</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-.agents/skills 폴더의 스킬 목록을 보여줘.
-각 스킬의 이름과 설명을 표로 정리해줘.
-
-</div>
-</div>
-
----
-
 ## 오늘의 체크리스트
 
 - [ ] .agents/skills 폴더 구조를 만들었다
 - [ ] SNS 배포 스킬을 만들고 한 번 호출해봤다
-- [ ] 유튜브 업로드 스킬을 만들었다
-- [ ] 블로그 포스팅 스킬을 만들었다
+- [ ] (선택) 유튜브 업로드 스킬을 만들었다
+- [ ] (선택) 블로그 포스팅 스킬을 만들었다
 - [ ] (선택) 마스터 스킬로 전체 배포를 한 번에 실행했다

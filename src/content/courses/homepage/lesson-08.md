@@ -153,12 +153,14 @@ Vercel 프로젝트 → **Settings → Domains**에서 `원하는이름.vercel.a
   </div>
 </div>
 
-## 오늘의 체크리스트
+## 오늘의 실습 체크
 
+::: practice
 - [ ] GitHub에 `my-site` 저장소가 있고 파일이 보인다
 - [ ] `….vercel.app` 주소가 폰에서 열린다
 - [ ] 수정 → 커밋 → push → 반영 리듬을 한 번 돌려봤다
 - [ ] 폰 점검 5개를 통과했다
+:::
 
 ## 다음 강의
 

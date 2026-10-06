@@ -26,6 +26,8 @@ part: 3부 · SNS 자동 배포
 
 ## 1. 채널별 글 자동 변환
 
+> **용어 풀이** 캡션 = 사진 아래 글, 해시태그 = `#단어` 형태의 검색용 꼬리표, CTA = 독자에게 "예약하세요" 같은 다음 행동을 권하는 문구입니다. 예약·게시를 확정하는 마지막 클릭은 항상 **사람이 미리보기를 확인한 뒤** 하세요.
+
 원본 글이 있으면 Claude Code에게:
 
 <div class="prompt-box not-prose" data-prompt="7-1" data-level="intermediate">
@@ -44,6 +46,9 @@ part: 3부 · SNS 자동 배포
 
 </div>
 </div>
+
+> 5개 채널이 한꺼번에 길면, 처음엔 "인스타그램과 X 두 개만"으로 줄여서 시켜도 됩니다. 결과가 마음에 들면 나머지를 이어서 요청하세요.
+
 
 ---
 
@@ -83,21 +88,7 @@ Computer Use로 크리에이터 스튜디오에서 인스타그램 새 게시물
 
 ## 3. X (트위터) 자동 포스팅
 
-### Playwright MCP 활용
-
-<div class="prompt-box not-prose" data-prompt="7-4" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-Playwright MCP로 x.com에 접속해서 글을 올려줘.
-텍스트: [변환된 X 텍스트]
-이미지가 있으면 첨부도.
-
-</div>
-</div>
-
-> [!NOTE]
-> X는 자동화를 강하게 감지합니다. Playwright가 차단되면 Computer Use로 Aside 브라우저에서 직접 입력 방식으로 전환하세요.
+처음에는 안전한 **반자동 방식**(Claude가 글을 만들어 복사해 주고, 내가 직접 붙여넣어 올림)으로 시작합니다.
 
 ### 반자동 방식 (안전)
 
@@ -148,7 +139,47 @@ Computer Use로 카카오 비즈니스 대시보드에서 채널 메시지를 �
 
 ---
 
-## 6. 전체 파이프라인 자동화
+## SNS 운영 주간 루틴
+
+```
+월요일: 이번 주 3개 포스팅 계획 (Claude Code로 캘린더 작성)
+화·목·토: 파이프라인 실행 → 예약
+일요일: 각 채널 성과 확인 → 잘 된 패턴 기록
+```
+
+---
+
+::: practice
+**실습 미션 — 원본 글 하나를 채널별 글로 바꾸고 직접 올려 보기**
+
+- [ ] 원본 글(신메뉴·이벤트 등 2~3줄)을 정했다
+- [ ] 프롬프트 7-1로 인스타·X 글을 받았다 — X 글이 **280자 이내**인지 글자 수를 확인했다
+- [ ] 인스타용 이미지 카드(1:1)를 만들었고, 열어서 글씨가 잘 읽히는지 확인했다
+- [ ] X 글을 클립보드에 복사해 **내가 직접 붙여넣어** 올렸거나 미리보기까지 확인했다
+- [ ] (선택) Computer Use로 인스타 예약 화면까지 진행하고, 확정 전에 멈춰 미리보기를 확인했다
+:::
+
+---
+
+## 더 해보기(선택) — Playwright MCP로 X에 직접 올리기
+
+<div class="prompt-box not-prose" data-prompt="7-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Playwright MCP로 x.com에 접속해서 글을 올려줘.
+텍스트: [변환된 X 텍스트]
+이미지가 있으면 첨부도.
+
+</div>
+</div>
+
+> [!NOTE]
+> X는 자동화를 강하게 감지합니다. Playwright가 차단되면 Computer Use로 Aside 브라우저에서 직접 입력 방식으로 전환하세요.
+
+---
+
+## 더 해보기(선택) — 전체 파이프라인 자동화
 
 한 번의 명령으로 모든 채널을 처리합니다.
 
@@ -169,16 +200,6 @@ Computer Use로 카카오 비즈니스 대시보드에서 채널 메시지를 �
 
 </div>
 </div>
-
----
-
-## SNS 운영 주간 루틴
-
-```
-월요일: 이번 주 3개 포스팅 계획 (Claude Code로 캘린더 작성)
-화·목·토: 파이프라인 실행 → 예약
-일요일: 각 채널 성과 확인 → 잘 된 패턴 기록
-```
 
 ---
 

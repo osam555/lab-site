@@ -11,7 +11,7 @@ part: 3부 · 만들기
 
 AI가 만들어주는 화면 코드를 읽으려면 세 단어만 알면 됩니다.
 
-### 1. 컴포넌트 — 레고 블록
+### 1. 컴포넌트 — 레고 블록 (화면의 재사용 조각)
 화면은 작은 블록의 조합입니다. `<Header />`, `<IngredientInput />`, `<MenuCard />`. 블록 하나는 파일 하나이고, 큰 화면은 블록을 쌓아 만듭니다.
 
 ```tsx
@@ -61,25 +61,54 @@ src/
 
 ## 따라하기: 화면 조각 만들기
 
-TODO.md에서 "화면만, 가짜 데이터" 조각을 하나 고르세요. 7강 템플릿으로 요청합니다. 예시:
+TODO.md에서 "화면만, 가짜 데이터" 조각을 하나 고르세요. 긴 요청 하나 대신 **3단계로 나눠** 보냅니다. 한 단계가 끝나면 브라우저에서 확인하고 다음으로 갑니다. 예시:
 
-<div class="prompt-box not-prose" data-prompt="11-1" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+**단계 1: 입력창과 추가 버튼**
+
+<div class="prompt-box not-prose" data-prompt="11-1" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-"IngredientInput 컴포넌트를 src/components/에 만들어줘.
-- 입력창 + '추가' 버튼. Enter로도 추가.
-- 추가된 재료는 아래에 칩(둥근 태그) 형태로 나열, 각 칩에 × 삭제 버튼
-- 빈 문자열이나 중복은 추가 안 됨
-- 상태는 이 컴포넌트 안에서 useState로 관리
-- Tailwind로 최소한만 스타일
-- page.tsx에 이 컴포넌트를 배치해줘. 다른 파일은 건드리지 마.
-- 완료 후 확인 방법 3단계"
+"IngredientInput 컴포넌트를 src/components/에 만들어줘. 입력창과 '추가' 버튼만. 추가를 누르면 입력한 재료가 입력창 아래에 한 줄씩 쌓여. 상태는 이 컴포넌트 안에서 useState로 관리하고, page.tsx에 배치해줘. 다른 파일은 건드리지 마. 완료 후 확인 방법 3단계."
 
 </div>
 </div>
 
-브라우저에서 확인 → 커밋. 그리고 두 번째 조각(예: 가짜 메뉴 3개 카드로 보여주기)도 같은 리듬으로.
+**확인:** 브라우저에서 재료를 두 개 입력해 추가하면 아래에 두 줄이 쌓입니다.
+
+**단계 2: 칩과 삭제 버튼**
+
+<div class="prompt-box not-prose" data-prompt="11-1a" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1a</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"@src/components/IngredientInput.tsx 쌓인 재료를 칩(둥근 태그) 모양으로 바꾸고, 각 칩에 × 삭제 버튼을 달아줘. × 를 누르면 그 재료만 사라져야 해. 이 파일만 고쳐줘."
+
+</div>
+</div>
+
+**확인:** 칩이 둥근 태그 모양으로 보이고, × 를 누른 재료만 사라집니다.
+
+**단계 3: 실수 막기**
+
+<div class="prompt-box not-prose" data-prompt="11-1b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 11-1b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+"@src/components/IngredientInput.tsx Enter 키로도 추가되게 하고, 빈 문자열과 중복된 재료는 추가되지 않게 해줘. 이 파일만 고쳐줘."
+
+</div>
+</div>
+
+**확인:** 아무것도 안 쓰고 추가 → 변화 없음 / 같은 재료 두 번 → 한 번만 들어감 / Enter로 추가됨.
+
+각 단계가 되면 커밋합니다. 두 번째 화면 조각(예: 가짜 메뉴 3개를 카드로 보여주기)도 같은 리듬으로 하세요.
+
+::: practice
+- [ ] 단계 1·2·3 결과를 브라우저에서 각각 눈으로 확인했다
+- [ ] 재료를 추가·삭제하는 것을 직접 눌러봤다
+- [ ] 배포된 `.vercel.app` 주소에서도 같은 동작이 된다
+:::
 
 ## 코드를 읽는 법
 
@@ -99,10 +128,14 @@ AI가 만든 파일을 열고 이것만 찾아보세요.
 
 ## 오늘의 체크리스트
 
+직접 해보고 **눈으로 확인한 것만** 체크하세요.
+
+::: practice
 - [ ] 컴포넌트 / 상태 / 이벤트를 한 줄씩 설명할 수 있다
-- [ ] AI가 만든 컴포넌트 파일에서 `useState`와 `onClick`을 찾아봤다
+- [ ] AI가 만든 컴포넌트 파일에서 `useState`와 `onClick`을 직접 찾아 손가락으로 짚어봤다
 - [ ] TODO.md 화면 조각 2개를 완성하고 커밋 + push했다
-- [ ] 배포된 주소에서 변화를 확인했다
+- [ ] 배포된 주소를 열어 변화를 눈으로 확인했다
+:::
 
 ## 다음 강의
 

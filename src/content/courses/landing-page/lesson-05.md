@@ -13,26 +13,30 @@ part: 2부 · 유형별 실전
 - 출시 전 사전예약(얼리버드)을 받을 때
 - 크라우드펀딩(텀블벅, 와디즈) 외부 소개 페이지가 필요할 때
 
-## 사례 A: 모바일 앱 다운로드
+## 사례는 쉬운 것부터 (난이도 표시)
 
-<div class="prompt-box not-prose" data-prompt="5-1" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+아래 사례는 **쉬운 순서**로 놓았습니다. 각 제목 옆의 난이도(★ 쉬움 / ★★ 보통 / ★★★ 어려움)와 예상 시간을 보고 **맨 위 1개부터** 해 보세요. 프롬프트가 길면 **1~3번 항목만 먼저** 보내 결과를 확인하고, 나머지를 이어서 보내면 훨씬 안전합니다. (전체 사례의 난이도 순서는 1강 표에 있습니다.)
+
+## 사례 1: 크라우드펀딩 소개  (★★ 보통 · 약 30분)
+
+<div class="prompt-box not-prose" data-prompt="5-3" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-index.html을 만들어줘. "오늘의 루틴" 습관 관리 앱 다운로드 랜딩페이지.
-1. 히어로: 왼쪽에 헤드라인 "작은 습관이 인생을 바꿉니다" + "무료 다운로드" 버튼 2개 (App Store 검은색, Play Store 초록색), 오른쪽에 폰 목업 안에 images/screen-1.png
-2. 숫자 배너: "다운로드 50,000+" / "별점 4.8" / "습관 달성률 89%"
-3. 핵심 기능 3개: 각각 폰 스크린샷(images/screen-2~4.png) + 제목 + 설명. 왼쪽-오른쪽 교대 배치. "원탭 체크인", "주간 통계 리포트", "친구와 함께 도전"
-4. 사용 후기: 앱스토어 리뷰 형태 카드 3개 (별점 + 닉네임 + 후기)
-5. 미디어 소개: "조선일보·중앙일보·매경이 주목한 앱" + 로고 가로 나열
-6. 마지막 CTA: "오늘부터 시작하세요" + 다운로드 버튼 2개
-7. 하단: 개인정보처리방침, 이용약관, 고객센터 이메일
-깔끔한 앱 스타일. 흰 배경 + 파란 포인트. 폰 스크린샷이 핵심.
+index.html을 만들어줘. "에어팟 분실방지 케이스" 와디즈 펀딩 소개 페이지.
+1. 히어로: 제품 사진 크게 + "에어팟, 더 이상 잃어버리지 마세요" + "와디즈에서 후원하기" 버튼
+2. 문제 → 해결: 일러스트 2컷 (에어팟 잃어버리는 장면 → 케이스로 찾는 장면)
+3. 제품 특징 4개: 아이콘 + 제목 + 설명 (GPS 추적 / 무선충전 호환 / 방수 / 가죽 소재)
+4. 스펙 표: 크기, 무게, 배터리, 호환 모델
+5. 리워드 가격: 슈퍼얼리버드 ₩29,000 / 얼리버드 ₩35,000 / 일반 ₩45,000
+6. 제조 과정 사진 갤러리
+7. "와디즈에서 후원하기" 버튼 + 펀딩 마감일
+제품 중심 미니멀 디자인. 흰 배경.
 
 </div>
 </div>
 
-## 사례 B: 사전예약·얼리버드
+## 사례 2: 사전예약·얼리버드  (★★ 보통 · 약 30분)
 
 <div class="prompt-box not-prose" data-prompt="5-2" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -51,21 +55,21 @@ index.html을 만들어줘. "FocusDesk" AI 집중력 앱 사전예약 페이지.
 </div>
 </div>
 
-## 사례 C: 크라우드펀딩 소개
+## 사례 3: 모바일 앱 다운로드  (★★★ 어려움 · 약 40분)
 
-<div class="prompt-box not-prose" data-prompt="5-3" data-level="intermediate">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-3</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box not-prose" data-prompt="5-1" data-level="intermediate">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 5-1</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
 <div class="prompt-box-body">
 
-index.html을 만들어줘. "에어팟 분실방지 케이스" 와디즈 펀딩 소개 페이지.
-1. 히어로: 제품 사진 크게 + "에어팟, 더 이상 잃어버리지 마세요" + "와디즈에서 후원하기" 버튼
-2. 문제 → 해결: 일러스트 2컷 (에어팟 잃어버리는 장면 → 케이스로 찾는 장면)
-3. 제품 특징 4개: 아이콘 + 제목 + 설명 (GPS 추적 / 무선충전 호환 / 방수 / 가죽 소재)
-4. 스펙 표: 크기, 무게, 배터리, 호환 모델
-5. 리워드 가격: 슈퍼얼리버드 ₩29,000 / 얼리버드 ₩35,000 / 일반 ₩45,000
-6. 제조 과정 사진 갤러리
-7. "와디즈에서 후원하기" 버튼 + 펀딩 마감일
-제품 중심 미니멀 디자인. 흰 배경.
+index.html을 만들어줘. "오늘의 루틴" 습관 관리 앱 다운로드 랜딩페이지.
+1. 히어로: 왼쪽에 헤드라인 "작은 습관이 인생을 바꿉니다" + "무료 다운로드" 버튼 2개 (App Store 검은색, Play Store 초록색), 오른쪽에 폰 목업 안에 images/screen-1.png
+2. 숫자 배너: "다운로드 50,000+" / "별점 4.8" / "습관 달성률 89%"
+3. 핵심 기능 3개: 각각 폰 스크린샷(images/screen-2~4.png) + 제목 + 설명. 왼쪽-오른쪽 교대 배치. "원탭 체크인", "주간 통계 리포트", "친구와 함께 도전"
+4. 사용 후기: 앱스토어 리뷰 형태 카드 3개 (별점 + 닉네임 + 후기)
+5. 미디어 소개: "조선일보·중앙일보·매경이 주목한 앱" + 로고 가로 나열
+6. 마지막 CTA: "오늘부터 시작하세요" + 다운로드 버튼 2개
+7. 하단: 개인정보처리방침, 이용약관, 고객센터 이메일
+깔끔한 앱 스타일. 흰 배경 + 파란 포인트. 폰 스크린샷이 핵심.
 
 </div>
 </div>
@@ -94,6 +98,15 @@ index.html을 만들어줘. "에어팟 분실방지 케이스" 와디즈 펀딩 
     </div>
   </div>
 </div>
+
+## 실습 체크: 앱·사전예약 페이지
+
+::: practice
+- [ ] 사례 1~3 중 하나를 내 앱·제품에 맞게 만들었다
+- [ ] 미리보기에서 다운로드(또는 후원·사전예약) 버튼이 첫 화면에 보인다
+- [ ] 폰 스크린샷(또는 회색 목업)이 폰 모양 틀 안에 들어가 보인다
+- [ ] 버튼을 눌렀을 때 링크가 열리거나 "준비 중" 알림이 뜬다
+:::
 
 ## 다음 강의
 

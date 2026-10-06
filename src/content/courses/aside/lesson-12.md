@@ -9,6 +9,8 @@ part: 5부 · 영상 자동화
 
 ## 영상 파이프라인 전체 흐름
 
+> 영상 파일을 만드는 단계는 도구가 많아 어렵습니다. **영상 파일이 없어도 1~3번(리서치·대본·썸네일)까지는 이 강의만으로 해볼 수 있습니다.** 쇼츠(60초 이내 세로 영상) 하나를 만든다고 생각하고 따라가세요. 업로드·예약 확정은 사람이 화면을 확인한 뒤 합니다.
+
 ```
 주제 입력
     │
@@ -47,6 +49,19 @@ Brave Search MCP로 "[주제]" 관련 유튜브와 쇼츠에서 이번 달 잘 �
 ## 2. 대본 작성 — 롱폼 + 쇼츠 동시에
 
 하나의 주제로 두 가지 대본을 씁니다.
+
+처음에는 **쇼츠 대본 하나만** 받아 보세요. 짧아서 확인하기 쉽습니다.
+
+<div class="prompt-box not-prose" data-prompt="12-2a" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-2a</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+주제 "[주제]"로 60초 이내 쇼츠 대본을 써줘. 첫 3초는 강한 후크, 핵심은 1가지만, 끝에 "전체 영상은 링크에서"를 넣어줘. 자막으로 넣을 문장 5개(20자 이내)도 따로 뽑아줘.
+
+</div>
+</div>
+
+**결과 확인**: 대본을 소리 내어 읽어 60초 안에 끝나는지 재 봅니다. 마음에 들면 **2단계 — 아래 프롬프트로 롱폼 대본까지** 이어서 만듭니다.
 
 <div class="prompt-box not-prose" data-prompt="12-2" data-level="intermediate">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-2</span><span class="prompt-level prompt-level-intermediate">🟡 중급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -111,35 +126,6 @@ Computer Use로 Google Vids(vids.google.com)에 접속해서 새 영상을 만�
 </div>
 </div>
 
-### CapCut AI (쇼츠·릴스)
-
-1. Aside 브라우저: `https://www.capcut.com`
-2. 대화창:
-
-<div class="prompt-box not-prose" data-prompt="12-5" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-Computer Use로 CapCut에서 스크립트 투 비디오 기능으로 쇼츠를 만들어줘.
-스크립트: [쇼츠 대본]
-비율: 9:16
-AI 아바타: [선택 또는 텍스트 자막만]
-
-</div>
-</div>
-
-### Runway (고품질 B롤)
-
-<div class="prompt-box not-prose" data-prompt="12-6" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-MCP 웹검색으로 Runway Gen-3에서 아래 장면용 B롤을 생성하는 방법 알려줘.
-장면: [비주얼 지시사항]
-
-</div>
-</div>
-
 ---
 
 ## 5. 전 채널 동시 배포
@@ -177,7 +163,7 @@ Computer Use로 크리에이터 스튜디오에서 릴스를 예약해줘.
 </div>
 </div>
 
-### 틱톡
+### 더 해보기(선택) — 틱톡
 
 <div class="prompt-box not-prose" data-prompt="12-9" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-9</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -194,7 +180,64 @@ Computer Use로 TikTok Studio(studio.tiktok.com)에서 영상을 업로드해줘
 
 ---
 
-## 6. 영상 파이프라인 마스터 파일
+## 영상 운영 주간 루틴
+
+```
+월요일: 주제 결정 + MCP 리서치 + 대본 작성 (20분)
+화~목: 촬영·편집 (사람의 영역)
+금요일: 썸네일 생성 + 전 채널 예약 배포 (15분)
+토요일: 쇼츠 추가 배포 자동 실행
+일요일: 분석 리포트 + 다음 주 주제
+```
+
+---
+
+::: practice
+**실습 미션 — 쇼츠 대본·썸네일 만들기 (+ 영상이 있다면 비공개 업로드)**
+
+- [ ] 프롬프트 12-1로 트렌드와 차별화 각도 3가지를 받았고, 각도 1개를 골랐다
+- [ ] 쇼츠 대본(12-2a)과 자막 문장 5개를 받아 **소리 내어 읽어 60초 이내**인지 확인했다
+- [ ] 썸네일(롱폼용·쇼츠용)이 만들어졌고, 열어서 글씨가 읽히는지 확인했다
+- [ ] (영상 파일이 있다면) YouTube에 **비공개** 업로드 후 화면에서 제목·설명을 확인했다. 공개·예약 확정은 내가 눌렀다
+- [ ] (선택) 인스타 릴스·틱톡 예약, `video-pipeline.md` 마스터 파일
+:::
+
+---
+
+## 더 해보기(선택) — CapCut AI·Runway로 영상 만들기
+
+### CapCut AI (쇼츠·릴스)
+
+1. Aside 브라우저: `https://www.capcut.com`
+2. 대화창:
+
+<div class="prompt-box not-prose" data-prompt="12-5" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-5</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+Computer Use로 CapCut에서 스크립트 투 비디오 기능으로 쇼츠를 만들어줘.
+스크립트: [쇼츠 대본]
+비율: 9:16
+AI 아바타: [선택 또는 텍스트 자막만]
+
+</div>
+</div>
+
+### Runway (고품질 B롤)
+
+<div class="prompt-box not-prose" data-prompt="12-6" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-6</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+MCP 웹검색으로 Runway Gen-3에서 아래 장면용 B롤을 생성하는 방법 알려줘.
+장면: [비주얼 지시사항]
+
+</div>
+</div>
+
+---
+
+## 더 해보기(선택) — 영상 파이프라인 마스터 파일
 
 <div class="prompt-box not-prose" data-prompt="12-10" data-level="advanced">
 <div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 12-10</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
@@ -221,23 +264,11 @@ video-pipeline.md 파일을 만들어줘. 아래 단계를 순서대로 적어�
 
 ---
 
-## 영상 운영 주간 루틴
-
-```
-월요일: 주제 결정 + MCP 리서치 + 대본 작성 (20분)
-화~목: 촬영·편집 (사람의 영역)
-금요일: 썸네일 생성 + 전 채널 예약 배포 (15분)
-토요일: 쇼츠 추가 배포 자동 실행
-일요일: 분석 리포트 + 다음 주 주제
-```
-
----
-
 ## 오늘의 체크리스트
 
 - [ ] MCP로 트렌드를 분석하고 차별화 각도를 찾았다
 - [ ] 롱폼·쇼츠 대본을 동시에 작성했다
 - [ ] 썸네일 2가지를 생성했다
 - [ ] YouTube에 롱폼과 쇼츠를 각각 예약했다
-- [ ] 인스타 릴스와 틱톡에도 예약했다
-- [ ] video-pipeline.md 마스터 파일을 만들었다
+- [ ] (선택) 인스타 릴스와 틱톡에도 예약했다
+- [ ] (선택) video-pipeline.md 마스터 파일을 만들었다

@@ -7,6 +7,8 @@ minutes: 40
 part: 3부 · 자동화와 운영
 ---
 
+> **용어 풀이** 스킬 = 여러 단계의 작업 순서를 파일 하나에 적어 두고 한 줄로 불러 쓰는 기능, 체크포인트(⏸) = 자동화가 멈추고 사람이 확인하는 지점입니다.
+
 ## 스킬로 저장
 
 <div class="prompt-box not-prose" data-prompt="7-1" data-level="beginner">
@@ -100,21 +102,6 @@ blog.naver.com → 내 블로그 → 통계.
 </div>
 </div>
 
-## 오래된 글 갱신
-
-발행 3개월 지난 글 중 유입이 있는 글은 **갱신이 새 글보다 효율이 좋습니다.**
-
-<div class="prompt-box not-prose" data-prompt="7-4" data-level="advanced">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-posts/에서 published 3개월 이상이고 meta.json에 유입 기록이 있는 글 목록을 보여줘. 각각 갱신할 항목(가격 변동, 새 제품, 계절 정보)을 research 다시 해서 제안해줘.
-
-</div>
-</div>
-
-갱신도 에디터 자동 입력 → 확인 → **수정 발행**은 손으로.
-
 ## 저품질 징후와 대응
 
 이런 신호가 보이면 멈추고 점검합니다.
@@ -131,6 +118,31 @@ posts/에서 published 3개월 이상이고 meta.json에 유입 기록이 있는
 - `naver-blog-factory/` — VOICE.md, 30개 캘린더, thumb 템플릿, fill-editor 절차, 스킬. 분야를 바꿔도 그대로
 - 네 군데 체크포인트 — 경험, 사실, 제목, 발행
 - 첫 글 3편과 주 3편 루틴
+
+::: practice
+**실습 미션 — 스킬 저장하고 두 번째 글을 임시저장까지**
+
+- [ ] `.claude/skills/` 아래에 스킬 파일이 생겼고 **열어서** 4단계와 ⏸ 4곳(경험·사실·제목·발행)이 있는지 확인했다
+- [ ] 새 대화에서 캘린더 항목 한 줄로 두 번째 글을 시작했다
+- [ ] ⏸ 지점마다 스킬이 **실제로 멈췄는지** 확인했다 (경험 채우기·사실 확인·제목 선택)
+- [ ] 임시저장된 글을 열어 확인하고, 발행은 내 손으로 했다
+- [ ] 주 3편(또는 2편) 루틴 표를 내 캘린더 앱에 넣었다
+:::
+
+## 더 해보기(선택) — 오래된 글 갱신
+
+발행 3개월 지난 글 중 유입이 있는 글은 **갱신이 새 글보다 효율이 좋습니다.**
+
+<div class="prompt-box not-prose" data-prompt="7-4" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-4</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+posts/에서 published 3개월 이상이고 meta.json에 유입 기록이 있는 글 목록을 보여줘. 각각 갱신할 항목(가격 변동, 새 제품, 계절 정보)을 research 다시 해서 제안해줘.
+
+</div>
+</div>
+
+갱신도 에디터 자동 입력 → 확인 → **수정 발행**은 손으로.
 
 ## 마지막 체크리스트
 

@@ -24,6 +24,8 @@ output/thumb.jpg
 
 ## 따라하기 1: 합성 스크립트
 
+7-1에서 세그먼트(컷별 영상+음성)를 만들어 확인하고, 7-1b에서 이어 붙입니다. 두 단계 사이에 `work/seg-01.mp4` 하나를 재생해 소리와 화면이 맞는지 보세요.
+
 한 번에 다 시키지 말고 단계별로 만들어 확인합니다.
 
 <div class="prompt-box not-prose" data-prompt="7-1" data-level="advanced">
@@ -34,9 +36,16 @@ scripts/assemble.py를 만들어줘. 1단계만:
 - script.json과 voice/durations.json을 읽어서
 - 컷마다 clips/cut-NN.mp4를 음성 길이 + 0.3초로 자르고(클립이 짧으면 마지막 프레임을 늘려서), voice/cut-NN.mp3를 얹어 work/seg-NN.mp4로 저장
 - 모든 세그먼트를 1080×1920, 30fps로 통일
-- 세그먼트를 순서대로 이어 work/body.mp4 생성
-- 각 컷의 시작 시각을 work/timeline.json에 기록 (자막용)
-실행 후 body.mp4 길이를 출력해줘.
+실행 후 work/ 안에 seg 파일이 몇 개 생겼는지 알려줘.
+
+</div>
+</div>
+
+<div class="prompt-box not-prose" data-prompt="7-1b" data-level="advanced">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-1b</span><span class="prompt-level prompt-level-advanced">🔴 고급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+assemble.py에 이어서 추가: 세그먼트를 순서대로 이어 work/body.mp4를 만들고, 각 컷의 시작 시각을 work/timeline.json에 기록해줘(자막용). 실행 후 body.mp4 길이를 출력해줘.
 
 </div>
 </div>
@@ -53,14 +62,12 @@ python3 scripts/assemble.py
 
 `work/body.mp4`를 열어 **끝까지 봅니다.** 확인: 컷 전환이 나레이션과 맞는가, 총 길이가 80~100초인가, 화면이 늘어지거나 검은 프레임이 없는가.
 
-<div class="prompt-box not-prose" data-prompt="7-2" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
 
-세그먼트 사이에 0.2초 크로스 디졸브를 넣어줘. 컷 전환이 너무 딱딱해.
-
-</div>
-</div>
+::: practice
+- [ ] `work/body.mp4`를 끝까지 재생했다 (검은 프레임·늘어진 화면이 없는지)
+- [ ] 총 길이가 80~100초인지 확인했다
+- [ ] 컷 전환이 나레이션 문장과 맞는 곳 3군데를 골라 확인했다
+:::
 
 ## 따라하기 2: BGM
 
@@ -94,18 +101,6 @@ assemble.py에 2단계 추가: assets/bgm/[파일명]을 body.mp4 길이에 맞�
 
 폰에서 확인하는 게 정확합니다. `final.mp4`를 폰으로 보내 세로로 보세요. 글자가 작으면 72px, 두 줄이 넘치면 3강 기준(12~18자)을 벗어난 컷입니다.
 
-### 자막 스타일 한 번에 바꾸기
-<div class="prompt-box not-prose" data-prompt="7-5" data-level="beginner">
-<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
-<div class="prompt-box-body">
-
-자막 강조: 각 컷에서 숫자와 고유명사만 노란색(#FFD400)으로.
-
-</div>
-</div>
-
-이런 것도 script.json에 `highlight` 필드를 추가해 Claude가 처리하게 할 수 있습니다.
-
 ## 따라하기 4: 썸네일과 메타
 
 <div class="prompt-box not-prose" data-prompt="7-6" data-level="advanced">
@@ -116,6 +111,13 @@ assemble.py에 2단계 추가: assets/bgm/[파일명]을 body.mp4 길이에 맞�
 
 </div>
 </div>
+
+::: practice
+- [ ] `output/final.mp4`를 폰으로 옮겨 세로로 재생했다
+- [ ] 무음으로 틀어도 자막만으로 내용이 이해된다
+- [ ] `output/thumb.jpg`를 열어 제목 글자가 잘리지 않았는지 확인했다
+- [ ] `output/meta.md`의 제목 3안 중 하나를 골랐다 (최종 선택은 사람이)
+:::
 
 ## 최종 점검
 
@@ -154,6 +156,33 @@ git commit -m "pyramid: 합성 스크립트 완성, 첫 영상"
 ```
 
 `output/`도 `.gitignore`에. 스크립트만 커밋합니다.
+
+## 더 해보기(선택): 전환 효과와 자막 강조
+
+기본 영상이 완성된 뒤 취향대로 더하세요. 안 해도 최종 영상은 문제없습니다.
+
+### 컷 전환을 부드럽게
+
+<div class="prompt-box not-prose" data-prompt="7-2" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-2</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+세그먼트 사이에 0.2초 크로스 디졸브를 넣어줘. 컷 전환이 너무 딱딱해.
+
+</div>
+</div>
+
+### 자막 숫자·이름 강조
+<div class="prompt-box not-prose" data-prompt="7-5" data-level="beginner">
+<div class="prompt-box-header"><span class="prompt-box-badge">프롬프트 7-5</span><span class="prompt-level prompt-level-beginner">🟢 초급</span><button class="prompt-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.prompt-box').querySelector('.prompt-box-body').innerText).then(()=>{this.textContent='✅';setTimeout(()=>this.textContent='📋',1500)})" title="복사">📋</button></div>
+<div class="prompt-box-body">
+
+자막 강조: 각 컷에서 숫자와 고유명사만 노란색(#FFD400)으로.
+
+</div>
+</div>
+
+이런 것도 script.json에 `highlight` 필드를 추가해 Claude가 처리하게 할 수 있습니다.
 
 ## 오늘의 체크리스트
 
