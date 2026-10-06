@@ -78,6 +78,33 @@ export const COURSES: Course[] = [
     ],
   },
   {
+    slug: "homepage-youtube",
+    title: "홈페이지 기초 — 유튜브 따라하기",
+    tagline: "누나IT 영상을 보며 클로드 아티팩트로 홈페이지 만들고 깃허브로 공개하기",
+    description:
+      "이 과정은 누나IT 님의 영상을 보며 따라 하는 과정이에요. 클로드 채팅의 아티팩트로 나를 소개하는 홈페이지를 만들고, 스타일과 사진을 고친 뒤, HTML 파일을 내려받아 깃허브에 올리고 깃허브 페이지로 무료 공개합니다. 강마다 영상 구간(타임스탬프)을 안내하고, 정식 홈페이지로 키우는 길도 알려 줍니다.",
+    level: "완전 초보",
+    audience: "코딩을 전혀 모르고, 영상을 보며 따라 하는 쪽이 편한 사람",
+    outcome: "깃허브 페이지로 공개된 내 소개 홈페이지 1개",
+    parts: ["1부 · 영상으로 만들기", "2부 · 영상으로 공개하기"],
+    badge: "영상 따라하기",
+    highlights: [
+      "클로드 채팅의 아티팩트로 코딩 없이 홈페이지 만들기",
+      "좋아하는 사이트 주소로 디자인 스타일 바꾸기",
+      "내 사진·이미지를 첨부해 홈페이지에 넣기",
+      "게시 링크와 HTML 내려받기의 차이",
+      "깃허브 저장소 만들고 index.html 올리기",
+      "깃허브 페이지로 내 홈페이지 주소 얻기",
+      "정식 홈페이지(Code 탭·버셀·도메인)로 키우는 길",
+    ],
+    relatedSkills: [
+      "prompt-writing",
+      "images-and-files",
+      "git-workflow",
+      "error-debugging",
+    ],
+  },
+  {
     slug: "homepage-cli",
     title: "홈페이지 만들기 — 고급",
     tagline: "지도 API·Analytics·MCP·어드민·SEO·대시보드까지",
