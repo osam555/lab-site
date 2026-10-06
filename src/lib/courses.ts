@@ -389,6 +389,37 @@ export const COURSES: Course[] = [
       "error-debugging",
     ],
   },
+  {
+    slug: "book-shorts-promo",
+    title: "책 발간 후 쇼츠 홍보 자동화",
+    tagline: "책 원고에서 한 문장을 뽑아 쇼츠로 만들고, 요일마다 루틴으로 내보내기",
+    description:
+      "내가 쓴 책 원고에서 쇼츠로 만들 한 문장·한 장면을 클로드와 함께 뽑고, 자막 카드 쇼츠(음성·ffmpeg 조립·썸네일)로 만든 뒤, 유튜브 예약 업로드와 블로그·SNS로 내보냅니다. 단톡방 챗봇 발송은 큰 그림과 지켜야 할 선만 개념으로 다루고, 주간 루틴표와 조회·클릭 기록으로 마무리합니다. 제작·업로드 방법은 이 사이트의 쇼츠·영상·Aside·SNS 과정을 다시 활용해요.",
+    level: "완전 초보~초급",
+    audience: "내 책을 냈거나 곧 내고, 쇼츠로 꾸준히 알리고 싶은 사람 (클로드 데스크탑 Code 탭을 열어본 적이 있으면 좋아요)",
+    outcome: "책 쇼츠 첫 편 mp4와 썸네일·제목·설명, 유튜브 예약 1편, 주간 루틴표와 성과 기록표",
+    parts: ["1부 · 발췌", "2부 · 쇼츠 제작", "3부 · 루틴 발송"],
+    badge: "Windows · macOS",
+    highlights: [
+      "내 책 원고(md·PDF)를 장별로 정리하고 규칙 파일로 선 긋기",
+      "\"이 장에서 쇼츠 10개 후보 뽑아줘\" — 후킹 문장 다섯 기준으로 고르기",
+      "30~60초 대본 확정, 원문 대조와 보장 표현 점검",
+      "자막 카드 쇼츠: 책 표지·구매 안내 엔딩 카드·시리즈 번호",
+      "음성(TTS)과 ffmpeg 조립은 쇼츠 자동화 과정 방법 재사용",
+      "유튜브 비공개 확인 후 예약 업로드, 블로그·SNS로 확장",
+      "단톡방 챗봇 발송의 큰 그림(개념) — 내 방만, 규칙·동의, 횟수 제한, 광고 표시",
+      "월 발췌 10개 · 화~금 제작 2개씩 · 매일 1편 예약 주간 루틴",
+      "조회·클릭·구매 링크 기록으로 다음 주 후보 고치기",
+    ],
+    relatedSkills: [
+      "prompt-writing",
+      "rules-file-deep-dive",
+      "skill-system",
+      "images-and-files",
+      "permissions-and-safety",
+      "plan-mode-and-context",
+    ],
+  },
 ];
 
 export function getCourse(slug: string) {

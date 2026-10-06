@@ -43,6 +43,7 @@ sources:
 | 블로그 글을 꾸준히 | [네이버 블로그 자동화](/lectures/naver-blog) | 7강 |
 | 짧은 영상 | [쇼츠 자동화](/lectures/shorts) | 8강 |
 | 글 하나를 여러 채널에 | [SNS 배포 자동화](/lectures/sns) | 8강 |
+| 내 책을 쇼츠로 꾸준히 홍보 | [책 발간 후 쇼츠 홍보 자동화](/lectures/book-shorts-promo) | 10강 |
 | 롱폼+쇼츠+썸네일 시리즈 | [영상 자동화](/lectures/video-automation) | 8강 |
 
 **끝나면**: 주제를 넣으면 초안·영상이 나오고, 올리기 전 내가 확인하는 파이프라인이 생겨요. 이 단계의 서비스들은 유료일 수 있으니 [안전·비용·계정](/basics/vibe-safety-money)을 먼저 읽어요.
