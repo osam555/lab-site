@@ -44,3 +44,5 @@ updated: '2026-10-06'
 - 낯선 설정 화면에서 Claude에게 도움을 받거나 맡길 수 있다
 - 도메인을 직접 사서 서브도메인과 짧은 주소까지 설정할 수 있다
 - 필요하면 어드민·로그인·예약 같은 백엔드 기능의 구조를 이해하고 붙여 볼 수 있다
+
+> 🔎 같은 방식으로 만든 실제 사이트는 [홈페이지 1강 "실제 사례로 보는 홈페이지"](/lectures/homepage/lesson-01)에서 볼 수 있습니다: <a href="https://makeupforl.co.kr" target="_blank" rel="noopener noreferrer">makeupforl.co.kr</a> · <a href="https://www.punolchi.com" target="_blank" rel="noopener noreferrer">punolchi.com</a> · <a href="https://mp3-free.org" target="_blank" rel="noopener noreferrer">mp3-free.org</a>

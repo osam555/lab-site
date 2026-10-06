@@ -43,3 +43,5 @@ updated: '2026-10-06'
 - 긴 프롬프트를 1~3개 섹션씩 쪼개서 보내고 결과를 눈으로 확인하며 고칠 수 있다
 - CTA 색·문구·위치를 바꿔 전환율을 높이는 시도를 할 수 있다
 - 만든 페이지를 배포하고 전환을 추적할 수 있다
+
+> 🔎 같은 방식으로 만든 실제 사이트는 [홈페이지 1강 "실제 사례로 보는 홈페이지"](/lectures/homepage/lesson-01)에서 볼 수 있습니다: <a href="https://makeupforl.co.kr" target="_blank" rel="noopener noreferrer">makeupforl.co.kr</a> · <a href="https://www.punolchi.com" target="_blank" rel="noopener noreferrer">punolchi.com</a> · <a href="https://mp3-free.org" target="_blank" rel="noopener noreferrer">mp3-free.org</a>

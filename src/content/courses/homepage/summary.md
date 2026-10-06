@@ -36,6 +36,8 @@ updated: '2026-10-06'
 - 구글·네이버에 등록된 사이트, 문의 버튼, 수정→커밋→push 루틴 (10~11강)
 - 다음 홈페이지에도 쓸 `CLAUDE.md`, `DESIGN.md`
 
+> 🔎 완성된 모습이 궁금하면 1강의 [실제 사례로 보는 홈페이지](/lectures/homepage/lesson-01)에서 오쌤이 만든 사이트 3곳을 구경해 보세요.
+
 ## 준비물
 
 - Claude 계정(유료 구독)과 Claude 데스크탑 앱, Git(Windows만 설치)

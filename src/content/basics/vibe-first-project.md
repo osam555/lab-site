@@ -37,6 +37,8 @@ sources:
 
 아이디어 모음에는 [냉장고 재료 메뉴 추천](/ideas/fridge-menu), [한 줄 독서 기록](/ideas/reading-log), [매일 체크인 습관 트래커](/ideas/habit-checkin) 같은 예가 있어요. 각각 "누가 쓰나요 → 핵심 기능 3개 → 안 만들 것"이 정리돼 있어서 그대로 베껴 써도 돼요. 처음 조각은 **화면만** 만드는 거예요.
 
+**오쌤이 만든 사이트 보기** (같은 방식으로 만든 실제 사이트, 새 창으로 열려요): <a href="https://makeupforl.co.kr" target="_blank" rel="noopener noreferrer">makeupforl.co.kr</a> · <a href="https://www.punolchi.com" target="_blank" rel="noopener noreferrer">punolchi.com</a> · <a href="https://mp3-free.org" target="_blank" rel="noopener noreferrer">mp3-free.org</a>. 소개는 [홈페이지 1강](/lectures/homepage/lesson-01)에 있어요.
+
 ## 한 번에 하나씩, 어떻게요?
 
 기능 하나를 정하고, 요청하고, 눈으로 확인하고, 커밋하고, 다음으로 가요. 이 리듬을 [조각 하나의 작업 루프](/skills/one-slice-loop)에서 연습해요. 요청이 두 가지로 늘어나면 둘로 나눠 두 번 돌려요. 커밋과 되돌리기는 [깃 기초](/basics/git-basics)에 있어요.
